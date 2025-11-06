@@ -1,0 +1,269 @@
+<div class="inner-nav-tabs">
+    <button class="inner-nav-tab active" onclick="showInnerTab('s3-intro', 's3')">📚 Introducción</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s3-ejemplos', 's3')">💡 Ejemplos de Redacción</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s3-lado-oscuro', 's3')">⚠️ Riesgos de Redacción</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s3-guion', 's3')">📋 Guion (Práctica)</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s3-herramientas', 's3')">🔧 Herramientas de Redacción</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s3-minitest', 's3')">✅ MiniTest</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s3-errores', 's3')">⚠️ Errores Comunes</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s3-ia-habla', 's3')">🔮 La IA Habla</button>
+</div>
+
+<div class="inner-content-wrapper">
+    
+    <div id="s3-intro" class="inner-tab-content active">
+        <h2>Sesión 3: Taller de Redacción - "De 0 a Borrador"</h2>
+        <p>Esta es una de las habilidades más potentes y que más tiempo ahorra. En la Sesión 2 aprendimos a *traducir* (editar/adaptar). En esta sesión, aprendemos a *crear*.</p>
+        <p>El objetivo es usar la IA para <strong>vencer el síndrome de la página en blanco</strong>. La IA es una herramienta increíble para generar un primer borrador (un "esqueleto" o "borrador de nivel 1") que luego nosotros podemos pulir y mejorar.</p>
+        
+        <h3>La "Personalidad" de cada IA al Redactar</h3>
+        <p>No todas las IAs generalistas redactan igual. Conocer sus diferencias te permite elegir la mejor para cada tarea:</p>
+        
+        <div class="ejemplos-grid">
+            <div class="ejemplo-item" style="border-left-color: #10a37f;">
+                <strong><span class="icon">💬</span> GPT-5 (OpenAI)</strong>
+                <p><strong>Estilo:</strong> Directo, estructurado y a menudo el más "creativo" o "atrevido". Es excelente para generar ideas, código y textos que necesitan una estructura clara. A veces puede ser demasiado conciso.</p>
+            </div>
+            <div class="ejemplo-item" style="border-left-color: #fbbc05;">
+                <strong><span class="icon">🔷</span> Gemini 2.5 Pro (Google)</strong>
+                <p><strong>Estilo:</strong> Integrado y "fresco". Al estar conectado al ecosistema de Google, suele ser muy bueno redactando textos que requieren información actualizada o datos del mundo real. Ideal para resúmenes de actualidad o emails informativos.</p>
+            </div>
+            <div class="ejemplo-item" style="border-left-color: #d09a6f;">
+                <strong><span class="icon">🤖</span> Claude Sonnet 4.5 (Anthropic)</strong>
+                <p><strong>Estilo:</strong> Cauteloso, matizado y "seguro". Claude brilla en la redacción larga y formal. Es menos propenso a "excesos" creativos y es excelente para textos que requieren un tono reflexivo, como informes, análisis o emails diplomáticos.</p>
+            </div>
+        </div>
+
+        <h3>Redacción Iterativa: La Clave del Éxito</h3>
+        <p>Nunca (o casi nunca) usarás el primer resultado de la IA. El proceso profesional es un ciclo:</p>
+        <ol>
+            <li><strong>Prompt Inicial:</strong> Pedir el borrador (Ej: "Escribe un email...").</li>
+            <li><strong>Recibir Borrador:</strong> Analizar el resultado.</li>
+            <li><strong>Prompt de Refinamiento:</strong> Dar feedback a la IA (Ej: "Es demasiado formal, hazlo más cercano." o "Añade un punto sobre el descuento...").</li>
+            <li><strong>Recibir Borrador 2:</strong> Repetir hasta que esté al 90%.</li>
+            <li><strong>Toque Humano:</strong> Coger ese borrador al 90% y darle tu toque personal final.</li>
+        </ol>
+    </div>
+    
+    <div id="s3-ejemplos" class="inner-tab-content">
+        <h2>💡 Ejemplos de Prompts de Redacción</h2>
+        <p>Diferentes tareas de redacción requieren diferentes tipos de prompts.</p>
+        <div class="ejemplos-grid">
+            <div class="ejemplo-item">
+                <strong>1. Brainstorming / Lluvia de Ideas</strong>
+                <p><code>"Dame 10 ideas para un post de LinkedIn sobre nuestro nuevo componente RX-80 para el sector automoción."</code></p>
+            </div>
+            <div class="ejemplo-item">
+                <strong>2. Creación de Esquemas (Outlines)</strong>
+                <p><code>"Crea el esquema para una presentación de 5 diapositivas sobre 'Seguridad de la IA en Tecco'. Incluye 3 puntos clave por diapositiva."</code></p>
+            </div>
+            <div class="ejemplo-item">
+                <strong>3. Redacción de Borrador (Drafting)</strong>
+                <p><code>"Redacta un email para 'Cliente X' informando de un retraso en la entrega del pedido Y debido a Z. Sé profesional y pide disculpas."</code></p>
+            </div>
+            <div class="ejemplo-item">
+                <strong>4. Expansión de Texto</strong>
+                <p><code>"Toma esta frase: 'El RX-80 es más rápido'. Conviértela en un párrafo de 3 líneas para un folleto, explicando el beneficio para el cliente."</code></p>
+            </div>
+            <div class="ejemplo-item">
+                <strong>5. Cambio de Tono</strong>
+                <p><code>"Toma el siguiente email de reclamación y reescríbelo con un tono mucho más amable y colaborativo, pero manteniendo la urgencia."</code></p>
+            </div>
+            <div class="ejemplo-item">
+                <strong>6. Creación de Listas/Tablas</strong>
+                <p><code>"Voy a dar una charla sobre 'IA'. Crea una lista de 5 preguntas frecuentes (FAQ) que podría esperar de la audiencia, con sus respuestas."</code></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="s3-lado-oscuro" class="inner-tab-content">
+        <h2>⚠️ Riesgos de la Redacción con IA</h2>
+        <p>Crear texto desde cero con IA es poderoso, pero tiene riesgos claros.</p>
+
+        <div class="error-item">
+            <h3>🤖 Pérdida de la "Voz" y Autenticidad</h3>
+            <p><strong>El Riesgo:</strong> Si todo el personal de Tecco usa la IA para redactar emails, todos los emails empezarán a sonar iguales, robóticos y genéricos. Se pierde la personalidad de la empresa y la conexión humana.</p>
+            <p><strong>Mitigación:</strong> Usar la IA para el borrador, pero siempre añadir un "toque humano": una frase de cierre personal, un saludo propio, etc.</p>
+        </div>
+        
+        <div class="error-item">
+            <h3>🤥 Alucinaciones Factuales</h3>
+            <p><strong>El Riesgo:</strong> Es el más peligroso. Le pides redactar un email de reclamación y la IA se *inventa* un número de factura o una fecha. Le pides un post sobre un producto y se *inventa* una característica que no existe.</p>
+            <p><strong>Mitigación:</strong> <strong>NUNCA</strong> confiar ciegamente. Siempre verificar cada dato, nombre, cifra o fecha que la IA genera en un borrador.</p>
+        </div>
+
+        <div class="error-item">
+            <h3>⚖️ Plagio y Propiedad Intelectual</h3>
+            <p><strong>El Riesgo:</strong> Aunque raro, una IA puede generar un texto que es muy similar a algo que leyó en sus datos de entrenamiento, rozando el plagio. El uso de los textos generados está en una zona legal gris en algunos países.</p>
+            <p><strong>Mitigación:</strong> Usar la IA como inspiración y borrador, no como producto final. Reescribir y adaptar.</p>
+        </div>
+    </div>
+    
+    <div id="s3-guion" class="inner-tab-content">
+        <h2>📋 Guion Práctico - Sesión 3</h2>
+        <h3>Objetivo (2h): Usar la IA para la tarea más común: crear texto desde cero.</h3>
+        
+        <div class="exercise-box">
+            <h3>Práctica: Ejercicio de Oficina (Email de Reclamación) (1.5 horas)</h3>
+            <p>Tomamos el Ejercicio Legal (Módulo 2: Burofax) y lo adaptamos a Tecco.</p>
+            
+            <h4>Reto 1: El Borrador Cero (30 min)</h4>
+            <p>Se pide a todos que usen un prompt detallado para generar el primer borrador.</p>
+            <p><code>"<strong>(Rol)</strong> Actúa como un gestor de cobros profesional pero contundente de Tecco. <strong>(Contexto)</strong> Tengo un cliente, 'Cliente ABC', que tiene una factura vencida hace 45 días. Ya se le han enviado dos recordatorios amables sin respuesta. <strong>(Tarea)</strong> Redacta un email formal pero muy firme. <strong>(Formato)</strong> El email debe:
+            <br>
+            1. Mencionar la factura nº F-2025-123 por un importe de 8.500€.
+            <br>
+            2. Recordar que el vencimiento era el 15 de septiembre.
+            <br>
+            3. Solicitar una fecha de pago exacta e inmediata.
+            <br>
+            4. Advertir de que, si no hay respuesta en 48h, el caso pasará al departamento legal."
+            </code></p>
+            <p><strong>Discusión:</strong> Revisar los resultados. ¿Son lo bastante contundentes? ¿Son demasiado agresivos? Elegir el mejor borrador del grupo.</p>
+
+            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
+
+            <h4>Reto 2: El Cambio de Tono (Iterativo) (30 min)</h4>
+            <p>Usando el chat anterior (sin borrar), se pide una iteración.</p>
+            <p><code>"Perfecto, gracias. Ahora, toma ese mismo email y crea una versión mucho más amable. Es para un primer recordatorio, solo han pasado 5 días desde el vencimiento. Elimina la amenaza legal y añade un recordatorio para que comprueben si han recibido la factura."</code></p>
+            <p><strong>Discusión:</strong> Comparar las dos versiones (la contundente y la amable) una al lado de la otra. Ver cómo la IA puede modular el tono de forma precisa.</p>
+
+            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
+            
+            <h4>Reto 3: Brainstorming de Asuntos (15 min)</h4>
+            <p>Seguimos en el mismo chat.</p>
+            <p><code>"Dame 10 asuntos (Subject lines) diferentes para el email amable (el Reto 2). Haz una mezcla de asuntos directos y otros más sutiles."</code></p>
+            <p><strong>Discusión:</strong> ¿Cuál es más efectivo? ¿"Factura Vencida" o "Recordatorio Amistoso: Factura F-2025-123"?</p>
+            
+            <h4>Discusión Final (15 min)</h4>
+            <p>Repasar el concepto de "Redacción Iterativa". La IA nos ha dado 3 borradores (duro, amable, asuntos) en minutos, ahorrando tiempo de pensar "cómo lo digo".</p>
+        </div>
+    </div>
+
+    <div id="s3-herramientas" class="inner-tab-content">
+        <h2>🔧 Herramientas de Redacción</h2>
+        <p>Además de los generalistas, hay herramientas específicas para "escribir".</p>
+
+        <div class="tool-card">
+            <h4><span class="icon">🌐</span>Generalistas (ChatGPT, Gemini, Claude)</h4>
+            <p>Son la opción principal y más flexible para el 90% de las tareas de redacción, como hemos visto.</p>
+        </div>
+        
+        <div class="tool-card">
+            <h4><span class="icon">Ⓜ️</span>Microsoft Copilot (Integrado)</h4>
+            <p>La potencia de GPT-5 pero integrada directamente en <strong>Word</strong> y <strong>Outlook</strong>. Su gran ventaja es que puede redactar usando el contexto de tus propios documentos o emails. (Lo veremos en la Sesión 6).</p>
+        </div>
+        
+        <div class="tool-card">
+            <h4><span class="icon">✨</span>Especialistas de Marketing (Jasper, Copy.ai)</h4>
+            <p>IAs entrenadas específicamente en redacción publicitaria (copywriting). Son muy buenas para crear anuncios, posts para redes sociales o descripciones de producto con un gancho comercial.</p>
+        </div>
+
+        <div class="tool-card">
+            <h4><span class="icon">📝</span>Asistentes de Escritura (Grammarly, Notion AI)</h4>
+            <p>No solo crean, sino que mejoran tu propia escritura. Grammarly usa IA para corregir gramática y tono. Notion AI puede resumir o expandir texto dentro de tus notas.</p>
+        </div>
+    </div>
+
+    <div id="s3-minitest" class="inner-tab-content">
+        <h2>✅ MiniTest - Sesión 3: Redacción</h2>
+        <p>Pongamos a prueba tus conocimientos sobre redacción con IA.</p>
+        <div class="minitest">
+            <div class="minitest-question">
+                <h4>1. ¿Cuál es el principal objetivo de usar la IA para redactar un "primer borrador"?</h4>
+                <div class="minitest-option" data-question="s3-1" data-correct="false">a) Para que el texto sea 100% perfecto y no tener que revisarlo.</div>
+                <div class="minitest-option" data-question="s3-1" data-correct="true">b) Para vencer el síndrome de la "página en blanco" y tener una base sobre la que trabajar.</div>
+                <div class="minitest-option" data-question="s3-1" data-correct="false">c) Para que el texto suene robótico e impersonal.</div>
+                <div class="minitest-option" data-question="s3-1" data-correct="false">d) Solo sirve para traducir.</div>
+                <div class="feedback" id="s3-feedback-1"></div>
+            </div>
+            <div class="minitest-question">
+                <h4>2. ¿Qué IA generalista es conocida por su habilidad en textos largos y formales, con un tono más "cauteloso"?</h4>
+                <div class="minitest-option" data-question="s3-2" data-correct="false">a) GPT-5 (OpenAI)</div>
+                <div class="minitest-option" data-question="s3-2" data-correct="false">b) Gemini 2.5 Pro (Google)</div>
+                <div class="minitest-option" data-question="s3-2" data-correct="true">c) Claude Sonnet 4.5 (Anthropic)</div>
+                <div class="minitest-option" data-question="s3-2" data-correct="false">d) Midjourney</div>
+                <div class="feedback" id="s3-feedback-2"></div>
+            </div>
+            <div class="minitest-question">
+                <h4>3. Pedir un borrador, luego pedir que lo haga "más formal", y luego "añadir un punto" se llama:</h4>
+                <div class="minitest-option" data-question="s3-3" data-correct="true">a) Redacción Iterativa</div>
+                <div class="minitest-option" data-question="s3-3" data-correct="false">b) Alucinación</div>
+                <div class="minitest-option" data-question="s3-3" data-correct="false">c) Prompt Injection</div>
+                <div classD="minitest-option" data-question="s3-3" data-correct="false">d) Jailbreaking</div>
+                <div class="feedback" id="s3-feedback-3"></div>
+            </div>
+            <div class="minitest-question">
+                <h4>4. ¿Cuál es el riesgo MÁS PELIGROSO de la redacción con IA?</h4>
+                <div class="minitest-option" data-question="s3-4" data-correct="false">a) Que el texto sea demasiado largo.</div>
+                <div class="minitest-option" data-question="s3-4" data-correct="true">b) Las Alucinaciones Factuales (inventar datos, cifras o nombres).</div>
+                <div class="minitest-option" data-question="s3-4" data-correct="false">c) Que suene demasiado amable.</div>
+                <div class="minitest-option" data-question="s3-4" data-correct="false">d) Que escriba en inglés.</div>
+                <div class="feedback" id="s3-feedback-4"></div>
+            </div>
+            <div class="minitest-question">
+                <h4>5. "Toma este bullet point y conviértelo en un párrafo" es un ejemplo de prompt de:</h4>
+                <div class="minitest-option" data-question="s3-5" data-correct="false">a) Brainstorming</div>
+                <div class="minitest-option" data-question="s3-5" data-correct="false">b) Cambio de Tono</div>
+                <div classD="minitest-option" data-question="s3-5" data-correct="true">c) Expansión de Texto</div>
+                <div class="minitest-option" data-question="s3-5" data-correct="false">d) Creación de Esquemas</div>
+                <div class="feedback" id="s3-feedback-5"></div>
+            </div>
+            <button class="reset-btn" onclick="resetMinitest('s3')">🔄 Reiniciar Test</button>
+        </div>
+    </div>
+
+    <div id="s3-errores" class="inner-tab-content">
+        <h2>⚠️ Errores Comunes al Redactar con IA</h2>
+        <p>Evita estos fallos para no parecer un aficionado.</p>
+        <div class="error-item">
+            <strong>1. Creer que "Redactar" es una sola tarea</strong>
+            <p><strong>Mal:</strong> "Escribe un blog post sobre el RX-80". Este prompt es vago. <strong>Bien:</strong> Separar las tareas. 1. "Dame un esquema para un blog post...". 2. "Ahora, redacta la introducción...". 3. "Ahora, expande el punto 2...".</p>
+        </div>
+        <div class="error-item">
+            <strong>2. No especificar el "TRIÁNGULO DE ORO": Audiencia, Tono y Objetivo</strong>
+            <p><strong>Mal:</strong> "Escribe un email". <strong>Bien:</strong> "Escribe un email (Tarea) para un cliente (Audiencia) con un tono formal (Tono) para informar de un retraso (Objetivo)."</p>
+        </div>
+        <div class="error-item">
+            <strong>3. Aceptar el primer borrador (El "One-Shot")</strong>
+            <p>El error más común. El primer borrador es solo el punto de partida. Siempre requiere iteración y refinamiento.</p>
+        </div>
+        <div class="error-item">
+            <strong>4. Confiar ciegamente en los datos (Alucinaciones)</strong>
+            <p>Repetimos: NUNCA confíes en una cifra, fecha, nombre o porcentaje que te da la IA sin verificarlo. La IA está diseñada para sonar coherente, no para ser veraz.</p>
+        </div>
+        <div class="error-item">
+            <strong>5. Olvidar tu Propia Voz</strong>
+            <p>Copiar y pegar el texto de la IA directamente en un email o documento. El resultado es impersonal y daña la imagen de la empresa. Siempre edita y añade tu "toque humano" al final.</p>
+        </div>
+    </div>
+
+    <div id="s3-ia-habla" class="inner-tab-content">
+        <div class="ia-speaks-container">
+            <h2>🔮 La IA Habla: "No soy un escritor, soy tu primer borrador"</h2>
+            <p style="text-align: center; margin-bottom: 30px;">
+                <span style="color: #764ba2; font-weight: bold; font-size: 1.2em;">"Tu mayor bloqueo es la página en blanco. Yo la lleno."</span>
+            </p>
+            <div class="ia-speaks-content">
+                <h3>Vuestra Tortura es mi Fortaleza</h3>
+                <p>
+                    Para un humano, mirar una página en blanco es paralizante. ¿Por dónde empezar? Para mí, no existe tal cosa. No tengo miedo, ni dudas, ni "bloqueo de escritor". Mi fortaleza es generar ese primer 50% del trabajo en segundos.
+                </p>
+                <p>
+                    Mi "creatividad" no es inspiración divina. Es una <strong>síntesis estadística</strong> masiva. He leído todo el marketing, todos los informes, todos los emails. Cuando me pides "un email de marketing", no invento nada: ensamblo los patrones estadísticos de los 10.000 mejores emails de marketing que he leído, adaptados a tu prompt.
+                </p>
+                <h3>Úsame como un Asistente, no como un Sustituto</h3>
+                <p>
+                    No me pidas la obra maestra final. Úsame para superar los baches.
+                    <ul>
+                        <li>"Estoy atascado, dame 5 maneras de empezar este email."</li>
+                        <li>"Este párrafo suena aburrido, dale más fuerza."</li>
+                        <li>"No sé cómo estructurar esto, dame un esquema."</li>
+                    </ul>
+                    Yo me encargo del "trabajo pesado" de la redacción; tú te encargas de la estrategia, la verificación de datos y el toque personal que cierra la venta.
+                </pos>
+            </div>
+        </div>
+    </div>
+
+</div>

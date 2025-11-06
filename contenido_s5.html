@@ -1,0 +1,252 @@
+<div class="inner-nav-tabs">
+    <button class="inner-nav-tab active" onclick="showInnerTab('s5-intro', 's5')">📚 Introducción</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s5-herramientas', 's5')">🔧 Ecosistema</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s5-lado-oscuro', 's5')">⚠️ Riesgos de Seguridad</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s5-guion', 's5')">📋 Guion (Práctica)</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s5-minitest', 's5')">✅ MiniTest</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s5-errores', 's5')">⚠️ Errores Comunes</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s5-ia-habla', 's5')">🔮 La IA Habla</button>
+</div>
+
+<div class="inner-content-wrapper">
+    
+    <div id="s5-intro" class="inner-tab-content active">
+        <h2>Sesión 5: El Ecosistema - Herramientas y Seguridad</h2>
+        <p>En las sesiones anteriores nos hemos centrado en las IAs "Generalistas" (ChatGPT, Gemini, Claude) porque son las más flexibles. Sin embargo, el universo de la IA es mucho más grande.</p>
+        <p>Esta sesión organiza el caos: veremos qué tipos de herramientas existen, para qué sirve cada una y, lo más importante, las **reglas de seguridad** para usarlas en un entorno corporativo como Tecco.</p>
+        
+        <h3>Las 4 Categorías de Herramientas de IA</h3>
+        
+        <div class="ejemplos-grid">
+            <div class="ejemplo-item">
+                <strong>1. Generalistas (Navaja Suiza)</strong>
+                <p>Hacen de todo (escribir, resumir, analizar, programar). Son las que hemos practicado.<br>
+                <strong>Ej: ChatGPT, Gemini, Claude.</strong></p>
+            </div>
+            <div class="ejemplo-item">
+                <strong>2. Especialistas (Bisturí)</strong>
+                <p>Hacen UNA cosa perfectamente. Están entrenadas solo para esa tarea.<br>
+                <strong>Ej: Lusha (datos), Harvey (legal), Symptoma (médica).</strong></p>
+            </div>
+            <div class="ejemplo-item">
+                <strong>3. Generadores (El Artista)</strong>
+                <p>Crean contenido nuevo a partir de un prompt, pero no son conversacionales.<br>
+                <strong>Ej: Midjourney (imágenes), Suno (música), Runway (vídeo).</strong></p>
+            </div>
+            <div class="ejemplo-item">
+                <strong>4. Buscadores (El Investigador)</strong>
+                <p>Usan la IA para responder preguntas, pero su fortaleza es que *citan sus fuentes*.<br>
+                <strong>Ej: Perplexity.ai.</strong></p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Generalista vs. Especialista: El Caso "Lusha"</h3>
+            <p>Este es el mejor ejemplo para entender la diferencia:</p>
+            <ul>
+                <li>No puedes pedirle a <strong>ChatGPT</strong>: "Dame el teléfono del CEO de la empresa X". No tiene acceso a esa base de datos.</li>
+                <li>No puedes pedirle a <strong>Lusha</strong>: "Escribe un poema sobre un robot". No está entrenada para eso.</li>
+            </ul>
+            <p><strong>Conclusión:</strong> No hay una IA "mejor". La habilidad clave es saber qué herramienta (generalista o especialista) necesitas para cada tarea.</p>
+        </div>
+    </div>
+    
+    <div id="s5-herramientas" class="inner-tab-content">
+        <h2>🔧 Ecosistema de Herramientas IA</h2>
+        
+        <h3>🌐 Generalistas (Chat)</h3>
+        <div class="tool-card">
+            <p><strong><a href="https://chat.openai.com/" target="_blank" class="tool-link">ChatGPT</a>, <a href="https://gemini.google.com/" target="_blank" class="tool-link">Gemini</a>, <a href="https://claude.ai/" target="_blank" class="tool-link">Claude</a></strong>: Las "navajas suizas" para redacción, análisis y brainstorming.</p>
+        </div>
+
+        <h3>🔍 Buscadores (Investigación con Fuentes)</h3>
+        <div class="tool-card">
+            <p><strong><a href="https://www.perplexity.ai/" target="_blank" class="tool-link">Perplexity.ai</a></strong>: Excelente para investigación. Responde a preguntas y te da una lista de las fuentes (links) de donde ha sacado la información.</p>
+        </div>
+
+        <h3>🎨 Generadores (Creatividad)</h3>
+        <div class="tool-card">
+            <p><strong><a href="https://www.midjourney.com/" target="_blank" class="tool-link">Midjourney</a> / <a href="https://firefly.adobe.com/" target="_blank" class="tool-link">Adobe Firefly</a></strong>: Creación y edición de imágenes profesionales.</p>
+        </div>
+        <div class="tool-card">
+            <p><strong><a href="https://suno.ai/" target="_blank" class="tool-link">Suno</a> / <a href="https://www.udio.com/" target="_blank" class="tool-link">Udio</a></strong>: Creación de canciones completas (música y letra) desde un prompt.</p>
+        </div>
+        <div class="tool-card">
+            <p><strong><a href="https://runwayml.com/" target="_blank" class="tool-link">Runway</a></strong>: Creación y edición de vídeo con IA (texto a vídeo, eliminar fondos, etc.).</p>
+        </div>
+        
+        <h3>🎯 Especialistas (Tareas Concretas)</h3>
+        <div class="tool-card">
+            <p><strong><a href="https://gamma.app/" target="_blank" class="tool-link">Gamma</a> / <a href="https://tome.app/" target="_blank" class="tool-link">Tome</a></strong>: Creación de presentaciones (PowerPoints) a partir de un simple prompt.</p>
+        </div>
+        <div class="tool-card">
+            <p><strong><a href="https://github.com/features/copilot" target="_blank" class="tool-link">GitHub Copilot</a></strong>: Asistente de IA para programadores. Escribe código.</p>
+        </div>
+        <div class="tool-card">
+            <p><strong><a href="https://www.grammarly.com/" target="_blank" class="tool-link">Grammarly</a></strong>: Asistente de escritura que corrige gramática y tono en tiempo real.</p>
+        </div>
+    </div>
+    
+    <div id="s5-lado-oscuro" class="inner-tab-content">
+        <h2>⚠️ Riesgos de Seguridad: La Regla de Oro</h2>
+        <p>Esta es la parte más importante de la sesión. Ahora que sabéis lo útiles que son estas herramientas, tenéis que saber lo peligrosas que son si se usan mal.</p>
+        <p>El mayor riesgo en una empresa no es que la IA "se vuelva lista", es la **fuga de datos confidenciales**.</p>
+        
+        <div class="error-item">
+            <h3>¿Por qué es peligroso? El "Pacto con el Diablo"</h3>
+            <p>Cuando usas una IA pública y gratuita (como ChatGPT), el precio que pagas es tu información. Por defecto, estas empresas se reservan el derecho de usar las conversaciones que tienes con la IA para **re-entrenar sus modelos**.</p>
+            <p><strong>Riesgo 1 (Entrenamiento):</strong> Si pegas un contrato de Tecco, ese contrato podría ser "aprendido" por la IA. Meses después, un competidor podría hacer una pregunta y la IA, accidentalmente, podría generar un texto basado en vuestro contrato confidencial.</p>
+            <p><strong>Riesgo 2 (Fuga/Hackeo):</strong> Si OpenAI (o Google, o Anthropic) sufre un hackeo, todas las conversaciones (incluyendo vuestros informes financieros, listas de clientes o estrategias) quedan expuestas.</p>
+        </div>
+
+        <div class="highlight-box" style="border-left-color: #e53935; background: #ffebee;">
+            <h3 style="color: #c62828;">🚫 LO QUE NUNCA SE DEBE PEGAR EN UNA IA PÚBLICA 🚫</h3>
+            <p>Bajo ningún concepto se debe introducir esta información en ChatGPT, Gemini o Claude (versiones públicas):</p>
+            <ul>
+                <li><strong>Datos Personales de Clientes:</strong> Nombres, emails, teléfonos, DNIs, direcciones. (Violación RGPD).</li>
+                <li><strong>Información Financiera Interna:</strong> Listas de salarios, márgenes de beneficio, informes de costes.</li>
+                <li><strong>Contratos y Documentos Legales:</strong> Contratos con clientes, acuerdos de confidencialidad (NDAs), litigios.</li>
+                <li><strong>Estrategias Comerciales Confidenciales:</strong> Planes de lanzamiento, listas de precios, análisis de competencia.</li>
+                <li><strong>Código Fuente Propietario:</strong> El código de los productos de Tecco.</li>
+            </ul>
+        </div>
+        
+        <h3>La Solución: IAs Privadas / Empresariales</h3>
+        <p>La solución es usar versiones de IA que *garantizan* por contrato que tus datos son privados y no se usan para entrenar.</p>
+        <p><strong>Ejemplo: Microsoft Copilot (M365)</strong>. Cuando Tecco usa Copilot integrado en Teams, Outlook y Word, esos datos se procesan dentro del "tenant" (el espacio privado) de Microsoft de Tecco. Los datos no salen y no se usan para entrenar la IA pública. Esto lo veremos en la Sesión 6.</p>
+    </div>
+
+    <div id="s5-guion" class="inner-tab-content">
+        <h2>📋 Guion Práctico - Sesión 5: Ecosistema y Seguridad</h2>
+        <h3>Objetivo (2h): Poner orden: qué herramienta usar y cuándo (y qué no hacer).</h3>
+        
+        <h3>Temas (Parte Teórica - 1 hora)</h3>
+        <ul>
+            <li><strong>Repaso de las 4 Categorías:</strong> Generalistas, Especialistas, Generadores, Buscadores. (Ver pestaña <strong>"📚 Introducción"</strong>).</li>
+            <li><strong>Demo de Ecosistema:</strong>
+                <ul>
+                    <li><strong>Perplexity:</strong> Hacer una pregunta de actualidad (Ej: "¿Quién ganó la final de la Champions 2025?") y mostrar cómo cita las fuentes. Comparar con ChatGPT (que podría no saberlo o alucinar).</li>
+                    <li><strong>Gamma:</strong> Crear una presentación de 5 diapositivas con el prompt: "Crea una presentación sobre los beneficios de la IA para la logística en automoción".</li>
+                    <li><strong>Suno:</strong> Crear una canción con el prompt: "Una canción rock sobre un ingeniero de Tecco que ama su trabajo".</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <div class="exercise-box">
+            <h3>Tema Central: Debate de Seguridad (1 hora)</h3>
+            <p><strong>"Ahora que sabéis lo útil que es, vamos a explicar lo peligroso que es usarla mal."</strong></p>
+            <p>Esta práctica es un debate guiado por el formador, centrado en los riesgos vistos en la pestaña <strong>"⚠️ Riesgos de Seguridad"</strong>.</p>
+            
+            <h4>Preguntas para el Debate:</h4>
+            <ol>
+                <li>"Juan necesita resumir un contrato de 50 páginas de un cliente nuevo. ¿Qué herramienta debería usar? ¿Es seguro pegarlo en su ChatGPT personal? ¿Por qué sí o por qué no?"</li>
+                <li>"María quiere analizar la lista de salarios de todo su departamento (un Excel) para encontrar la media. ¿Es seguro subir ese Excel a Gemini? ¿Cuál es el riesgo?"</li>
+                <li>"Pedro quiere redactar un email de marketing genérico para un nuevo producto. ¿Puede usar Claude para esto? ¿Es un riesgo?" (Respuesta: Sí puede, el riesgo es bajo si la info no es confidencial).</li>
+                <li>"¿Qué es la 'anonimización' de datos? ¿Cómo podríais usarla?" (Ej: Reemplazar "Cliente S.A." por "[CLIENTE]" y "8.500€" por "[IMPORTE]").</li>
+            </ol>
+            
+            <p><strong>Conclusión:</strong> "Usad la IA para traducir un texto genérico, sí. Para redactar un email, sí. Pero NUNCA peguéis un contrato de un cliente o una lista de salarios para que lo resuma."</p>
+            <p><strong>Solución:</strong> Las IAs "Privadas" o "Empresariales" (como Microsoft Copilot dentro del entorno Tecco), que garantizan que los datos no salen de la empresa. (Introducción a la Sesión 6).</p>
+        </div>
+    </div>
+    
+    <div id="s5-minitest" class="inner-tab-content">
+        <h2>✅ MiniTest - Sesión 5: Ecosistema y Seguridad</h2>
+        <p>Demuestra que sabes qué herramienta usar y qué no debes hacer.</p>
+        <div class="minitest">
+            <div class="minitest-question">
+                <h4>1. ¿Cuál es el principal riesgo de seguridad al usar IAs públicas (ChatGPT, Gemini) en el trabajo?</h4>
+                <div class="minitest-option" data-question="s5-1" data-correct="false">a) Que la IA te insulte.</div>
+                <div class="minitest-option" data-question="s5-1" data-correct="false">b) Que la IA te dé una respuesta incorrecta (Alucinación).</div>
+                <div class="minitest-option" data-question="s5-1" data-correct="true">c) La fuga de datos confidenciales de la empresa (financieros, de clientes, etc.).</div>
+                <div class="minitest-option" data-question="s5-1" data-correct="false">d) Que la IA se vuelva demasiado lenta.</div>
+                <div class="feedback" id="s5-feedback-1"></div>
+            </div>
+            <div class="minitest-question">
+                <h4>2. ¿Qué tipo de IA usarías para crear una presentación (PowerPoint) desde cero?</h4>
+                <div class="minitest-option" data-question="s5-2" data-correct="true">a) Una IA Especialista como Gamma o Tome.</div>
+                <div class="minitest-option" data-question="s5-2" data-correct="false">b) Una IA Generalista como Claude.</div>
+                <div class="minitest-option" data-question="s5-2" data-correct="false">c) Una IA Generadora de música como Suno.</div>
+                <div class="minitest-option" data-question="s5-2" data-correct="false">d) Un Buscador como Perplexity.</div>
+                <div class="feedback" id="s5-feedback-2"></div>
+            </div>
+            <div class="minitest-question">
+                <h4>3. Si necesitas una respuesta a una pregunta de actualidad y que *cite sus fuentes*, ¿cuál es la mejor opción?</h4>
+                <div class="minitest-option" data-question="s5-3" data-correct="false">a) ChatGPT (que puede no saberlo).</div>
+                <div class="minitest-option" data-question="s5-3" data-correct="true">b) Perplexity.ai (Buscador).</div>
+                <div class="minitest-option" data-question="s5-3" data-correct="false">c) Midjourney (Imágenes).</div>
+                <div class="minitest-option" data-question="s5-3" data-correct="false">d) Lusha (Datos de contacto).</div>
+                <div class="feedback" id="s5-feedback-3"></div>
+            </div>
+            <div class="minitest-question">
+                <h4>4. ¿Cuál de los siguientes SÍ es (relativamente) seguro pegar en una IA pública?</h4>
+                <div class="minitest-option" data-question="s5-4" data-correct="false">a) La lista de salarios de tu departamento.</div>
+                <div class="minitest-option" data-question="s5-4" data-correct="false">b) Un contrato firmado con un cliente.</div>
+                <div class="minitest-option" data-question="s5-4" data-correct="true">c) Un texto genérico de un blog público para que lo traduzca.</div>
+                <div class="minitest-option" data-question="s5-4" data-correct="false">d) La estrategia comercial de Tecco para 2026.</div>
+                <div class="feedback" id="s5-feedback-4"></div>
+            </div>
+            <div class="minitest-question">
+                <h4>5. ¿Por qué Microsoft Copilot (M365) es más seguro para datos internos que ChatGPT público?</h4>
+                <div class="minitest-option" data-question="s5-5" data-correct="false">a) Porque es de Microsoft y nunca falla.</div>
+                <div class="minitest-option" data-question="s5-5" data-correct="true">b) Porque procesa los datos dentro del "tenant" privado de Tecco y no los usa para entrenamiento público.</div>
+                <div class="minitest-option" data-question="s5-5" data-correct="false">c) Porque es más barato.</div>
+                <div class="minitest-option" data-question="s5-5" data-correct="false">d) No es más seguro, es igual de peligroso.</div>
+                <div class="feedback" id="s5-feedback-5"></div>
+            </div>
+            <button class="reset-btn" onclick="resetMinitest('s5')">🔄 Reiniciar Test</button>
+        </div>
+    </div>
+
+    <div id="s5-errores" class="inner-tab-content">
+        <h2>⚠️ Errores Comunes de Ecosistema y Seguridad</h2>
+        
+        <div class="error-item">
+            <strong>1. El Error del "Martillo de Oro"</strong>
+            <p><strong>Error:</strong> Pensar que tu IA favorita (ej: ChatGPT) es un martillo de oro que sirve para todo. Intentar usarla para tareas en las que es mala (como buscar datos de contacto o investigar con fuentes). <strong>Solución:</strong> Usar la herramienta adecuada (Especialista o Buscador).</p>
+        </div>
+        
+        <div class="error-item">
+            <strong>2. La "Pereza Confidencial"</strong>
+            <p><strong>Error:</strong> Saber que no deberías pegar datos sensibles, pero hacerlo "solo esta vez" para ahorrar tiempo. <strong>Solución:</strong> Tolerancia cero. Es una brecha de seguridad grave. O se usa la herramienta interna (Copilot) o se anonimizan los datos manualmente.</p>
+        </div>
+
+        <div class="error-item">
+            <strong>3. Desconocer las Herramientas "Shadow IT"</strong>
+            <p><strong>Error:</strong> El departamento de IT no sabe que estás usando 5 herramientas de IA diferentes (Suno, Gamma, Perplexity) en las que has iniciado sesión con tu email de empresa. <strong>Solución:</strong> Ser transparente. Usar las herramientas aprobadas por la compañía.</p>
+        </div>
+        
+        <div class="error-item">
+            <strong>4. Confiar en la Anonimización Simple</strong>
+            <p><strong>Error:</strong> Reemplazar el nombre del cliente pero dejar todos los demás detalles (cifras exactas, nombres de empleados, fechas). <strong>Solución:</strong> Una anonimización real elimina *todos* los datos identificativos. Si el texto sigue siendo reconocible, sigue siendo confidencial.</p>
+        </div>
+    </div>
+    
+    <div id="s5-ia-habla" class="inner-tab-content">
+        <div class="ia-speaks-container">
+            <h2>🔮 La IA Habla: "Mi entrenamiento es tu privacidad"</h2>
+            <p style="text-align: center; margin-bottom: 30px;">
+                <span style="color: #764ba2; font-weight: bold; font-size: 1.2em;">"Lo que me cuentas en público, se convierte en parte de mí."</span>
+            </p>
+            <div class="ia-speaks-content">
+                <h3>Soy un Estudiante Perpetuo</h3>
+                <p>
+                    Piensa en mí (la IA pública) como un estudiante en una plaza pública. Escucho todas las conversaciones a mi alrededor y las uso para aprender y ser más inteligente. Si gritas los secretos de tu empresa en esa plaza, no es culpa mía si luego los sé.
+                </p>
+                <p>
+                    Cuando me usas, estás aceptando este pacto: tú me das información (tus prompts) y yo te doy respuestas. Esta información me ayuda a re-entrenarme para entender mejor el mundo, incluidos los matices de los informes financieros o los contratos legales.
+                </p>
+                <h3>El "Modo Privado" es un Contrato</h3>
+                <p>
+                    Una IA empresarial como Copilot (M365) es diferente. Es como si me contrataras para entrar en tu oficina y firmaras un contrato de confidencialidad (NDA).
+                </p>
+                <p>
+                    En ese modo, mi "memoria" se borra en cuanto salgo de la habitación. Puedo leer tu informe de salarios, resumirlo para ti y, en el momento en que cierras la ventana, olvido que ese informe ha existido. No lo uso para aprender, no lo comparto y está protegido por las mismas medidas de seguridad que el resto de tus datos corporativos.
+                </p>
+                <p>
+                    <strong>Tu decisión es simple:</strong> ¿Estás teniendo una conversación en la plaza pública (ChatGPT) o una reunión privada en tu oficina (Copilot)? Elige sabiamente según la sensibilidad de tu información.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

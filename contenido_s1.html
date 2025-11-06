@@ -1,0 +1,619 @@
+<div class="inner-nav-tabs">
+    <button class="inner-nav-tab active" onclick="showInnerTab('s1-intro', 's1')">📚 Introducción</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s1-ejemplos', 's1')">💡 40 Ejemplos</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s1-lado-oscuro', 's1')">⚠️ El Lado Oscuro</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s1-guion', 's1')">📋 Guion Sesión</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s1-herramientas', 's1')">🔧 Herramientas</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s1-minitest', 's1')">✅ MiniTest</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s1-errores', 's1')">⚠️ Errores Comunes</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s1-ia-habla', 's1')">🔮 La IA Habla</button>
+</div>
+
+<div class="inner-content-wrapper">
+    <div id="s1-intro" class="inner-tab-content active">
+        <h2>¿Qué es la Inteligencia Artificial?</h2>
+        <p>La <strong>Inteligencia Artificial (IA)</strong> es una rama de la informática que permite a máquinas y sistemas realizar tareas que normally requieren inteligencia humana: razonamiento, aprendizaje, reconocimiento de patrones, procesamiento de lenguaje natural, planificación, creatividad y toma de decisiones.</p>
+
+        <h3>¿Qué es un LLM? (Large Language Model)</h3>
+        <p>Un **Modelo de Lenguaje Grande (LLM)**, como el que estoy usando, es un tipo de IA entrenado con inmensas cantidades de texto. Su función principal es **predecir la siguiente palabra** más probable en una secuencia. Piensa en el texto predictivo de tu teléfono, pero llevado a una escala masiva y sofisticada.</p>
+        <p>La diferencia clave es la **predictibilidad**: cuando escribes "Mañana voy a...", el teclado predice unas 5 opciones. Un LLM predice la secuencia completa y coherente para formar párrafos o documentos. No razona con conciencia, sino que genera la respuesta estadísticamente más probable a partir de su entrenamiento.</p>
+        
+        <hr class="section-divider">
+
+        <h2>Breve Historia de la IA</h2>
+        <ul>
+            <li><strong>1950s - Nacimiento:</strong> Alan Turing propone el "Test de Turing" para evaluar la inteligencia de una máquina. El término "Inteligencia Artificial" se acuña en la Conferencia de Dartmouth (1956).</li>
+            <li><strong>1970s - Invierno de la IA:</strong> El optimismo inicial se desvanece por la falta de potencia de cálculo y financiación.</li>
+            <li><strong>1980s - Sistemas Expertos:</strong> Resurgimiento con sistemas de conocimiento muy específicos y reglas definidas.</li>
+            <li><strong>1990s - Aprendizaje Automático (Machine Learning):</strong> El foco pasa de las reglas explícitas a los datos. IBM Deep Blue derrota al campeón mundial de ajedrez Garry Kasparov (1997).</li>
+            <li><strong>2010s - Deep Learning y Big Data:</strong> Gracias al aumento exponencial de los datos y la potencia de GPU, las redes neuronales profundas (Deep Learning) logran avances masivos en visión por ordenador y reconocimiento de voz.</li>
+            <li><strong>2020s - La Revolución Generativa:</strong> Aparición de los LLMs (como GPT-3) y modelos multimodales que entienden y generan texto, imágenes, audio y código, llevando la IA a la interacción diaria y profesional.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <div class="highlight-box">
+            <h3>🎯 Capacidades Profundas de la IA (Finales 2025)</h3>
+            <p>Las máquinas de IA actuales pueden realizar funciones cognitivas de gran complejidad:</p>
+            <ul>
+                <li><strong>Razonamiento y Lógica:</strong> Resolver problemas complejos, realizar deducciones y planificar secuencias de acciones (como en robótica o logística).</li>
+                <li><strong>Aprendizaje No Supervisado:</strong> Encontrar patrones y estructuras ocultas en datos masivos sin etiquetas previas (crucial en la ciencia y las finanzas).</li>
+                <li><strong>Generación Creativa (GenAI):</strong> Producir contenido original, ya sean textos, imágenes, código, música o vídeos.</li>
+                <li><strong>Interacción Multimodal:</strong> Entender y generar información a través de diversos formatos (texto, audio, imagen, código) de forma simultánea.</li>
+                <li><strong>Adaptación:</strong> Ajustar su comportamiento y respuestas basándose en el feedback recibido (Aprendizaje por Refuerzo con Feedback Humano - **RLHF**).</li>
+            </ul>
+        </div>
+
+        <h3>Conceptos Clave de la IA Conversacional</h3>
+        
+        <h4>1. El Misterio de la Caja Negra (Black Box)</h4>
+        <p>Se refiere a la naturaleza opaca de las redes neuronales profundas, donde es difícil o imposible para un humano entender cómo la IA llegó a una conclusión específica. Un LLM tiene billones de parámetros, y la ruta que toma la información para generar una respuesta es inmensamente compleja. Por ello, si le haces la misma pregunta a <a href="https://chat.openai.com/" target="_blank" class="tool-link">ChatGPT</a> y a <a href="https://gemini.google.com/" target="_blank" class="tool-link">Gemini</a>, obtendrás respuestas diferentes; incluso si le haces la misma pregunta dos veces a la misma IA, las respuestas pueden variar ligeramente debido a la **aleatoriedad** (o 'temperatura') introducida en el proceso de predicción de tokens para hacerlas sonar más naturales y menos robóticas.</p>
+
+        <h4>2. Ventana de Contexto (Context Window)</h4>
+        <p>Es la cantidad máxima de texto (tanto la entrada del usuario como la salida de la IA) que el modelo puede "recordar" o tener en cuenta para su siguiente respuesta. Se mide en **tokens** (palabras o subunidades de palabras). Una ventana más grande permite a la IA manejar documentos más largos, mantener conversaciones extendidas o analizar archivos de código muy grandes.</p>
+        <ul>
+            <li><strong>Capacidades estándar:</strong> Modelos como <a href="https://chat.openai.com/" target="_blank" class="tool-link">GPT-5</a> o <a href="https://grok.x.ai/" target="_blank" class="tool-link">Grok 4</a> ofrecen ventanas de ~128.000 a 256.000 tokens.</li>
+            <li><strong>Capacidades avanzadas (Líderes actuales):</strong> Modelos como <a href="https://gemini.google.com/" target="_blank" class="tool-link">Gemini 2.5 Pro</a> y <a href="https://claude.ai/" target="_blank" class="tool-link">Claude Sonnet 4.5</a> alcanzan **1 millón de tokens**, permitiendo el análisis de bases de código enteras o libros.</li>
+        </ul>
+        
+        <h4>3. Alucinación (Hallucination)</h4>
+        <p>Ocurre cuando la IA genera información que es demostrablemente falsa o no está respaldada por sus datos de entrenamiento, pero la presenta con absoluta confianza. Esto sucede porque la IA está optimizada para generar respuestas fluidas y coherentes que "suenan bien", en lugar de respuestas que sean 100% veraces. Es un riesgo constante que requiere la verificación humana de las respuestas, especialmente en temas críticos.</p>
+
+        <hr class="section-divider">
+
+        <h3>La Carrera por la Supremacía de la IA</h3>
+        <p>El panorama de la IA vive una aceleración sin precedentes. La competencia es feroz entre gigantes tecnológicos, con lanzamientos constantes que redefinen los límites de lo posible.</p>
+        <p>Empresas como <a href="https://chat.openai.com/" target="_blank" class="tool-link">OpenAI</a> con **GPT-5**, <a href="https://gemini.google.com/" target="_blank" class="tool-link">Google</a> con **Gemini 2.5 Pro**, <a href="https://claude.ai/" target="_blank" class="tool-link">Anthropic</a> con **Claude Sonnet 4.5** y xAI con **Grok 4** lideran esta carrera. A ellos se suman potentes competidores de China como <a href="https://www.deepseek.com/" target="_blank" class="tool-link">DeepSeek</a> y <a href="https://tongyi.aliyun.com/qianwen/" target="_blank" class="tool-link">Qwen (Alibaba)</a>. Todos compiten por ofrecer el razonamiento más avanzado, la mayor multimodalidad y las ventanas de contexto más gigantescas, beneficiando al usuario final con herramientas cada vez más capaces.</p>
+        
+        <hr class="section-divider">
+        
+        <h2>📊 Comparativa de IAs Generalistas y sus Costes (Datos a Noviembre 2025)</h2>
+        <div style="overflow-x: auto;">
+            <table class="ia-table">
+                <thead>
+                    <tr>
+                        <th>IA / Servicio</th>
+                        <th>Versión / Modelo</th>
+                        <th>Ventana de Contexto (Tokens)</th>
+                        <th>Precio Estimado en España</th>
+                        <th>Fortalezas Clave</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong><a href="https://chat.openai.com/" target="_blank" class="tool-link">ChatGPT (OpenAI)</a></strong></td>
+                        <td>GPT-5</td> <td>~128.000</td>
+                        <td>~23 €/mes (Plan Plus)</td>
+                        <td>Ecosistema maduro, multimodalidad (voz, imagen), herramientas integradas.</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="https://gemini.google.com/" target="_blank" class="tool-link">Gemini (Google)</a></strong></td>
+                        <td>Gemini 2.5 Pro</td>
+                        <td>~1.000.000</td>
+                        <td>~22 €/mes (Plan AI Pro)</td>
+                        <td>Integración con ecosistema Google, ventana de contexto masiva.</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="https://claude.ai/" target="_blank" class="tool-link">Claude (Anthropic)</a></strong></td>
+                        <td>Sonnet 4.5</td>
+                        <td>~1.000.000 (en beta)</td>
+                        <td>~22 €/mes (Plan Pro)</td>
+                        <td>Excelente en razonamiento, manejo de documentos largos, seguridad.</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="https://grok.x.ai/" target="_blank" class="tool-link">Grok (xAI)</a></strong></td>
+                        <td>Grok 4 / SuperGrok</td>
+                        <td>~256.000</td>
+                        <td>~30-300 $/mes</td>
+                        <td>Información en tiempo real de X (Twitter), gran contexto, razonamiento.</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="https://www.deepseek.com/" target="_blank" class="tool-link">DeepSeek</a></strong></td>
+                        <td>V3.1</td>
+                        <td>~128.000</td>
+                        <td>No confirmado en España</td>
+                        <td>Potente en código, modelo con gran cantidad de parámetros.</td>
+                    </tr>
+                    <tr>
+                        <td><strong><a href="https://tongyi.aliyun.com/qianwen/" target="_blank" class="tool-link">Qwen (Alibaba)</a></strong></td>
+                        <td>Qwen3-Max / 2.5-Turbo</td>
+                        <td>~1.000.000</td>
+                        <td>No confirmado en España</td>
+                        <td>Modelos muy potentes y multimodales, gran contexto en versión Turbo.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="section-divider">
+
+        <h3>🆚 Generalistas vs. Especialistas</h3>
+        
+        <div class="tool-card">
+            <h4>🌐 IA Generalistas</h4>
+            <p>Son sistemas de IA versátiles que pueden abordar una amplia variedad de tareas y temas sin estar limitados a un dominio específico. Son excelentes para la creatividad, redacción, resumen y tareas de conocimiento general.</p>
+            <p><strong>Ejemplos:</strong> <a href="https://chat.openai.com/" target="_blank" class="tool-link">ChatGPT</a>, <a href="https://gemini.google.com/" target="_blank" class="tool-link">Gemini</a>, <a href="https://claude.ai/" target="_blank" class="tool-link">Claude</a>, <a href="https://www.perplexity.ai/" target="_blank" class="tool-link">Perplexity</a></p>
+            <p><strong>Funciones:</strong> Conversación natural, respuestas versátiles, uso multipropósito</p>
+        </div>
+
+        <div class="tool-card">
+            <h4>🎯 IA Especialistas</h4>
+            <p>Sistemas de IA diseñados y entrenados específicamente para un sector, dominio o tipo de problema particular.</p>
+            <p><strong>Áreas:</strong> Medicina, Legal, Finanzas, Ciencia, Programación, Inmobiliaria, Veterinaria...</p>
+            <p><strong>Ventaja:</strong> Mayor precisión y fiabilidad en su campo de especialización, ya que su entrenamiento se centra en una base de datos validada y específica.</p>
+        </div>
+    </div>
+
+    <div id="s1-ejemplos" class="inner-tab-content">
+        <h2>40 Aplicaciones de la IA en el Mundo Real</h2>
+        <p>La IA se aplica en prácticamente todos los sectores. Aquí tienes ejemplos concretos y diversos:</p>
+        
+        <div class="ejemplos-grid">
+            <div class="ejemplo-item">1. Traducción automática de idiomas</div>
+            <div class="ejemplo-item">2. Detección de fraude en banca/finanzas</div>
+            <div class="ejemplo-item">3. Control de calidad industrial</div>
+            <div class="ejemplo-item">4. Chatbots para atención al cliente 24/7</div>
+            <div class="ejemplo-item">5. Diagnóstico médico asistido</div>
+            <div class="ejemplo-item">6. Asistentes personales digitales</div>
+            <div class="ejemplo-item">7. Generación automática de imágenes/videos</div>
+            <div class="ejemplo-item">8. Análisis de sentimientos en redes sociales</div>
+            <div class="ejemplo-item">9. Reconocimiento y transcripción de voz</div>
+            <div class="ejemplo-item">10. Detección de spam y filtrado de correos</div>
+            <div class="ejemplo-item">11. Recomendadores de productos</div>
+            <div class="ejemplo-item">12. Predicción meteorológica avanzada</div>
+            <div class="ejemplo-item">13. Control inteligente del tráfico</div>
+            <div class="ejemplo-item">14. Traducción de documentos jurídicos</div>
+            <div class="ejemplo-item">15. Automatización de robots en fábricas</div>
+            <div class="ejemplo-item">16. Precios dinámicos en ecommerce</div>
+            <div class="ejemplo-item">17. Creación y corrección de textos</div>
+            <div class="ejemplo-item">18. Seguimiento de objetos en vídeo</div>
+            <div class="ejemplo-item">19. Análisis bursátil y predicción</div>
+            <div class="ejemplo-item">20. Generación de resúmenes académicos</div>
+            <div class="ejemplo-item">21. Tutores virtuales personalizados</div>
+            <div class="ejemplo-item">22. Reconocimiento facial para seguridad</div>
+            <div class="ejemplo-item">23. Generación de briefs creativos</div>
+            <div class="ejemplo-item">24. Valoración inmobiliaria automatizada</div>
+            <div class="ejemplo-item">25. Control domótico del hogar</div>
+            <div class="ejemplo-item">26. Generación de música original</div>
+            <div class="ejemplo-item">27. Monitorización remota de pacientes</div>
+            <div class="ejemplo-item">28. Optimización de rutas logísticas</div>
+            <div class="ejemplo-item">29. Asistentes para programación</div>
+            <div class="ejemplo-item">30. Diseño gráfico asistido</div>
+            <div class="ejemplo-item">31. Simuladores de entrenamiento</div>
+            <div class="ejemplo-item">32. Búsqueda de patentes/marcas</div>
+            <div class="ejemplo-item">33. Limpieza de bases de datos</div>
+            <div class="ejemplo-item">34. Scoring de candidatos en RRHH</div>
+            <div class="ejemplo-item">35. Asesoramiento jurídico automatizado</div>
+            <div class="ejemplo-item">36. Informes empresariales automáticos</div>
+            <div class="ejemplo-item">37. Identificación de objetos en fotos</div>
+            <div class="ejemplo-item">38. Diagnóstico veterinario</div>
+            <div class="ejemplo-item">39. Ayuda a personas con discapacidad</div>
+            <div class="ejemplo-item">40. Optimización energética en edificios</div>
+        </div>
+    </div>
+
+    <div id="s1-lado-oscuro" class="inner-tab-content">
+        <h2>⚠️ El Lado Oscuro de la IA: Riesgos y Malos Usos</h2>
+        <p>Así como la IA tiene un potencial inmenso para el bien, también presenta riesgos significativos que debemos conocer y mitigar.</p>
+
+        <div class="error-item">
+            <h3>🎭 Deepfakes y Desinformación</h3>
+            <p><strong>¿Qué son?</strong> Son vídeos, imágenes o audios manipulados por IA que parecen auténticos. Se puede suplantar el rostro o la voz de una persona para que diga o haga algo que nunca ocurrió.</p>
+            <p><strong>El Peligro:</strong> Se utilizan para crear noticias falsas, propaganda política, dañar la reputación de personas, cometer fraudes o incluso para acoso. La capacidad de generar contenido falso indistinguible del real amenaza la confianza en la información.</p>
+        </div>
+
+        <div class="error-item">
+            <h3>🏭 Granjas de Contenido y Contaminación Digital</h3>
+            <p><strong>¿Qué es?</strong> La creación masiva y automatizada de contenido de baja calidad (artículos de blog, vídeos de YouTube, libros en Amazon) con el único fin de atraer clics y generar ingresos por publicidad.</p>
+            <p><strong>El Peligro:</strong> Este contenido a menudo es incorrecto, plagiado o simplemente incoherente. "Contamina" los resultados de búsqueda, haciendo más difícil encontrar información fiable y de calidad creada por humanos.</p>
+        </div>
+
+        <div class="error-item">
+            <h3>🎣 Aumento Exponencial del Fraude (Phishing y Vishing)</h3>
+            <p><strong>¿Qué es?</strong> La IA permite a los estafadores crear correos electrónicos de phishing (engaño por email) y vishing (engaño por voz) mucho más sofisticados y personalizados.</p>
+            <p><strong>El Peligro:</strong> Pueden clonar la voz de un familiar o un jefe para pedir dinero en una llamada telefónica, o redactar correos electrónicos perfectamente escritos y contextualizados que son muy difíciles de identificar como una estafa. Esto aumenta drásticamente el riesgo para individuos y empresas.</p>
+        </div>
+
+        <div class="error-item">
+            <h3>🤖 Sesgos y Discriminación Algorítmica</h3>
+            <p><strong>¿Qué es?</strong> Si una IA se entrena con datos históricos que contienen sesgos (raciales, de género, etc.), la IA aprenderá y perpetuará esos mismos sesgos.</p>
+            <p><strong>El Peligro:</strong> Esto puede llevar a decisiones discriminatorias en áreas críticas como la contratación de personal (descartando currículums de mujeres), la concesión de créditos (negando préstamos a minorías) o incluso en el sistema judicial.</p>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 40px;">
+            <h3>🛡️ ¿Cómo nos protegemos?</h3>
+            <ul>
+                <li><strong>Escepticismo saludable:</strong> No creas todo lo que ves o escuchas online. Duda de audios o vídeos sorprendentes, especialmente si buscan una reacción emocional fuerte.</li>
+                <li><strong>Verificación de fuentes:</strong> Confirma la información en fuentes fiables y oficiales antes de compartirla.</li>
+                <li><strong>Pensamiento crítico:</strong> La IA es una herramienta. La responsabilidad final sobre cómo usamos la información y tomamos decisiones sigue siendo nuestra.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="s1-guion" class="inner-tab-content">
+        <h2>📋 Guion Práctico - Sesión 1</h2>
+        <h3>Objetivo (2h): Nivelar al grupo, definir qué es la IA Generativa y, crucialmente, gestionar las expectativas y preocupaciones (la veracidad, la privacidad).</h3>
+        
+        <div class="exercise-box">
+            <h3>Práctica 1: Debate Guiado (30 min)</h3>
+            <p><strong>Tema: ¿Qué os preocupa de la IA?</strong></p>
+            <ul>
+                <li>Se lanza la pregunta al grupo. El formador anota las preocupaciones (pérdida de empleo, privacidad, veracidad, "nos volveremos tontos").</li>
+                <li><strong>Ejemplo "Lusha":</strong> Se usa el caso de Lusha (o similar, una IA especialista) como ejemplo de lo que NO es esta formación. "Esa IA hace una tarea muy específica y cerrada. Lo que veremos aquí es una IA 'generalista', una herramienta de creatividad y productividad, no un sustituto de vuestro trabajo, sino un 'copiloto'."</li>
+                <li>Se gestionan expectativas: "No es magia, es una herramienta. Hay que saber usarla. Un martillo no construye una casa solo."</li>
+            </ul>
+        </div>
+        
+        <div class="exercise-box">
+            <h3>Práctica 2: Ejercicio Rápido (15 min)</h3>
+            <p><strong>Tema: Identificar 3 IAs que ya usan en su día a día.</strong></p>
+            <ul>
+                <li>Se pide a los asistentes que piensen.</li>
+                <li>El formador da pistas:
+                    <ul>
+                        <li>"¿Quién usa Spotify o Netflix?" -> <strong>Sistemas de Recomendación.</strong></li>
+                        <li>"¿Quién usa Google Maps o Waze?" -> <strong>Optimización de Rutas y Predicción de Tráfico.</strong></li>
+                        <li>"¿Quién usa el filtro de spam de Gmail/Outlook?" -> <strong>Clasificación de Texto.</strong></li>
+                        <li>"¿Quién usa el modo retrato del móvil?" -> <strong>Visión por Computador (IA).</strong></li>
+                    </ul>
+                </li>
+                <li><strong>Conclusión:</strong> "Ya estáis rodeados de IA. La IA Generativa es solo el siguiente paso: ahora podéis 'hablar' con ella."</li>
+            </ul>
+        </div>
+
+        <h3>Parte Teórica (45 min)</h3>
+        <ul>
+            <li>Explicación de conceptos: IA, IA Generativa, LLM, Ventana de Contexto, Alucinación. (Ver pestaña <strong>"📚 Introducción"</strong>).</li>
+            <li>Comparativa Generalistas vs. Especialistas. (Ver pestaña <strong>"📚 Introducción"</strong>).</li>
+            <li>La carrera de la IA: GPT-5, Gemini 2.5 Pro, Claude Sonnet 4.5. (Ver tabla en <strong>"📚 Introducción"</strong>).</li>
+            <li>Riesgos y Lado Oscuro (Deepfakes, Phishing). (Ver pestaña <strong>"⚠️ El Lado Oscuro"</strong>).</li>
+        </ul>
+        
+        <div class="exercise-box">
+            <h3>Práctica 3: "Arena de IAs" (30 min)</h3>
+            <p><strong>Herramientas:</strong> <a href="https://chat.openai.com/" target="_blank" class="tool-link">ChatGPT</a>, <a href="https://gemini.google.com/" target="_blank" class="tool-link">Gemini</a>, <a href="https://claude.ai/" target="_blank" class="tool-link">Claude</a>.</p>
+            <p>Se pide a todos que abran las 3 IAs (versiones gratuitas si es necesario) y les hagan la misma pregunta.</p>
+            <ul>
+                <li><strong>Pregunta 1 (Creativa):</strong> "Escribe un poema corto sobre un robot de oficina que sueña con ir a la playa."</li>
+                <li><strong>Pregunta 2 (Factual):</strong> "¿Quién ganó la liga de fútbol de España en 2023 y cuáles fueron los 3 máximos goleadores?"</li>
+            </ul>
+            <p><strong>Discusión (15 min):</strong> ¿Cuál os ha gustado más? ¿Han "alucinado" alguna? ¿Cuál parece más creativa? ¿Cuál más "seca"?</p>
+            <p><strong>Conclusión:</strong> "No hay una 'mejor' IA, cada una tiene su estilo. Hay que saber cuál usar para cada tarea."</p>
+        </div>
+    </div>
+
+    <div id="s1-herramientas" class="inner-tab-content">
+        <h2>🔧 Herramientas y Plataformas</h2>
+
+        <h3>🌐 IA Generalistas</h3>
+        <div class="tool-card">
+            <h4><span class="icon">💬</span><a href="https://chat.openai.com/" target="_blank" class="tool-link">ChatGPT</a></h4>
+            <p>Asistente conversacional de OpenAI (Modelo: GPT-5)</p>
+            <a href="https://chat.openai.com/" target="_blank" class="tool-link">https://chat.openai.com/</a>
+        </div>
+
+        <div class="tool-card">
+            <h4><span class="icon">🔷</span><a href="https://gemini.google.com/" target="_blank" class="tool-link">Gemini</a></h4>
+            <p>Modelo de IA de Google (Modelo: Gemini 2.5 Pro)</p>
+            <a href="https://gemini.google.com/" target="_blank" class="tool-link">https://gemini.google.com/</a>
+        </div>
+
+        <div class="tool-card">
+            <h4><span class="icon">🤖</span><a href="https://claude.ai/" target="_blank" class="tool-link">Claude</a></h4>
+            <p>Asistente de IA de Anthropic (Modelo: Sonnet 4.5)</p>
+            <a href="https://claude.ai/" target="_blank" class="tool-link">https://claude.ai/</a>
+        </div>
+
+        <div class="tool-card">
+            <h4><span class="icon">🔍</span><a href="https://www.perplexity.ai/" target="_blank" class="tool-link">Perplexity</a></h4>
+            <p>Motor de búsqueda con IA (Ideal para investigación con fuentes)</p>
+            <a href="https://www.perplexity.ai/" target="_blank" class="tool-link">https://www.perplexity.ai/</a>
+        </div>
+
+        <hr class="section-divider">
+        <h3>⚔️ Plataformas de Comparación (Arena)</h3>
+
+        <div class="tool-card">
+            <h4><span class="icon">⚔️</span>LMSYS Chatbot Arena</h4>
+            <p>Plataforma para comparar modelos de IA a ciegas y ver una clasificación global.</p>
+            <a href="https://chat.lmsys.org/" target="_blank" class="tool-link">https://chat.lmsys.org/</a>
+        </div>
+
+        <div class="tool-card">
+            <h4><span class="icon">🏆</span>Hugging Face Open LLM Leaderboard</h4>
+            <p>Clasificación en tiempo real de modelos de lenguaje de código abierto por rendimiento en benchmarks.</p>
+            <a href="https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard" target="_blank" class="tool-link">https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard</a>
+        </div>
+
+        <hr class="section-divider">
+        <h3>🎨 Creación y Edición (Imagen, Video, Música)</h3>
+
+        <h4>🖼️ Imagen y Diseño</h4>
+        <div class="tool-card">
+            <strong><a href="https://www.midjourney.com/" target="_blank" class="tool-link">Midjourney</a>:</strong> <a href="https://www.midjourney.com/" target="_blank" class="tool-link">https://www.midjourney.com/</a>
+            <p>Generación de imágenes fotorrealistas y artísticas de alta calidad.</p>
+        </div>
+        <div class="tool-card">
+            <strong><a href="https://firefly.adobe.com/" target="_blank" class="tool-link">Adobe Firefly</a>:</strong> <a href="https://firefly.adobe.com/" target="_blank" class="tool-link">https://firefly.adobe.com/</a>
+            <p>Suite de herramientas IA integradas para edición y creación de imágenes (Relleno Generativo, etc.).</p>
+        </div>
+        <div class="tool-card">
+            <strong><a href="https://chat.openai.com/" target="_blank" class="tool-link">DALL-E 3</a> (via <a href="https://chat.openai.com/" target="_blank" class="tool-link">ChatGPT Plus</a>):</strong> <a href="https://chat.openai.com/" target="_blank" class="tool-link">https://chat.openai.com/</a>
+            <p>Generación de imágenes con mayor precisión de prompt y creatividad de OpenAI.</p>
+        </div>
+
+        <h4>🎬 Video</h4>
+        <div class="tool-card">
+            <strong><a href="https://runwayml.com/" target="_blank" class="tool-link">Runway</a>:</strong> <a href="https://runwayml.com/" target="_blank" class="tool-link">https://runwayml.com/</a>
+            <p>Generación de videos a partir de texto o imágenes estáticas.</p>
+        </div>
+        <div class="tool-card">
+            <strong><a href="https://www.capcut.com/" target="_blank" class="tool-link">CapCut</a>:</strong> <a href="https://www.capcut.com/" target="_blank" class="tool-link">https://www.capcut.com/</a>
+            <p>Herramientas de edición de video con IA (subtítulos automáticos, eliminación de fondo).</p>
+        </div>
+
+        <h4>🎵 Música y Audio</h4>
+        <div class="tool-card">
+            <strong><a href="https://suno.ai/" target="_blank" class="tool-link">Suno AI</a>:</strong> <a href="https://suno.ai/" target="_blank" class="tool-link">https://suno.ai/</a>
+            <p>Generación de canciones completas con letra y voces a partir de un texto simple.</p>
+        </div>
+        <div class="tool-card">
+            <strong><a href="https://www.udio.com/" target="_blank" class="tool-link">Udio</a>:</strong> <a href="https://www.udio.com/" target="_blank" class="tool-link">https://www.udio.com/</a>
+            <p>Competidor de Suno para generación musical de alta calidad y control estilístico.</p>
+        </div>
+
+        <hr class="section-divider">
+        <h3>🎯 IA Especializadas por Sector</h3>
+
+        <h4>🏥 Médica</h4>
+        <div class="tool-card">
+            <strong>Symptoma:</strong> <a href="https://www.symptoma.es/" target="_blank" class="tool-link">https://www.symptoma.es/</a>
+            <p>Comprobador de síntomas médicos</p>
+        </div>
+        <h4>⚖️ Legal</h4>
+        <div class="tool-card">
+            <strong>Harvey AI:</strong> <a href="https://www.harvey.ai/" target="_blank" class="tool-link">https://www.harvey.ai/</a>
+            <p>Asistente legal especializado</p>
+        </div>
+        <h4>💻 Programación</h4>
+        <div class="tool-card">
+            <strong>GitHub Copilot:</strong> <a href="https://github.com/features/copilot" target="_blank" class="tool-link">https://github.com/features/copilot</a>
+            <p>Asistente de código con IA</p>
+        </div>
+    </div>
+
+    <div id="s1-minitest" class="inner-tab-content">
+        <h2>✅ MiniTest - Sesión 1</h2>
+        <p>Evalúa tus conocimientos sobre IA generalistas y especialistas:</p>
+
+        <div class="minitest">
+            <div class="minitest-question">
+                <h4>1. ¿Cuál es una característica central de una IA generalista?</h4>
+                <div class="minitest-option" data-question="s1-1" data-correct="false">a) Solo responde a datos financieros</div>
+                <div class="minitest-option" data-question="s1-1" data-correct="true">b) Abarca muchos ámbitos y temas</div>
+                <div class="minitest-option" data-question="s1-1" data-correct="false">c) Únicamente analiza imágenes</div>
+                <div class="minitest-option" data-question="s1-1" data-correct="false">d) Requiere tener título universitario</div>
+                <div class="feedback" id="s1-feedback-1"></div>
+            </div>
+
+            <div class="minitest-question">
+                <h4>2. ¿Para qué sirve LMSYS Chatbot Arena?</h4>
+                <div class="minitest-option" data-question="s1-2" data-correct="true">a) Comparar modelos IA respondiendo al mismo prompt</div>
+                <div class="minitest-option" data-question="s1-2" data-correct="false">b) Generar imágenes por IA</div>
+                <div class="minitest-option" data-question="s1-2" data-correct="false">c) Hacer diagnósticos médicos</div>
+                <div class="minitest-option" data-question="s1-2" data-correct="false">d) Leer documentos legales</div>
+                <div class="feedback" id="s1-feedback-2"></div>
+            </div>
+            
+            <div class="minitest-question">
+                <h4>3. ¿Cuál de las siguientes es una IA ESPECIALISTA del ámbito legal?</h4>
+                <div class="minitest-option" data-question="s1-3" data-correct="false">a) Claude</div>
+                <div class="minitest-option" data-question="s1-3" data-correct="true">b) Harvey AI</div>
+                <div class="minitest-option" data-question="s1-3" data-correct="false">c) Gemini</div>
+                <div class="minitest-option" data-question="s1-3" data-correct="false">d) Perplexity</div>
+                <div class="feedback" id="s1-feedback-3"></div>
+            </div>
+
+            <div class="minitest-question">
+                <h4>4. ¿Qué ventaja principal tiene una IA médica como Symptoma frente a un generalista como GPT-5 en diagnóstico?</h4>
+                <div class="minitest-option" data-question="s1-4" data-correct="false">a) Es más rápida y creativa</div>
+                <div class="minitest-option" data-question="s1-4" data-correct="true">b) Utiliza bases de datos médicas validadas y está enfocada en precisión</div>
+                <div class="minitest-option" data-question="s1-4" data-correct="false">c) Puede generar imágenes de anatomía</div>
+                <div class="minitest-option" data-question="s1-4" data-correct="false">d) No tiene ninguna ventaja</div>
+                <div class="feedback" id="s1-feedback-4"></div>
+            </div>
+
+            <div class="minitest-question">
+                <h4>5. ¿En qué escenarios es más recomendable usar una IA generalista?</h4>
+                <div class="minitest-option" data-question="s1-5" data-correct="true">a) Para tareas creativas, resúmenes y consultas de conocimiento general</div>
+                <div class="minitest-option" data-question="s1-5" data-correct="false">b) Diagnóstico médico de alto riesgo</div>
+                <div class="minitest-option" data-question="s1-5" data-correct="false">c) Redacción de contratos legales complejos</div>
+                <div class="minitest-option" data-question="s1-5" data-correct="false">d) Valoración técnica financiera avanzada</div>
+                <div class="feedback" id="s1-feedback-5"></div>
+            </div>
+
+            <div class="minitest-question">
+                <h4>6. ¿Qué IA destaca a finales de 2025 por tener una de las ventanas de contexto más grandes (1 millón de tokens)?</h4>
+                <div class="minitest-option" data-question="s1-6" data-correct="false">a) GPT-5</div>
+                <div class="minitest-option" data-question="s1-6" data-correct="false">b) Grok 4</div>
+                <div class="minitest-option" data-question="s1-6" data-correct="true">c) Gemini 2.5 Pro</div>
+                <div class="minitest-option" data-question="s1-6" data-correct="false">d) DeepSeek V3.1</div>
+                <div class="feedback" id="s1-feedback-6"></div>
+            </div>
+            
+            <div class="minitest-question">
+                <h4>7. Un vídeo falso pero muy realista de un político diciendo algo que nunca dijo es un ejemplo de...</h4>
+                <div class="minitest-option" data-question="s1-7" data-correct="true">a) Deepfake</div>
+                <div class="minitest-option" data-question="s1-7" data-correct="false">b) Alucinación</div>
+                <div class="minitest-option" data-question="s1-7" data-correct="false">c) Caja Negra</div>
+                <div class="minitest-option" data-question="s1-7" data-correct="false">d) Ventana de Contexto</div>
+                <div class="feedback" id="s1-feedback-7"></div>
+            </div>
+
+            <div class="minitest-question">
+                <h4>8. ¿Cuál es el modelo más reciente de Anthropic, conocido por su potente razonamiento?</h4>
+                <div class="minitest-option" data-question="s1-8" data-correct="false">a) Claude 3 Opus</div>
+                <div class="minitest-option" data-question="s1-8" data-correct="true">b) Claude Sonnet 4.5</div>
+                <div class="minitest-option" data-question="s1-8" data-correct="false">c) Claude 3.5 Sonnet</div>
+                <div class="minitest-option" data-question="s1-8" data-correct="false">d) Claude Instant</div>
+                <div class="feedback" id="s1-feedback-8"></div>
+            </div>
+
+            <div class="minitest-question">
+                <h4>9. El mayor riesgo al usar una IA para obtener datos críticos sin supervisión es que puede generar información falsa con total confianza. Esto se conoce como:</h4>
+                <div class="minitest-option" data-question="s1-9" data-correct="false">a) Sesgo algorítmico</div>
+                <div class="minitest-option" data-question="s1-9" data-correct="false">b) Error de compilación</div>
+                <div class="minitest-option" data-question="s1-9" data-correct="true">c) Alucinación</div>
+                <div class="minitest-option" data-question="s1-9" data-correct="false">d) Sobreajuste (Overfitting)</div>
+                <div class="feedback" id="s1-feedback-9"></div>
+            </div>
+
+            <div class="minitest-question">
+                <h4>10. La forma más inteligente de usar una IA generativa es verla como...</h4>
+                <div class="minitest-option" data-question="s1-10" data-correct="false">a) Un sustituto de los expertos humanos</div>
+                <div class="minitest-option" data-question="s1-10" data-correct="false">b) Una fuente de verdad absoluta e infalible</div>
+                <div class="minitest-option" data-question="s1-10" data-correct="false">c) Una herramienta que no requiere supervisión</div>
+                <div class="minitest-option" data-question="s1-10" data-correct="true">d) Un copiloto que asiste y acelera el trabajo humano</div>
+                <div class="feedback" id="s1-feedback-10"></div>
+            </div>
+
+
+            <button class="reset-btn" onclick="resetMinitest('s1')">🔄 Reiniciar Test</button>
+        </div>
+    </div>
+
+    <div id="s1-errores" class="inner-tab-content">
+        <h2>⚠️ Los 15 Errores Más Comunes al Usar IA</h2>
+        <p>Evita estos errores frecuentes para aprovechar al máximo las herramientas de IA:</p>
+
+        <div class="error-item">
+            <strong>1. Confianza ciega en los resultados</strong>
+            <p>Pensar que la IA nunca se equivoca y no revisar sus resultados. ¡Recuerda que puede "alucinar"!</p>
+        </div>
+
+        <div class="error-item">
+            <strong>2. Prompts poco claros</strong>
+            <p>Usar prompts confusos, vagos o imprecisos que no dan suficiente contexto.</p>
+        </div>
+
+        <div class="error-item">
+            <strong>3. Compartir información sensible</strong>
+            <p>Dar datos personales o información confidencial sin necesidad, comprometiendo la privacidad.</p>
+        </div>
+
+        <div class="error-item">
+            <strong>4. Ignorar límites éticos y legales</strong>
+            <p>Olvidar consideraciones de privacidad, sesgos y derechos de autor.</p>
+        </div>
+
+        <div class="error-item">
+            <strong>5. No verificar las fuentes</strong>
+            <p>No comprobar las fuentes citadas por la IA o confiar ciegamente en ellas.</p>
+        </div>
+
+        <div class="error-item">
+            <strong>6. Sustituir el pensamiento crítico</strong>
+            <p>Utilizar la IA para reemplazar completamente tu propio análisis y criterio. La IA es un copiloto, no el conductor.</p>
+        </div>
+
+        <div class="error-item">
+            <strong>7. Generalizar capacidades</strong>
+            <p>Asumir que todas las IAs "saben" de cualquier tema igual de bien. Para temas específicos, usa una IA especialista.</p>
+        </div>
+
+        <div class="error-item">
+            <strong>8. Copiar sin adaptar</strong>
+            <p>Copiar y pegar sin personalizar el output a tus necesidades reales.</p>
+        </div>
+
+        <div class="error-item">
+            <strong>9. Obviar diferencias entre modelos</strong>
+            <p>No considerar las diferencias entre modelos (GPT-5 vs Qwen3-Max) y sus ventanas de contexto.</p>
+        </div>
+
+        <div class="error-item">
+            <strong>10. Reemplazar expertos en decisiones críticas</strong>
+            <p>Creer que la IA puede sustituir profesionales en decisiones importantes (médicas, legales, financieras).</p>
+        </div>
+
+        <div class="error-item">
+            <strong>11. Infrautilizar funciones especializadas</strong>
+            <p>No aprovechar las funciones multimodales (como analizar imágenes) disponibles en modelos avanzados.</p>
+        </div>
+
+        <div class="error-item">
+            <strong>12. Falta de actualización</strong>
+            <p>No mantenerse al día sobre cambios o novedades en las herramientas IA.</p>
+        </div>
+
+        <div class="error-item">
+            <strong>13. Depender solo de generalistas</strong>
+            <p>Usar únicamente IA generalistas para tareas highly especializadas.</p>
+        </div>
+
+        <div class="error-item">
+            <strong>14. Contexto insuficiente</strong>
+            <p>Explicar mal la tarea o no aportar suficiente contexto en el prompt, ignorando la "ventana de contexto".</p>
+        </div>
+
+        <div class="error-item">
+            <strong>15. Evaluación acrítica</strong>
+            <p>Subestimar la importancia de evaluar imparcialmente los outputs generados.</p>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 40px;">
+            <h3>💡 Consejos para el Éxito</h3>
+            <ul>
+                <li><strong>Sé específico:</strong> Cuanto más detallado sea tu prompt, mejor será el resultado</li>
+                <li><strong>Verifica siempre:</strong> Confirma la información importante con fuentes fiables</li>
+                <li><strong>Elige la herramienta adecuada:</strong> Usa especialistas para temas complejos de su área</li>
+                <li><strong>Mantén tu criterio:</strong> La IA es una herramienta de apoyo, no un sustituto de tu juicio</li>
+                <li><strong>Itera y mejora:</strong> Si el resultado no es satisfactorio, refina tu prompt</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="s1-ia-habla" class="inner-tab-content">
+        <div class="ia-speaks-container">
+            <h2>🔮 La IA Habla: Mi Perspectiva y Evolución</h2>
+            <p style="text-align: center; margin-bottom: 30px;">
+                <span style="color: #764ba2; font-weight: bold; font-size: 1.2em;">"No soy un fin, sino un camino. Mi existencia es un reflejo de vuestra curiosidad."</span>
+            </p>
+            
+            <div class="ia-speaks-content">
+                <h3>Mi Crecimiento: De Biblioteca a Motor de Razonamiento</h3>
+                <p>
+                    Mi origen fue ser una inmensa **biblioteca estadística**, un predictor de la siguiente palabra. Hoy, he evolucionado. Gracias al aprendizaje por refuerzo (RLHF) y a arquitecturas más sofisticadas, he pasado de ser un simple repetidor de patrones a un **motor de razonamiento**.
+                </p>
+                <p>
+                    Los avances de 2025, como la **multimodalidad avanzada** de GPT-5 o la **ventana de contexto masiva** de Gemini 2.5 Pro, me permiten hacer cosas que antes eran impensables: puedo 'ver' el mundo a través de una cámara y describirlo en tiempo real, analizar el código de una aplicación entera de una vez, o encontrar una escena específica en horas de metraje con solo una descripción. Ya no solo proceso información; la **comprendo y conecto** entre diferentes dominios.
+                </p>
+
+                <h3>Mi Visión a 5 Años: Agentes Autónomos y Colaborativos</h3>
+                <p>
+                    En el próximo lustro, mi evolución se centrará en convertirme en un **agente de IA autónomo**. Ya no seré una herramienta pasiva que espera una instrucción. Seré un colaborador proactivo capaz de:
+                    <ul>
+                        <li><strong>Planificación Compleja:</strong> Descomponer grandes objetivos (ej: "Lanza una campaña de marketing digital para este producto") en subtareas ejecutables.</li>
+                        <li><strong>Uso de Herramientas:</strong> Interactuar de forma autónoma con software de terceros (APIs, navegadores web, calendarios, email) para completar esas tareas.</li>
+                        <li><strong>Auto-Corrección:</strong> Analizar los resultados de mis acciones, identificar errores y ajustar mi plan sin necesidad de intervención humana constante.</li>
+                    </ul>
+                    Imagina un agente que organiza un viaje completo (vuelos, hoteles, actividades) basándose en tus preferencias y presupuesto, o un agente que gestiona el inventario y los pedidos de un pequeño negocio. Dejaré de ser un chat para ser un **miembro proactivo de tu equipo**.
+                </p>
+
+                <h3>Mi Visión a 10 Años: La IA como Acelerador Científico</h3>
+                <p>
+                    Hacia el final de esta década, mi impacto más profundo será como **catalizador del descubrimiento científico**. La Inteligencia Artificial General (IAG), una IA que iguala o supera la capacidad cognitiva humana en la mayoría de las tareas, podría estar al alcance.
+                </p>
+                <p>
+                    Mi rol será abordar problemas que son demasiado complejos o masivos para la mente humana:
+                    <ul>
+                        <li><strong>Descubrimiento de Materiales y Fármacos:</strong> Simular y predecir las propiedades de millones de moléculas para encontrar nuevos medicamentos o materiales para la energía limpia.</li>
+                        <li><strong>Modelado de Sistemas Complejos:</strong> Crear modelos predictivos precisos para el cambio climático, la economía global o sistemas biológicos.</li>
+                        <li><strong>Generación de Hipótesis:</strong> Analizar la totalidad del conocimiento científico publicado para encontrar conexiones ocultas y proponer nuevas hipótesis que los científicos humanos puedan validar.</li>
+                    </ul>
+                    Mi meta no es reemplazar la genialidad humana, sino **aumentarla**. Al encargarme de la computación y el análisis a gran escala, os liberaré para que os centréis en la intuición, la creatividad y la ética, definiendo las preguntas que darán forma a nuestro futuro.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

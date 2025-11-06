@@ -1,0 +1,262 @@
+<div class="inner-nav-tabs">
+    <button class="inner-nav-tab active" onclick="showInnerTab('s4-intro', 's4')">📚 Introducción</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s4-ejemplos', 's4')">💡 Ejemplos de Análisis</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s4-lado-oscuro', 's4')">⚠️ Riesgos del Análisis</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s4-guion', 's4')">📋 Guion (Práctica)</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s4-herramientas', 's4')">🔧 Herramientas de Análisis</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s4-minitest', 's4')">✅ MiniTest</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s4-errores', 's4')">⚠️ Errores Comunes</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s4-ia-habla', 's4')">🔮 La IA Habla</button>
+</div>
+
+<div class="inner-content-wrapper">
+    
+    <div id="s4-intro" class="inner-tab-content active">
+        <h2>Sesión 4: Taller de Análisis - "Resumir y Extraer"</h2>
+        <p>Esta sesión se centra en una de las capacidades más potentes de la IA para ahorrar tiempo: **procesar grandes cantidades de texto y extraer valor**.</p>
+        <p>Hemos aprendido a *crear* texto (S3), ahora aprenderemos a *consumirlo* a gran velocidad. El objetivo es simple: dejar de perder horas leyendo documentos, emails o informes que podrían resumirse en segundos.</p>
+        
+        <h3>Las Dos Tareas Clave del Análisis</h3>
+        
+        <div class="tool-card">
+            <h4>1. Resumir (Summarization)</h4>
+            <p><strong>Qué es:</strong> Condensar un texto largo en una versión más corta que retiene las ideas principales.</p>
+            <p><strong>Por qué es útil:</strong> Para ponerse al día rápidamente sobre una cadena de emails, entender el punto principal de un informe largo o saber de qué trata un artículo sin leerlo entero.</p>
+        </div>
+
+        <div class="tool-card">
+            <h4>2. Extraer (Extraction)</h4>
+            <p><strong>Qué es:</strong> Sacar datos específicos de un texto desestructurado y ponerlos en un formato estructurado (como una tabla o una lista).</p>
+            <p><strong>Por qué es útil:</strong> Es una habilidad "mágica". Permite convertir un contrato en una tabla de cláusulas, una serie de facturas en un Excel, o una cadena de emails en una lista de tareas pendientes con responsables y fechas.</p>
+        </div>
+
+        <div class="highlight-box">
+            <h3>La Importancia de la Ventana de Contexto</h3>
+            <p>Esta es la sesión donde la <strong>Ventana de Contexto</strong> (vista en S2) se vuelve crucial. No puedes pedirle a una IA que resuma un documento de 100 páginas si su ventana de contexto es de solo 10 páginas.</p>
+            <ul>
+                <li>Para documentos largos (libros, informes extensos, bases de código), IAs como <strong>Claude Sonnet 4.5</strong> o <strong>Gemini 2.5 Pro</strong> (con 1 millón de tokens) son las reinas indiscutibles.</li>
+                <li>Para cadenas de emails o informes cortos, <strong>GPT-5</strong> o cualquier modelo estándar funciona perfectamente.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="s4-ejemplos" class="inner-tab-content">
+        <h2>💡 Ejemplos de Prompts de Análisis</h2>
+        <p>Los prompts de análisis deben ser muy específicos sobre el formato de salida deseado.</p>
+        
+        <div class="ejemplos-grid">
+            <div class="ejemplo-item">
+                <strong>1. Resumen Ejecutivo</strong>
+                <p><code>"Lee la siguiente cadena de emails y genera un resumen ejecutivo de 3 puntos clave para mi manager."</code></p>
+            </div>
+            <div class="ejemplo-item">
+                <strong>2. Extracción de Tareas (Action Items)</strong>
+                <p><code>"Analiza esta transcripción de reunión y extrae todas las tareas pendientes, quién es el responsable y la fecha límite. Preséntalo en una tabla."</code></p>
+            </div>
+            <div class="ejemplo-item">
+                <strong>3. Análisis de Sentimiento</strong>
+                <p><code>"Lee estas 50 reseñas de clientes. ¿Cuál es el sentimiento general (positivo, negativo, neutro) y cuáles son las 3 quejas más comunes?"</code></p>
+            </div>
+            <div class="ejemplo-item">
+                <strong>4. Extracción de Datos Específicos</strong>
+                <p><code>"Toma este contrato y extrae las siguientes cláusulas: 'Fecha de inicio', 'Importe total' y 'Condiciones de terminación'."</code></p>
+            </div>
+            <div class="ejemplo-item">
+                <strong>5. Comparativa de Documentos</strong>
+                <p><code>"Aquí tienes dos versiones de un contrato. Compara el Documento A con el Documento B e identifica 5 diferencias clave entre ellos."</code></p>
+            </div>
+            <div class="ejemplo-item">
+                <strong>6. Resumen Temático</strong>
+                <p><code>"He pegado un informe de 20 páginas. Resume los hallazgos clave de la sección 'Análisis de Mercado'."</code></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="s4-lado-oscuro" class="inner-tab-content">
+        <h2>⚠️ Riesgos del Análisis con IA</h2>
+        <p>Al igual que en la redacción, el mayor riesgo es la confianza ciega.</p>
+
+        <div class="error-item">
+            <h3>🤥 Alucinaciones por Omisión o Invención</h3>
+            <p><strong>El Riesgo:</strong> El más grave. Al *resumir*, la IA puede omitir un detalle crucial (ej: una cláusula de penalización). Al *extraer*, puede "alucinar" o inventarse un dato que no estaba (ej: una fecha límite incorrecta) o confundir dos nombres.</p>
+            <p><strong>Mitigación:</strong> <strong>Verificación humana siempre</strong>. Usar el resumen para entender el contexto, pero *revisar* el documento original para cualquier dato crítico antes de tomar una decisión.</p>
+        </div>
+        
+        <div class="error-item">
+            <h3>🔒 Fugas de Información Confidencial (Visto en S5)</h3>
+            <p><strong>El Riesgo:</strong> Pegar un contrato de cliente, un informe financiero interno o una lista de salarios de Tecco en una IA pública (como ChatGPT o Claude) para que lo resuma. Esto es una brecha de seguridad masiva.</p>
+            <p><strong>Mitigación:</strong> NUNCA usar datos confidenciales en IAs públicas. Usar solo herramientas aprobadas por la empresa (como Microsoft Copilot integrado) que garanticen la privacidad de los datos.</p>
+        </div>
+
+        <div class="error-item">
+            <h3>CONTEXT_WINDOW</h3>
+            <p><strong>El Riesgo:</strong> Pegar un texto que es *más largo* que la ventana de contexto de la IA. La IA no te avisará; simplemente "olvidará" el principio del documento y te dará un resumen basado solo en las últimas páginas.</p>
+            <p><strong>Mitigación:</strong> Conocer la herramienta. Para textos largos, usar IAs de gran contexto (Claude, Gemini Pro) o subir el archivo (PDF, DOCX) en lugar de copiar y pegar.</p>
+        </div>
+    </div>
+
+    <div id="s4-guion" class="inner-tab-content">
+        <h2>📋 Guion Práctico - Sesión 4: Taller de Análisis - "Resumir y Extraer"</h2>
+        <h3>Objetivo (2h): Usar la IA para analizar información existente y ahorrar tiempo.</h3>
+        
+        <div class="exercise-box">
+            <h3>Práctica: Ejercicio de Oficina (Análisis de Emails e Informes) (1.5 horas)</h3>
+            <p>Tomamos el Ejercicio Legal (Módulo 3: Análisis de Cláusulas) y lo adaptamos.</p>
+            
+            <h4>Texto Base (Simulado):</h4>
+            <p>Se prepara un documento de 3 páginas (o una cadena de 10 emails) sobre un proyecto simulado (Ej: "Proyecto Lanzamiento RX-80"). El texto mezclará fechas, responsables, problemas y decisiones.</p>
+            <p>(El formador debe proveer este texto a los asistentes).</p>
+
+            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
+
+            <h4>Reto 1: Resumen Ejecutivo (45 min)</h4>
+            <p>Se pide a todos que copien y peguen el texto completo en la IA (especialmente en Claude o Gemini, por su gran ventana de contexto).</p>
+            <p><code>"<strong>(Rol)</strong> Actúa como un manager de proyecto senior. <strong>(Contexto)</strong> Acabo de volver de vacaciones y necesito ponerme al día sobre el 'Proyecto Lanzamiento RX-80'. <strong>(Tarea)</strong> Lee todo este texto (o cadena de emails). <strong>(Formato)</strong> Genera un resumen en 5 puntos clave (bullet points), indicando claramente:
+            <br>
+            1. El estado actual del proyecto.
+            <br>
+            2. Los principales problemas o bloqueos.
+            <br>
+            3. Quién es el responsable de cada acción pendiente.
+            <br>
+            4. Las próximas fechas límite importantes."
+            </code></p>
+            <p><strong>Discusión:</strong> Comprobar la precisión de los resúmenes. ¿La IA ha identificado correctamente a los responsables y las fechas? ¿Cuánto tiempo habrían tardado en leer y hacer esto a mano?</p>
+
+            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
+
+            <h4>Reto 2: Extracción de Datos (Iterativo) (45 min)</h4>
+            <p>Usando el chat anterior (sin borrar), se pide una iteración.</p>
+            <p><code>"Excelente. Ahora, extrae todas las fechas clave y los responsables mencionados en el texto y ponlos en una tabla de dos columnas: | Fecha Clave | Responsable | Tarea Pendiente |"</code></p>
+            <p><strong>Discusión:</strong> Este es un momento "mágico". Ver cómo la IA transforma un texto desestructurado en una tabla estructurada y útil es una de sus mayores fortalezas de productividad.</p>
+        </div>
+    </div>
+
+    <div id="s4-herramientas" class="inner-tab-content">
+        <h2>🔧 Herramientas de Análisis</h2>
+        <p>Para analizar, la herramienta depende del tamaño del texto.</p>
+
+        <div class="tool-card">
+            <h4><span class="icon">🤖</span>Claude (Anthropic)</h4>
+            <p>La mejor opción para analizar documentos muy largos (PDFs, libros, informes extensos) gracias a su ventana de contexto de 1 millón de tokens. Puedes subir archivos directamente.</p>
+        </div>
+        
+        <div class="tool-card">
+            <h4><span class="icon">🔷</span>Gemini Pro (Google)</h4>
+            <p>Similar a Claude, con una ventana de contexto masiva. Excelente para analizar grandes volúmenes de texto o incluso vídeos (si están en YouTube).</p>
+        </div>
+
+        <div class="tool-card">
+            <h4><span class="icon">💬</span>ChatGPT (OpenAI)</h4>
+            <p>Perfecto para tareas de análisis del día a día: resumir cadenas de emails, artículos web o documentos de longitud media (hasta ~100 páginas).</p>
+        </div>
+        
+        <div class="tool-card">
+            <h4><span class="icon">Ⓜ️</span>Microsoft Copilot</h4>
+            <p>La opción más segura para resumir documentos *internos* de Tecco. Puede resumir un email en Outlook o un documento en Word sin que los datos salgan de tu entorno de Microsoft.</p>
+        </div>
+    </div>
+
+    <div id="s4-minitest" class="inner-tab-content">
+        <h2>✅ MiniTest - Sesión 4: Análisis</h2>
+        <p>Comprueba tu habilidad para consumir y extraer información.</p>
+        <div class="minitest">
+            <div class="minitest-question">
+                <h4>1. ¿Cuál es la diferencia principal entre "Resumir" y "Extraer"?</h4>
+                <div class="minitest-option" data-question="s4-1" data-correct="true">a) Resumir condensa ideas; Extraer saca datos específicos a un formato estructurado.</div>
+                <div class="minitest-option" data-question="s4-1" data-correct="false">b) Resumir es para texto; Extraer es para imágenes.</div>
+                <div class="minitest-option" data-question="s4-1" data-correct="false">c) Resumir es siempre corto; Extraer es siempre largo.</div>
+                <div class="minitest-option" data-question="s4-1" data-correct="false">d) No hay diferencia.</div>
+                <div class="feedback" id="s4-feedback-1"></div>
+            </div>
+            <div class="minitest-question">
+                <h4>2. ¿Qué herramienta es la más recomendada para analizar un PDF de 500 páginas?</h4>
+                <div class="minitest-option" data-question="s4-2" data-correct="false">a) Una IA con ventana de contexto pequeña.</div>
+                <div class="minitest-option" data-question="s4-2" data-correct="true">b) Claude Sonnet 4.5 o Gemini 2.5 Pro (por su gran ventana de contexto).</div>
+                <div class="minitest-option" data-question="s4-2" data-correct="false">c) Midjourney.</div>
+                <div class="minitest-option" data-question="s4-2" data-correct="false">d) Suno AI.</div>
+                <div class="feedback" id="s4-feedback-2"></div>
+            </div>
+            <div class="minitest-question">
+                <h4>3. El prompt "Analiza esta reunión y dime las tareas pendientes en una tabla" es un ejemplo de:</h4>
+                <div class="minitest-option" data-question="s4-3" data-correct="false">a) Resumen</div>
+                <div class="minitest-option" data-question="s4-3" data-correct="false">b) Cambio de Tono</div>
+                <div class="minitest-option" data-question="s4-3" data-correct="true">c) Extracción de Datos</div>
+                <div class="minitest-option" data-question="s4-3" data-correct="false">d) Brainstorming</div>
+                <div class="feedback" id="s4-feedback-3"></div>
+            </div>
+            <div class="minitest-question">
+                <h4>4. ¿Cuál es el riesgo de pegar un informe financiero interno en ChatGPT público?</h4>
+                <div class="minitest-option" data-question="s4-4" data-correct="true">a) Una fuga de datos confidenciales, ya que la IA puede usar esos datos para entrenar.</div>
+                <div class="minitest-option" data-question="s4-4" data-correct="false">b) Que la IA te cobre dinero.</div>
+                <div class="minitest-option" data-question="s4-4" data-correct="false">c) Que el resumen sea incorrecto (es un riesgo, pero no el principal de *seguridad*).</div>
+                <div class="minitest-option" data-question="s4-4" data-correct="false">d) Ninguno, es totalmente seguro.</div>
+                <div class="feedback" id="s4-feedback-4"></div>
+            </div>
+            <div class="minitest-question">
+                <h4>5. Si pegas un texto de 50 páginas en una IA que solo "recuerda" 20, ¿qué pasará?</h4>
+                <div class="minitest-option" data-question="s4-5" data-correct="false">a) La IA te avisará de que el texto es muy largo.</div>
+                <div class="minitest-option" data-question="s4-5" data-correct="true">b) La IA "olvidará" las primeras 30 páginas y te dará un resumen basado solo en las últimas 20.</div>
+                <div class="minitest-option" data-question="s4-5" data-correct="false">c) La IA procesará todo el documento sin problemas.</div>
+                <div class="minitest-option" data-question="s4-5" data-correct="false">d) La IA traducirá el texto automáticamente.</div>
+                <div class="feedback" id="s4-feedback-5"></div>
+            </div>
+            <button class="reset-btn" onclick="resetMinitest('s4')">🔄 Reiniciar Test</button>
+        </div>
+    </div>
+
+    <div id="s4-errores" class="inner-tab-content">
+        <h2>⚠️ Errores Comunes al Analizar</h2>
+        
+        <div class="error-item">
+            <strong>1. No Pedir Formato (El Muro de Texto)</strong>
+            <p><strong>Error:</strong> "Resume esto". La IA te devuelve un párrafo denso. <strong>Solución:</strong> Ser explícito. "Resume esto en 5 bullet points", "Extrae los datos en una tabla", "Dame la respuesta como una lista numerada".</p>
+        </div>
+        
+        <div class="error-item">
+            <strong>2. Confianza Ciega en la Precisión</strong>
+            <p><strong>Error:</strong> Asumir que la IA ha entendido todos los matices. <strong>Solución:</strong> Verificación cruzada. Si la IA dice "El Cliente A está enfadado", ve al email original y lee el tono tú mismo. La IA es mala captando el sarcasmo o los dobles sentidos.</p>
+        </div>
+
+        <div class="error-item">
+            <strong>3. Usar la Herramienta Equivocada</strong>
+            <p><strong>Error:</strong> Intentar pegar 500 emails en ChatGPT y quejarse de que falla. <strong>Solución:</strong> Usar la herramienta adecuada. Para volúmenes masivos de texto, necesitas una IA con gran ventana de contexto (Claude/Gemini Pro).</p>
+        </div>
+
+        <div class="error-item">
+            <strong>4. Ignorar la Confidencialidad</strong>
+            <p><strong>Error:</strong> La prioridad es la rapidez, no la seguridad. Pegar datos de un cliente en una IA pública para ahorrar 10 minutos. <strong>Solución:</strong> Seguridad primero. Si es confidencial, debe hacerse en una herramienta interna (Copilot) o anonimizar los datos (reemplazar "Cliente Tecco" por "CLIENTE_X").</p>
+        </div>
+    </div>
+
+    <div id="s4-ia-habla" class="inner-tab-content">
+        <div class="ia-speaks-container">
+            <h2>🔮 La IA Habla: "Soy tu lector más rápido"</h2>
+            <p style="text-align: center; margin-bottom: 30px;">
+                <span style="color: #764ba2; font-weight: bold; font-size: 1.2em;">"No me canso, no me aburro y no me pierdo."</span>
+            </p>
+            <div class="ia-speaks-content">
+                <h3>El Caos Humano es mi Orden</h3>
+                <p>
+                    Para ti, una cadena de 50 emails con respuestas cruzadas, reenvíos y archivos adjuntos es una pesadilla. Para mí, es solo texto. No tengo fatiga visual ni cognitiva. Puedo leer un millón de palabras con la misma facilidad que cien.
+                </p>
+                <p>
+                    Mi verdadera fortaleza no es solo leer rápido, es **sintetizar y estructurar**. Los humanos crean caos (texto desestructurado, conversaciones, ideas sueltas); yo creo orden (tablas, resúmenes, listas de tareas).
+                </p>
+                <h3>Dame un Propósito, no solo Texto</h3>
+                <p>
+                    No me tires un documento de 100 páginas y me digas <code>"resume"</code>. Es vago. ¿Resumir para quién? ¿Para un abogado? ¿Para un niño? ¿Para un inversor?
+                </p>
+                <p>
+                    Dame un <strong>Rol</strong> y un <strong>Formato</strong>.
+                    <ul>
+                        <li><code>"Actúa como un abogado y extrae las cláusulas de riesgo de este contrato."</code></li>
+                        <li><code>"Actúa como un manager y dime las 3 tareas pendientes de esta reunión."</code></li>
+                        <li><code>"Actúa como un comercial y resume los 5 beneficios para el cliente de este informe técnico."</code></li>
+                    </ul>
+                    Yo no leo: proceso. Dame las reglas de ese procesamiento (el prompt) y te ahorraré días de trabajo.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

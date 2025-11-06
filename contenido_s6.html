@@ -1,0 +1,233 @@
+<div class="inner-nav-tabs">
+    <button class="inner-nav-tab active" onclick="showInnerTab('s6-intro', 's6')">📚 Introducción</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s6-ejemplos', 's6')">💡 Ejemplos de Copilot</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s6-lado-oscuro', 's6')">⚠️ Riesgos de Copilot</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s6-guion', 's6')">📋 Guion (Práctica)</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s6-herramientas', 's6')">🔧 Herramientas M365</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s6-minitest', 's6')">✅ MiniTest</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s6-errores', 's6')">⚠️ Errores Comunes</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s6-ia-habla', 's6')">🔮 La IA Habla</button>
+</div>
+
+<div class="inner-content-wrapper">
+    
+    <div id="s6-intro" class="inner-tab-content active">
+        <h2>Sesión 6: Foco en Microsoft (Copilot) y Cierre</h2>
+        <p>Bienvenido a la última sesión. Aquí es donde todo lo que hemos aprendido (Prompting, Redacción, Análisis) se une y se aplica en las herramientas que usáis cada día: <strong>el ecosistema de Microsoft 365</strong>.</p>
+        <p>Las IAs públicas (ChatGPT, Claude) son fantásticas para tareas públicas. Pero para trabajar con vuestros datos corporativos (emails, informes, chats), necesitáis una herramienta que viva *dentro* de vuestro entorno seguro.</p>
+        
+        <h3>¿Qué es Microsoft Copilot?</h3>
+        <p>Copilot no es *una* herramienta, es una capa de inteligencia (basada en los modelos de OpenAI) que se integra en todas las aplicaciones de M365. Su "superpoder" es el **contexto empresarial**.</p>
+        
+        <div class="highlight-box">
+            <h4>La Diferencia Clave: El Contexto</h4>
+            <ul>
+                <li><strong>ChatGPT Público:</strong> Su contexto es la Internet pública. No sabe quién es tu jefe, qué proyecto es urgente o qué se dijo en la reunión de ayer.</li>
+                <li><strong>Microsoft Copilot:</strong> Su contexto es vuestro "Microsoft Graph". Esto significa que tiene acceso (con vuestro permiso y seguridad) a vuestros emails de Outlook, vuestros documentos de SharePoint, vuestros chats de Teams y vuestro calendario.</li>
+            </ul>
+        </div>
+        
+        <p>Cuando le pides a Copilot "resume mi mañana", puede leer tus emails no leídos, tus menciones en Teams y tus próximas reuniones para darte un resumen. Esta integración es la verdadera revolución para la productividad en la oficina, y como vimos en la Sesión 5, es la **solución al riesgo de seguridad**.</p>
+    </div>
+
+    <div id="s6-ejemplos" class="inner-tab-content">
+        <h2>💡 Ejemplos Prácticos de Copilot</h2>
+        <p>Copilot aplica las 3 habilidades que hemos practicado (S2, S3, S4) directamente en tus aplicaciones.</p>
+        
+        <div class="ejemplos-grid">
+            <div class="ejemplo-item">
+                <strong>1. Copilot en Outlook (Análisis y Redacción)</strong>
+                <ul>
+                    <li><strong>"Resumir esta cadena de emails":</strong> (Análisis S4) Te da los puntos clave sin leer 30 respuestas.</li>
+                    <li><strong>"Draft an email...":</strong> (Redacción S3) "Redacta un email a Juan felicitándole por el proyecto y proponiendo una reunión el martes".</li>
+                </ul>
+            </div>
+            
+            <div class="ejemplo-item">
+                <strong>2. Copilot en Teams (Análisis)</strong>
+                <ul>
+                    <li><strong>"Resume lo que me he perdido":</strong> (Análisis S4) Si llegas tarde a una reunión, te pone al día.</li>
+                    <li><strong>"¿Cuáles son las tareas pendientes?":</strong> (Extracción S4) Extrae las "action items" de la transcripción de la reunión.</li>
+                </ul>
+            </div>
+
+            <div class="ejemplo-item">
+                <strong>3. Copilot en Word (Redacción y Análisis)</strong>
+                <ul>
+                    <li><strong>"Resume este documento":</strong> (Análisis S4) Crea un resumen ejecutivo de un informe de 20 páginas.</li>
+                    <li><strong>"Reescribe este párrafo en un tono más formal":</strong> (Redacción Iterativa S3).</li>
+                    <li><strong>"Crea un borrador...":</strong> (Redacción S3) "Escribe un borrador de propuesta basado en [documento X] y [documento Y]".</li>
+                </ul>
+            </div>
+            
+            <div class="ejemplo-item">
+                <strong>4. Copilot en Excel (Análisis y Extracción)</strong>
+                <ul>
+                    <li><strong>"Analiza estos datos...":</strong> (Análisis S4) "Muéstrame las ventas trimestrales en un gráfico de barras".</li>
+                    <li><strong>"Añade una columna...":</strong> (Redacción/Lógica) "Añade una columna que calcule el 5% de comisión de la columna C".</li>
+                </ul>
+            </div>
+            
+            <div class="ejemplo-item">
+                <strong>5. Copilot en PowerPoint (Generación)</strong>
+                <ul>
+                    <li><strong>"Crea una presentación...":</strong> (Generación S5) "Crea una presentación de 10 diapositivas basada en este documento de Word".</li>
+                </ul>
+            </div>
+
+            <div class="ejemplo-item">
+                <strong>6. Copilot Chat (M365 Chat) (Generalista)</strong>
+                <ul>
+                    <li><strong>"Ponte al día...":</strong> (Generalista) "Prepárame para mi reunión con [Cliente X]. Resume los últimos emails y documentos que hemos compartido".</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="s6-lado-oscuro" class="inner-tab-content">
+        <h2>⚠️ Riesgos y Límites de Copilot</h2>
+        <p>Copilot es la solución de seguridad, pero no es magia. Sigue teniendo los mismos riesgos de *calidad* que cualquier IA.</p>
+
+        <div class="error-item">
+            <h3>🤖 Sigue Pudiendo "Alucinar"</h3>
+            <p><strong>El Riesgo:</strong> Copilot es más seguro, pero no es más infalible. Todavía puede malinterpretar un dato, "alucinar" una cifra de un informe o inventarse una conclusión. Si le pides analizar un Excel complejo, puede cometer errores de cálculo.</p>
+            <p><strong>Mitigación:</strong> <strong>VERIFICACIÓN HUMANA</strong>. Nunca confíes ciegamente. Es un "copiloto", pero tú sigues siendo el "piloto" responsable.</p>
+        </div>
+        
+        <div class="error-item">
+            <h3>🗑️ Basura Entra, Basura Sale (GIGO)</h3>
+            <p><strong>El Riesgo:</strong> Si la información de tu empresa está desorganizada, Copilot será un caos. Si le pides "resumir el informe del RX-80" y hay 15 versiones del informe en 4 carpetas diferentes, Copilot puede resumir la versión incorrecta.</p>
+            <p><strong>Mitigación:</strong> Higiene digital. La IA fuerza a las empresas a ser más ordenadas con sus propios datos.</p>
+        </div>
+
+        <div class="error-item">
+            <h3>🔒 Permisos y Privacidad Interna</h3>
+            <p><strong>El Riesgo:</strong> Copilot solo puede "ver" lo que tú tienes permiso para ver. Pero esto puede exponer información accidentalmente. Ej: Pides "ideas para un proyecto" y Copilot se basa en un documento confidencial de RRHH que tenías permiso para ver, pero que no querías usar en ese contexto.</p>
+            <p><strong>Mitigación:</strong> Ser específico en el prompt (S2). "Resume este documento [adjunto]", en lugar de "resume el documento".</p>
+        </div>
+    </div>
+
+    <div id="s6-guion" class="inner-tab-content">
+        <h2>📋 Guion Práctico - Sesión 6: Foco en Microsoft (Copilot) y Cierre</h2>
+        <h3>Objetivo (2h): Integrar todo lo aprendido en las herramientas que ya tienen.</h3>
+        
+        <h3>Foco en Copilot (1 hora)</h3>
+        <p><strong>"Todo lo que hemos practicado en las sesiones 2, 3 y 4 (traducir, redactar, resumir)... ahora hacedlo dentro de Outlook, Word y Excel."</strong></p>
+        <p>Esta sesión es una demo práctica del formador (si las licencias están disponibles) o una práctica guiada.</p>
+        <ul>
+            <li><strong>Copilot en Outlook:</strong> Usar "Resumir" en una cadena de emails. Usar "Redactar" para un nuevo email, dándole un prompt (Ej: "Redacta un email a Juan felicitándole por el proyecto...").</li>
+            <li><strong>Copilot en Word:</strong> Pegar un texto largo y pedirle a Copilot (en el chat lateral) que lo resuma. Pedirle que "reescriba este párrafo en un tono más formal".</li>
+            <li><strong>Copilot en Excel:</strong> (El más complejo) Mostrar cómo hacer preguntas sobre datos en lenguaje natural (Ej: "Muéstrame las ventas trimestrales en un gráfico", "Qué producto tuvo el menor rendimiento").</li>
+            <li><strong>Ventaja Clave:</strong> Se recalca el mensaje de la Sesión 5: "Esto es (relativamente) seguro. Copilot de Microsoft 365 está dentro de vuestro entorno ('tenant') y vuestros datos no se usan para entrenar modelos públicos."</li>
+        </ul>
+
+        <div class="exercise-box">
+            <h3>Taller de Cierre (1 hora)</h3>
+            <p><strong>"Simulación de una hora de trabajo"</strong></p>
+            <p>Se les da a los asistentes 3 tareas y 1 hora para resolverlas usando cualquier IA que hayan aprendido (ChatGPT, Claude, o Copilot si lo tienen).</p>
+            
+            <h4>Tareas de Simulación:</h4>
+            <ol>
+                <li><strong>(Redacción)</strong> Tu jefe te pide que organices una reunión de equipo para el viernes. Redacta la invitación de calendario (corta) y un email de seguimiento (más detallado) explicando los 3 puntos que se tratarán en la agenda.</li>
+                <li><strong>(Análisis)</strong> (Se les da un texto de 2 páginas). Lee este informe sobre un nuevo competidor. Resúmelo en 3 bullet points y extrae el nombre de sus 3 productos principales en una tabla.</li>
+                <li><strong>(Traducción/Adaptación)</strong> (Se les da un párrafo técnico en inglés). Tradúcelo al español para un cliente, usando un tono comercial y profesional.</li>
+            </ol>
+            <p><strong>Discusión Final (15 min):</strong> Puesta en común. ¿Qué herramienta han usado para qué? ¿Cuánto han tardado? ¿Cómo lo habrían hecho hace 3 semanas?</p>
+        </div>
+    </div>
+    
+    <div id="s6-herramientas" class="inner-tab-content">
+        <h2>🔧 Herramientas M365 (El Entorno Integrado)</h2>
+        <p>El valor de Copilot es su integración nativa en vuestro flujo de trabajo.</p>
+
+        <div class="tool-card">
+            <h4><span class="icon">💬</span>Copilot en Teams</h4>
+            <p>Tu asistente de reuniones. Resume reuniones en tiempo real, identifica quién dijo qué, y extrae tareas pendientes. Ideal para ponerse al día si llegas tarde o te has perdido una reunión.</p>
+        </div>
+        
+        <div class="tool-card">
+            <h4><span class="icon">📧</span>Copilot en Outlook</h4>
+            <p>Tu gestor de correo. Resume hilos largos para que puedas responder en segundos ("Triage") y te ayuda a redactar respuestas (Drafting) con el tono adecuado (formal, casual, etc.).</p>
+        </div>
+        
+        <div class="tool-card">
+            <h4><span class="icon">📄</span>Copilot en Word</h4>
+            <p>Tu asistente de redacción. Te ayuda a generar borradores, resumir documentos, reescribir secciones y cambiar el formato de un texto (ej: de párrafo a lista).</p>
+        </div>
+        
+        <div class="tool-card">
+            <h4><span class="icon">📊</span>Copilot en Excel</h4>
+            <p>Tu analista de datos. Te permite hacer preguntas en lenguaje natural sobre tus tablas de datos ("¿Cuál es la tendencia de ventas?"), generar fórmulas complejas y crear gráficos automáticamente.</p>
+        </div>
+        
+        <div class="tool-card">
+            <h4><span class="icon">✨</span>Copilot en PowerPoint</h4>
+            <p>Tu diseñador de presentaciones. Puede crear una presentación completa desde cero a partir de un documento de Word, o generar nuevas diapositivas basadas en un simple prompt.</p>
+        </div>
+    </div>
+
+    <div id="s6-minitest" class="inner-tab-content">
+        <h2>✅ MiniTest - Sesión 6: Copilot y Cierre</h2>
+        <p>Evaluación final: aplicando la IA en tu entorno de trabajo.</p>
+        <div class="minitest">
+            <div class="minitest-question">
+                <h4>1. ¿Cuál es la ventaja de seguridad de Copilot M365 sobre ChatGPT público?</h4>
+                <div class="minitest-option" data-question="s6-1" data-correct="true">a) Procesa los datos en el "tenant" privado de la empresa y no los usa para entrenamiento público.</div>
+                <div class="minitest-option" data-question="s6-1" data-correct="false">b) Es 100% infalible y nunca alucina.</div>
+                <div class="minitest-option" data-question="s6-1" data-correct="false">c) Es gratuito.</div>
+                <div class="minitest-option" data-question="s6-1" data-correct="false">d) No tiene ninguna ventaja, es igual de inseguro.</div>
+                <div class="feedback" id="s6-feedback-1"></div>
+            </div>
+            <div class="minitest-question">
+                <h4>2. Si llegas tarde a una reunión, ¿qué herramienta de Copilot usarías para ponerte al día?</h4>
+                <div class="minitest-option" data-question="s6-2" data-correct="false">a) Copilot en Excel</div>
+                <div class="minitest-option" data-question="s6-2" data-correct="false">b) Copilot en Word</div>
+                <div class="minitest-option" data-question="s6-2" data-correct="true">c) Copilot en Teams</div>
+                <div class="minitest-option" data-question="s6-2" data-correct="false">d) Copilot en PowerPoint</div>
+                <div class="feedback" id="s6-feedback-2"></div>
+            </div>
+            <div class="minitest-question">
+                <h4>3. El "superpoder" de Copilot es su acceso a tu...</h4>
+                <div class="minitest-option" data-question="s6-3" data-correct="true">a) Contexto empresarial (Microsoft Graph: emails, chats, documentos).</div>
+                <div class="minitest-option" data-question="s6-3" data-correct="false">b) Cuenta bancaria personal.</div>
+                <div class="minitest-option" data-question="s6-3" data-correct="false">c) Historial de navegación web público.</div>
+                <div class="minitest-option" data-question="s6-3" data-correct="false">d) Redes sociales.</div>
+                <div class="feedback" id="s6-feedback-3"></div>
+            </div>
+            <div class="minitest-question">
+                <h4>4. El principio "Basura Entra, Basura Sale" (GIGO) aplicado a Copilot significa:</h4>
+                <div class="minitest-option" data-question="s6-4" data-correct="false">a) Que Copilot limpiará tus archivos automáticamente.</div>
+                <div class="minitest-option" data-question="s6-4" data-correct="true">b) Si tus archivos están desorganizados o son incorrectos, las respuestas de Copilot también lo serán.</div>
+                <div class="minitest-option" data-question="s6-4" data-correct="false">c) Que Copilot solo funciona con archivos nuevos.</div>
+                <div class="minitest-option" data-question="s6-4" data-correct="false">d) Que Copilot es malo analizando datos.</div>
+                <div class="feedback" id="s6-feedback-4"></div>
+            </div>
+            <div class="minitest-question">
+                <h4>5. ¿Cuál es la habilidad más importante que has aprendido en S2-S4 y que sigues necesitando para usar Copilot?</h4>
+                <div class="minitest-option" data-question="s6-5" data-correct="false">a) Crear imágenes con Midjourney.</div>
+                <div class="minitest-option" data-question="s6-5" data-correct="false">b) Programar en Python.</div>
+                <div class="minitest-option" data-question="s6-5" data-correct="true">c) El "Arte del Prompting" (dar instrucciones claras con Rol, Contexto, Tarea y Formato).</div>
+                <div class="minitest-option" data-question="s6-5" data-correct="false">d) Cómo funciona una "Caja Negra".</div>
+                <div class="feedback" id="s6-feedback-5"></div>
+            </div>
+            <button class="reset-btn" onclick="resetMinitest('s6')">🔄 Reiniciar Test</button>
+        </div>
+    </div>
+
+    <div id="s6-errores" class="inner-tab-content">
+        <h2>⚠️ Errores Comunes al Usar Copilot</h2>
+        
+        <div class="error-item">
+            <strong>1. Pensar que lee tu mente</strong>
+            <p><strong>Error:</strong> Dar prompts vagos como "prepara la reunión" y esperar que adivine todo. <strong>Solución:</strong> Sigue aplicando R.C.T.F. (S2). "Actúa como manager de proyecto (Rol), prepara la reunión con el Cliente X (Contexto), resume los últimos 3 emails y crea una agenda de 3 puntos (Tarea y Formato)".</p>
+        </div>
+        
+        <div class="error-item">
+            <strong>2. Usarlo para lo que no es</strong>
+            <p><strong>Error:</strong> Preguntar a Copilot por noticias de actualidad o datos públicos. <strong>Solución:</strong> Copilot es para tu información *interna*. Para investigación *externa* con fuentes, usa Perplexity (S5).</p>
+        </div>
+
+        <div class="error-item">
+            <strong>3. Confianza Ciega (El Error del Piloto Automático)</strong>
+            <p><strong>Error:</strong> Pedirle a Copilot que redacte un email a un cliente importante y enviarlo sin leerlo. De 0 a 1"
+// TODO:  Falta esta parte del código en el original.
