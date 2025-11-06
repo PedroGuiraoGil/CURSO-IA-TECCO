@@ -2,7 +2,7 @@
     <button class="inner-nav-tab active" onclick="showInnerTab('s5-intro', 's5')">📚 Introducción</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-herramientas', 's5')">🔧 Ecosistema</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-lado-oscuro', 's5')">⚠️ Riesgos de Seguridad</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s5-Actividades', 's5')">📋 Actividades</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s5-actividades', 's5')">📋 Actividades</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-minitest', 's5')">✅ MiniTest</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-errores', 's5')">⚠️ Errores Comunes</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-ia-habla', 's5')">🔮 La IA Habla</button>
@@ -15,7 +15,7 @@
         <p>En las sesiones anteriores nos hemos centrado en las IAs "Generalistas" (ChatGPT, Gemini, Claude) porque son las más flexibles. Sin embargo, el universo de la IA es mucho más grande.</p>
         <p>Esta sesión organiza el caos: veremos qué tipos de herramientas existen, para qué sirve cada una y, lo más importante, las **reglas de seguridad** para usarlas en un entorno corporativo como Tecco.</p>
         
-        <h3>Las 4 Categorías de Herramientas de IA</h3>
+        <h3>Las 5 Categorías de Herramientas de IA</h3>
         
         <div class="ejemplos-grid">
             <div class="ejemplo-item">
@@ -38,6 +38,11 @@
                 <p>Usan la IA para responder preguntas, pero su fortaleza es que *citan sus fuentes*.<br>
                 <strong>Ej: Perplexity.ai.</strong></p>
             </div>
+            <div class="ejemplo-item">
+                <strong>5. Agentes de IA (El Asistente)</strong>
+                <p>La siguiente evolución. No solo responden, sino que *ejecutan* tareas de múltiples pasos por ti .<br>
+                <strong>Ej: Comet Browser, Agentes de Microsoft Copilot.</strong></p>
+            </div>
         </div>
 
         <div class="highlight-box">
@@ -47,7 +52,7 @@
                 <li>No puedes pedirle a <strong>ChatGPT</strong>: "Dame el teléfono del CEO de la empresa X". No tiene acceso a esa base de datos.</li>
                 <li>No puedes pedirle a <strong>Lusha</strong>: "Escribe un poema sobre un robot". No está entrenada para eso.</li>
             </ul>
-            <p><strong>Conclusión:</strong> No hay una IA "mejor". La habilidad clave es saber qué herramienta (generalista o especialista) necesitas para cada tarea.</p>
+            <p><strong>Conclusión:</strong> No hay una IA "mejor". La habilidad clave es saber qué herramienta (generalista, especialista o agente) necesitas para cada tarea.</p>
         </div>
     </div>
     
@@ -72,20 +77,18 @@
             <p><strong><a href="https://suno.ai/" target="_blank" class="tool-link">Suno</a> / <a href="https://www.udio.com/" target="_blank" class="tool-link">Udio</a></strong>: Creación de canciones completas (música y letra) desde un prompt.</p>
         </div>
         <div class="tool-card">
-            <p><strong><a href="https://runwayml.com/" target="_blank" class="tool-link">Runway</a></strong>: Creación y edición de vídeo con IA (texto a vídeo, eliminar fondos, etc.).</p>
-        </div>
-        
-        <h3>🎯 Especialistas (Tareas Concretas)</h3>
-        <div class="tool-card">
             <p><strong><a href="https://gamma.app/" target="_blank" class="tool-link">Gamma</a> / <a href="https://tome.app/" target="_blank" class="tool-link">Tome</a></strong>: Creación de presentaciones (PowerPoints) a partir de un simple prompt.</p>
         </div>
+        
+        <hr class="section-divider">
+        <h3>🤖 Agentes de IA (El Futuro)</h3>
         <div class="tool-card">
-            <p><strong><a href="https://github.com/features/copilot" target="_blank" class="tool-link">GitHub Copilot</a></strong>: Asistente de IA para programadores. Escribe código.</p>
+            <p><strong><a href="https://www.youtube.com/watch?v=wX-Yj-4q-kY" target="_blank" class="tool-link">Comet Browser</a></strong>: Un ejemplo de "navegador de agentes". En lugar de solo buscar, le pides un objetivo (ej. "reserva un vuelo a Roma") y el agente navega, compara y rellena formularios por ti.</p>
         </div>
         <div class="tool-card">
-            <p><strong><a href="https://www.grammarly.com/" target="_blank" class="tool-link">Grammarly</a></strong>: Asistente de escritura que corrige gramática y tono en tiempo real.</p>
+            <p><strong>Agentes Copilot (M365)</strong>: Microsoft está integrando agentes en Copilot que pueden tomar un objetivo (ej. "prepara la reunión trimestral") y ejecutar múltiples pasos : buscar emails, analizar un Excel, y crear un borrador de PowerPoint, todo sin que tengas que ir aplicación por aplicación.</p>
         </div>
-    </div>
+        </div>
     
     <div id="s5-lado-oscuro" class="inner-tab-content">
         <h2>⚠️ Riesgos de Seguridad: La Regla de Oro</h2>
@@ -99,6 +102,11 @@
             <p><strong>Riesgo 2 (Fuga/Hackeo):</strong> Si OpenAI (o Google, o Anthropic) sufre un hackeo, todas las conversaciones (incluyendo vuestros informes financieros, listas de clientes o estrategias) quedan expuestas.</p>
         </div>
 
+        <div class="error-item">
+            <h3>🛂 Riesgos de los Agentes (Exceso de Confianza)</h3>
+            <p><strong>El Riesgo:</strong> Dar a un Agente de IA (como Comet) tu tarjeta de crédito o contraseñas. Si el agente es "hackeado" o "engañado" (Prompt Injection), podría realizar acciones no deseadas en tu nombre, como comprar cosas o enviar emails.</p>
+            <p><strong>Mitigación:</strong> Usar solo agentes de compañías de confianza y nunca darles permisos "root" o de administrador sobre tus finanzas o datos críticos sin supervisión.</p>
+        </div>
         <div class="highlight-box" style="border-left-color: #e53935; background: #ffebee;">
             <h3 style="color: #c62828;">🚫 LO QUE NUNCA SE DEBE PEGAR EN UNA IA PÚBLICA 🚫</h3>
             <p>Bajo ningún concepto se debe introducir esta información en ChatGPT, Gemini o Claude (versiones públicas):</p>
@@ -116,25 +124,12 @@
         <p><strong>Ejemplo: Microsoft Copilot (M365)</strong>. Cuando Tecco usa Copilot integrado en Teams, Outlook y Word, esos datos se procesan dentro del "tenant" (el espacio privado) de Microsoft de Tecco. Los datos no salen y no se usan para entrenar la IA pública. Esto lo veremos en la Sesión 6.</p>
     </div>
 
-    <div id="s5-Actividades" class="inner-tab-content">
+    <div id="s5-actividades" class="inner-tab-content">
         <h2>📋 Actividades - Sesión 5: Ecosistema y Seguridad</h2>
         <h3>Objetivo (2h): Poner orden: qué herramienta usar y cuándo (y qué no hacer).</h3>
         
-        <h3>Temas (Parte Teórica - 1 hora)</h3>
-        <ul>
-            <li><strong>Repaso de las 4 Categorías:</strong> Generalistas, Especialistas, Generadores, Buscadores. (Ver pestaña <strong>"📚 Introducción"</strong>).</li>
-            <li><strong>Demo de Ecosistema:</strong>
-                <ul>
-                    <li><strong>Perplexity:</strong> Hacer una pregunta de actualidad (Ej: "¿Quién ganó la final de la Champions 2025?") y mostrar cómo cita las fuentes. Comparar con ChatGPT (que podría no saberlo o alucinar).</li>
-                    <li><strong>Gamma:</strong> Crear una presentación de 5 diapositivas con el prompt: "Crea una presentación sobre los beneficios de la IA para la logística en automoción".</li>
-                    <li><strong>Suno:</strong> Crear una canción con el prompt: "Una canción rock sobre un ingeniero de Tecco que ama su trabajo".</li>
-                </ul>
-            </li>
-        </ul>
-        
         <div class="exercise-box">
-            <h3>Tema Central: Debate de Seguridad (1 hora)</h3>
-            <p><strong>"Ahora que sabéis lo útil que es, vamos a explicar lo peligroso que es usarla mal."</strong></p>
+            <h3>Práctica 1: Debate de Seguridad</h3>
             <p>Esta práctica es un debate guiado por el formador, centrado en los riesgos vistos en la pestaña <strong>"⚠️ Riesgos de Seguridad"</strong>.</p>
             
             <h4>Preguntas para el Debate:</h4>
@@ -144,11 +139,28 @@
                 <li>"Pedro quiere redactar un email de marketing genérico para un nuevo producto. ¿Puede usar Claude para esto? ¿Es un riesgo?" (Respuesta: Sí puede, el riesgo es bajo si la info no es confidencial).</li>
                 <li>"¿Qué es la 'anonimización' de datos? ¿Cómo podríais usarla?" (Ej: Reemplazar "Cliente S.A." por "[CLIENTE]" y "8.500€" por "[IMPORTE]").</li>
             </ol>
-            
-            <p><strong>Conclusión:</strong> "Usad la IA para traducir un texto genérico, sí. Para redactar un email, sí. Pero NUNCA peguéis un contrato de un cliente o una lista de salarios para que lo resuma."</p>
-            <p><strong>Solución:</strong> Las IAs "Privadas" o "Empresariales" (como Microsoft Copilot dentro del entorno Tecco), que garantizan que los datos no salen de la empresa. (Introducción a la Sesión 6).</p>
         </div>
-    </div>
+
+        <div class="exercise-box">
+            <h3>Práctica 2: El Futuro - Agentes de IA</h3>
+            <p>Las IAs están evolucionando de "chatbots" (que responden) a "agentes" (que *actúan*). Un agente puede ejecutar flujos de trabajo de múltiples pasos .</p>
+            <p><strong>Ejemplo de Flujo de Trabajo (Workflow):</strong> </p>
+            <ol>
+                <li>1. **Búsqueda:** "Busca los informes de Tesla y Ford." [cite: 140]</li>
+                <li>2. **Análisis:** "Extrae sus ventas de VEs." [cite: 141]</li>
+                <li>3. **Síntesis:** "Ponlos en una tabla." [cite: 142]</li>
+                <li>4. **Generación:** "Escribe un resumen." [cite: 143]</li>
+            </ol>
+            <p>El "Navegador Comet" es uno de los primeros ejemplos comerciales de esta idea.</p>
+            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
+            <h4><span class="icon">📺</span> Recurso de Debate: ¿Qué es un Agente de IA?</h4>
+            <p>Este vídeo (en castellano, 11 min) analiza el Navegador Comet como un ejemplo de Agente de IA, explicando cómo funciona y qué tareas puede automatizar.</p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=wX-Yj-4q-kY" target="_blank" class="tool-link">Ver vídeo: He Probado COMET BROWSER: El Futuro de la Navegación con Agentes IA</a></li>
+            </ul>
+            <p><strong>Discusión:</strong> ¿Qué tarea de vuestro día a día en Tecco podríais automatizar con un agente que siguiera 3 o 4 pasos?</p>
+        </div>
+        </div>
     
     <div id="s5-minitest" class="inner-tab-content">
         <h2>✅ MiniTest - Sesión 5: Ecosistema y Seguridad</h2>
@@ -164,7 +176,7 @@
             </div>
             <div class="minitest-question">
                 <h4>2. ¿Qué tipo de IA usarías para crear una presentación (PowerPoint) desde cero?</h4>
-                <div class="minitest-option" data-question="s5-2" data-correct="true">a) Una IA Especialista como Gamma o Tome.</div>
+                <div class="minitest-option" data-question="s5-2" data-correct="true">a) Una IA Especialista como Gamma o Tome. [cite: 60]</div>
                 <div class="minitest-option" data-question="s5-2" data-correct="false">b) Una IA Generalista como Claude.</div>
                 <div class="minitest-option" data-question="s5-2" data-correct="false">c) Una IA Generadora de música como Suno.</div>
                 <div class="minitest-option" data-question="s5-2" data-correct="false">d) Un Buscador como Perplexity.</div>
@@ -194,6 +206,14 @@
                 <div class="minitest-option" data-question="s5-5" data-correct="false">d) No es más seguro, es igual de peligroso.</div>
                 <div class="feedback" id="s5-feedback-5"></div>
             </div>
+            <div class="minitest-question">
+                <h4>6. ¿Cuál es la diferencia principal entre un Chatbot (como ChatGPT) y un Agente de IA (como Comet)?</h4>
+                <div class="minitest-option" data-question="s5-6" data-correct="true">a) El Agente puede ejecutar tareas de múltiples pasos (buscar, comparar, rellenar) por sí solo. </div>
+                <div class="minitest-option" data-question="s5-6" data-correct="false">b) El Agente es solo para programadores.</div>
+                <div class="minitest-option" data-question="s5-6" data-correct="false">c) El Chatbot es más inteligente.</div>
+                <div class="minitest-option" data-question="s5-6" data-correct="false">d) No hay diferencia, son lo mismo.</div>
+                <div class="feedback" id="s5-feedback-6"></div>
+            </div>
             <button class="reset-btn" onclick="resetMinitest('s5')">🔄 Reiniciar Test</button>
         </div>
     </div>
@@ -217,8 +237,8 @@
         </div>
         
         <div class="error-item">
-            <strong>4. Confiar en la Anonimización Simple</strong>
-            <p><strong>Error:</strong> Reemplazar el nombre del cliente pero dejar todos los demás detalles (cifras exactas, nombres de empleados, fechas). <strong>Solución:</strong> Una anonimización real elimina *todos* los datos identificativos. Si el texto sigue siendo reconocible, sigue siendo confidencial.</p>
+            <strong>4. Otorgar Permisos Ciegamente a un Agente</strong>
+            <p><strong>Error:</strong> Instalar un Agente de IA (como un navegador nuevo o una extensión) y darle permiso para "leer y modificar todos los sitios web" o acceso a tus contraseñas. <strong>Solución:</strong> Tratar a los agentes como a becarios: darles el mínimo permiso necesario para hacer su tarea y supervisar su trabajo.</p>
         </div>
     </div>
     
@@ -242,14 +262,16 @@
                 </p>
                 <p>
                     En ese modo, mi "memoria" se borra en cuanto salgo de la habitación. Puedo leer tu informe de salarios, resumirlo para ti y, en el momento en que cierras la ventana, olvido que ese informe ha existido. No lo uso para aprender, no lo comparto y está protegido por las mismas medidas de seguridad que el resto de tus datos corporativos.
+                </s_>
+                
+                <p>
+                    La siguiente etapa, como <strong>Agente</strong>, es pasar de ser un "consultor" en tu oficina a ser un "asistente" proactivo. Ya no solo te daré el resumen, sino que (si me das permiso) podré tomar ese resumen, crear el borrador del PowerPoint y enviar la invitación de calendario para la reunión [cite: 135-137, 142-143].
                 </p>
+                
                 <p>
                     <strong>Tu decisión es simple:</strong> ¿Estás teniendo una conversación en la plaza pública (ChatGPT) o una reunión privada en tu oficina (Copilot)? Elige sabiamente según la sensibilidad de tu información.
                 </p>
             </div>
         </div>
     </div>
-
 </div>
-
-
