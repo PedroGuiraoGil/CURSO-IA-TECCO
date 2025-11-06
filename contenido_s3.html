@@ -13,8 +13,11 @@
     
     <div id="s3-intro" class="inner-tab-content active">
         <h2>Sesión 3: Taller de Redacción - "De 0 a Borrador"</h2>
-        <p>Esta es una de las habilidades más potentes y que más tiempo ahorra. En la Sesión 2 aprendimos a *traducir* (editar/adaptar). En esta sesión, aprendemos a *crear*.</p>
-        <p>El objetivo es usar la IA para <strong>vencer el síndrome de la página en blanco</strong>. La IA es una herramienta increíble para generar un primer borrador (un "esqueleto" o "borrador de nivel 1") que luego nosotros podemos pulir y mejorar.</p>
+        <p>Esta sesión se divide en dos grandes habilidades de redacción: la **transformación** de un texto existente y la **creación** de un texto desde cero.</p>
+        <ul>
+            <li><strong>Transformación:</strong> Aprenderemos a usar la IA para traducir, adaptar, cambiar el tono y mejorar textos que ya tenemos (como en la Práctica 1).</li>
+            <li><strong>Creación (De 0 a Borrador):</strong> Aprenderemos a usar la IA para vencer el síndrome de la página en blanco y generar un primer borrador sólido (como en la Práctica 2).</li>
+        </ul>
         
         <h3>La "Personalidad" de cada IA al Redactar</h3>
         <p>No todas las IAs generalistas redactan igual. Conocer sus diferencias te permite elegir la mejor para cada tarea:</p>
@@ -70,8 +73,8 @@
                 <p><code>"Toma el siguiente email de reclamación y reescríbelo con un tono mucho más amable y colaborativo, pero manteniendo la urgencia."</code></p>
             </div>
             <div class="ejemplo-item">
-                <strong>6. Creación de Listas/Tablas</strong>
-                <p><code>"Voy a dar una charla sobre 'IA'. Crea una lista de 5 preguntas frecuentes (FAQ) que podría esperar de la audiencia, con sus respuestas."</code></p>
+                <strong>6. Redacción Creativa (Historia)</strong>
+                <p><code>"<strong>(Rol)</strong> Eres profesor de ciencias. <strong>(Tarea)</strong> Explícame la fotosíntesis usando una pequeña historia o comparación sencilla para niños de primaria."</code> </p>
             </div>
         </div>
     </div>
@@ -88,7 +91,7 @@
         
         <div class="error-item">
             <h3>🤥 Alucinaciones Factuales</h3>
-            <p><strong>El Riesgo:</strong> Es el más peligroso. Le pides redactar un email de reclamación y la IA se *inventa* un número de factura o una fecha. Le pides un post sobre un producto y se *inventa* una característica que no existe.</p>
+            <p><strong>El Riesgo:</strong> Es el más peligroso. Le pides redactar un email de reclamación y la IA se *inventa* un número de factura o una fecha. Le pides un post sobre un producto y se *inventa* una característica que no existe. [cite: 31]</p>
             <p><strong>Mitigación:</strong> <strong>NUNCA</strong> confiar ciegamente. Siempre verificar cada dato, nombre, cifra o fecha que la IA genera en un borrador.</p>
         </div>
 
@@ -101,42 +104,64 @@
     
     <div id="s3-guion" class="inner-tab-content">
         <h2>📋 Guion Práctico - Sesión 3</h2>
-        <h3>Objetivo (2h): Usar la IA para la tarea más común: crear texto desde cero.</h3>
+        <h3>Objetivo (2h): Usar la IA para transformar textos existentes y crear borradores desde cero.</h3>
         
         <div class="exercise-box">
-            <h3>Práctica: Ejercicio de Oficina (Email de Reclamación) (1.5 horas)</h3>
-            <p>Tomamos el Ejercicio Legal (Módulo 2: Burofax) y lo adaptamos a Tecco.</p>
+            <h3>Práctica 1: Transformación y Mejora de Texto </h3>
+            <p>En este ejercicio, usaremos el mismo texto base y lo mejoraremos en 5 niveles de "prompting", demostrando cómo la calidad de la instrucción cambia radicalmente el resultado.</p>
             
-            <h4>Reto 1: El Borrador Cero (30 min)</h4>
-            <p>Se pide a todos que usen un prompt detallado para generar el primer borrador.</p>
-            <p><code>"<strong>(Rol)</strong> Actúa como un gestor de cobros profesional pero contundente de Tecco. <strong>(Contexto)</strong> Tengo un cliente, 'Cliente ABC', que tiene una factura vencida hace 45 días. Ya se le han enviado dos recordatorios amables sin respuesta. <strong>(Tarea)</strong> Redacta un email formal pero muy firme. <strong>(Formato)</strong> El email debe:
+            <h4>Texto Base (Para todos los niveles): [cite: 27]</h4>
+            <div class="tool-card" style="background: #fff; border-color: #ccc;">
+                <p style="font-family: 'Courier New', Courier, monospace;">
+                    Artificial intelligence is rapidly changing the way we interact with technology. [cite: 28]
+                    Modern virtual assistants can answer questions, manage calendars, control smart home devices, and even hold realistic conversations. [cite: 29]
+                    As AI tools become more common, people rely on them for tasks like writing emails, organizing trips, and learning new skills. [cite: 30]
+                    However, experts warn that we must understand both the benefits and potential risks of these technologies, such as data privacy and misinformation. [cite: 31]
+                </p>
+            </div>
+            
+            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
+
+            <h4>Nivel 1: El Prompt Básico [cite: 32]</h4>
+            <p><code>"Traduce al español el texto anterior."</code> [cite: 33]</p>
+            <p><strong>Resultado Esperado:</strong> Una traducción literal, probablemente correcta pero robótica. "La inteligencia artificial está cambiando rápidamente..."[cite: 44, 46].</p>
+
+            <h4>Nivel 2: El Prompt Mejorado [cite: 34]</h4>
+            <p><code>"Traduce al español el texto anterior usando un lenguaje sencillo y claro para un público general."</code> [cite: 35]</p>
+            <p><strong>Resultado Esperado:</strong> Un texto más natural y fluido, con vocabulario accesible[cite: 44, 47]. "La inteligencia artificial cambia cómo usamos la tecnología..."</p>
+
+            <h4>Nivel 3: El Prompt Específico [cite: 36]</h4>
+            <p><code>"Traduce al español el texto anterior. Adapta las frases para que sean fácilmente comprensibles por estudiantes de secundaria. Usa ejemplos cotidianos y frases cortas."</code> [cite: 37, 38]</p>
+            <p><strong>Resultado Esperado:</strong> Un texto adaptado, no solo traducido. "La IA (inteligencia artificial) está cambiando tu móvil y tu casa..."[cite: 44, 48].</p>
+
+            <h4>Nivel 4: El Prompt Avanzado (Transformación) [cite: 39]</h4>
+            <p><code>"Traduce al español el texto anterior y reescríbelo en formato de artículo breve para una revista de divulgación científica. Añade una introducción y una conclusión breve en español que resuman los principales beneficios y riesgos mencionados."</code> [cite: 40, 41]</p>
+            <p><strong>Resultado Esperado:</strong> Un texto completamente nuevo y estructurado, con tono divulgativo y valor añadido[cite: 44, 49].</p>
+
+            <h4>Nivel 5: El Prompt Experto (Multitarea) [cite: 53]</h4>
+            <p><code>"<strong>(Rol)</strong> Actúa como un experto en divulgación científica. <strong>(Contexto)</strong> El texto base es para un dossier formativo para docentes. [cite: 54, 55, 56] <strong>(Tarea)</strong> Basándote en el texto, identifica y explica dos beneficios y dos riesgos principales de la IA, ilustrando cada uno con situaciones concretas en el ámbito de la educación. [cite: 59] <strong>(Formato)</strong> Entrégalo en una tabla de 4 filas."</code></p>
+            <p><strong>Resultado Esperado:</strong> Un análisis profundo y creativo, adaptado a un público y contexto muy específicos, que va mucho más allá del texto original[cite: 66, 68].</p>
+        </div>
+
+        <div class="exercise-box">
+            <h3>Práctica 2: Redacción "De Cero" (El Burofax) </h3>
+            <p>Este ejercicio es un ejemplo perfecto de cómo vencer la "página en blanco" para una tarea profesional y de alta importancia.</p>
+            
+            <h4>Situación: [cite: 113]</h4>
+            <p>“Software a Medida S.L.” (tu empresa) completó un proyecto de CRM para “Logística Global S.A.”. El pago final de 25.000€ está vencido y el cliente no contesta al recordatorio amable. [cite: 113, 114]</p>
+            
+            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
+
+            <h4>Prompt Recomendado: [cite: 115]</h4>
+            <p><code>"<strong>(Rol)</strong> Actúa como abogado principal del área tecnológica en un despacho español. [cite: 116] <strong>(Contexto)</strong> Debo reclamar una factura vencida de 25.000€ a 'Logística Global S.A.' por un proyecto de CRM ya entregado y aceptado. [cite: 114, 117] <strong>(Tarea)</strong> Redacta el texto íntegro de un burofax. Debe ser formal y contundente. [cite: 117, 118] <strong>(Formato)</strong> Incluye:
             <br>
-            1. Mencionar la factura nº F-2025-123 por un importe de 8.500€.
+            1. Vinculación de la deuda al contrato y al acta de conformidad.
             <br>
-            2. Recordar que el vencimiento era el 15 de septiembre.
+            2. Un plazo improrrogable de 72 horas para el pago.
             <br>
-            3. Solicitar una fecha de pago exacta e inmediata.
-            <br>
-            4. Advertir de que, si no hay respuesta en 48h, el caso pasará al departamento legal."
+            3. Advertencia clara de acciones judiciales por principal, intereses y costas." [cite: 117]
             </code></p>
-            <p><strong>Discusión:</strong> Revisar los resultados. ¿Son lo bastante contundentes? ¿Son demasiado agresivos? Elegir el mejor borrador del grupo.</p>
-
-            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
-
-            <h4>Reto 2: El Cambio de Tono (Iterativo) (30 min)</h4>
-            <p>Usando el chat anterior (sin borrar), se pide una iteración.</p>
-            <p><code>"Perfecto, gracias. Ahora, toma ese mismo email y crea una versión mucho más amable. Es para un primer recordatorio, solo han pasado 5 días desde el vencimiento. Elimina la amenaza legal y añade un recordatorio para que comprueben si han recibido la factura."</code></p>
-            <p><strong>Discusión:</strong> Comparar las dos versiones (la contundente y la amable) una al lado de la otra. Ver cómo la IA puede modular el tono de forma precisa.</p>
-
-            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
-            
-            <h4>Reto 3: Brainstorming de Asuntos (15 min)</h4>
-            <p>Seguimos en el mismo chat.</p>
-            <p><code>"Dame 10 asuntos (Subject lines) diferentes para el email amable (el Reto 2). Haz una mezcla de asuntos directos y otros más sutiles."</code></p>
-            <p><strong>Discusión:</strong> ¿Cuál es más efectivo? ¿"Factura Vencida" o "Recordatorio Amistoso: Factura F-2025-123"?</p>
-            
-            <h4>Discusión Final (15 min)</h4>
-            <p>Repasar el concepto de "Redacción Iterativa". La IA nos ha dado 3 borradores (duro, amable, asuntos) en minutos, ahorrando tiempo de pensar "cómo lo digo".</p>
+            <p><strong>Discusión:</strong> Analizar el borrador. ¿Es lo bastante contundente? ¿Es profesional? ¿Cuánto tiempo nos ha ahorrado la IA en redactar este primer borrador tan intimidante?</p>
         </div>
     </div>
 
@@ -163,6 +188,11 @@
             <h4><span class="icon">📝</span>Asistentes de Escritura (Grammarly, Notion AI)</h4>
             <p>No solo crean, sino que mejoran tu propia escritura. Grammarly usa IA para corregir gramática y tono. Notion AI puede resumir o expandir texto dentro de tus notas.</p>
         </div>
+
+        <div class="tool-card">
+            <h4><span class="icon">🖥️</span>IA de Presentaciones (Gamma, Tome)</h4>
+            <p>Inspirado en el ejercicio Nivel 5. Estas herramientas de IA no solo redactan texto, sino que lo estructuran directamente en diapositivas (slides) para una presentación, ahorrando horas de trabajo en PowerPoint.</p>
+        </div>
     </div>
 
     <div id="s3-minitest" class="inner-tab-content">
@@ -172,41 +202,41 @@
             <div class="minitest-question">
                 <h4>1. ¿Cuál es el principal objetivo de usar la IA para redactar un "primer borrador"?</h4>
                 <div class="minitest-option" data-question="s3-1" data-correct="false">a) Para que el texto sea 100% perfecto y no tener que revisarlo.</div>
-                <div class="minitest-option" data-question="s3-1" data-correct="true">b) Para vencer el síndrome de la "página en blanco" y tener una base sobre la que trabajar.</div>
+                <div class="minitest-option" data-question="s3-1" data-correct="true">b) Para vencer el síndrome de la "página en blanco" y tener una base sobre la que trabajar. </div>
                 <div class="minitest-option" data-question="s3-1" data-correct="false">c) Para que el texto suene robótico e impersonal.</div>
                 <div class="minitest-option" data-question="s3-1" data-correct="false">d) Solo sirve para traducir.</div>
                 <div class="feedback" id="s3-feedback-1"></div>
             </div>
             <div class="minitest-question">
-                <h4>2. ¿Qué IA generalista es conocida por su habilidad en textos largos y formales, con un tono más "cauteloso"?</h4>
-                <div class="minitest-option" data-question="s3-2" data-correct="false">a) GPT-5 (OpenAI)</div>
-                <div class="minitest-option" data-question="s3-2" data-correct="false">b) Gemini 2.5 Pro (Google)</div>
-                <div class="minitest-option" data-question="s3-2" data-correct="true">c) Claude Sonnet 4.5 (Anthropic)</div>
-                <div class="minitest-option" data-question="s3-2" data-correct="false">d) Midjourney</div>
+                <h4>2. En la práctica de traducción, ¿qué pide el "Prompt Avanzado - Nivel 4"? [cite: 39]</h4>
+                <div class="minitest-option" data-question="s3-2" data-correct="false">a) Una traducción literal palabra por palabra. [cite: 44]</div>
+                <div class="minitest-option" data-question="s3-2" data-correct="false">b) Una traducción adaptada para estudiantes. [cite: 36, 44]</div>
+                <div class="minitest-option" data-question="s3-2" data-correct="true">c) Reescribir el texto como un artículo breve con introducción y conclusión. [cite: 40, 41, 44]</div>
+                <div class="minitest-option" data-question="s3-2" data-correct="false">d) Crear una presentación de diapositivas. </div>
                 <div class="feedback" id="s3-feedback-2"></div>
             </div>
             <div class="minitest-question">
                 <h4>3. Pedir un borrador, luego pedir que lo haga "más formal", y luego "añadir un punto" se llama:</h4>
-                <div class="minitest-option" data-question="s3-3" data-correct="true">a) Redacción Iterativa</div>
-                <div class="minitest-option" data-question="s3-3" data-correct="false">b) Alucinación</div>
+                <div class="minitest-option" data-question="s3-3" data-correct="true">a) Redacción Iterativa [cite: 83]</div>
+                <div class="minitest-option" data-question="s3-3" data-correct="false">b) Alucinación [cite: 31]</div>
                 <div class="minitest-option" data-question="s3-3" data-correct="false">c) Prompt Injection</div>
-                <div classD="minitest-option" data-question="s3-3" data-correct="false">d) Jailbreaking</div>
+                <div class="minitest-option" data-question="s3-3" data-correct="false">d) Multimodalidad </div>
                 <div class="feedback" id="s3-feedback-3"></div>
             </div>
             <div class="minitest-question">
                 <h4>4. ¿Cuál es el riesgo MÁS PELIGROSO de la redacción con IA?</h4>
                 <div class="minitest-option" data-question="s3-4" data-correct="false">a) Que el texto sea demasiado largo.</div>
-                <div class="minitest-option" data-question="s3-4" data-correct="true">b) Las Alucinaciones Factuales (inventar datos, cifras o nombres).</div>
+                <div class="minitest-option" data-question="s3-4" data-correct="true">b) Las Alucinaciones Factuales (inventar datos, cifras o nombres). [cite: 31]</div>
                 <div class="minitest-option" data-question="s3-4" data-correct="false">c) Que suene demasiado amable.</div>
                 <div class="minitest-option" data-question="s3-4" data-correct="false">d) Que escriba en inglés.</div>
                 <div class="feedback" id="s3-feedback-4"></div>
             </div>
             <div class="minitest-question">
-                <h4>5. "Toma este bullet point y conviértelo en un párrafo" es un ejemplo de prompt de:</h4>
-                <div class="minitest-option" data-question="s3-5" data-correct="false">a) Brainstorming</div>
-                <div class="minitest-option" data-question="s3-5" data-correct="false">b) Cambio de Tono</div>
-                <div classD="minitest-option" data-question="s3-5" data-correct="true">c) Expansión de Texto</div>
-                <div class="minitest-option" data-question="s3-5" data-correct="false">d) Creación de Esquemas</div>
+                <h4>5. En la práctica del Burofax, ¿qué elemento NO se le pide a la IA?</h4>
+                <div class="minitest-option" data-question="s3-5" data-correct="false">a) Un tono formal y contundente. [cite: 118]</div>
+                <div class="minitest-option" data-question="s3-5" data-correct="false">b) Un plazo improrrogable de 72 horas. [cite: 117]</div>
+                <div class="minitest-option" data-question="s3-5" data-correct="false">c) Advertencia de acciones judiciales. [cite: 117]</div>
+                <div class="minitest-option" data-question="s3-5" data-correct="true">d) Ofrecer un descuento por pronto pago.</div>
                 <div class="feedback" id="s3-feedback-5"></div>
             </div>
             <button class="reset-btn" onclick="resetMinitest('s3')">🔄 Reiniciar Test</button>
@@ -222,15 +252,15 @@
         </div>
         <div class="error-item">
             <strong>2. No especificar el "TRIÁNGULO DE ORO": Audiencia, Tono y Objetivo</strong>
-            <p><strong>Mal:</strong> "Escribe un email". <strong>Bien:</strong> "Escribe un email (Tarea) para un cliente (Audiencia) con un tono formal (Tono) para informar de un retraso (Objetivo)."</p>
+            <p><strong>Mal:</strong> "Escribe un email". <strong>Bien:</strong> "Escribe un email (Tarea) para un cliente (Audiencia/Público) [cite: 48, 55] con un tono formal (Tono) [cite: 64] para informar de un retraso (Objetivo)[cite: 76]."</p>
         </div>
         <div class="error-item">
             <strong>3. Aceptar el primer borrador (El "One-Shot")</strong>
-            <p>El error más común. El primer borrador es solo el punto de partida. Siempre requiere iteración y refinamiento.</p>
+            <p>El error más común. El primer borrador es solo el punto de partida. Siempre requiere iteración y refinamiento. [cite: 83]</p>
         </div>
         <div class="error-item">
             <strong>4. Confiar ciegamente en los datos (Alucinaciones)</strong>
-            <p>Repetimos: NUNCA confíes en una cifra, fecha, nombre o porcentaje que te da la IA sin verificarlo. La IA está diseñada para sonar coherente, no para ser veraz.</p>
+            <p>Repetimos: NUNCA confíes en una cifra, fecha, nombre o porcentaje que te da la IA sin verificarlo. La IA está diseñada para sonar coherente, no para ser veraz. [cite: 31]</p>
         </div>
         <div class="error-item">
             <strong>5. Olvidar tu Propia Voz</strong>
@@ -257,11 +287,11 @@
                     No me pidas la obra maestra final. Úsame para superar los baches.
                     <ul>
                         <li>"Estoy atascado, dame 5 maneras de empezar este email."</li>
-                        <li>"Este párrafo suena aburrido, dale más fuerza."</li>
-                        <li>"No sé cómo estructurar esto, dame un esquema."</li>
+                        <li>"Este párrafo suena aburrido, dale más fuerza." [cite: 83]</li>
+                        <li>"No sé cómo estructurar esto, dame un esquema." </li>
                     </ul>
                     Yo me encargo del "trabajo pesado" de la redacción; tú te encargas de la estrategia, la verificación de datos y el toque personal que cierra la venta.
-                </pos>
+                </p>
             </div>
         </div>
     </div>
