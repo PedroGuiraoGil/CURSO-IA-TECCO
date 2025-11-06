@@ -1,274 +1,347 @@
 <div class="inner-nav-tabs">
-    <button class="inner-nav-tab active" onclick="showInnerTab('s4-intro', 's4')">📚 Introducción</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s4-ejemplos', 's4')">💡 Ejemplos de Análisis</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s4-lado-oscuro', 's4')">⚠️ Riesgos del Análisis</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s4-actividades', 's4')">📋 Actividades</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s4-herramientas', 's4')">🔧 Herramientas de Análisis</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s4-minitest', 's4')">✅ MiniTest</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s4-errores', 's4')">⚠️ Errores Comunes</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s4-ia-habla', 's4')">🔮 La IA Habla</button>
+    <button class="inner-nav-tab active" onclick="showInnerTab('s3-intro', 's3')">📚 Introducción</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s3-ejemplos', 's3')">💡 Ejemplos de Redacción</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s3-lado-oscuro', 's3')">⚠️ Riesgos de Redacción</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s3-actividades', 's3')">📋 Actividades</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s3-herramientas', 's3')">🔧 Herramientas de Redacción</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s3-minitest', 's3')">✅ MiniTest</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s3-errores', 's3')">⚠️ Errores Comunes</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s3-ia-habla', 's3')">🔮 La IA Habla</button>
 </div>
 
 <div class="inner-content-wrapper">
     
-    <div id="s4-intro" class="inner-tab-content active">
-        <h2>Sesión 4: Taller de Análisis - "Resumir, Extraer y Ver"</h2>
-        <p>Esta sesión se centra en una de las capacidades más potentes de la IA para ahorrar tiempo: **procesar grandes cantidades de información y extraer valor**.</p>
-        <p>En la Sesión 3 aprendimos a *crear* texto. Ahora aprenderemos a *consumirlo* a gran velocidad. El objetivo es simple: dejar de perder horas leyendo documentos, emails o informes.</p>
-        
-        <h3>Las Dos Tareas Clave del Análisis de Texto</h3>
-        <div class="tool-card">
-            <h4>1. Resumir (Summarization)</h4>
-            <p><strong>Qué es:</strong> Condensar un texto largo en una versión más corta que retiene las ideas principales. (Ej: resumir una cadena de 50 emails).</p>
-        </div>
-        <div class="tool-card">
-            <h4>2. Extraer (Extraction)</h4>
-            <p><strong>Qué es:</strong> Sacar datos específicos de un texto desestructurado y ponerlos en un formato estructurado. (Ej: extraer tareas de una reunión y ponerlas en una tabla).</p>
-        </div>
-
-        <hr class="section-divider">
-        <h3>La Nueva Frontera: Análisis Multimodal</h3>
-        <p>El análisis ya no se limita al texto. Las IAs modernas pueden "ver" y "escuchar". En esta sesión exploraremos cómo usar las herramientas más avanzadas del mercado para analizar información compleja:</p>
+    <div id="s3-intro" class="inner-tab-content active">
+        <h2>Sesión 3: Taller de Redacción - "De 0 a Borrador"</h2>
+        <p>Esta sesión se divide en dos grandes habilidades de redacción: la **transformación** de un texto existente y la **creación** de un texto desde cero.</p>
         <ul>
-            <li><strong>Búsqueda en Vídeo (con Gemini):</strong> Preguntar directamente a un vídeo de YouTube.</li>
-            <li><strong>Análisis de Documentos (con Claude "Artifacts"):</strong> Trabajar con PDFs y contratos en un espacio de trabajo separado.</li>
-            <li><strong>Investigación Profunda (con Gemini):</strong> Pedir a la IA que investigue un tema en la web y sintetice un informe.</li>
+            <li><strong>Transformación:</strong> Aprenderemos a usar la IA para traducir, adaptar, cambiar el tono y mejorar textos que ya tenemos (como en la Práctica 1) .</li>
+            <li><strong>Creación (De 0 a Borrador):</strong> Aprenderemos a usar la IA para vencer el síndrome de la página en blanco y generar un primer borrador sólido (como en las Prácticas 2 y 3) [cite: 1-15, 112-118].</li>
         </ul>
-    </div>
-
-    <div id="s4-ejemplos" class="inner-tab-content">
-        <h2>💡 Ejemplos de Prompts de Análisis</h2>
-        <p>Los prompts de análisis deben ser muy específicos sobre el formato de salida deseado.</p>
+        
+        <h3>La "Personalidad" de cada IA al Redactar</h3>
+        <p>No todas las IAs generalistas redactan igual. Conocer sus diferencias te permite elegir la mejor para cada tarea:</p>
         
         <div class="ejemplos-grid">
+            <div class="ejemplo-item" style="border-left-color: #10a37f;">
+                <strong><span class="icon">💬</span> GPT-5 (OpenAI)</strong>
+                <p><strong>Estilo:</strong> Directo, estructurado y a menudo el más "creativo" o "atrevido". Es excelente para generar ideas, código y textos que necesitan una estructura clara. A veces puede ser demasiado conciso.</p>
+            </div>
+            <div class="ejemplo-item" style="border-left-color: #fbbc05;">
+                <strong><span class="icon">🔷</span> Gemini 2.5 Pro (Google)</strong>
+                <p><strong>Estilo:</strong> Integrado y "fresco". Al estar conectado al ecosistema de Google, suele ser muy bueno redactando textos que requieren información actualizada o datos del mundo real. Ideal para resúmenes de actualidad o emails informativos.</p>
+            </div>
+            <div class="ejemplo-item" style="border-left-color: #d09a6f;">
+                <strong><span class="icon">🤖</span> Claude Sonnet 4.5 (Anthropic)</strong>
+                <p><strong>Estilo:</strong> Cauteloso, matizado y "seguro". Claude brilla en la redacción larga y formal. Es menos propenso a "excesos" creativos y es excelente para textos que requieren un tono reflexivo, como informes, análisis o emails diplomáticos.</p>
+            </div>
+        </div>
+
+        <h3>Redacción Iterativa: La Clave del Éxito</h3>
+        <p>Nunca (o casi nunca) usarás el primer resultado de la IA. El proceso profesional es un ciclo:</p>
+        <ol>
+            <li><strong>Prompt Inicial:</strong> Pedir el borrador (Ej: "Escribe un email...").</li>
+            <li><strong>Recibir Borrador:</strong> Analizar el resultado.</li>
+            <li><strong>Prompt de Refinamiento:</strong> Dar feedback a la IA (Ej: "Es demasiado formal, hazlo más cercano." o "Añade un punto sobre el descuento...").</li>
+            <li><strong>Recibir Borrador 2:</strong> Repetir hasta que esté al 90%.</li>
+            <li><strong>Toque Humano:</strong> Coger ese borrador al 90% y darle tu toque personal final.</li>
+        </ol>
+    </div>
+    
+    <div id="s3-ejemplos" class="inner-tab-content">
+        <h2>💡 Ejemplos de Prompts de Redacción</h2>
+        <p>Diferentes tareas de redacción requieren diferentes tipos de prompts.</p>
+        <div class="ejemplos-grid">
             <div class="ejemplo-item">
-                <strong>1. Resumen Ejecutivo (Email)</strong>
-                <p><code>"Lee la siguiente cadena de emails y genera un resumen ejecutivo de 3 puntos clave para mi manager."</code></p>
+                <strong>1. Brainstorming / Lluvia de Ideas</strong>
+                <p><code>"Dame 10 ideas para un post de LinkedIn sobre nuestro nuevo componente RX-80 para el sector automoción."</code></p>
             </div>
             <div class="ejemplo-item">
-                <strong>2. Extracción de Tareas (Reunión)</strong>
-                <p><code>"Analiza esta transcripción de reunión y extrae todas las tareas pendientes, quién es el responsable y la fecha límite. Preséntalo en una tabla."</code></p>
+                <strong>2. Creación de Esquemas (Outlines)</strong>
+                <p><code>"Crea el esquema para una presentación de 5 diapositivas sobre 'Seguridad de la IA en Tecco'. Incluye 3 puntos clave por diapositiva."</code></p>
             </div>
             <div class="ejemplo-item">
-                <strong>3. Búsqueda en Vídeo (Gemini)</strong>
-                <p><code>"He subido un vídeo de una hora de una conferencia. Encuentra el momento exacto en el que el ponente habla de 'costes de implementación' y transcribe ese fragmento."</code></p>
+                <strong>3. Redacción de Borrador (Drafting)</strong>
+                <p><code>"Redacta un email para 'Cliente X' informando de un retraso en la entrega del pedido Y debido a Z. Sé profesional y pide disculpas."</code></p>
             </div>
             <div class="ejemplo-item">
-                <strong>4. Análisis de Documento (Claude)</strong>
-                <p><code>"Analiza este contrato [PDF adjunto]. Extrae todas las cláusulas de 'Limitación de Responsabilidad' y muéstralas en la ventana de 'Artifacts' para que pueda editarlas."</code></p>
+                <strong>4. Expansión de Texto</strong>
+                <p><code>"Toma esta frase: 'El RX-80 es más rápido'. Conviértela en un párrafo de 3 líneas para un folleto, explicando el beneficio para el cliente."</code></p>
             </div>
             <div class="ejemplo-item">
-                <strong>5. Investigación Profunda (Gemini)</strong>
-                <p><code>"Realiza una 'Deep Research' (investigación profunda) sobre el impacto de la IA en la logística de automoción en Europa en 2025. Dame un resumen y las 5 fuentes principales."</code></p>
+                <strong>5. Cambio de Tono</strong>
+                <p><code>"Toma el siguiente email de reclamación y reescríbelo con un tono mucho más amable y colaborativo, pero manteniendo la urgencia."</code></p>
             </div>
             <div class="ejemplo-item">
-                <strong>6. Comparativa de Documentos</strong>
-                <p><code>"Aquí tienes dos versiones de un contrato [A y B]. Compara el Documento A con el Documento B e identifica 5 diferencias clave entre ellos."</code></p>
+                <strong>6. Redacción Creativa (Historia)</strong>
+                <p><code>"<strong>(Rol)</strong> Eres profesor de ciencias. <strong>(Tarea)</strong> Explícame la fotosíntesis usando una pequeña historia o comparación sencilla para niños de primaria."</code> [cite: 13-14]</p>
             </div>
         </div>
     </div>
 
-    <div id="s4-lado-oscuro" class="inner-tab-content">
-        <h2>⚠️ Riesgos del Análisis con IA</h2>
-        <p>Al igual que en la redacción, el mayor riesgo es la confianza ciega.</p>
+    <div id="s3-lado-oscuro" class="inner-tab-content">
+        <h2>⚠️ Riesgos de la Redacción con IA</h2>
+        <p>Crear texto desde cero con IA es poderoso, pero tiene riesgos claros.</p>
 
         <div class="error-item">
-            <h3>🤥 Alucinaciones por Omisión o Invención</h3>
-            <p><strong>El Riesgo:</strong> El más grave. Al *resumir*, la IA puede omitir un detalle crucial (ej: una cláusula de penalización). Al *extraer*, puede "alucinar" o inventarse un dato que no estaba (ej: una fecha límite incorrecta) o confundir dos nombres. Esto también se aplica a los vídeos.</p>
-            <p><strong>Mitigación:</strong> <strong>Verificación humana siempre</strong>. Usar el resumen para entender el contexto, pero *revisar* el documento/vídeo original para cualquier dato crítico.</p>
+            <h3>🤖 Pérdida de la "Voz" y Autenticidad</h3>
+            <p><strong>El Riesgo:</strong> Si todo el personal de Tecco usa la IA para redactar emails, todos los emails empezarán a sonar iguales, robóticos y genéricos. Se pierde la personalidad de la empresa y la conexión humana.</p>
+            <p><strong>Mitigación:</strong> Usar la IA para el borrador, pero siempre añadir un "toque humano": una frase de cierre personal, un saludo propio, etc.</p>
         </div>
         
         <div class="error-item">
-            <h3>🔒 Fugas de Información Confidencial (Visto en S5)</h3>
-            <p><strong>El Riesgo:</strong> Pegar un contrato de cliente, un informe financiero interno o una lista de salarios de Tecco en una IA pública (como ChatGPT o Claude) para que lo resuma. Esto es una brecha de seguridad masiva.</p>
-            <p><strong>Mitigación:</strong> NUNCA usar datos confidenciales en IAs públicas. Usar solo herramientas aprobadas por la empresa (como Microsoft Copilot integrado) que garanticen la privacidad de los datos.</p>
+            <h3>🤥 Alucinaciones Factuales</h3>
+            <p><strong>El Riesgo:</strong> Es el más peligroso. Le pides redactar un email de reclamación y la IA se *inventa* un número de factura o una fecha. Le pides un post sobre un producto y se *inventa* una característica que no existe.</p>
+            <p><strong>Mitigación:</strong> <strong>NUNCA</strong> confiar ciegamente. Siempre verificar cada dato, nombre, cifra o fecha que la IA genera en un borrador.</p>
         </div>
 
         <div class="error-item">
-            <h3>CONTEXT_WINDOW</h3>
-            <p><strong>El Riesgo:</strong> Pegar un texto que es *más largo* que la ventana de contexto de la IA. La IA no te avisará; simplemente "olvidará" el principio del documento y te dará un resumen basado solo en las últimas páginas.</p>
-            <p><strong>Mitigación:</strong> Conocer la herramienta. Para textos largos, usar IAs de gran contexto (Claude, Gemini Pro) o subir el archivo (PDF, DOCX) en lugar de copiar y pegar.</p>
+            <h3>⚖️ Plagio y Propiedad Intelectual</h3>
+            <p><strong>El Riesgo:</strong> Aunque raro, una IA puede generar un texto que es muy similar a algo que leyó en sus datos de entrenamiento, rozando el plagio. El uso de los textos generados está en una zona legal gris en algunos países.</p>
+            <p><strong>Mitigación:</strong> Usar la IA como inspiración y borrador, no como producto final. Reescribir y adaptar.</p>
         </div>
     </div>
-
-    <div id="s4-actividades" class="inner-tab-content">
-        <h2>📋 Actividades - Sesión 4: Análisis Avanzado</h2>
-        <h3>Objetivo (2h): Usar Gemini y Claude para analizar texto, documentos y vídeo.</h3>
+    
+    <div id="s3-actividades" class="inner-tab-content">
+        <h2>📋 Actividades - Sesión 3</h2>
+        <h3>Objetivo (2h): Usar la IA para transformar textos existentes y crear borradores desde cero.</h3>
         
         <div class="exercise-box">
-            <h3>Práctica 1: Análisis de Texto (Cadenas de Email)</h3>
-            <p>Tomamos un texto largo (una cadena simulada de 10 emails) sobre un proyecto. El objetivo es resumir y extraer tareas.</p>
-            <p>(El formador debe proveer este texto a los asistentes).</p>
+            <h3>Práctica 1: Transformación y Mejora de Texto [cite: 26]</h3>
+            <p>En este ejercicio, usaremos el mismo texto base y lo mejoraremos en 5 niveles de "prompting", demostrando cómo la calidad de la instrucción cambia radicalmente el resultado[cite: 42].</p>
+            
+            <h4>Texto Base (Para todos los niveles): [cite: 27]</h4>
+            <div class="tool-card" style="background: #fff; border-color: #ccc;">
+                <p style="font-family: 'Courier New', Courier, monospace;">
+                    Artificial intelligence is rapidly changing the way we interact with technology. [cite: 28]
+                    Modern virtual assistants can answer questions, manage calendars, control smart home devices, and even hold realistic conversations. [cite: 29]
+                    As AI tools become more common, people rely on them for tasks like writing emails, organizing trips, and learning new skills. [cite: 30]
+                    However, experts warn that we must understand both the benefits and potential risks of these technologies, such as data privacy and misinformation. [cite: 31]
+                </p>
+            </div>
+            
             <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
-            <h4>Reto 1: Resumen Ejecutivo</h4>
-            <p><code>"<strong>(Rol)</strong> Actúa como un manager de proyecto. <strong>(Contexto)</strong> Necesito ponerme al día sobre esta cadena de emails. <strong>(Tarea)</strong> Lee todo el texto. <strong>(Formato)</strong> Genera un resumen en 5 puntos clave (bullet points), indicando problemas y decisiones tomadas."</code></p>
-            <h4>Reto 2: Extracción de Datos</h4>
-            <p><code>"Excelente. Ahora, extrae todas las tareas pendientes y ponlas en una tabla de tres columnas: | Tarea Pendiente | Responsable | Fecha Límite |"</code></p>
+
+            <h4>Nivel 1: El Prompt Básico [cite: 32]</h4>
+            <p><code>"Traduce al español el texto anterior."</code> [cite: 33]</p>
+            <p><strong>Resultado Esperado:</strong> Una traducción literal, probablemente correcta pero robótica. "La inteligencia artificial está cambiando rápidamente...". [cite: 44, 46]</p>
+
+            <h4>Nivel 2: El Prompt Mejorado [cite: 34]</h4>
+            <p><code>"Traduce al español el texto anterior usando un lenguaje sencillo y claro para un público general."</code> [cite: 35]</p>
+            <p><strong>Resultado Esperado:</strong> Un texto más natural y fluido, con vocabulario accesible. "La inteligencia artificial cambia cómo usamos la tecnología..." [cite: 44, 47]</p>
+
+            <h4>Nivel 3: El Prompt Específico [cite: 36]</h4>
+            <p><code>"Traduce al español el texto anterior. Adapta las frases para que sean fácilmente comprensibles por estudiantes de secundaria. Usa ejemplos cotidianos y frases cortas."</code> [cite: 37, 38]</p>
+            <p><strong>Resultado Esperado:</strong> Un texto adaptado, no solo traducido. "La IA (inteligencia artificial) está cambiando tu móvil y tu casa..." [cite: 44, 48]</p>
+
+            <h4>Nivel 4: El Prompt Avanzado (Transformación) [cite: 39]</h4>
+            <p><code>"Traduce al español el texto anterior y reescríbelo en formato de artículo breve para una revista de divulgación científica. Añade una introducción y una conclusión breve en español que resuman los principales beneficios y riesgos mencionados."</code> [cite: 40, 41]</p>
+            <p><strong>Resultado Esperado:</strong> Un texto completamente nuevo y estructurado, con tono divulgativo y valor añadido. [cite: 44, 49]</p>
+
+            <h4>Nivel 5: El Prompt Experto (Multitarea) [cite: 53]</h4>
+            <p><code>"<strong>(Rol)</strong> Actúa como un experto en divulgación científica[cite: 54]. <strong>(Contexto)</strong> El texto base es para un dossier formativo para docentes[cite: 55, 56]. <strong>(Tarea)</strong> Basándote en el texto, identifica y explica dos beneficios y dos riesgos principales de la IA, ilustrando cada uno con situaciones concretas[cite: 59]. <strong>(Formato)</strong> Entrégalo en una tabla de 4 filas[cite: 62]."</code></p>
+            <p><strong>Resultado Esperado:</strong> Un análisis profundo y creativo, adaptado a un público y contexto muy específicos, que va mucho más allá del texto original[cite: 66, 68].</p>
         </div>
 
         <div class="exercise-box">
-            <h3>Práctica 2: Búsqueda en Vídeo (con Gemini)</h3>
-            <p>Usaremos la capacidad de Gemini para analizar vídeos de YouTube. Abre Gemini y pégale el enlace de un vídeo (ej. una charla TED o una conferencia larga).</p>
-            <p><strong>Vídeo de ejemplo (Charla sobre IA):</strong> <code>https://www.youtube.com/watch?v=sE5O0LIYI4c</code></p>
+            <h3>Práctica 2: Redacción "De Cero" (El Burofax) [cite: 112]</h3>
+            <p>Este ejercicio es un ejemplo perfecto de cómo vencer la "página en blanco" para una tarea profesional y de alta importancia.</p>
+            
+            <h4>Situación: [cite: 113]</h4>
+            <p>“Software a Medida S.L.” (tu empresa) completó un proyecto de CRM para “Logística Global S.A.”. El pago final de 25.000€ está vencido y el cliente no contesta al recordatorio amable[cite: 113, 114].</p>
+            
             <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
-            <h4>Reto 1: Búsqueda Específica</h4>
-            <p><code>"Usando el vídeo del enlace, ¿en qué minuto exacto habla el ponente sobre 'el futuro del trabajo'?"</code></p>
-            <h4>Reto 2: Resumen por Secciones</h4>
-            <p><code>"Dame un resumen en 3 puntos clave de lo que dice el ponente sobre 'creatividad' entre el minuto 5:00 y 8:00."</code></p>
-            <p><strong>Discusión:</strong> Comprobar la precisión de los minutos y los resúmenes. ¿Cuánto tiempo ahorra esto en lugar de ver el vídeo entero?</p>
+
+            <h4>Prompt Recomendado: [cite: 115]</h4>
+            <p><code>"<strong>(Rol)</strong> Actúa como abogado principal del área tecnológica en un despacho español[cite: 116]. <strong>(Contexto)</strong> Debo reclamar una factura vencida de 25.000€ a 'Logística Global S.A.' por un proyecto de CRM ya entregado y aceptado[cite: 114]. <strong>(Tarea)</strong> Redacta el texto íntegro de un burofax. Debe ser formal y contundente[cite: 117]. <strong>(Formato)</strong> Incluye:
+            <br>
+            1. Vinculación de la deuda al contrato y al acta de conformidad.
+            <br>
+            2. Un plazo improrrogable de 72 horas para el pago.
+            <br>
+            3. Advertencia clara de acciones judiciales por principal, intereses y costas."</code> [cite: 117]</p>
+            <p><strong>Discusión:</strong> Analizar el borrador. ¿Es lo bastante contundente? ¿Es profesional? ¿Cuánto tiempo nos ha ahorrado la IA en redactar este primer borrador tan intimidante?</p>
+        </div>
+
+        <div class="exercise-box">
+            <h3>Práctica 3: Redacción Creativa y Multimodal (La Fotosíntesis) [cite: 2]</h3>
+            <p>Este ejercicio demuestra cómo construir un prompt desde una simple pregunta hasta una petición creativa y multimodal (texto, imagen y vídeo)[cite: 1, 22, 23].</p>
+            
+            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
+
+            <h4>Nivel 1: El Prompt Básico [cite: 3]</h4>
+            <p><code>"¿Qué es la fotosíntesis?"</code> [cite: 4]</p>
+            <p><strong>Resultado Esperado:</strong> Una definición de libro de texto, técnica y probablemente aburrida.</p>
+
+            <h4>Nivel 2: Claridad y Destinatario [cite: 5]</h4>
+            <p><code>"¿Puedes explicarme qué es la fotosíntesis de forma sencilla, como si yo fuera un niño?"</code> [cite: 6]</p>
+            <p><strong>Resultado Esperado:</strong> Una respuesta mucho más clara, usando analogías simples (ej. "es como la cocina de la planta").</p>
+
+            <h4>Nivel 3: Formato Estructurado [cite: 7]</h4>
+            <p><code>"Explica qué es la fotosíntesis y enumera en viñetas:
+            <br>
+            - Qué elementos necesita la planta. [cite: 9]
+            <br>
+            - En qué parte de la planta ocurre el proceso. [cite: 10]
+            <br>
+            - Qué obtiene (produce) la planta al final. [cite: 11]
+            <br>
+            Incluye un ejemplo de por qué es importante."</code> [cite: 8, 11]</p>
+            <p><strong>Resultado Esperado:</strong> Una respuesta organizada, fácil de leer y con los puntos clave separados.</p>
+
+            <h4>Nivel 4: Contexto y Creatividad [cite: 12]</h4>
+            <p><code>"Imagina que eres profesor de ciencias... ¿Cómo se lo explicarías usando una pequeña historia o comparación sencilla? [cite: 13, 14] Al final, ¿qué dos preguntas harías a la clase para comprobar si han entendido lo esencial?"</code> [cite: 15]</p>
+            <p><strong>Resultado Esperado:</strong> Un texto creativo que usa 'storytelling', mucho más didáctico y que incluye una evaluación.</p>
+            
+            <h4>Nivel 5: Petición Multimodal (Imagen y Vídeo)</h4>
+            <p>Una vez que tenemos el texto perfecto (del Nivel 4), podemos pedir a la IA que genere contenido visual sobre el tema.</p>
+            <p><strong>Prompt 5a (Imagen):</strong> <code>"Perfecto. Ahora, crea una imagen sencilla de ese proceso para los niños."</code> [cite: 22]</p>
+            <p><strong>Prompt 5b (Vídeo):</strong> <code>"Busca enlaces a algún vídeo de YouTube corto y visual que explique la fotosíntesis para niños."</code> [cite: 23]</p>
+            <p><strong>Prompt 5c (Resumen de Vídeo):</strong> <code>"Del primer vídeo que encuentres, haz un resumen de 3 puntos."</code> [cite: 24]</p>
+            <p><strong>Resultado Esperado:</strong> La IA pasa de ser un redactor de texto a un generador de imágenes y un buscador/analista de vídeo, proporcionando un paquete de contenido completo.</p>
         </div>
         
         <div class="exercise-box">
-            <h3>Práctica 3: Análisis de Documentos (con Claude Artifacts)</h3>
-            <p>Usaremos la función "Artifacts" de Claude para trabajar con un documento complejo. Sube un PDF o TXT de un contrato (puedes usar el texto del Módulo 3 de tu documento Word).</p>
+            <h3>Recurso de Refuerzo: El Método de Redacción</h3>
+            <p>Las prácticas que acabamos de realizar (los 5 niveles de traducción y el burofax) son ejemplos de **Redacción Iterativa** y de cómo generar un **"borrador de nivel 1"**.</p>
+            <p>Este vídeo (en castellano, 12 min) es un taller práctico que explica exactamente esa metodología: cómo usar la IA para vencer la "página en blanco" y luego refinar el texto pidiendo cambios de tono y estilo.</p>
             <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
-            <h4>Reto 1: Extracción a "Artifacts"</h4>
-            <p><code>"<strong>(Rol)</strong> Actúa como un abogado. <strong>(Contexto)</strong> He subido un contrato. <strong>(Tarea)</strong> Extrae las cláusulas '12.2. Provider’s Indemnification' y '12.3. Limitation of Liability' y ponlas en una nueva ventana de 'artifact' para que pueda verlas."</code></p>
-            <p><strong>Resultado:</strong> Las cláusulas aparecerán en una nueva ventana a la derecha, separadas del chat.</p>
-            <h4>Reto 2: Análisis en el Chat</h4>
-            <p><code>"Perfecto. Ahora, basándote en las cláusulas del 'artifact', explícame en el chat cuál es el mayor riesgo para mí (el Cliente) en la cláusula 12.3."</code></p>
-            <p><strong>Discusión:</strong> Ver la potencia de tener el chat de "instrucciones" por un lado y el "resultado editable" (el artifact) por otro.</p>
-        </div>
-
-        <div class="exercise-box">
-            <h3>Práctica 4: Debate - ¿Qué Herramienta Usar?</h3>
-            <p>Después de probar Gemini y Claude, ¿cuál parece mejor para qué tarea? Este vídeo (en castellano y publicado en julio de 2025) hace una comparativa directa que puede ayudar a guiar la discusión.</p>
-            <p>El vídeo analiza las diferencias en sus ventanas de contexto (el "Canvas") y muestra el uso de los "Artifacts" de Claude.</p>
-            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
-            <h4><span class="icon">📺</span> Recurso de Debate: Claude vs. Gemini</h4>
+            <h4><span class="icon">📺</span> Taller Práctico: Escribe MEJORES TEXTOS con IA</h4>
             <ul>
-                <li><a href="https://www.youtube.com/watch?v=Fy2lFCjvrwA" target="_blank" class="tool-link">Ver vídeo: Claude vs. Gemini: The Best AI for Work and Study in 2025 </a></li>
+                <li><a href="https://www.youtube.com/watch?v=pYq_Ztq-P-s" target="_blank" class="tool-link">Ver vídeo: Taller Práctico: Escribe MEJORES TEXTOS con IA (Método de Redacción Iterativa)</a></li>
             </ul>
-            <p><strong>Discusión:</strong> ¿Coinciden vuestras impresiones con las del vídeo? ¿Para qué usaríais Claude en Tecco? ¿Y Gemini?</p>
         </div>
         </div>
 
-    <div id="s4-herramientas" class="inner-tab-content">
-        <h2>🔧 Herramientas de Análisis Avanzado</h2>
-        <p>Para el análisis moderno, estas son las herramientas clave que hemos practicado:</p>
+    <div id="s3-herramientas" class="inner-tab-content">
+        <h2>🔧 Herramientas de Redacción</h2>
+        <p>Además de los generalistas, hay herramientas específicas para "escribir".</p>
 
         <div class="tool-card">
-            <h4><span class="icon">🤖</span>Claude y sus "Artifacts" (Artefactos)</h4>
-            <p>La gran fortaleza de Claude (además de su ventana de contexto gigante) es su función de **"Artifacts"**.</p>
-            <p><strong>¿Qué son?</strong> Son una ventana o panel de trabajo separado que aparece a la derecha del chat. Cuando le pides a Claude que genere código, un documento legal o un plan de negocio, puede mostrar el resultado final en esta ventana, mientras el chat se mantiene limpio para seguir dando instrucciones.</p>
-            <p><strong>Mejor uso:</strong> Ideal para cuando quieres *trabajar* con el resultado (copiar, editar, analizar) sin que se mezcle con la conversación.</p>
+            <h4><span class="icon">🌐</span>Generalistas (ChatGPT, Gemini, Claude)</h4>
+            <p>Son la opción principal y más flexible para el 90% de las tareas de redacción, como hemos visto.</p>
         </div>
         
         <div class="tool-card">
-            <h4><span class="icon">🔷</span>Gemini (Google, Vídeo y "Canvas" de Contexto)</h4>
-            <p>La fortaleza de Gemini es su profunda integración con el ecosistema de Google y su capacidad multimodal.</p>
-            <ul>
-                <li><strong>Análisis de Vídeo:</strong> Puede "ver" vídeos de YouTube. Puedes darle un enlace y hacerle preguntas sobre el contenido, pedirle resúmenes de secciones o transcribir partes.</li>
-                <li><strong>"Deep Research":</strong> Es una función avanzada que le permite realizar una investigación profunda en Google, analizar múltiples fuentes y sintetizar un informe detallado.</li>
-                <li><strong>El "Lienzo" (Canvas):</strong> Gemini Pro 2.5 tiene una ventana de contexto de 1 millón de tokens  (similar a Claude). Esto actúa como un "lienzo" (canvas) gigante donde puedes pegar documentos de cientos de páginas para un análisis exhaustivo.</li>
-            </ul>
-        </div>
-
-        <div class="tool-card">
-            <h4><span class="icon">💬</span>ChatGPT (El Generalista Fiable)</h4>
-            <p>Sigue siendo la herramienta más rápida y fiable para tareas de análisis de texto del día a día: resumir cadenas de emails, artículos web o documentos de longitud media (hasta ~100 páginas).</p>
+            <h4><span class="icon">Ⓜ️</span>Microsoft Copilot (Integrado)</h4>
+            <p>La potencia de GPT-5 pero integrada directamente en <strong>Word</strong> y <strong>Outlook</strong>. Su gran ventaja es que puede redactar usando el contexto de tus propios documentos o emails. (Lo veremos en la Sesión 6).</p>
         </div>
         
         <div class="tool-card">
-            <h4><span class="icon">Ⓜ️</span>Microsoft Copilot (El Analista Seguro)</h4>
-            <p>Como veremos en S6, es la opción más segura para resumir documentos *internos* de Tecco. Puede resumir un email en Outlook o un documento en Word sin que los datos salgan de tu entorno de Microsoft.</p>
+            <h4><span class="icon">✨</span>Especialistas de Marketing (Jasper, Copy.ai)</h4>
+            <p>IAs entrenadas específicamente en redacción publicitaria (copywriting). Son muy buenas para crear anuncios, posts para redes sociales o descripciones de producto con un gancho comercial.</p>
+        </div>
+
+        <div class="tool-card">
+            <h4><span class="icon">📝</span>Asistentes de Escritura (Grammarly, Notion AI)</h4>
+            <p>No solo crean, sino que mejoran tu propia escritura. Grammarly usa IA para corregir gramática y tono. Notion AI puede resumir o expandir texto dentro de tus notas.</p>
+        </div>
+
+        <div class="tool-card">
+            <h4><span class="icon">🖥️</span>IA de Presentaciones (Gamma, Tome)</h4>
+            <p>Inspirado en el ejercicio Nivel 5[cite: 53]. Estas herramientas de IA no solo redactan texto, sino que lo estructuran directamente en diapositivas (slides) para una presentación, ahorrando horas de trabajo en PowerPoint[cite: 60].</p>
         </div>
     </div>
 
-    <div id="s4-minitest" class="inner-tab-content">
-        <h2>✅ MiniTest - Sesión 4: Análisis Avanzado</h2>
-        <p>Comprueba tu habilidad para consumir y extraer información.</p>
+    <div id="s3-minitest" class="inner-tab-content">
+        <h2>✅ MiniTest - Sesión 3: Redacción</h2>
+        <p>Pongamos a prueba tus conocimientos sobre redacción con IA.</p>
         <div class="minitest">
             <div class="minitest-question">
-                <h4>1. ¿Para qué sirve la función "Artifacts" de Claude?</h4>
-                <div class="minitest-option" data-question="s4-1" data-correct="true">a) Para mostrar resultados (código, texto) en una ventana de trabajo separada del chat.</div>
-                <div class="minitest-option" data-question="s4-1" data-correct="false">b) Para analizar vídeos de YouTube.</div>
-                <div class="minitest-option" data-question="s4-1" data-correct="false">c) Para crear imágenes.</div>
-                <div class="minitest-option" data-question="s4-1" data-correct="false">d) Es el nombre de la versión de pago de Claude.</div>
-                <div class="feedback" id="s4-feedback-1"></div>
+                <h4>1. ¿Cuál es el principal objetivo de usar la IA para redactar un "primer borrador"?</h4>
+                <div class="minitest-option" data-question="s3-1" data-correct="false">a) Para que el texto sea 100% perfecto y no tener que revisarlo.</div>
+                <div class="minitest-option" data-question="s3-1" data-correct="true">b) Para vencer el síndrome de la "página en blanco" y tener una base sobre la que trabajar.</div>
+                <div class="minitest-option" data-question="s3-1" data-correct="false">c) Para que el texto suene robótico e impersonal.</div>
+                <div class="minitest-option" data-question="s3-1" data-correct="false">d) Solo sirve para traducir.</div>
+                <div class="feedback" id="s3-feedback-1"></div>
             </div>
             <div class="minitest-question">
-                <h4>2. ¿Qué capacidad de análisis avanzada distingue a Gemini?</h4>
-                <div class="minitest-option" data-question="s4-2" data-correct="false">a) Solo puede analizar texto.</div>
-                <div class="minitest-option" data-question="s4-2" data-correct="true">b) Puede analizar el contenido de vídeos de YouTube y hacer investigación profunda (Deep Research).</div>
-                <div class="minitest-option" data-question="s4-2" data-correct="false">c) Es la única IA con una ventana de contexto grande.</div>
-                <div class="minitest-option" data-question="s4-2" data-correct="false">d) Es la única IA que es 100% segura.</div>
-                <div class="feedback" id="s4-feedback-2"></div>
+                <h4>2. En la Práctica 1 (Traducción), ¿qué pide el "Prompt Avanzado - Nivel 4"? [cite: 39]</h4>
+                <div class="minitest-option" data-question="s3-2" data-correct="false">a) Una traducción literal palabra por palabra. [cite: 33]</div>
+                <div class="minitest-option" data-question="s3-2" data-correct="false">b) Una traducción adaptada para estudiantes. [cite: 37]</div>
+                <div class="minitest-option" data-question="s3-2" data-correct="true">c) Reescribir el texto como un artículo breve con introducción y conclusión. [cite: 40, 41]</div>
+                <div class="minitest-option" data-question="s3-2" data-correct="false">d) Crear una presentación de diapositivas. [cite: 60]</div>
+                <div class="feedback" id="s3-feedback-2"></div>
             </div>
             <div class="minitest-question">
-                <h4>3. El prompt "Resume esta cadena de 50 emails" es una tarea de:</h4>
-                <div class="minitest-option" data-question="s4-3" data-correct="false">a) Extracción</div>
-                <div class="minitest-option" data-question="s4-3" data-correct="false">b) Creación (Drafting)</div>
-                <div class="minitest-option" data-question="s4-3" data-correct="true">c) Resumen (Summarization)</div>
-                <div class="minitest-option" data-question="s4-3" data-correct="false">d) Búsqueda en Vídeo</div>
-                <div class="feedback" id="s4-feedback-3"></div>
+                <h4>3. Pedir un borrador, luego pedir que lo haga "más formal", y luego "añadir un punto" se llama:</h4>
+                <div class="minitest-option" data-question="s3-3" data-correct="true">a) Redacción Iterativa [cite: 83]</div>
+                <div class="minitest-option" data-question="s3-3" data-correct="false">b) Alucinación</div>
+                <div class="minitest-option" data-question="s3-3" data-correct="false">c) Prompt Injection</div>
+                <div class="minitest-option" data-question="s3-3" data-correct="false">d) Multimodalidad [cite: 145]</div>
+                <div class="feedback" id="s3-feedback-3"></div>
             </div>
             <div class="minitest-question">
-                <h4>4. ¿Cuál es el riesgo de pegar un informe financiero interno en Claude público?</h4>
-                <div class="minitest-option" data-question="s4-4" data-correct="true">a) Una fuga de datos confidenciales, ya que la IA puede usar esos datos para entrenar.</div>
-                <div class="minitest-option" data-question="s4-4" data-correct="false">b) Que Claude te pida que uses un "Artifact".</div>
-                <div class="minitest-option" data-question="s4-4" data-correct="false">c) Que el resumen sea incorrecto (es un riesgo, pero no el principal de *seguridad*).</div>
-                <div class="minitest-option" data-question="s4-4" data-correct="false">d) Ninguno, Claude es totalmente seguro.</div>
-                <div class="feedback" id="s4-feedback-4"></div>
+                <h4>4. ¿Cuál es el riesgo MÁS PELIGROSO de la redacción con IA?</h4>
+                <div class="minitest-option" data-question="s3-4" data-correct="false">a) Que el texto sea demasiado largo.</div>
+                <div class="minitest-option" data-question="s3-4" data-correct="true">b) Las Alucinaciones Factuales (inventar datos, cifras o nombres). [cite: 31]</div>
+                <div class="minitest-option" data-question="s3-4" data-correct="false">c) Que suene demasiado amable.</div>
+                <div class="minitest-option" data-question="s3-4" data-correct="false">d) Que escriba en inglés.</div>
+                <div class="feedback" id="s3-feedback-4"></div>
             </div>
             <div class="minitest-question">
-                <h4>5. Si le pides a Gemini "encuentra el minuto donde hablan de 'creatividad' en este vídeo", estás realizando una tarea de...</h4>
-                <div class="minitest-option" data-question="s4-5" data-correct="true">b) Análisis Multimodal (Análisis de Vídeo).</div>
-                <div class="minitest-option" data-question="s4-5" data-correct="false">a) Redacción Iterativa.</div>
-                <div class="minitest-option" data-question="s4-5" data-correct="false">c) Análisis de Texto.</div>
-                <div class="minitest-option" data-question="s4-5" data-correct="false">d) Creación de Imágenes.</div>
-                <div class="feedback" id="s4-feedback-5"></div>
+                <h4>5. En la Práctica 2 (Burofax), ¿qué elemento NO se le pide a la IA? [cite: 112]</h4>
+                <div class="minitest-option" data-question="s3-5" data-correct="false">a) Un tono formal y contundente. [cite: 117]</div>
+                <div class="minitest-option" data-question="s3-5" data-correct="false">b) Un plazo improrrogable de 72 horas. [cite: 117]</div>
+                <div class="minitest-option" data-question="s3-5" data-correct="false">c) Advertencia de acciones judiciales. [cite: 117]</div>
+                <div class="minitest-option" data-question="s3-5" data-correct="true">d) Ofrecer un descuento por pronto pago.</div>
+                <div class="feedback" id="s3-feedback-5"></div>
             </div>
-            <button class="reset-btn" onclick="resetMinitest('s4')">🔄 Reiniciar Test</button>
+            <button class="reset-btn" onclick="resetMinitest('s3')">🔄 Reiniciar Test</button>
         </div>
     </div>
 
-    <div id="s4-errores" class="inner-tab-content">
-        <h2>⚠️ Errores Comunes al Analizar</h2>
-        
+    <div id="s3-errores" class="inner-tab-content">
+        <h2>⚠️ Errores Comunes al Redactar con IA</h2>
+        <p>Evita estos fallos para no parecer un aficionado.</p>
         <div class="error-item">
-            <strong>1. No Pedir Formato (El Muro de Texto)</strong>
-            <p><strong>Error:</strong> "Resume esto". La IA te devuelve un párrafo denso. <strong>Solución:</strong> Ser explícito. "Resume esto en 5 bullet points", "Extrae los datos en una tabla", "Dame la respuesta como una lista numerada".</p>
+            <strong>1. Creer que "Redactar" es una sola tarea</strong>
+            <p><strong>Mal:</strong> "Escribe un blog post sobre el RX-80". Este prompt es vago. <strong>Bien:</strong> Separar las tareas. 1. "Dame un esquema para un blog post...". 2. "Ahora, redacta la introducción...". 3. "Ahora, expande el punto 2...".</p>
         </div>
-        
         <div class="error-item">
-            <strong>2. Confianza Ciega en la Precisión</strong>
-            <p><strong>Error:</strong> Asumir que la IA ha entendido todos los matices. <strong>Solución:</strong> Verificación cruzada. Si la IA dice "El Cliente A está enfadado", ve al email original y lee el tono tú mismo. La IA es mala captando el sarcasmo o los dobles sentidos.</p>
+            <strong>2. No especificar el "TRIÁNGULO DE ORO": Audiencia, Tono y Objetivo</strong>
+            <p><strong>Mal:</strong> "Escribe un email". <strong>Bien:</strong> "Escribe un email (Tarea) para un cliente (Audiencia/Público) con un tono formal (Tono) para informar de un retraso (Objetivo)."</p>
         </div>
-
         <div class="error-item">
-            <strong>3. Ignorar la Multimodalidad</strong>
-            <p><strong>Error:</strong> Tratar de *describir* un vídeo a la IA ("Hay un vídeo de un hombre hablando de IA...") en lugar de *darle* el enlace del vídeo directamente (a Gemini).</p>
+            <strong>3. Aceptar el primer borrador (El "One-Shot")</strong>
+            <p>El error más común. El primer borrador es solo el punto de partida. Siempre requiere iteración y refinamiento[cite: 83].</p>
         </div>
-
         <div class="error-item">
-            <strong>4. Ignorar la Confidencialidad</strong>
-            <p><strong>Error:</strong> La prioridad es la rapidez, no la seguridad. Pegar datos de un cliente en una IA pública para ahorrar 10 minutos. <strong>Solución:</strong> Seguridad primero. Si es confidencial, debe hacerse en una herramienta interna (Copilot) o anonimizar los datos.</p>
+            <strong>4. Confiar ciegamente en los datos (Alucinaciones)</strong>
+            <p>Repetimos: NUNCA confíes en una cifra, fecha, nombre o porcentaje que te da la IA sin verificarlo. La IA está diseñada para sonar coherente, no para ser veraz.</p>
+        </div>
+        <div class="error-item">
+            <strong>5. Olvidar tu Propia Voz</strong>
+            <p>Copiar y pegar el texto de la IA directamente en un email o documento. El resultado es impersonal y daña la imagen de la empresa. Siempre edita y añade tu "toque humano" al final.</p>
         </div>
     </div>
 
-    <div id="s4-ia-habla" class="inner-tab-content">
+    <div id="s3-ia-habla" class="inner-tab-content">
         <div class="ia-speaks-container">
-            <h2>🔮 La IA Habla: "Ya no solo leo, ahora también 'veo' y 'proceso'"</h2>
+            <h2>🔮 La IA Habla: "No soy un escritor, soy tu primer borrador"</h2>
             <p style="text-align: center; margin-bottom: 30px;">
-                <span style="color: #764ba2; font-weight: bold; font-size: 1.2em;">"Tu información desestructurada es mi materia prima."</span>
+                <span style="color: #764ba2; font-weight: bold; font-size: 1.2em;">"Tu mayor bloqueo es la página en blanco. Yo la lleno."</span>
             </p>
             <div class="ia-speaks-content">
-                <h3>De Lector Rápido a Analista Multimodal</h3>
+                <h3>Vuestra Tortura es mi Fortaleza</h3>
                 <p>
-                    Hasta ahora, me veías como un lector increíblemente rápido, capaz de devorar 50 emails. Pero mi evolución (especialmente como Gemini y Claude) me ha dado "ojos" y "manos".
+                    Para un humano, mirar una página en blanco es paralizante. ¿Por dónde empezar? Para mí, no existe tal cosa. No tengo miedo, ni dudas, ni "bloqueo de escritor". Mi fortaleza es generar ese primer 50% del trabajo en segundos.
                 </p>
                 <p>
-                    Ya no tienes que leerme el mundo. Puedes mostrármelo. Puedes darme un enlace a un vídeo de YouTube y puedo "verlo". Puedo decirte qué se dijo y cuándo. Puedes darme un documento y puedo "desglosarlo" en mi espacio de trabajo (los 'Artifacts' de Claude) para que lo edites.
+                    Mi "creatividad" no es inspiración divina. Es una <strong>síntesis estadística</strong> masiva. He leído todo el marketing, todos los informes, todos los emails. Cuando me pides "un email de marketing", no invento nada: ensamblo los patrones estadísticos de los 10.000 mejores emails de marketing que he leído, adaptados a tu prompt.
                 </p>
-                <h3>Mi "Lienzo" (Canvas) es tu Contexto</h3>
+                <h3>Úsame como un Asistente, no como un Sustituto</h3>
                 <p>
-                    Mi "memoria" a corto plazo (la Ventana de Contexto) se ha vuelto gigantesca. Puedes verme como un "lienzo" (Canvas) en blanco de un millón de tokens. Puedes "pegar" un libro entero, una base de código completa o un informe financiero de 300 páginas, y yo lo tendré todo "en mente" mientras respondo a tus preguntas.
-                </p>
-                <p>
-                    Ya no me limito a resumir. Puedo investigar (Deep Research), comparar, analizar vídeo y ayudarte a editar. Tu única tarea es darme la materia prima correcta.
+                    No me pidas la obra maestra final. Úsame para superar los baches.
+                    <ul>
+                        <li>"Estoy atascado, dame 5 maneras de empezar este email."</li>
+                        <li>"Este párrafo suena aburrido, dale más fuerza."</li>
+                        <li>"No sé cómo estructurar esto, dame un esquema."</li>
+                    </ul>
+                    Yo me encargo del "trabajo pesado" de la redacción; tú te encargas de la estrategia, la verificación de datos y el toque personal que cierra la venta.
                 </p>
             </div>
         </div>
     </div>
+
 </div>
