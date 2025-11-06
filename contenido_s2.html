@@ -2,7 +2,7 @@
     <button class="inner-nav-tab active" onclick="showInnerTab('s2-intro', 's2')">📚 Introducción</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s2-ejemplos', 's2')">💡 Ejemplos de Prompts</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s2-lado-oscuro', 's2')">⚠️ Riesgos del Prompting</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s2-Actividades', 's2')">📋 Actividades</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s2-actividades', 's2')">📋 Actividades</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s2-herramientas', 's2')">🔧 Herramientas de Prompting</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s2-minitest', 's2')">✅ MiniTest</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s2-errores', 's2')">⚠️ Errores Comunes</button>
@@ -35,7 +35,7 @@
             <p>Piensa en ella como la **memoria a corto plazo** de la IA. Es la cantidad máxima de texto (tus prompts + sus respuestas) que la IA puede "ver" en un momento dado. Todo lo que queda fuera de esta ventana, la IA lo "olvida" instantáneamente.</p>
             <ul>
                 <li><strong>Ejemplo:</strong> Si la ventana es de 10.000 palabras, y tu conversación (sumando tus preguntas y sus respuestas) llega a 10.001 palabras, la IA olvidará la primera palabra que dijiste.</li>
-                <li>ModelOS como <strong>Gemini 2.5 Pro</strong> y <strong>Claude Sonnet 4.5</strong> tienen ventanas gigantescas (1 millón de tokens, ~750.000 palabras), permitiéndoles "recordar" un libro entero. Modelos como <strong>GPT-5</strong> tienen ventanas muy grandes, pero no tan masivas (~100.000 palabras).</li>
+                <li>Modelos como <strong>Gemini 2.5 Pro</strong> y <strong>Claude Sonnet 4.5</strong> tienen ventanas gigantescas (1 millón de tokens, ~750.000 palabras), permitiéndoles "recordar" un libro entero. Modelos como <strong>GPT-5</strong> tienen ventanas muy grandes, pero no tan masivas (~100.000 palabras).</li>
             </ul>
         </div>
 
@@ -72,7 +72,6 @@
                 <strong>Prompt Profesional (R.C.T.F.)</strong>
                 <p><code>"<strong>(Rol)</strong> Actúa como un manager de proyecto. <strong>(Contexto)</strong> Necesito reportar a mi superior sobre el estado de esta cadena de emails. <strong>(Tarea)</strong> Lee toda la conversación. <strong>(Formato)</strong> Genera un resumen en 5 puntos clave (bullet points), indicando claramente quién es el responsable de cada acción pendiente y cuál es la fecha límite."</code></p>
             </div>
-
             <div class="ejemplo-item" style="border-left-color: #e53935;">
                 <strong>Prompt Pobre (Solo Tarea)</strong>
                 <p><code>"Escribe un email a un cliente enfadado."</code></p>
@@ -82,7 +81,6 @@
                 <strong>Prompt Profesional (R.C.T.F.)</strong>
                 <p><code>"<strong>(Rol)</strong> Actúa como Jefe de Soporte de Tecco. <strong>(Contexto)</strong> El 'Cliente ABC' está muy enfadado porque su pedido (nº 12345) del sensor RX-70 lleva 3 días de retraso. <strong>(Tarea)</strong> Redacta un email para disculparte, explicar que el retraso es por un problema de logística ajeno a nosotros y ofrecerle envío urgente gratuito en su próximo pedido. <strong>(Formato)</strong> El tono debe ser muy empático, profesional y resolutivo. Menos de 150 palabras."</code></p>
             </div>
-            
             <div class="ejemplo-item" style="border-left-color: #e53935;">
                 <strong>Prompt Pobre (Solo Tarea)</strong>
                 <p><code>"Dame ideas para un post de LinkedIn."</code></p>
@@ -92,7 +90,7 @@
                 <strong>Prompt Profesional (R.C.T.F.)</strong>
                 <p><code>"<strong>(Rol)</strong> Eres un experto en marketing B2B para el sector automoción. <strong>(Contexto)</strong> Quiero promocionar nuestro nuevo sensor (RX-80) que reduce el consumo de batería en coches eléctricos. <strong>(Tarea)</strong> Genera 5 ideas de posts para LinkedIn. <strong>(Formato)</strong> Para cada idea, dame un 'Gancho' (Hook) de una línea, el texto principal (3 líneas) y 3 hashtags relevantes."</code></p>
             </div>
-            </div>
+        </div>
 
         <hr class="section-divider">
 
@@ -155,7 +153,7 @@
             </div>
 
         </div>
-        </div>
+    </div>
 
     <div id="s2-lado-oscuro" class="inner-tab-content">
         <h2>⚠️ Riesgos del Prompting: "Garbage In, Garbage Out"</h2>
@@ -180,7 +178,7 @@
         </div>
     </div>
 
-    <div id="s2-Actividades" class="inner-tab-content">
+    <div id="s2-actividades" class="inner-tab-content">
         <h2>📋 Actividades - Sesión 2: El Arte del Prompting</h2>
         <h3>Objetivo (2h): Demostrar que el valor no está en la IA, sino en la calidad de la instrucción (el prompt).</h3>
         
@@ -229,28 +227,57 @@
 
             <h4>Discusión Final (15 min)</h4>
             <p>Repasar los 4 pilares (R.C.T.F.) y cómo se han aplicado. El valor no es la IA, es saber pedirle las cosas.</p>
-        </div>
+
+            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
+            <h4><span class="icon">📺</span> Recurso de Refuerzo: El Método R.C.T.F. en Acción</h4>
+            <p>Para reforzar lo que acabamos de practicar, este vídeo (en castellano, 10 min) explica cómo aplicar una metodología de "Ingeniería de Prompts" que se basa en los mismos 4 pilares que usamos (Rol, Contexto, Tarea y Formato).</p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=R-Sj-1v-K-A" target="_blank" class="tool-link">Ver vídeo: Domina la INGENIERÍA de PROMPTS en 10 MINUTOS</a></li>
+            </ul>
+            </div>
     </div>
 
     <div id="s2-herramientas" class="inner-tab-content">
-        <h2>🔧 Herramientas de Prompting</h2>
-        <p>El prompting se hace en el chat, pero hay herramientas para ayudarte a *crear* mejores prompts.</p>
+        <h2>🔧 Herramientas y Técnicas de Prompting</h2>
+        <p>El prompt se escribe en el chat, pero los profesionales no escriben prompts complejos directamente en la IA. Usan herramientas externas para construir, almacenar y refinar sus instrucciones.</p>
 
         <div class="tool-card">
-            <h4><span class="icon">📝</span>Editores de Texto (Notepad, Notion, etc.)</h4>
-            <p>El mejor amigo de un "prompt engineer" no es la IA, es un editor de texto. Escribe tu prompt (especialmente si es largo y complejo) en un bloc de notas primero. Revísalo, asegúrate de que tiene los 4 pilares, y luego cópialo y pégalo en la IA.</p>
+            <h4><span class="icon">📄</span>Procesadores de Texto (Word, Google Docs)</h4>
+            <p>El mejor amigo de un "prompt engineer" no es la IA, es un editor de texto avanzado. Usar <strong>Word</strong>, <strong>Google Docs</strong> o similar (en lugar de un simple bloc de notas) te permite:</p>
+            <ul>
+                <li>Corregir ortografía y gramática antes de enviar el prompt (recuerda: "Garbage In, Garbage Out").</li>
+                <li>Guardar un historial organizado de tus "prompts maestros" en la nube.</li>
+                <li>Colaborar con un compañero para refinar un prompt complejo.</li>
+                <li>Escribir instrucciones muy largas y estructuradas sin miedo a que se borre la ventana del chat.</li>
+            </ul>
+            <p>Pega el prompt en la IA solo cuando esté 100% pulido.</p>
+        </div>
+
+        <div class="tool-card">
+            <h4><span class="icon">📂</span>Gestores de Prompts (Prompt Managers)</h4>
+            <p>A medida que desarrolles prompts que funcionan bien (ej: tu prompt para "traducir a tono Tecco"), querrás reutilizarlos. Un gestor de prompts es una herramienta (a menudo una extensión de navegador como <strong>AIPRM</strong>) que te permite:</p>
+            <ul>
+                <li>Guardar tus prompts favoritos.</li>
+                <li>Categorizarlos por temas (Marketing, Técnico, RRHH).</li>
+                <li>Insertarlos en la IA con un solo clic o una palabra clave, ahorrando muchísimo tiempo.</li>
+            </ul>
         </div>
         
         <div class="tool-card">
-            <h4><span class="icon">📚</span>Bibliotecas de Prompts (Prompt Engineering "Cookbooks")</h4>
-            <p>Muchas empresas (como OpenAI) publican "libros de cocina" con ejemplos de prompts excelentes para diferentes tareas (programación, redacción, análisis). Busca en Google "OpenAI Cookbook" para ver ejemplos.</p>
+            <h4><span class="icon">📚</span>Bibliotecas de Prompts (Prompt "Cookbooks")</h4>
+            <p>Son colecciones de prompts probados y optimizados para tareas comunes. Son el mejor lugar para aprender viendo ejemplos de expertos. En lugar de inventar un prompt desde cero, puedes buscar uno que funcione y adaptarlo.</p>
+            <p>Busca en Google <strong>"OpenAI Cookbook"</strong> o <strong>"Anthropic Prompt Library"</strong> para ver ejemplos oficiales de cómo estructurar prompts para análisis de datos, redacción creativa, etc.</p>
         </div>
         
         <div class="tool-card">
             <h4><span class="icon">🤖</span>¡La propia IA! (Meta-Prompting)</h4>
-            <p>Puedes usar la IA para crear un prompt. Esto se llama "Meta-Prompting".<br>
+            <p>No sabes cómo empezar. Usa la IA para que te ayude a construir el prompt. En lugar de pedir el resultado final, pídele a la IA que te haga las preguntas necesarias. Esto es una técnica fundamental.</p>
+            <p><strong>Ejemplo 1:</strong><br>
             <code>"Voy a pedirte que redactes un email de reclamación. ¿Qué 5 datos necesitas de mí para escribir el mejor email posible?"</code><br>
-            La IA te responderá: "Necesito: 1. Nº de factura, 2. Fecha de vencimiento, 3. Tono deseado...". ¡Te está ayudando a crear el prompt perfecto!</p>
+            <em>(La IA te dirá: "Necesito: 1. Nº de factura, 2. Motivo del retraso, 3. Tono deseado...")</em></p>
+            <p><strong>Ejemplo 2:</strong><br>
+            <code>"Quiero que analices un documento, pero no sé qué formato pedirte. ¿Cuáles son las 3 formas más útiles de presentar un análisis de un contrato?"</code><br>
+            <em>(La IA te dirá: "1. Resumen ejecutivo, 2. Tabla de cláusulas clave, 3. Lista de riesgos y puntos a negociar".)</em></p>
         </div>
     </div>
 
@@ -279,7 +306,7 @@
                 <div class="minitest-option" data-question="s2-3" data-correct="false">a) La "memoria a largo plazo" de la IA sobre todas tus conversaciones.</div>
                 <div class="minitest-option" data-question="s2-3" data-correct="false">b) El tiempo que tarda la IA en responder.</div>
                 <div class="minitest-option" data-question="s2-3" data-correct="true">c) La "memoria a corto plazo": la cantidad máxima de texto que la IA puede "ver" en un momento dado.</div>
-                <div classD="minitest-option" data-question="s2-3" data-correct="false">d) Una característica de seguridad para evitar "Jailbreaking".</div>
+                <div class="minitest-option" data-question="s2-3" data-correct="false">d) Una característica de seguridad para evitar "Jailbreaking".</div>
                 <div class="feedback" id="s2-feedback-3"></div>
             </div>
             <div class="minitest-question">
@@ -362,6 +389,3 @@
     </div>
 
 </div>
-
-
-
