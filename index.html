@@ -27,7 +27,7 @@
             overflow: hidden;
         }
 
-        /* --- NUEVA CABECERA CON LOGO --- */
+        /* --- CABECERA --- */
         .header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -47,12 +47,12 @@
             font-size: 2.5em;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
             margin: 0;
-            flex-shrink: 0; /* Evita que el título se encoja */
+            flex-shrink: 0;
         }
 
         .header-logo {
-            height: 60px; /* Altura fija para el logo */
-            width: auto; /* Ancho automático */
+            height: 60px;
+            width: auto;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
@@ -61,42 +61,63 @@
             font-size: 1.2em;
             opacity: 0.95;
             margin-top: 10px;
-            width: 100%; /* Ocupa todo el ancho debajo del título/logo */
+            width: 100%;
         }
         /* --- FIN CABECERA --- */
 
-        /* --- NAVEGACIÓN PRINCIPAL (SESIONES) --- */
+        /* --- NAVEGACIÓN PRINCIPAL (CON SUBTÍTULOS) --- */
         .session-nav {
             display: flex;
-            background: #343a40; /* Fondo oscuro para la nav principal */
+            background: #343a40;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             padding: 5px;
-            justify-content: center; /* Centra las sesiones */
+            justify-content: center;
         }
 
         .session-tab {
-            padding: 15px 25px;
+            padding: 12px 25px;
             cursor: pointer;
             border: none;
             background: transparent;
-            font-size: 1.1em;
-            font-weight: 600;
-            color: #f8f9fa; /* Texto claro */
+            color: #f8f9fa;
             transition: all 0.3s;
             border-bottom: 4px solid transparent;
             white-space: nowrap;
+            text-align: center;
+        }
+        
+        .tab-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: white;
+        }
+        
+        .tab-subtitle {
+            font-size: 0.8em;
+            font-weight: 400;
+            color: #b0b8c0;
+            text-transform: uppercase;
+            transition: color 0.3s;
         }
 
         .session-tab:hover {
             background: #495057;
+        }
+        
+        .session-tab:hover .tab-subtitle {
             color: white;
         }
 
         .session-tab.active {
             color: white;
-            background: #667eea; /* Color activo */
+            background: #667eea;
             border-bottom-color: #ffffff;
+        }
+        
+        .session-tab.active .tab-subtitle {
+            color: white;
         }
 
         .session-content {
@@ -167,7 +188,6 @@
             padding-bottom: 10px;
         }
         
-        /* Ajuste para h2 dentro de pestañas, sin margen superior */
         .inner-tab-content h2 {
             margin-top: 0;
         }
@@ -390,7 +410,7 @@
         .icon {
             display: inline-block;
             margin-right: 10px;
-            font-size: 1.2em; /* Iconos un poco más grandes */
+            font-size: 1.2em;
         }
 
         .highlight-box {
@@ -406,8 +426,8 @@
             border-collapse: collapse;
             margin: 20px 0;
             overflow-x: auto;
-            display: block; /* Para permitir scroll horizontal en tablas anchas */
-            white-space: nowrap; /* Evita que el contenido de la tabla se rompa */
+            display: block;
+            white-space: nowrap;
         }
         .ia-table thead th {
             background-color: #667eea;
@@ -421,7 +441,7 @@
             border: 1px solid #e0e0e0;
             vertical-align: top;
             font-size: 0.9em;
-            white-space: normal; /* Permite que el contenido de las celdas se ajuste */
+            white-space: normal;
         }
         .ia-table tbody tr:nth-child(even) {
             background-color: #f8f9fa;
@@ -430,7 +450,6 @@
             background-color: #e3f2fd;
         }
 
-        /* Estilo específico para La IA Habla */
         .ia-speaks-container {
             background: linear-gradient(135deg, #f0f8ff 0%, #cce0ff 100%);
             border-left: 8px solid #0056b3;
@@ -467,10 +486,17 @@
             .header-logo {
                 height: 50px;
             }
+            /* CSS PARA SUBTÍTULOS EN MÓVIL */
             .session-tab {
-                font-size: 1em;
-                padding: 12px 18px;
+                padding: 10px 15px;
             }
+            .tab-title {
+                font-size: 1em;
+            }
+            .tab-subtitle {
+                font-size: 0.7em;
+            }
+            /* FIN CSS MÓVIL */
             .inner-nav-tab {
                 font-size: 0.9em;
                 padding: 12px 15px;
@@ -498,26 +524,57 @@
         </div>
 
         <div class="session-nav">
-            <button class="session-tab active" onclick="showSession('s1')">Sesión 1</button>
-            <button class="session-tab" onclick="showSession('s2')">Sesión 2</button>
-            <button class="session-tab" onclick="showSession('s3')">Sesión 3</button>
-            <button class="session-tab" onclick="showSession('s4')">Sesión 4</button>
-            <button class="session-tab" onclick="showSession('s5')">Sesión 5</button>
-            <button class="session-tab" onclick="showSession('s6')">Sesión 6</button>
+            <button class="session-tab active" onclick="showSession('s1')">
+                <div class="tab-title">Sesión 1</div>
+                <div class="tab-subtitle">Fundamentos y Creatividad</div>
+            </button>
+            <button class="session-tab" onclick="showSession('s2')">
+                <div class="tab-title">Sesión 2</div>
+                <div class="tab-subtitle">Prompting Profesional</div>
+            </button>
+            <button class="session-tab" onclick="showSession('s3')">
+                <div class="tab-title">Sesión 3</div>
+                <div class="tab-subtitle">Taller de Redacción</div>
+            </button>
+            <button class="session-tab" onclick="showSession('s4')">
+                <div class="tab-title">Sesión 4</div>
+                <div class="tab-subtitle">Resumir y Extraer</div>
+            </button>
+            <button class="session-tab" onclick="showSession('s5')">
+                <div class="tab-title">Sesión 5</div>
+                <div class="tab-subtitle">Multimodalidad</div>
+            </button>
+            <button class="session-tab" onclick="showSession('s6')">
+                <div class="tab-title">Sesión 6</div>
+                <div class="tab-subtitle">Copilot y Agentes</div>
+            </button>
         </div>
-
         <div class="session-content-wrapper">
 
             <div id="s1" class="session-content active">
-                </div> <div id="s2" class="session-content">
-                </div> <div id="s3" class="session-content">
-                </div> <div id="s4" class="session-content">
-                </div> <div id="s5" class="session-content">
-                </div> <div id="s6" class="session-content">
-                </div> </div> </div> <script>
-        // --- FUNCIONES GLOBALES (permanecen igual) ---
+                </div>
+            
+            <div id="s2" class="session-content">
+                </div>
 
-        // Muestra la pestaña interna (ej: s1-intro, s2-guion, ...)
+            <div id="s3" class="session-content">
+                </div>
+
+            <div id="s4" class="session-content">
+                </div>
+
+            <div id="s5" class="session-content">
+                </div>
+
+            <div id="s6" class="session-content">
+                </div>
+
+        </div> </div> <script>
+        // Creamos un 'sello de tiempo' único CADA VEZ que la página se carga.
+        const CACHE_VERSION = new Date().getTime();
+
+        // --- FUNCIONES GLOBALES ---
+
         function showInnerTab(tabId, sessionId) {
             const currentSession = document.getElementById(sessionId);
             if (!currentSession) return;
@@ -537,9 +594,22 @@
             if (activeTabButton) {
                 activeTabButton.classList.add('active');
             }
+
+            // === MEJORA DE SCROLL AÑADIDA ===
+            // Mueve la vista al inicio del contenedor de contenido
+            const contentWrapper = currentSession.querySelector('.inner-content-wrapper');
+            if (contentWrapper) {
+                // Hacemos scroll relativo al contenedor principal, no a la ventana
+                const container = document.querySelector('.container');
+                if (container && container.scrollTop > contentWrapper.offsetTop) {
+                    container.scrollTo({ top: contentWrapper.offsetTop - 50, behavior: 'smooth' });
+                } else if (window.scrollY > contentWrapper.offsetTop) {
+                     window.scrollTo({top: container.offsetTop + contentWrapper.offsetTop - 50, behavior: 'smooth'});
+                }
+            }
         }
 
-        // --- LÓGICA DEL MINITEST (permanecen igual) ---
+        // --- LÓGICA DEL MINITEST ---
         
         function handleMinitestClick(option) {
             if (option.classList.contains('disabled')) return;
@@ -585,62 +655,48 @@
             });
         }
         
-        // --- NUEVA LÓGICA DE CARGA DE SESIONES ---
+        // --- LÓGICA DE CARGA DE SESIONES ---
 
-        /**
-         * Añade los 'event listeners' a los botones del minitest 
-         * dentro de un contenedor específico (después de cargar el contenido).
-         */
         function attachMinitestListeners(container) {
             const allOptions = container.querySelectorAll('.minitest-option');
             allOptions.forEach(option => {
-                // Evita añadir el listener múltiples veces
                 if (!option.dataset.listenerAttached) {
                     option.addEventListener('click', function() {
                         handleMinitestClick(this);
+Recuerda que para que esto funcione, **debes subir este `index.html` actualizado** a tu repositorio de GitHub. No necesitas tocar ninguno de los archivos `contenido_sX.html`.
                     });
                     option.dataset.listenerAttached = 'true';
                 }
             });
         }
 
-        /**
-         * Muestra la sesión principal (S1, S2, ...)
-         * y carga su contenido dinámicamente si es necesario.
-         */
         function showSession(sessionId) {
-            // 1. Ocultar todas las sesiones
             const sessions = document.querySelectorAll('.session-content');
             sessions.forEach(session => session.classList.remove('active'));
             
-            // 2. Desactivar todas las pestañas de sesión
             const tabs = document.querySelectorAll('.session-tab');
             tabs.forEach(tab => tab.classList.remove('active'));
             
-            // 3. Activar la pestaña seleccionada
             const activeTabButton = document.querySelector(`.session-tab[onclick="showSession('${sessionId}')"]`);
             if (activeTabButton) {
                 activeTabButton.classList.add('active');
             }
             
-            // 4. Obtener el contenedor de la sesión
             const sessionContainer = document.getElementById(sessionId);
             if (!sessionContainer) return;
 
-            // 5. Mostrar el contenedor (estará vacío o con contenido)
             sessionContainer.classList.add('active');
             
-            // 6. Comprobar si el contenido ya ha sido cargado
             if (sessionContainer.dataset.loaded === 'true') {
-                // Si ya está cargado, no hacer nada más
                 return;
             }
 
-            // 7. Si no está cargado, cargarlo
             const fileName = `contenido_${sessionId}.html`;
+            const cacheBuster = `?v=${CACHE_VERSION}`;
+
             sessionContainer.innerHTML = '<p style="padding: 40px; text-align: center;">Cargando contenido...</p>';
 
-            fetch(fileName)
+            fetch(fileName + cacheBuster)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`No se pudo encontrar el archivo: ${fileName}`);
@@ -648,11 +704,8 @@
                     return response.text();
                 })
                 .then(htmlContent => {
-                    // Cargar el contenido
                     sessionContainer.innerHTML = htmlContent;
-                    // Marcar como cargado
                     sessionContainer.dataset.loaded = 'true';
-                    // Activar los botones del minitest dentro del nuevo contenido
                     attachMinitestListeners(sessionContainer);
                 })
                 .catch(error => {
@@ -660,7 +713,6 @@
                     sessionContainer.innerHTML = `<p style="padding: 40px; text-align: center; color: red;">${error.message}</p>`;
                 });
 
-            // Scroll suave al inicio
             if (window.scrollY > 200) {
                  window.scrollTo({top: 150, behavior: 'smooth'});
             }
@@ -668,7 +720,6 @@
 
         // --- INICIALIZACIÓN ---
         
-        // Cuando la página cargue, mostrar la Sesión 1 por defecto
         document.addEventListener('DOMContentLoaded', function() {
             showSession('s1');
         });
