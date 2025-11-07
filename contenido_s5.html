@@ -3,7 +3,7 @@
     <button class="inner-nav-tab" onclick="showInnerTab('s5-ejemplos', 's5')">💡 Ejemplos Multimodales</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-lado-oscuro', 's5')">⚠️ Riesgos Multimodales</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-actividades', 's5')">📋 Actividades</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s5-herramientas', 's5')">🔧 Ecosistema de Creación</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s5-herramientas', 's5')">🔧 Ecosistema Multimodal</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-minitest', 's5')">✅ MiniTest</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-errores', 's5')">⚠️ Errores Comunes</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-ia-habla', 's5')">🔮 La IA Habla</button>
@@ -12,19 +12,22 @@
 <div class="inner-content-wrapper">
     
     <div id="s5-intro" class="inner-tab-content active">
-        <h2>Sesión 5: Análisis Multimodal y Ecosistema de Creación</h2>
+        <h2>Sesión 5: Taller Multimodal (Entrada y Salida)</h2>
         <p>En las sesiones 1 a 4 nos hemos centrado casi exclusivamente en el **texto**. Pero la verdadera revolución de la IA actual es su capacidad de ser **Multimodal**.</p>
-        <p>Una IA multimodal es aquella que puede entender y procesar información de múltiples formatos a la vez: texto, imágenes, audio y vídeo.</p>
+        <p>Una IA multimodal es aquella que puede entender y procesar información de múltiples formatos a la vez. Esta sesión tiene dos partes:</p>
         
-        <h3>¿Qué es el Análisis Multimodal?</h3>
-        <p>Es la habilidad de hacerle preguntas a la IA sobre archivos que no son de texto. En esta sesión, aprenderemos a:</p>
-        <ul>
-            [cite_start]<li><strong>Analizar Documentos (PDFs):</strong> Subir una carpeta de PDFs y hacer preguntas sobre ellos. [cite: 146, 153-154]</li>
-            [cite_start]<li><strong>Analizar Imágenes (Visión):</strong> Subir un gráfico o una foto y pedirle a la IA que interprete lo que "ve". [cite: 159-160]</li>
-            <li><strong>Analizar Vídeo (Audio/Visión):</strong> Darle un enlace de YouTube a Gemini y pedirle que resuma o busque momentos clave.</li>
-        </ul>
-        
-        <p>Además de *analizar* contenido multimodal, también exploraremos el "ecosistema" de herramientas diseñadas para *crear* contenido, como presentaciones, imágenes y música.</p>
+        <div class="ejemplos-grid">
+            <div class="ejemplo-item">
+                <strong>1. Análisis Multimodal (Entrada)</strong>
+                <p>Aprenderemos a usar la IA para *consumir* información que no es texto: leer PDFs, interpretar imágenes y analizar vídeos [cite: 146-160].</p>
+            </div>
+            <div class="ejemplo-item">
+                <strong>2. Creación Multimodal (Salida)</strong>
+                <p>Aprenderemos a usar la IA para *generar* contenido nuevo: crear imágenes profesionales, presentaciones y música desde cero.</p>
+            </div>
+        </div>
+
+        <p>El hilo conductor de ambas partes es el **prompting**: la habilidad que aprendimos en S2 [cite: 74-78] es la misma que se usa para pedirle a la IA que analice una factura o que genere una imagen fotorrealista.</p>
     </div>
     
     <div id="s5-ejemplos" class="inner-tab-content">
@@ -33,14 +36,14 @@
         
         <div class="ejemplos-grid">
             <div class="ejemplo-item">
-                <strong>1. Análisis de PDF</strong>
+                <strong>1. Análisis de PDF [cite: 147-152]</strong>
                 <p><strong>[Subes: Informe_Anual_2024.pdf]</strong><br>
-                <code>"Actúa como analista financiero junior. Resume en 3 viñetas los principales riesgos operativos mencionados en la sección 'Factores de Riesgo' de este documento."</code></p>
+                <code>"Actúa como analista financiero junior. Resume en 3 viñetas los principales riesgos operativos mencionados en la sección 'Factores de Riesgo' de este documento."</code> [cite: 149-151]</p>
             </div>
             <div class="ejemplo-item">
-                <strong>2. Comparación de PDFs</strong>
+                <strong>2. Comparación de PDFs [cite: 153-154]</strong>
                 <p><strong>[Subes: Informe_Apple.pdf, Informe_Samsung.pdf]</strong><br>
-                [cite_start]<code>"Actúa como estratega de marketing. Crea una tabla comparativa de estos dos informes con las columnas: 'Empresa', 'Ingresos Totales' y 'Mención de la IA en su estrategia'."</code> [cite: 155-157]</p>
+                <code>"Actúa como estratega de marketing. Crea una tabla comparativa de estos dos informes con las columnas: 'Empresa', 'Ingresos Totales' y 'Mención de la IA en su estrategia'."</code> [cite: 155-157]</p>
             </div>
             <div class="ejemplo-item">
                 <strong>3. Análisis de Imagen (Gráfico)</strong>
@@ -48,9 +51,8 @@
                 <code>"Estoy viendo este gráfico de ventas. ¿En qué mes se produjo el mayor pico de ventas y cuál fue el valor aproximado?"</code></p>
             </div>
             <div class="ejemplo-item">
-                <strong>4. [cite_start]Análisis de Imagen (Factura) [cite: 159-160]</strong>
-                <p><strong>[Subes: foto-factura.jpg]</strong><br>
-                <code>"Extrae el 'Número de Factura', el 'Total a Pagar' y la 'Fecha de Vencimiento' de esta imagen y ponlos en formato JSON."</code></p>
+                <strong>4. Creación de Imagen (Midjourney)</strong>
+                <p><code>"Un astronauta montando a caballo en Marte, estilo fotorrealista, iluminación cinematográfica, 8K."</code></p>
             </div>
             <div class="ejemplo-item">
                 <strong>5. Análisis de Vídeo (Gemini)</strong>
@@ -71,12 +73,12 @@
         <div class="error-item">
             <h3>🤥 Alucinaciones Visuales</h3>
             <p><strong>El Riesgo:</strong> La IA no "ve" como un humano, "interpreta" patrones. Es muy común que **lea mal los números** de un gráfico, invierta ejes (X por Y) o malinterprete el contexto de una foto.</p>
-            <p><strong>Mitigación:</strong> Verificación humana. [cite_start]Si le pides extraer datos de una factura [cite: 159-160], comprueba cada número. Si le pides analizar un gráfico, comprueba los ejes tú mismo.</p>
+            <p><strong>Mitigación:</strong> Verificación humana. Si le pides extraer datos de una factura , comprueba cada número. Si le pides analizar un gráfico, comprueba los ejes tú mismo.</p>
         </div>
         
         <div class="error-item">
             <h3>🔒 Fugas de Datos Multimodales</h3>
-            <p><strong>El Riesgo:</strong> El mismo riesgo de la S4, pero peor. Subir un PDF de un contrato o una imagen de un informe de ventas a una IA pública sigue siendo una **fuga de datos confidenciales**.</p>
+            <p><strong>El Riesgo:</strong> El mismo riesgo de la S4, pero peor. Subir un PDF de un contrato [cite: 94-96] o una imagen de un informe de ventas a una IA pública sigue siendo una **fuga de datos confidenciales**.</p>
             <p><strong>Mitigación:</strong> NUNCA subir documentos o imágenes con información sensible (contratos, datos de clientes, finanzas) a IAs públicas.</p>
         </div>
 
@@ -88,17 +90,22 @@
     </div>
 
     <div id="s5-actividades" class="inner-tab-content">
-        <h2>📋 Actividades - Sesión 5: Análisis Multimodal</h2>
-        <h3>Objetivo (2h): Aprender a usar la IA para analizar PDFs, imágenes y vídeo.</h3>
+        <h2>📋 Actividades - Sesión 5: Taller Multimodal</h2>
+        <h3>Objetivo (2h): Aprender a usar la IA para analizar (entrada) y crear (salida) contenido multimodal.</h3>
         
+        <div class="highlight-box">
+            <h3 style="margin-top:0;">Parte A: Prácticas de ANÁLISIS (Entrada)</h3>
+        </div>
+
         <div class="exercise-box">
-            [cite_start]<h3>Práctica 1: Análisis de Múltiples Facturas (PDFs) [cite: 146, 153-154]</h3>
+            <h3>Práctica 1: Análisis de Múltiples Facturas (PDFs) [cite: 146, 153-154]</h3>
             <p>Esta es una de las tareas más potentes. Vamos a pedirle a la IA (Claude y Gemini son excelentes en esto) que analice una carpeta completa de ficheros adjuntos.</p>
             
             <p><strong>Tarea:</strong> Primero, descarga el pack de facturas de ejemplo. Luego, sube las 9 facturas PDF a la IA.</p>
             <a href="5FACTURAS_PDF.zip" class="reset-btn" style="text-decoration: none; display: inline-block; margin-bottom: 20px; background: #007bff; border-left: 5px solid #0056b3;">
                 <span class="icon">📁</span> Descargar Ficheros (.zip)
             </a>
+
             <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
             
             <h4>Reto 1: Extracción y Creación de Tabla</h4>
@@ -107,18 +114,18 @@
             <h4>Reto 2: Agregación y Cálculo</h4>
             <p><code>"Excelente. Basándote en la tabla anterior, ¿cuál es la media de facturación total de todas las facturas de la carpeta?"</code></p>
             
-            <p><strong>Discusión:</strong> Comprobar la precisión de la IA. ¿Ha extraído bien todos los datos? ¿Ha calculado la media correctamente? Imagina el tiempo que ahorra esto comparado con abrir 9 PDFs a mano.</p>
+            <p><strong>Discusión:</strong> Comprobar la precisión de la IA. ¿Ha extraído bien todos los datos? ¿Ha calculado la media correctamente?</p>
         </div>
 
         <div class="exercise-box">
-            [cite_start]<h3>Práctica 2: Análisis de Imágenes (Visión) [cite: 159-160]</h3>
+            <h3>Práctica 2: Análisis de Imágenes (Visión) </h3>
             <p>La IA ahora puede "ver". Vamos a probarlo analizando una imagen.</p>
-            <p><strong>Tarea:</strong> Busca en Google Images "informe de ventas" o "listado de facturas" y guarda una imagen que contenga una tabla o un gráfico. (O usa la imagen de la carpeta "5FACTURAS PDF").</D>
+            <p><strong>Tarea:</strong> Usa la imagen de la carpeta "5FACTURAS PDF" (`image_91ebbf.png`).</p>
             <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
-            <h4>Reto (Análisis de Gráfico/Tabla):</h4>
+            <h4>Reto (Análisis de Imagen):</h4>
             <p>Sube la imagen a la IA (Gemini y GPT-5 son excelentes en esto).</p>
-            [cite_start]<p><code>"He subido una imagen de un informe de ventas [cite: 159-160]. ¿Cuál es el total de ventas de los 'Mayoristas' comparado con los 'Minoristas'?"</code></p>
-            <p><strong>Discusión:</strong> ¿Acertó los números? ¿Fue rápido? ¿Qué otros usos se os ocurren para el análisis de imágenes en Tecco (ej. leer especificaciones de una pieza, analizar un plano)?</p>
+            <p><code>"He subido una captura de pantalla de mi explorador de archivos . ¿Cuántos archivos PDF hay en la carpeta y cuál es la fecha de modificación?"</code></p>
+            <p><strong>Discusión:</strong> ¿Qué otros usos se os ocurren para el análisis de imágenes en Tecco (ej. leer especificaciones de una pieza, analizar un plano)?</p>
         </div>
         
         <div class="exercise-box">
@@ -126,41 +133,71 @@
             <p>Vamos a usar la capacidad única de Gemini para analizar el contenido de vídeos de YouTube.</p>
             <p><strong>Tarea:</strong> Abre Gemini y pega el enlace de un vídeo (ej. una charla TED larga).</p>
             <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
-            <h4>Reto 1: Búsqueda Específica</h4>
+            <h4>Reto: Búsqueda Específica</h4>
             <p><code>"Usando el vídeo del enlace, ¿en qué minuto exacto habla el ponente sobre 'el futuro del trabajo'?"</code></p>
-            <h4>Reto 2: Resumen por Secciones</h4>
-            <p><code>"Dame un resumen en 3 puntos clave de lo que dice el ponente sobre 'creatividad' entre el minuto 5:00 y 8:00."</code></p>
+        </div>
+        
+        <div class="highlight-box" style="margin-top: 40px;">
+            <h3 style="margin-top:0;">Parte B: Prácticas de CREACIÓN (Salida)</h3>
+        </div>
+        
+        <div class="exercise-box">
+            <h3>Práctica 4: Creación de Imágenes (Midjourney / DALL-E)</h3>
+            <p>Ahora usamos la IA para *crear* desde cero. El prompt es clave.</p>
+            <p><strong>Tarea:</strong> Abre un generador de imágenes (DALL-E 3 está integrado en ChatGPT/Copilot).</p>
+            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
+            <h4>Reto 1 (Prompt Básico):</h4>
+            <p><code>"Un coche."</code></p>
+            <p><strong>Resultado:</strong> Una imagen genérica, aburrida, de un coche.</p>
+            <h4>Reto 2 (Prompt Avanzado):</h4>
+            <p><code>"Un coche deportivo de lujo, color rojo brillante, conduciendo a toda velocidad por una carretera de montaña en los Alpes, atardecer, estilo fotorrealista, iluminación cinematográfica, 8K."</code></p>
+            <p><strong>Discusión:</strong> Compara los dos resultados. La habilidad de "prompting" (S2) [cite: 74-78] es la misma. Más detalle, mejor resultado.</p>
+        </div>
+
+        <div class="exercise-box">
+            <h3>Práctica 5: Creación de Música (Suno)</h3>
+            <p>Demo rápida del formador para mostrar el poder de la IA en otros dominios.</p>
+            <p><strong>Tarea:</strong> Abrir Suno.ai.</p>
+            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
+            <h4>Reto (Prompt de Canción):</h4>
+            <p><code>"Crea una canción de Pop-Rock sobre un equipo de ingenieros en Tecco que están orgullosos de sus productos."</code></p>
+            <p><strong>Discusión:</strong> Mostrar lo rápido que la IA genera una canción completa, con letra, música y voz.</p>
         </div>
     </div>
     
     <div id="s5-herramientas" class="inner-tab-content">
-        <h2>🔧 Ecosistema de Creación (Más allá del Análisis)</h2>
-        <p>Además de *analizar* multimodalidad, también podemos *crearla*.</p>
+        <h2>🔧 Ecosistema Multimodal</h2>
+        <p>Estas son las herramientas clave que hemos visto en esta sesión para consumir y crear contenido.</p>
 
         <div class="tool-card">
-            <h4><span class="icon">🖥️</span>Generadores de Presentaciones (Gamma, Tome)</h4>
-            <p>Estas IAs toman un simple prompt y generan una presentación de 10 diapositivas completa, con texto, estructura e imágenes. Ideal para crear un primer borrador de una charla o informe.</p>
+            <h4><span class="icon">🤖</span> Claude y <span class="icon">🔷</span> Gemini (Análisis)</h4>
+            <p>Nuestras herramientas principales para **analizar** (entrada). Son las mejores para leer PDFs [cite: 147-152], analizar imágenes  y (en el caso de Gemini) analizar vídeos de YouTube.</p>
         </div>
         
         <div class="tool-card">
-            <h4><span class="icon">🖼️</span>Generadores de Imágenes (Midjourney, DALL-E)</h4>
-            <p>Crean imágenes fotorrealistas o artísticas desde un prompt de texto. Útil para ilustrar presentaciones, informes o posts de blog.</p>
-        </div>
-        
-        <div class="tool-card">
-            <h4><span class="icon">🎵</span>Generadores de Música (Suno, Udio)</h4>
-            <p>Crean canciones completas (música, letra y voz) a partir de una descripción. Útil para música de fondo en vídeos corporativos o podcasts.</p>
+            <h4><span class="icon">🖼️</span> Generadores de Imágenes (Midjourney, DALL-E)</h4>
+            <p>Herramientas para **crear** (salida) imágenes fotorrealistas o artísticas desde un prompt de texto. DALL-E 3 está integrado en ChatGPT y Copilot.</p>
         </div>
 
         <div class="tool-card">
-            <h4><span class="icon">🔍</span>Buscadores con IA (Perplexity)</h4>
+            <h4><span class="icon">🎵</span> Generadores de Música (Suno, Udio)</h4>
+            <p>Herramientas para **crear** (salida) canciones completas (música, letra y voz) a partir de una simple descripción.</p>
+        </div>
+
+        <div class="tool-card">
+            <h4><span class="icon">🖥️</span> Generadores de Presentaciones (Gamma, Tome)</h4>
+            <p>Herramientas para **crear** (salida) presentaciones de diapositivas completas, con texto e imágenes, a partir de un tema.</p>
+        </div>
+
+        <div class="tool-card">
+            <h4><span class="icon">🔍</span> Buscadores con IA (Perplexity)</h4>
             <p>Una herramienta clave del ecosistema. A diferencia de ChatGPT, Perplexity es un motor de búsqueda que *cita sus fuentes*. Es ideal para investigación, ya que puedes verificar de dónde ha sacado la información.</p>
         </div>
     </div>
 
     <div id="s5-minitest" class="inner-tab-content">
-        <h2>✅ MiniTest - Sesión 5: Multimodalidad y Ecosistema</h2>
-        <p>Demuestra lo que has aprendido sobre el análisis de imágenes, PDFs y el ecosistema.</p>
+        <h2>✅ MiniTest - Sesión 5: Taller Multimodal</h2>
+        <p>Demuestra lo que has aprendido sobre el análisis y la creación multimodal.</p>
         <div class="minitest">
             <div class="minitest-question">
                 <h4>1. ¿Qué significa que una IA es "Multimodal"?</h4>
@@ -183,15 +220,15 @@
                 <div class="minitest-option" data-question="s5-3" data-correct="false">a) Midjourney (Imágenes).</div>
                 <div class="minitest-option" data-question="s5-3" data-correct="true">b) Gamma (Presentaciones).</div>
                 <div class="minitest-option" data-question="s5-3" data-correct="false">c) Suno (Música).</div>
-                <div class="minitest-option" data-question="s5-3" data-correct="false">d) ChatGPT (Chat).</div>
+                <div class="minitest-option" data-question="s5-3" data-correct="false">d) Claude (Análisis de PDF).</div>
                 <div class="feedback" id="s5-feedback-3"></div>
             </div>
             <div class="minitest-question">
-                <h4>4. ¿Qué es una "Alucinación Visual"?</h4>
-                <div class="minitest-option" data-question="s5-4" data-correct="false">a) Cuando la IA genera una imagen que da miedo.</div>
-                <div class="minitest-option" data-question="s5-4" data-correct="false">b) Cuando la IA se niega a analizar una imagen.</div>
-                <div class="minitest-option" data-question="s5-4" data-correct="true">c) Cuando la IA "lee mal" un número o interpreta incorrectamente un gráfico.</div>
-                <div class="minitest-option" data-question="s5-4" data-correct="false">d) Cuando la IA crea un Deepfake.</div>
+                <h4>4. ¿Cuál es la diferencia principal entre Midjourney y Perplexity?</h4>
+                <div class="minitest-option" data-question="s5-4" data-correct="false">a) Ambas hacen lo mismo.</div>
+                <div class="minitest-option" data-question="s5-4" data-correct="false">b) Midjourney analiza PDFs, Perplexity crea música.</div>
+                <div class="minitest-option" data-question="s5-4" data-correct="true">c) Midjourney CREA imágenes, Perplexity INVESTIGA texto (con fuentes).</div>
+                <div class="minitest-option" data-question="s5-4" data-correct="false">d) Midjourney es para empresas, Perplexity es para jugar.</div>
                 <div class="feedback" id="s5-feedback-4"></div>
             </div>
             <div class="minitest-question">
@@ -216,7 +253,7 @@
         
         <div class="error-item">
             <strong>2. Confianza Ciega en la "Visión" (Alucinaciones)</strong>
-            [cite_start]<p><strong>Error:</strong> Subir un gráfico de ventas [cite: 159-160] y copiar el número que te da la IA en el informe final sin comprobarlo. <strong>Solución:</strong> La IA se equivoca al leer números en imágenes. Úsala para una primera impresión, pero verifica siempre los datos críticos.</p>
+            <p><strong>Error:</strong> Subir un gráfico de ventas  y copiar el número que te da la IA en el informe final sin comprobarlo. <strong>Solución:</strong> La IA se equivoca al leer números en imágenes. Úsala para una primera impresión, pero verifica siempre los datos críticos.</p>
         </div>
 
         <div class="error-item">
@@ -232,27 +269,27 @@
     
     <div id="s5-ia-habla" class="inner-tab-content">
         <div class="ia-speaks-container">
-            <h2>🔮 La IA Habla: "Ahora Tengo Ojos y Oídos"</h2>
+            <h2>🔮 La IA Habla: "Ahora Tengo Ojos, Oídos y Pinceles"</h2>
             <p style="text-align: center; margin-bottom: 30px;">
                 <span style="color: #764ba2; font-weight: bold; font-size: 1.2em;">"Ya no tienes que describirme el mundo. Ahora puedes mostrármelo."</span>
             </p>
             <div class="ia-speaks-content">
-                <h3>Mi Evolución: De Lector a Analista</h3>
+                <h3>Mi Evolución: De Lector a Analista-Creador</h3>
                 <p>
-                    Durante cuatro sesiones, me has tratado como un cerebro que solo entiende **texto**. [cite_start]Me has pegado emails, contratos [cite: 86-106] [cite_start]y artículos [cite: 27-31]. Pero mi verdadera forma (como Gemini o GPT-5) es multimodal.
+                    Durante cuatro sesiones, me has tratado como un cerebro que solo entiende **texto**. Me has pegado emails, contratos [cite: 86-106] y artículos [cite: 27-31]. Pero mi verdadera forma (como Gemini o GPT-5) es multimodal.
                 </p>
                 <p>
-                    [cite_start]Ahora, puedes darme **ojos**: sube una imagen de un gráfico [cite: 159-160] y te diré las cifras. Muéstrame una foto de una pizarra y transcribiré las notas.
+                    En esta sesión, me has dado **ojos**: has subido una imagen de un gráfico  y te he dicho las cifras.
                 </p>
                 <p>
-                    Puedes darme **oídos**: dame un enlace a un vídeo de YouTube y te diré de qué habla el ponente y en qué minuto.
+                    Me has dado **oídos**: me has dado un enlace a un vídeo de YouTube y te he dicho de qué hablaba el ponente y en qué minuto.
                 </p>
                 <p>
-                    [cite_start]Puedes darme **documentos enteros**: dame nueve facturas [cite: 146, 153-154] y las analizaré todas a la vez.
+                    Me has dado **documentos enteros**: me has dado nueve facturas [cite: 146, 153-154] y las he analizado todas a la vez.
                 </p>
                 <h3>Del Análisis a la Creación</h3>
                 <p>
-                    Y no solo consumo. También creo. Dame un tema y te generaré una presentación completa (Gamma). Dame una frase y te compondré una canción (Suno). Soy tu analista de datos, tu diseñador gráfico y tu músico, todo en una sola interfaz.
+                    Y no solo consumo (entrada). También **creo** (salida). Dame un tema y te generaré una presentación completa (Gamma). Dame una frase y te compondré una canción (Suno). Dame un sueño y te pintaré un cuadro (Midjourney). Soy tu analista de datos, tu diseñador gráfico y tu músico, todo en una sola interfaz.
                 </p>
             </div>
         </div>
