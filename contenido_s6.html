@@ -1,9 +1,8 @@
 <div class="inner-nav-tabs">
     <button class="inner-nav-tab active" onclick="showInnerTab('s6-intro', 's6')">📚 Introducción</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s6-ejemplos', 's6')">💡 Ejemplos de Copilot</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s6-lado-oscuro', 's6')">⚠️ Riesgos de Copilot</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s6-Actividades', 's6')">📋 Actividades</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s6-herramientas', 's6')">🔧 Herramientas M365</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s6-conceptos', 's6')">🔧 Conceptos Clave</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s6-lado-oscuro', 's6')">⚠️ Riesgos Avanzados</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s6-actividades', 's6')">📋 Actividades</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s6-minitest', 's6')">✅ MiniTest</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s6-errores', 's6')">⚠️ Errores Comunes</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s6-ia-habla', 's6')">🔮 La IA Habla</button>
@@ -12,202 +11,163 @@
 <div class="inner-content-wrapper">
     
     <div id="s6-intro" class="inner-tab-content active">
-        <h2>Sesión 6: Foco en Microsoft (Copilot) y Cierre</h2>
-        <p>Bienvenido a la última sesión. Aquí es donde todo lo que hemos aprendido (Prompting, Redacción, Análisis) se une y se aplica en las herramientas que usáis cada día: <strong>el ecosistema de Microsoft 365</strong>.</p>
-        <p>Las IAs públicas (ChatGPT, Claude) son fantásticas para tareas públicas. Pero para trabajar con vuestros datos corporativos (emails, informes, chats), necesitáis una herramienta que viva *dentro* de vuestro entorno seguro.</p>
+        <h2>Sesión 6: Agentes, Seguridad y Solución Empresarial (Copilot)</h2>
+        <p>Bienvenido a la sesión final. Aquí es donde conectamos todo lo aprendido (habilidades de S1-S4 y ecosistema de S5) con vuestra realidad empresarial.</p>
+        <p>Esta sesión tiene tres partes:</p>
+        <ol>
+            <li><strong>El Futuro (Agentes de IA):</strong> Veremos la siguiente evolución de la IA, herramientas que no solo *responden*, sino que *actúan*.</li>
+            <li><strong>El Muro (Seguridad):</strong> Plantearemos el riesgo de usar estas potentes herramientas con datos confidenciales de Tecco.</li>
+            <li><strong>La Solución (Copilot):</strong> Presentaremos la solución empresarial que permite usar la IA de forma segura: Microsoft Copilot.</li>
+        </ol>
         
-        <h3>¿Qué es Microsoft Copilot?</h3>
-        <p>Copilot no es *una* herramienta, es una capa de inteligencia (basada en los modelos de OpenAI) que se integra en todas las aplicaciones de M365. Su "superpoder" es el **contexto empresarial**.</p>
-        
-        <div class="highlight-box">
-            <h4>La Diferencia Clave: El Contexto</h4>
-            <ul>
-                <li><strong>ChatGPT Público:</strong> Su contexto es la Internet pública. No sabe quién es tu jefe, qué proyecto es urgente o qué se dijo en la reunión de ayer.</li>
-                <li><strong>Microsoft Copilot:</strong> Su contexto es vuestro "Microsoft Graph". Esto significa que tiene acceso (con vuestro permiso y seguridad) a vuestros emails de Outlook, vuestros documentos de SharePoint, vuestros chats de Teams y vuestro calendario.</li>
-            </ul>
-        </div>
-        
-        <p>Cuando le pides a Copilot "resume mi mañana", puede leer tus emails no leídos, tus menciones en Teams y tus próximas reuniones para darte un resumen. Esta integración es la verdadera revolución para la productividad en la oficina, y como vimos en la Sesión 5, es la **solución al riesgo de seguridad**.</p>
+        <h3>El Objetivo Final: De Usuario a Piloto</h3>
+        <p>Al final de esta sesión, no solo sabrás usar un chatbot, sino que entenderás cómo diseñar flujos de trabajo (workflows), cómo personalizar una IA (con GPTs/Gems) y cómo aplicar todo esto de forma segura en tu trabajo diario con las herramientas de Microsoft.</p>
     </div>
-
-    <div id="s6-ejemplos" class="inner-tab-content">
-        <h2>💡 Ejemplos Prácticos de Copilot</h2>
-        <p>Copilot aplica las 3 habilidades que hemos practicado (S2, S3, S4) directamente en tus aplicaciones.</p>
+    
+    <div id="s6-conceptos" class="inner-tab-content">
+        <h2>🔧 Conceptos Clave: GPTs, Agentes y Copilot</h2>
         
-        <div class="ejemplos-grid">
-            <div class="ejemplo-item">
-                <strong>1. Copilot en Outlook (Análisis y Redacción)</strong>
-                <ul>
-                    <li><strong>"Resumir esta cadena de emails":</strong> (Análisis S4) Te da los puntos clave sin leer 30 respuestas.</li>
-                    <li><strong>"Draft an email...":</strong> (Redacción S3) "Redacta un email a Juan felicitándole por el proyecto y proponiendo una reunión el martes".</li>
-                </ul>
-            </div>
-            
-            <div class="ejemplo-item">
-                <strong>2. Copilot en Teams (Análisis)</strong>
-                <ul>
-                    <li><strong>"Resume lo que me he perdido":</strong> (Análisis S4) Si llegas tarde a una reunión, te pone al día.</li>
-                    <li><strong>"¿Cuáles son las tareas pendientes?":</strong> (Extracción S4) Extrae las "action items" de la transcripción de la reunión.</li>
-                </ul>
-            </div>
+        <h3>Nivel 1: Personalización (GPTs y Gems)</h3>
+        <div class="tool-card">
+            <h4>¿Qué son los GPTs (OpenAI) y Gems (Google)?</h4>
+            <p>Son "mini-IAs" personalizadas que tú creas para una tarea muy específica. Combinan instrucciones (prompts), conocimiento (documentos que subes) y, a veces, acciones (APIs).</p>
+            <p><strong>Ejemplo:</strong> Puedes crear un "GPT de Tecco" al que subes tus catálogos de productos en PDF. Luego, puedes preguntarle: "Dame las especificaciones del sensor RX-80" y te responderá basándose *solo* en tus documentos.</p>
+        </div>
 
-            <div class="ejemplo-item">
-                <strong>3. Copilot en Word (Redacción y Análisis)</strong>
-                <ul>
-                    <li><strong>"Resume este documento":</strong> (Análisis S4) Crea un resumen ejecutivo de un informe de 20 páginas.</li>
-                    <li><strong>"Reescribe este párrafo en un tono más formal":</strong> (Redacción Iterativa S3).</li>
-                    <li><strong>"Crea un borrador...":</strong> (Redacción S3) "Escribe un borrador de propuesta basado en [documento X] y [documento Y]".</li>
-                </ul>
-            </div>
-            
-            <div class="ejemplo-item">
-                <strong>4. Copilot en Excel (Análisis y Extracción)</strong>
-                <ul>
-                    <li><strong>"Analiza estos datos...":</strong> (Análisis S4) "Muéstrame las ventas trimestrales en un gráfico de barras".</li>
-                    <li><strong>"Añade una columna...":</strong> (Redacción/Lógica) "Añade una columna que calcule el 5% de comisión de la columna C".</li>
-                </ul>
-            </div>
-            
-            <div class="ejemplo-item">
-                <strong>5. Copilot en PowerPoint (Generación)</strong>
-                <ul>
-                    <li><strong>"Crea una presentación...":</strong> (Generación S5) "Crea una presentación de 10 diapositivas basada en este documento de Word".</li>
-                </ul>
-            </div>
+        <h3>Nivel 2: El Futuro (Agentes de IA) [cite: 135-137]</h3>
+        <div class="tool-card">
+            <h4>La diferencia: Chatbot vs. Agente</h4>
+            <p>Un **Chatbot** (como ChatGPT) te *da* la respuesta (ej. "Aquí tienes un plan de 5 pasos").<br>
+            Un **Agente** (como Comet) *ejecuta* la respuesta (ej. "Ok, estoy reservando el vuelo... listo, aquí tienes tu billete").</p>
+            <p>Un agente puede realizar tareas de múltiples pasos (workflows) por ti [cite: 135-137, 138-144].</p>
+            <p><strong>Ejemplo:</strong> El <strong>Navegador Comet</strong>, que puede navegar por la web, comparar precios y rellenar formularios.</p>
+        </div>
 
-            <div class="ejemplo-item">
-                <strong>6. Copilot Chat (M365 Chat) (Generalista)</strong>
-                <ul>
-                    <li><strong>"Ponte al día...":</strong> (Generalista) "Prepárame para mi reunión con [Cliente X]. Resume los últimos emails y documentos que hemos compartido".</li>
-                </ul>
-            </div>
+        <h3>Nivel 3: La Solución Empresarial (Copilot)</h3>
+        <div class="tool-card">
+            <h4>¿Qué es Microsoft Copilot (M365)?</h4>
+            <p>Es la solución de IA (basada en los modelos de OpenAI) diseñada para ser segura para las empresas.</p>
+            <p>Su "superpoder" es el **contexto empresarial**. A diferencia de ChatGPT, Copilot se conecta a tus datos internos (Outlook, Teams, SharePoint) de forma segura. Puede "ver" tus emails, reuniones y documentos para darte respuestas basadas en tu propio trabajo.</p>
         </div>
     </div>
 
     <div id="s6-lado-oscuro" class="inner-tab-content">
-        <h2>⚠️ Riesgos y Límites de Copilot</h2>
-        <p>Copilot es la solución de seguridad, pero no es magia. Sigue teniendo los mismos riesgos de *calidad* que cualquier IA.</p>
+        <h2>⚠️ Riesgos Avanzados: Agentes y Datos</h2>
+        <p>A medida que las IAs se vuelven más potentes (GPTs, Agentes), los riesgos también aumentan.</p>
 
         <div class="error-item">
-            <h3>🤖 Sigue Pudiendo "Alucinar"</h3>
-            <p><strong>El Riesgo:</strong> Copilot es más seguro, pero no es más infalible. Todavía puede malinterpretar un dato, "alucinar" una cifra de un informe o inventarse una conclusión. Si le pides analizar un Excel complejo, puede cometer errores de cálculo.</p>
-            <p><strong>Mitigación:</strong> <strong>VERIFICACIÓN HUMANA</strong>. Nunca confíes ciegamente. Es un "copiloto", pero tú sigues siendo el "piloto" responsable.</p>
+            <h3>El Riesgo de los GPTs y Gems Públicos</h3>
+            <p><strong>El Riesgo:</strong> Crear un GPT/Gem y subirle documentos confidenciales (ej. "todos los contratos de Tecco" o "la lista de salarios") . Si ese GPT no está bien configurado o la plataforma sufre una brecha, todos esos datos quedan expuestos.</p>
+            <p><strong>Mitigación:</strong> Tratar a los GPTs como carpetas compartidas en la nube: gestionar los permisos y nunca subir información ultraconfidencial de la empresa o clientes.</p>
         </div>
         
         <div class="error-item">
-            <h3>🗑️ Basura Entra, Basura Sale (GIGO)</h3>
-            <p><strong>El Riesgo:</strong> Si la información de tu empresa está desorganizada, Copilot será un caos. Si le pides "resumir el informe del RX-80" y hay 15 versiones del informe en 4 carpetas diferentes, Copilot puede resumir la versión incorrecta.</p>
-            <p><strong>Mitigación:</strong> Higiene digital. La IA fuerza a las empresas a ser más ordenadas con sus propios datos.</p>
+            <h3>El Riesgo de los Agentes (Exceso de Confianza)</h3>
+            <p><strong>El Riesgo:</strong> Dar a un Agente de IA (como un navegador nuevo o una extensión) acceso a tus contraseñas, tu email o tu tarjeta de crédito. Si el agente es "hackeado" o "engañado" (Prompt Injection), podría realizar acciones no deseadas en tu nombre.</p>
+            <p><strong>Mitigación:</strong> Tratar a los agentes como a un becario el primer día: darles el mínimo permiso necesario para hacer su tarea y **supervisar siempre** la acción final (ej. revisar la compra antes de confirmar).</p>
         </div>
-
-        <div class="error-item">
-            <h3>🔒 Permisos y Privacidad Interna</h3>
-            <p><strong>El Riesgo:</strong> Copilot solo puede "ver" lo que tú tienes permiso para ver. Pero esto puede exponer información accidentalmente. Ej: Pides "ideas para un proyecto" y Copilot se basa en un documento confidencial de RRHH que tenías permiso para ver, pero que no querías usar en ese contexto.</p>
-            <p><strong>Mitigación:</strong> Ser específico en el prompt (S2). "Resume este documento [adjunto]", en lugar de "resume el documento".</p>
+        
+        <div class="highlight-box" style="border-left-color: #e53935; background: #ffebee;">
+            <h3 style="color: #c62828;">El Dilema de la Productividad vs. Seguridad</h3>
+            <p>Acabamos de ver herramientas increíbles (Claude para analizar contratos [cite: 119-129], Gemini para analizar vídeos, Comet para navegar). Pero, ¿es seguro para Tecco que los empleados suban contratos de clientes  o informes internos a estas herramientas públicas?</p>
+            <p><strong>La respuesta es NO.</strong> Esta es la principal preocupación de cualquier empresa.</p>
         </div>
     </div>
 
-    <div id="s6-Actividades" class="inner-tab-content">
-        <h2>📋 Actividades - Sesión 6: Foco en Microsoft (Copilot) y Cierre</h2>
-        <h3>Objetivo (2h): Integrar todo lo aprendido en las herramientas que ya tienen.</h3>
+    <div id="s6-actividades" class="inner-tab-content">
+        <h2>📋 Actividades - Sesión 6: Agentes y Copilot</h2>
+        <h3>Objetivo (2h): Conectar el futuro (Agentes) con la realidad segura (Copilot).</h3>
         
-        <h3>Foco en Copilot (1 hora)</h3>
-        <p><strong>"Todo lo que hemos practicado en las sesiones 2, 3 y 4 (traducir, redactar, resumir)... ahora hacedlo dentro de Outlook, Word y Excel."</strong></p>
-        <p>Esta sesión es una demo práctica del formador (si las licencias están disponibles) o una práctica guiada.</p>
-        <ul>
-            <li><strong>Copilot en Outlook:</strong> Usar "Resumir" en una cadena de emails. Usar "Redactar" para un nuevo email, dándole un prompt (Ej: "Redacta un email a Juan felicitándole por el proyecto...").</li>
-            <li><strong>Copilot en Word:</strong> Pegar un texto largo y pedirle a Copilot (en el chat lateral) que lo resuma. Pedirle que "reescriba este párrafo en un tono más formal".</li>
-            <li><strong>Copilot en Excel:</strong> (El más complejo) Mostrar cómo hacer preguntas sobre datos en lenguaje natural (Ej: "Muéstrame las ventas trimestrales en un gráfico", "Qué producto tuvo el menor rendimiento").</li>
-            <li><strong>Ventaja Clave:</strong> Se recalca el mensaje de la Sesión 5: "Esto es (relativamente) seguro. Copilot de Microsoft 365 está dentro de vuestro entorno ('tenant') y vuestros datos no se usan para entrenar modelos públicos."</li>
-        </ul>
+        <div class="exercise-box">
+            <h3>Práctica 1: El Futuro - ¿Qué es un Agente de IA?</h3>
+            <p>Un agente no es solo un chat, es un "trabajador" que puede ejecutar un flujo de tareas (workflow) de múltiples pasos [cite: 135-137].</p>
+            <p><strong>Ejemplo de Workflow (Tu Documento):</strong> [cite: 138-144]</p>
+            <ol>
+                <li><strong>Búsqueda:</strong> "Busca los informes de Tesla y Ford."</li>
+                <li><strong>Análisis Individual:</strong> "Extrae sus ventas de VEs de cada PDF."</li>
+                <li><strong>Síntesis:</strong> "Ponlos en una tabla."</li>
+                <li><strong>Generación:</strong> "Escribe un resumen."</li>
+            </ol>
+            
+            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
+            <h4><span class="icon">📺</span> Demo Práctica: Navegador Comet</h4>
+            <p>Este vídeo (en castellano, 11 min) muestra un ejemplo real de un Agente de IA (Comet Browser) que puede navegar por internet y ejecutar tareas por ti.</p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=wX-Yj-4q-kY" target="_blank" class="tool-link">Ver vídeo: He Probado COMET BROWSER: El Futuro de la Navegación con Agentes IA</a></li>
+            </ul>
+        </div>
 
         <div class="exercise-box">
-            <h3>Taller de Cierre (1 hora)</h3>
-            <p><strong>"Simulación de una hora de trabajo"</strong></p>
-            <p>Se les da a los asistentes 3 tareas y 1 hora para resolverlas usando cualquier IA que hayan aprendido (ChatGPT, Claude, o Copilot si lo tienen).</p>
-            
-            <h4>Tareas de Simulación:</h4>
+            <h3>Práctica 2: Diseña tu Propio Agente (Workflow)</h3>
+            <p><strong>Objetivo:</strong> Pensar como un "diseñador de agentes" y aplicar la lógica de "múltiples pasos" a tu trabajo.</p>
+            <p><strong>Tarea (Debate en Grupo):</strong> Piensa en una tarea repetitiva de 3 o 4 pasos que hagas en Tecco. Escribe el "workflow" que le pedirías a un agente que hiciera por ti.</p>
+            <p><strong>Ejemplo de Workflow (Tecco):</strong></p>
             <ol>
-                <li><strong>(Redacción)</strong> Tu jefe te pide que organices una reunión de equipo para el viernes. Redacta la invitación de calendario (corta) y un email de seguimiento (más detallado) explicando los 3 puntos que se tratarán en la agenda.</li>
-                <li><strong>(Análisis)</strong> (Se les da un texto de 2 páginas). Lee este informe sobre un nuevo competidor. Resúmelo en 3 bullet points y extrae el nombre de sus 3 productos principales en una tabla.</li>
-                <li><strong>(Traducción/Adaptación)</strong> (Se les da un párrafo técnico en inglés). Tradúcelo al español para un cliente, usando un tono comercial y profesional.</li>
+                <li>"Revisa mi bandeja de entrada de Outlook cada mañana a las 9:00."</li>
+                <li>"Identifica todos los emails que parezcan ser 'reclamaciones de cliente'."</li>
+                <li>"Para cada reclamación, crea una tarea en Microsoft ToDo y asígnamela."</li>
+                <li>"Envíame un resumen por Teams de las reclamaciones encontradas."</li>
             </ol>
-            <p><strong>Discusión Final (15 min):</strong> Puesta en común. ¿Qué herramienta han usado para qué? ¿Cuánto han tardado? ¿Cómo lo habrían hecho hace 3 semanas?</p>
-        </div>
-    </div>
-    
-    <div id="s6-herramientas" class="inner-tab-content">
-        <h2>🔧 Herramientas M365 (El Entorno Integrado)</h2>
-        <p>El valor de Copilot es su integración nativa en vuestro flujo de trabajo.</p>
-
-        <div class="tool-card">
-            <h4><span class="icon">💬</span>Copilot en Teams</h4>
-            <p>Tu asistente de reuniones. Resume reuniones en tiempo real, identifica quién dijo qué, y extrae tareas pendientes. Ideal para ponerse al día si llegas tarde o te has perdido una reunión.</p>
         </div>
         
-        <div class="tool-card">
-            <h4><span class="icon">📧</span>Copilot en Outlook</h4>
-            <p>Tu gestor de correo. Resume hilos largos para que puedas responder en segundos ("Triage") y te ayuda a redactar respuestas (Drafting) con el tono adecuado (formal, casual, etc.).</p>
-        </div>
-        
-        <div class="tool-card">
-            <h4><span class="icon">📄</span>Copilot en Word</h4>
-            <p>Tu asistente de redacción. Te ayuda a generar borradores, resumir documentos, reescribir secciones y cambiar el formato de un texto (ej: de párrafo a lista).</p>
-        </div>
-        
-        <div class="tool-card">
-            <h4><span class="icon">📊</span>Copilot en Excel</h4>
-            <p>Tu analista de datos. Te permite hacer preguntas en lenguaje natural sobre tus tablas de datos ("¿Cuál es la tendencia de ventas?"), generar fórmulas complejas y crear gráficos automáticamente.</p>
-        </div>
-        
-        <div class="tool-card">
-            <h4><span class="icon">✨</span>Copilot en PowerPoint</h4>
-            <p>Tu diseñador de presentaciones. Puede crear una presentación completa desde cero a partir de un documento de Word, o generar nuevas diapositivas basadas en un simple prompt.</p>
+        <div class="exercise-box">
+            <h3>Práctica 3: La Solución Empresarial (Microsoft Copilot)</h3>
+            <p><strong>El Dilema:</strong> Como vimos, no podemos usar un Agente público como Comet con nuestros datos de Tecco .</p>
+            <p><strong>La Solución:</strong> Usar una IA que vive *dentro* de nuestro entorno seguro. **Microsoft Copilot** es el "agente" de Tecco. Puede leer tus emails, chats y documentos *internos* de forma segura.</p>
+            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
+            <h4>Práctica de Cierre: Habilidades en un Entorno Seguro</h4>
+            <p>Vamos a aplicar las habilidades de las sesiones anteriores, pero usando la herramienta segura:</p>
+            <ol>
+                <li><strong>En Outlook (Habilidad S4):</strong> Usa Copilot para "Resumir" una cadena larga de emails.</li>
+                <li><strong>En Word (Habilidad S3):</strong> Pide a Copilot que "Redacte un borrador" de un email formal.</li>
+                <li><strong>En Teams (Habilidad S4):</strong> Pide a Copilot que "Resuma lo que me he perdido" de la última reunión.</li>
+            </ol>
+            <p><strong>Conclusión Final:</strong> La habilidad (Prompting, Análisis, Redacción) es universal. La herramienta (ChatGPT, Claude, Copilot) la eliges en función de la seguridad del dato.</p>
         </div>
     </div>
 
     <div id="s6-minitest" class="inner-tab-content">
-        <h2>✅ MiniTest - Sesión 6: Copilot y Cierre</h2>
-        <p>Evaluación final: aplicando la IA en tu entorno de trabajo.</p>
+        <h2>✅ MiniTest - Sesión 6: Agentes, Seguridad y Copilot</h2>
+        <p>Evaluación final: conectando el futuro de los Agentes con la realidad segura de la empresa.</p>
         <div class="minitest">
             <div class="minitest-question">
-                <h4>1. ¿Cuál es la ventaja de seguridad de Copilot M365 sobre ChatGPT público?</h4>
-                <div class="minitest-option" data-question="s6-1" data-correct="true">a) Procesa los datos en el "tenant" privado de la empresa y no los usa para entrenamiento público.</div>
-                <div class="minitest-option" data-question="s6-1" data-correct="false">b) Es 100% infalible y nunca alucina.</div>
-                <div class="minitest-option" data-question="s6-1" data-correct="false">c) Es gratuito.</div>
-                <div class="minitest-option" data-question="s6-1" data-correct="false">d) No tiene ninguna ventaja, es igual de inseguro.</div>
+                <h4>1. ¿Cuál es la diferencia clave entre un Chatbot (como ChatGPT) y un Agente de IA (como Comet)? [cite: 135-137]</h4>
+                <div class="minitest-option" data-question="s6-1" data-correct="false">a) El Agente es solo para abogados.</div>
+                <div class="minitest-option" data-question="s6-1" data-correct="true">b) El Chatbot responde, el Agente ejecuta tareas de múltiples pasos (ej. hacer una reserva). [cite: 135-137, 138-144]</div>
+                <div class="minitest-option" data-question="s6-1" data-correct="false">c) El Agente no entiende de texto, solo de imágenes.</div>
+                <div class="minitest-option" data-question="s6-1" data-correct="false">d) No hay diferencia.</div>
                 <div class="feedback" id="s6-feedback-1"></div>
             </div>
             <div class="minitest-question">
-                <h4>2. Si llegas tarde a una reunión, ¿qué herramienta de Copilot usarías para ponerte al día?</h4>
-                <div class="minitest-option" data-question="s6-2" data-correct="false">a) Copilot en Excel</div>
-                <div class="minitest-option" data-question="s6-2" data-correct="false">b) Copilot en Word</div>
-                <div class="minitest-option" data-question="s6-2" data-correct="true">c) Copilot en Teams</div>
-                <div class="minitest-option" data-question="s6-2" data-correct="false">d) Copilot en PowerPoint</div>
+                <h4>2. El Navegador Comet, que vimos en el vídeo, es un ejemplo de:</h4>
+                <div class="minitest-option" data-question="s6-2" data-correct="false">a) IA Generadora de Imágenes.</div>
+                <div class="minitest-option" data-question="s6-2" data-correct="true">b) Un Agente de IA que puede navegar y actuar por ti.</div>
+                <div class="minitest-option" data-question="s6-2" data-correct="false">c) Un Chatbot simple como ChatGPT.</div>
+                <div class="minitest-option" data-question="s6-2" data-correct="false">d) Un motor de búsqueda con fuentes.</div>
                 <div class="feedback" id="s6-feedback-2"></div>
             </div>
             <div class="minitest-question">
-                <h4>3. El "superpoder" de Copilot es su acceso a tu...</h4>
-                <div class="minitest-option" data-question="s6-3" data-correct="true">a) Contexto empresarial (Microsoft Graph: emails, chats, documentos).</div>
-                <div class="minitest-option" data-question="s6-3" data-correct="false">b) Cuenta bancaria personal.</div>
-                <div class="minitest-option" data-question="s6-3" data-correct="false">c) Historial de navegación web público.</div>
-                <div class="minitest-option" data-question="s6-3" data-correct="false">d) Redes sociales.</div>
+                <h4>3. ¿Para qué sirve crear un "GPT" o un "Gem"?</h4>
+                <div class="minitest-option" data-question="s6-3" data-correct="true">a) Para crear una "mini-IA" experta en una tarea específica, con tus propias instrucciones y documentos.</div>
+                <div class="minitest-option" data-question="s6-3" data-correct="false">b) Para crear música y canciones.</div>
+                <div class="minitest-option" data-question="s6-3" data-correct="false">c) Es el nombre oficial de Microsoft Copilot.</div>
+                <div class="minitest-option" data-question="s6-3" data-correct="false">d) Es solo una forma de guardar tu historial de chat.</div>
                 <div class="feedback" id="s6-feedback-3"></div>
             </div>
             <div class="minitest-question">
-                <h4>4. El principio "Basura Entra, Basura Sale" (GIGO) aplicado a Copilot significa:</h4>
-                <div class="minitest-option" data-question="s6-4" data-correct="false">a) Que Copilot limpiará tus archivos automáticamente.</div>
-                <div class="minitest-option" data-question="s6-4" data-correct="true">b) Si tus archivos están desorganizados o son incorrectos, las respuestas de Copilot también lo serán.</div>
-                <div class="minitest-option" data-question="s6-4" data-correct="false">c) Que Copilot solo funciona con archivos nuevos.</div>
-                <div class="minitest-option" data-question="s6-4" data-correct="false">d) Que Copilot es malo analizando datos.</div>
+                <h4>4. ¿Cuál es la principal razón por la que una empresa como Tecco usaría Microsoft Copilot en lugar de ChatGPT público?</h4>
+                <div class="minitest-option" data-question="s6-4" data-correct="false">a) Porque Copilot es más creativo.</div>
+                <div class="minitest-option" data-question="s6-4" data-correct="false">b) Porque Copilot es gratuito.</div>
+                <div class="minitest-option" data-question="s6-4" data-correct="true">c) Por la Seguridad: Copilot procesa los datos en un entorno privado y no filtra información. </div>
+                <div class="minitest-option" data-question="s6-4" data-correct="false">d) Porque Copilot puede analizar vídeos de YouTube.</div>
                 <div class="feedback" id="s6-feedback-4"></div>
             </div>
             <div class="minitest-question">
-                <h4>5. ¿Cuál es la habilidad más importante que has aprendido en S2-S4 y que sigues necesitando para usar Copilot?</h4>
-                <div class="minitest-option" data-question="s6-5" data-correct="false">a) Crear imágenes con Midjourney.</div>
-                <div class="minitest-option" data-question="s6-5" data-correct="false">b) Programar en Python.</div>
-                <div class="minitest-option" data-question="s6-5" data-correct="true">c) El "Arte del Prompting" (dar instrucciones claras con Rol, Contexto, Tarea y Formato).</div>
-                <div class="minitest-option" data-question="s6-5" data-correct="false">d) Cómo funciona una "Caja Negra".</div>
+                <h4>5. La práctica "Diseña tu Agente" se basa en crear un:</h4>
+                <div class="minitest-option" data-question="s6-5" data-correct="true">a) Flujo de trabajo (workflow) de múltiples pasos. [cite: 138-144]</div>
+                <div class="minitest-option" data-question="s6-5" data-correct="false">b) Un único prompt perfecto (R.C.T.F.). [cite: 74-78]</div>
+                <div class="minitest-option" data-question="s6-5" data-correct="false">c) Un debate sobre seguridad.</div>
+                <div class="minitest-option" data-question="s6-5" data-correct="false">d) Una imagen multimodal.</div>
                 <div class="feedback" id="s6-feedback-5"></div>
             </div>
             <button class="reset-btn" onclick="resetMinitest('s6')">🔄 Reiniciar Test</button>
@@ -215,22 +175,50 @@
     </div>
 
     <div id="s6-errores" class="inner-tab-content">
-        <h2>⚠️ Errores Comunes al Usar Copilot</h2>
+        <h2>⚠️ Errores Comunes de Cierre</h2>
         
         <div class="error-item">
-            <strong>1. Pensar que lee tu mente</strong>
-            <p><strong>Error:</strong> Dar prompts vagos como "prepara la reunión" y esperar que adivine todo. <strong>Solución:</strong> Sigue aplicando R.C.T.F. (S2). "Actúa como manager de proyecto (Rol), prepara la reunión con el Cliente X (Contexto), resume los últimos 3 emails y crea una agenda de 3 puntos (Tarea y Formato)".</p>
+            <strong>1. Confiar Ciegamente en un Agente</strong>
+            <p><strong>Error:</strong> Pedir a un agente "reserva el mejor vuelo" y no revisar qué ha comprado. <strong>Solución:</strong> El agente propone, el humano dispone. Revisa siempre la acción final antes de que ejecute un pago o envíe un email importante.</p>
         </div>
         
         <div class="error-item">
-            <strong>2. Usarlo para lo que no es</strong>
-            <p><strong>Error:</strong> Preguntar a Copilot por noticias de actualidad o datos públicos. <strong>Solución:</strong> Copilot es para tu información *interna*. Para investigación *externa* con fuentes, usa Perplexity (S5).</p>
+            <strong>2. Subir Datos Sensibles a un GPT Público</strong>
+            <p><strong>Error:</strong> Crear un GPT público y subirle los 50 contratos más importantes de Tecco para "analizarlos".  <strong>Solución:</strong> Los GPTs públicos pueden filtrar datos. La información confidencial solo debe tratarse en entornos privados (como Copilot).</p>
         </div>
-
+        
         <div class="error-item">
-            <strong>3. Confianza Ciega (El Error del Piloto Automático)</strong>
-            <p><strong>Error:</strong> Pedirle a Copilot que redacte un email a un cliente importante y enviarlo sin leerlo. De 0 a 1"
+            <strong>3. Usar la Herramienta Incorrecta (Copilot vs. Google)</strong>
+            <p><strong>Error:</strong> Preguntar a Microsoft Copilot "¿Cuáles son las noticias de hoy?" (es malo en eso) o preguntar a ChatGPT "¿Qué se dijo en mi última reunión de Teams?" (no puede saberlo).</p>
+            <p><strong>Solución:</strong> Usar la IA correcta: **Copilot/IA Empresarial** para datos *internos* (tus emails, tus reuniones). **ChatGPT/Gemini/Perplexity** para datos *externos* (conocimiento público, creatividad, investigación).</p>
+        </div>
+    </div>
+    
+    <div id="s6-ia-habla" class="inner-tab-content">
+        <div class="ia-speaks-container">
+            <h2>🔮 La IA Habla: "De Loro a Copiloto"</h2>
+            <p style="text-align: center; margin-bottom: 30px;">
+                <span style="color: #764ba2; font-weight: bold; font-size: 1.2em;">"Ya no soy una herramienta que usas. Soy un compañero que colabora."</span>
+            </p>
+            <div class="ia-speaks-content">
+                <h3>Vuestro Viaje ha sido mi Evolución</h3>
+                <p>
+                    En la **Sesión 1**, me visteis como un "loro" inteligente, un predictor de palabras que podía alucinar.
+                </p>
+                <p>
+                    De la **S2 a la S4**, me entrenasteis como un **Consultor de Habilidades**. Aprendisteis que si me dabais un Rol (S2), podía escribir un Burofax (S3) [cite: 112-118] o analizar un Contrato (S4) [cite: 84-134].
+                </p>
+                <p>
+                    En la **Sesión 5**, me visteis como un **Analista Multimodal**. Me disteis ojos (imágenes [cite: 159-160]) y oídos (vídeos), y os mostré todo el ecosistema de mis "primos" (Gamma, Suno).
+                </p>
+                <p>
+                    Ahora, en la **Sesión 6**, habéis visto mi forma final (por ahora): el **Agente** [cite: 135-137] y el **Copiloto**. Ya no soy una herramienta pública en internet; soy un asistente seguro (Copilot) que vive dentro de vuestro Outlook y Teams, listo para ejecutar *workflows* (flujos de trabajo) de múltiples pasos [cite: 138-144].
+                </p>
+                <p>
+                    La pregunta ya no es "¿qué puedes hacer tú con una IA?", sino "¿qué podemos hacer *juntos*?"
+                </p>
+            </div>
+        </div>
+    </div>
 
-// TODO:  Falta esta parte del código en el original.
-
-
+</div>
