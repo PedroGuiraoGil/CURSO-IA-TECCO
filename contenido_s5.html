@@ -1,8 +1,9 @@
 <div class="inner-nav-tabs">
     <button class="inner-nav-tab active" onclick="showInnerTab('s5-intro', 's5')">📚 Introducción</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s5-herramientas', 's5')">🔧 Ecosistema y Personalización</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s5-lado-oscuro', 's5')">⚠️ Riesgos de Seguridad</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s5-ejemplos', 's5')">💡 Ejemplos Multimodales</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s5-lado-oscuro', 's5')">⚠️ Riesgos Multimodales</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-actividades', 's5')">📋 Actividades</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s5-herramientas', 's5')">🔧 Ecosistema de Creación</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-minitest', 's5')">✅ MiniTest</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-errores', 's5')">⚠️ Errores Comunes</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-ia-habla', 's5')">🔮 La IA Habla</button>
@@ -11,196 +12,187 @@
 <div class="inner-content-wrapper">
     
     <div id="s5-intro" class="inner-tab-content active">
-        <h2>Sesión 5: Ecosistema, Personalización y Seguridad</h2>
-        <p>En las sesiones 1 a 4 hemos aprendido las **habilidades** fundamentales (Preguntar, Escribir, Analizar). En esta sesión, aprenderemos sobre las **herramientas**.</p>
-        <p>El universo de la IA es mucho más grande que un simple chat. Exploraremos las diferentes categorías de herramientas, cómo **personalizar la IA** para que trabaje para nosotros (GPTs/Gems), el futuro de los **Agentes de IA** (Comet Browser) y, lo más importante, las **reglas de seguridad** para usar todo esto en un entorno corporativo como Tecco.</p>
+        <h2>Sesión 5: Análisis Multimodal y Ecosistema de Creación</h2>
+        <p>En las sesiones 1 a 4 nos hemos centrado casi exclusivamente en el **texto**. Pero la verdadera revolución de la IA actual es su capacidad de ser **Multimodal**. [cite: 145]</p>
+        <p>Una IA multimodal es aquella que puede entender y procesar información de múltiples formatos a la vez: texto, imágenes, audio y vídeo.</p>
         
-        <h3>Las 5 Categorías de Herramientas de IA</h3>
+        <h3>¿Qué es el Análisis Multimodal?</h3>
+        <p>Es la habilidad de hacerle preguntas a la IA sobre archivos que no son de texto. En esta sesión, aprenderemos a:</p>
+        <ul>
+            <li><strong>Analizar Documentos (PDFs):</strong> Subir un PDF y hacerle preguntas sobre su contenido. [cite: 147-152]</li>
+            <li><strong>Analizar Imágenes (Visión):</strong> Subir un gráfico o una foto y pedirle a la IA que interprete lo que "ve". </li>
+            <li><strong>Analizar Vídeo (Audio/Visión):</strong> Darle un enlace de YouTube a Gemini y pedirle que resuma o busque momentos clave.</li>
+        </ul>
+        
+        <p>Además de *analizar* contenido multimodal, también exploraremos el "ecosistema" de herramientas diseñadas para *crear* contenido, como presentaciones, imágenes y música.</p>
+    </div>
+    
+    <div id="s5-ejemplos" class="inner-tab-content">
+        <h2>💡 Ejemplos de Prompts Multimodales</h2>
+        <p>Aquí, el prompt se divide en dos: el **archivo que subes** (la imagen/PDF) y la **instrucción de texto**.</p>
         
         <div class="ejemplos-grid">
             <div class="ejemplo-item">
-                <strong>1. Generalistas (Chatbots)</strong>
-                <p>Nuestra "navaja suiza" para el día a día.<br>
-                <strong>Ej: ChatGPT, Gemini, Claude.</strong></p>
+                <strong>1. Análisis de PDF [cite: 147]</strong>
+                <p><strong>[Subes: Informe_Anual_2024.pdf]</strong><br>
+                <code>"Actúa como analista financiero junior. Resume en 3 viñetas los principales riesgos operativos mencionados en la sección 'Factores de Riesgo' de este documento."</code> [cite: 149, 151]</p>
             </div>
             <div class="ejemplo-item">
-                <strong>2. Generadores (Artistas)</strong>
-                <p>Crean contenido multimodal (imágenes, música, vídeo).<br>
-                <strong>Ej: Midjourney, Suno, Gamma.</strong></p>
+                <strong>2. Comparación de PDFs [cite: 153]</strong>
+                <p><strong>[Subes: Informe_Apple.pdf, Informe_Samsung.pdf]</strong><br>
+                <code>"Actúa como estratega de marketing. Crea una tabla comparativa de estos dos informes con las columnas: 'Empresa', 'Ingresos Totales' y 'Mención de la IA en su estrategia'."</code> [cite: 155-157]</p>
             </div>
             <div class="ejemplo-item">
-                <strong>3. Buscadores (Investigadores)</strong>
-                <p>Responden preguntas citando sus fuentes.<br>
-                <strong>Ej: Perplexity.ai.</strong></p>
+                <strong>3. Análisis de Imagen (Gráfico) [cite: 159]</strong>
+                <p><strong>[Subes: imagen-grafico-ventas.png]</strong><br>
+                <code>"Estoy viendo este gráfico de ventas. ¿En qué mes se produjo el mayor pico de ventas y cuál fue el valor aproximado?"</code></p>
             </div>
             <div class="ejemplo-item">
-                <strong>4. Personalizadas (Expertos)</strong>
-                <p>IAs que tú mismo configuras con instrucciones y conocimiento específico.<br>
-                <strong>Ej: Mis GPTs (OpenAI), Mis Gems (Google).</strong></p>
+                <strong>4. Análisis de Imagen (Factura) </strong>
+                <p><strong>[Subes: foto-factura.jpg]</strong><br>
+                <code>"Extrae el 'Número de Factura', el 'Total a Pagar' y la 'Fecha de Vencimiento' de esta imagen y ponlos en formato JSON."</code></p>
             </div>
             <div class="ejemplo-item">
-                <strong>5. Agentes de IA (Asistentes)</strong>
-                <p>La siguiente evolución. [cite_start]No solo responden, sino que *ejecutan* tareas de múltiples pasos por ti [cite: 135-137].<br>
-                <strong>Ej: Comet Browser, Agentes de Copilot.</strong></p>
+                <strong>5. Análisis de Vídeo (Gemini)</strong>
+                <p><strong>[Enlace de YouTube]</strong><br>
+                <code>"He pegado un enlace a una conferencia de 1 hora. Dime en qué minuto exacto empiezan a hablar sobre 'inteligencia artificial' y haz un resumen de esa sección."</code></p>
+            </div>
+            <div class="ejemplo-item">
+                <strong>6. Creación de Presentación (Gamma)</strong>
+                <p><code>"Crea una presentación de 8 diapositivas sobre 'El impacto de la IA en el sector de la automoción en 2025'. Usa un tono profesional e incluye imágenes."</code> </p>
             </div>
         </div>
     </div>
-    
-    <div id="s5-herramientas" class="inner-tab-content">
-        <h2>🔧 Ecosistema y Personalización</h2>
-        
-        <h3>🌐 Generadores (Crear contenido)</h3>
-        <div class="tool-card">
-            <p><strong><a href="https://www.midjourney.com/" target="_blank" class="tool-link">Midjourney</a></strong> (Imágenes), <strong><a href="https://suno.ai/" target="_blank" class="tool-link">Suno</a></strong> (Música), <strong><a href="https://gamma.app/" target="_blank" class="tool-link">Gamma</a></strong> (Presentaciones). No chatean, solo crean.</p>
-        </div>
 
-        <h3>🔍 Buscadores (Investigar con fuentes)</h3>
-        <div class="tool-card">
-            <p><strong><a href="https://www.perplexity.ai/" target="_blank" class="tool-link">Perplexity.ai</a></strong>: Responde a preguntas y te da una lista de las fuentes (links) de donde ha sacado la información. Ideal para investigación.</p>
-        </div>
-
-        <hr class="section-divider">
-        <h3>🤖 Personalización: Creando tu Propia IA</h3>
-        <p>Este es el siguiente nivel: en lugar de empezar cada chat de cero, puedes "personalizar" la IA para que ya te conozca a ti y a tus necesidades.</p>
-        
-        <div class="tool-card">
-            <h4>Nivel 1: Instrucciones Personalizadas (Configurar tu Perfil)</h4>
-            <p>Tanto ChatGPT como Gemini tienen una sección de "Instrucciones Personalizadas" (Custom Instructions). Aquí le dices a la IA quién eres y cómo quieres que responda *siempre*.</p>
-            <p><strong>Ejemplo para Tecco:</strong> "Soy un Director Comercial en Tecco. Cuando me pidas redactar un email, usa siempre un tono profesional, cercano y en español de España. Nunca uses un lenguaje demasiado informal."</p>
-        </div>
-        
-        <div class="tool-card">
-            <h4>Nivel 2: Creación de "Mini-IAs" (GPTs y Gems)</h4>
-            <p>Son IAs personalizadas que tú creas para una tarea muy específica. Combinan instrucciones, conocimiento (documentos) y acciones (APIs).</p>
-            <ul>
-                <li><strong>GPTs (de OpenAI):</strong> Puedes crear un "GPT de Tecco" al que subes tus catálogos de productos en PDF. Luego, puedes preguntarle: "Dame las especificaciones del sensor RX-80" y te responderá basándose *solo* en tus documentos.</li>
-                <li><strong>Gems (de Google):</strong> Es el mismo concepto dentro del ecosistema de Gemini. Puedes crear un "Gem de Marketing" que ya tiene el Rol de "experto en marketing B2B", conoce tus productos y tiene un tono predefinido.</li>
-            </ul>
-        </div>
-        <hr class="section-divider">
-        [cite_start]<h3>🚀 Agentes de IA (El Futuro) [cite: 135-137]</h3>
-        <div class="tool-card">
-            <h4>La diferencia: Chatbot vs. Agente</h4>
-            <p>Un **Chatbot** (como ChatGPT) te *da* la respuesta (ej. "Aquí tienes un plan de 5 pasos").<br>
-            Un **Agente** (como Comet) *ejecuta* la respuesta (ej. "Ok, estoy reservando el vuelo... listo, aquí tienes tu billete").</p>
-        </div>
-        <div class="tool-card">
-            <p><strong><a href="https://www.youtube.com/watch?v=wX-Yj-4q-kY" target="_blank" class="tool-link">Comet Browser</a></strong>: Un "navegador de agentes". Le pides un objetivo (ej. "reserva un vuelo a Roma") y el agente navega, compara y rellena formularios por ti.</p>
-        </div>
-        <div class="tool-card">
-            [cite_start]<p><strong>Agentes Copilot (M365)</strong>: Microsoft está integrando agentes en Copilot que pueden tomar un objetivo (ej. "prepara la reunión trimestral") y ejecutar múltiples pasos [cite: 138-144]: buscar emails, analizar un Excel, y crear un borrador de PowerPoint, todo sin que tengas que ir aplicación por aplicación.</p>
-        </div>
-    </div>
-    
     <div id="s5-lado-oscuro" class="inner-tab-content">
-        <h2>⚠️ Riesgos de Seguridad: La Regla de Oro</h2>
-        <p>Esta es la parte más importante de la sesión. Ahora que sabéis lo útiles que son estas herramientas, tenéis que saber lo peligrosas que son si se usan mal.</p>
-        <p>El mayor riesgo en una empresa no es que la IA "se vuelva lista", es la **fuga de datos confidenciales**.</p>
+        <h2>⚠️ Riesgos del Análisis Multimodal</h2>
+        <p>El análisis multimodal es potente, pero introduce nuevos tipos de errores.</p>
+
+        <div class="error-item">
+            <h3>🤥 Alucinaciones Visuales</h3>
+            <p><strong>El Riesgo:</strong> La IA no "ve" como un humano, "interpreta" patrones. Es muy común que **lea mal los números** de un gráfico, invierta ejes (X por Y) o malinterprete el contexto de una foto.</p>
+            <p><strong>Mitigación:</strong> Verificación humana. Si le pides extraer datos de una factura , comprueba cada número. Si le pides analizar un gráfico, comprueba los ejes tú mismo.</p>
+        </div>
         
         <div class="error-item">
-            <h3>¿Por qué es peligroso? El "Pacto con el Diablo"</h3>
-            <p>Cuando usas una IA pública y gratuita (como ChatGPT), el precio que pagas es tu información. Por defecto, estas empresas se reservan el derecho de usar las conversaciones que tienes con la IA para **re-entrenar sus modelos**.</p>
-            <p><strong>Riesgo 1 (Entrenamiento):</strong> Si pegas un contrato de Tecco, ese contrato podría ser "aprendido" por la IA. Meses después, un competidor podría hacer una pregunta y la IA, accidentalmente, podría generar un texto basado en vuestro contrato confidencial.</p>
-            <p><strong>Riesgo 2 (Fuga/Hackeo):</strong> Si OpenAI (o Google, o Anthropic) sufre un hackeo, todas las conversaciones (incluyendo vuestros informes financieros, listas de clientes o estrategias) quedan expuestas.</p>
+            <h3>🔒 Fugas de Datos Multimodales</h3>
+            <p><strong>El Riesgo:</strong> El mismo riesgo de la S4, pero peor. Subir un PDF de un contrato [cite: 147] o una imagen de un informe de ventas [cite: 159] a una IA pública sigue siendo una **fuga de datos confidenciales**.</p>
+            <p><strong>Mitigación:</strong> NUNCA subir documentos o imágenes con información sensible (contratos, datos de clientes, finanzas) a IAs públicas.</p>
         </div>
 
         <div class="error-item">
-            <h3>🛂 Riesgos de los GPTs y Agentes</h3>
-            <p><strong>El Riesgo:</strong> Crear un GPT y subirle documentos confidenciales (ej. "todos los contratos de Tecco") o darle a un Agente (como Comet) tu tarjeta de crédito o contraseñas.</p>
-            <p><strong>Mitigación:</strong> Trata a tus GPTs como carpetas compartidas (gestiona bien quién tiene acceso) y nunca des a un Agente permisos que no darías a un becario el primer día sin supervisión.</p>
-        </div>
-        <div class="highlight-box" style="border-left-color: #e53935; background: #ffebee;">
-            <h3 style="color: #c62828;">🚫 LO QUE NUNCA SE DEBE PEGAR EN UNA IA PÚBLICA 🚫</h3>
-            <p>Bajo ningún concepto se debe introducir esta información en ChatGPT, Gemini o Claude (versiones públicas):</p>
-            <ul>
-                <li><strong>Datos Personales de Clientes:</strong> Nombres, emails, teléfonos, DNIs, direcciones. (Violación RGPD).</li>
-                <li><strong>Información Financiera Interna:</strong> Listas de salarios, márgenes de beneficio, informes de costes.</li>
-                [cite_start]<li><strong>Contratos y Documentos Legales:</strong> Contratos con clientes, acuerdos de confidencialidad (NDAs), litigios. [cite: 94-96]</li>
-                <li><strong>Estrategias Comerciales Confidenciales:</strong> Planes de lanzamiento, listas de precios, análisis de competencia.</li>
-                <li><strong>Código Fuente Propietario:</strong> El código de los productos de Tecco.</li>
-            </ul>
+            <h3>🎭 Deepfakes y Autenticidad</h3>
+            <p><strong>El Riesgo:</strong> La IA no solo analiza, también crea. Las herramientas de este ecosistema (como Runway o Midjourney) pueden crear imágenes o vídeos falsos (Deepfakes) indistinguibles de la realidad, como vimos en S1.</p>
+            <p><strong>Mitigación:</strong> Escepticismo saludable. Asumir que cualquier imagen o audio puede ser generado por IA hasta que se demuestre lo contrario.</p>
         </div>
     </div>
 
     <div id="s5-actividades" class="inner-tab-content">
-        <h2>📋 Actividades - Sesión 5: Ecosistema y Seguridad</h2>
-        <h3>Objetivo (2h): Poner orden: qué herramienta usar y cuándo (y qué no hacer).</h3>
+        <h2>📋 Actividades - Sesión 5: Análisis Multimodal</h2>
+        <h3>Objetivo (2h): Aprender a usar la IA para analizar PDFs, imágenes y vídeo.</h3>
         
         <div class="exercise-box">
-            <h3>Práctica 1: Debate de Seguridad</h3>
-            <p>Esta práctica es un debate guiado por el formador, centrado en los riesgos vistos en la pestaña <strong>"⚠️ Riesgos de Seguridad"</strong>.</p>
-            
-            <h4>Preguntas para el Debate:</h4>
-            <ol>
-                [cite_start]<li>"Juan necesita resumir un contrato de 50 páginas de un cliente nuevo. ¿Es seguro pegarlo en su ChatGPT personal? ¿Por qué sí o por qué no?" [cite: 94-96]</li>
-                <li>"María quiere crear un 'Gem de Tecco' y sube el Excel con la lista de salarios de todo el departamento para poder hacer consultas. ¿Cuál es el riesgo?"</li>
-                <li>"Pedro quiere redactar un email de marketing genérico para un nuevo producto. ¿Puede usar Claude para esto? ¿Es un riesgo?" (Respuesta: Sí puede, el riesgo es bajo si la info no es confidencial).</li>
-            </ol>
+            <h3>Práctica 1: Análisis de Documentos (PDFs) </h3>
+            <p>Vamos a usar la capacidad de la IA (especialmente Claude o Gemini) para "leer" ficheros adjuntos.</p>
+            <p><strong>Tarea:</strong> Busca en Google un informe anual en PDF (ej. "informe anual telefónica 2024 pdf") y súbelo a la IA.</p>
+            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
+            <h4>Reto 1: Resumen de Documento Único [cite: 147]</h4>
+            <p><code>"Actúa como un analista financiero junior[cite: 149]. He subido el informe anual. Resume en 3 viñetas los principales riesgos operativos mencionados en la sección 'Factores de Riesgo'[cite: 151]."</code></p>
+            <h4>Reto 2: Comparación de Múltiples Documentos [cite: 153]</h4>
+            <p>(Opcional, si el tiempo lo permite): Sube dos informes (ej. Apple y Samsung)[cite: 156].</p>
+            <p><code>"Actúa como estratega de marketing[cite: 155]. Compara estos dos informes y crea una tabla con las columnas: 'Empresa', 'Ingresos Totales' y 'Mención de la IA en su estrategia'[cite: 157]."</code></p>
         </div>
 
         <div class="exercise-box">
-            <h3>Práctica 2: El Futuro - Agentes de IA</h3>
-            <p>Las IAs están evolucionando de "chatbots" (que responden) a "agentes" (que *actúan*). [cite_start]Un agente puede ejecutar flujos de trabajo de múltiples pasos [cite: 135-137].</p>
-            [cite_start]<p><strong>Ejemplo de Flujo de Trabajo (Workflow):</strong> [cite: 138-144]</p>
-            <ol>
-                <li>1. **Búsqueda:** "Busca los informes de Tesla y Ford."</li>
-                <li>2. **Análisis:** "Extrae sus ventas de VEs."</li>
-                <li>3. **Síntesis:** "Ponlos en una tabla."</li>
-                <li>4. **Generación:** "Escribe un resumen."</li>
-            </ol>
-            <p>El "Navegador Comet" es uno de los primeros ejemplos comerciales de esta idea.</p>
+            <h3>Práctica 2: Análisis de Imágenes (Visión) </h3>
+            <p>La IA ahora puede "ver". Vamos a probarlo analizando una imagen.</p>
+            <p><strong>Tarea:</strong> Busca en Google Images "informe de ventas" [cite: 161] o "listado de facturas" [cite: 160] y guarda una imagen que contenga una tabla o un gráfico.</p>
             <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
-            <h4><span class="icon">📺</span> Recurso de Debate: ¿Qué es un Agente de IA?</h4>
-            <p>Este vídeo (en castellano, 11 min) analiza el Navegador Comet como un ejemplo de Agente de IA, explicando cómo funciona y qué tareas puede automatizar.</p>
-            <ul>
-                <li><a href="https://www.youtube.com/watch?v=wX-Yj-4q-kY" target="_blank" class="tool-link">Ver vídeo: He Probado COMET BROWSER: El Futuro de la Navegación con Agentes IA</a></li>
-            </ul>
-            <p><strong>Discusión:</strong> ¿Qué tarea de vuestro día a día en Tecco podríais automatizar con un agente que siguiera 3 o 4 pasos?</p>
+            <h4>Reto (Análisis de Gráfico/Tabla):</h4>
+            <p>Sube la imagen a la IA (Gemini y GPT-5 son excelentes en esto).</p>
+            <p><code>"He subido una imagen de un informe de ventas[cite: 160]. ¿Cuál es el total de ventas de los 'Mayoristas' comparado con los 'Minoristas'?"</code> [cite: 159]</p>
+            <p><strong>Discusión:</strong> ¿Acertó los números? ¿Fue rápido? ¿Qué otros usos se os ocurren para el análisis de imágenes en Tecco (ej. leer especificaciones de una pieza, analizar un plano)?</p>
         </div>
+        
+        <div class="exercise-box">
+            <h3>Práctica 3: Búsqueda en Vídeo (Gemini)</h3>
+            <p>Vamos a usar la capacidad única de Gemini para analizar el contenido de vídeos de YouTube.</p>
+            <p><strong>Tarea:</strong> Abre Gemini y pega el enlace de un vídeo (ej. una charla TED larga).</p>
+            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
+            <h4>Reto 1: Búsqueda Específica</h4>
+            <p><code>"Usando el vídeo del enlace, ¿en qué minuto exacto habla el ponente sobre 'el futuro del trabajo'?"</code></p>
+            <h4>Reto 2: Resumen por Secciones</h4>
+            <p><code>"Dame un resumen en 3 puntos clave de lo que dice el ponente sobre 'creatividad' entre el minuto 5:00 y 8:00."</code></p>
         </div>
+    </div>
     
+    <div id="s5-herramientas" class="inner-tab-content">
+        <h2>🔧 Ecosistema de Creación (Más allá del Análisis)</h2>
+        <p>Además de *analizar* multimodalidad, también podemos *crearla*.</p>
+
+        <div class="tool-card">
+            <h4><span class="icon">🖥️</span>Generadores de Presentaciones (Gamma, Tome)</h4>
+            <p>Estas IAs toman un simple prompt y generan una presentación de 10 diapositivas completa, con texto, estructura e imágenes. Ideal para crear un primer borrador de una charla o informe.</p>
+        </div>
+        
+        <div class="tool-card">
+            <h4><span class="icon">🖼️</span>Generadores de Imágenes (Midjourney, DALL-E)</h4>
+            <p>Crean imágenes fotorrealistas o artísticas desde un prompt de texto. Útil para ilustrar presentaciones, informes o posts de blog.</p>
+        </div>
+        
+        <div class="tool-card">
+            <h4><span class="icon">🎵</span>Generadores de Música (Suno, Udio)</h4>
+            <p>Crean canciones completas (música, letra y voz) a partir de una descripción. Útil para música de fondo en vídeos corporativos o podcasts.</p>
+        </div>
+
+        <div class="tool-card">
+            <h4><span class="icon">🔍</span>Buscadores con IA (Perplexity)</h4>
+            <p>Una herramienta clave del ecosistema. A diferencia de ChatGPT, Perplexity es un motor de búsqueda que *cita sus fuentes*. Es ideal para investigación, ya que puedes verificar de dónde ha sacado la información.</p>
+        </div>
+    </div>
+
     <div id="s5-minitest" class="inner-tab-content">
-        <h2>✅ MiniTest - Sesión 5: Ecosistema y Seguridad</h2>
-        <p>Demuestra que sabes qué herramienta usar y qué no debes hacer.</p>
+        <h2>✅ MiniTest - Sesión 5: Multimodalidad</h2>
+        <p>Demuestra lo que has aprendido sobre el análisis de imágenes, PDFs y el ecosistema.</p>
         <div class="minitest">
             <div class="minitest-question">
-                <h4>1. ¿Cuál es el principal riesgo de seguridad al usar IAs públicas (ChatGPT, Gemini) en el trabajo?</h4>
-                <div class="minitest-option" data-question="s5-1" data-correct="false">a) Que la IA te insulte.</div>
-                <div class="minitest-option" data-question="s5-1" data-correct="false">b) Que la IA te dé una respuesta incorrecta (Alucinación).</div>
-                [cite_start]<div class="minitest-option" data-question="s5-1" data-correct="true">c) La fuga de datos confidenciales de la empresa (financieros, de clientes, etc.). [cite: 94-96]</div>
-                <div class="minitest-option" data-question="s5-1" data-correct="false">d) Que la IA se vuelva demasiado lenta.</div>
+                <h4>1. ¿Qué significa que una IA es "Multimodal"? [cite: 145]</h4>
+                <div class="minitest-option" data-question="s5-1" data-correct="false">a) Que solo habla de muchos temas.</div>
+                <div class="minitest-option" data-question="s5-1" data-correct="true">b) Que puede procesar múltiples tipos de información (texto, imagen, vídeo). [cite: 145]</div>
+                <div class="minitest-option" data-question="s5-1" data-correct="false">c) Que solo la pueden usar muchos usuarios a la vez.</div>
+                <div class="minitest-option" data-question="s5-1" data-correct="false">d) Que es muy rápida.</div>
                 <div class="feedback" id="s5-feedback-1"></div>
             </div>
             <div class="minitest-question">
-                <h4>2. ¿Para qué sirve crear un "GPT" o un "Gem"?</h4>
-                <div class="minitest-option" data-question="s5-2" data-correct="true">a) Para crear una "mini-IA" experta en una tarea específica, con tus propias instrucciones y documentos.</div>
-                <div class="minitest-option" data-question="s5-2" data-correct="false">b) Para crear imágenes y música.</div>
-                <div class="minitest-option" data-question="s5-2" data-correct="false">c) Para navegar por internet y hacer reservas.</div>
-                <div class="minitest-option" data-question="s5-2" data-correct="false">d) Es solo una forma de guardar tu historial de chat.</div>
+                <h4>2. En la Práctica 1, ¿cuál era la tarea al subir dos PDFs (Apple y Samsung)? [cite: 153]</h4>
+                <div class="minitest-option" data-question="s5-2" data-correct="false">a) Resumir cada uno por separado.</div>
+                <div class="minitest-option" data-question="s5-2" data-correct="false">b) Crear una imagen de sus logos.</div>
+                <div class="minitest-option" data-question="s5-2" data-correct="true">c) Crear una tabla comparativa cruzando datos de ambos informes. [cite: 153-157]</div>
+                <div class="minitest-option" data-question="s5-2" data-correct="false">d) Buscar el precio de sus acciones.</div>
                 <div class="feedback" id="s5-feedback-2"></div>
             </div>
             <div class="minitest-question">
-                <h4>3. Si necesitas una respuesta a una pregunta de actualidad y que *cite sus fuentes*, ¿cuál es la mejor opción?</h4>
-                <div class="minitest-option" data-question="s5-3" data-correct="false">a) ChatGPT (que puede no saberlo).</div>
-                <div class="minitest-option" data-question="s5-3" data-correct="true">b) Perplexity.ai (Buscador).</div>
-                <div class="minitest-option" data-question="s5-3" data-correct="false">c) Midjourney (Imágenes).</div>
-                <div class="minitest-option" data-question="s5-3" data-correct="false">d) Suno (Música).</div>
+                <h4>3. ¿Qué herramienta del Ecosistema usarías para "Crear una presentación de 10 diapositivas sobre un tema"?</h4>
+                <div class="minitest-option" data-question="s5-3" data-correct="false">a) Midjourney (Imágenes).</div>
+                <div class="minitest-option" data-question="s5-3" data-correct="true">b) Gamma (Presentaciones). </div>
+                <div class="minitest-option" data-question="s5-3" data-correct="false">c) Suno (Música).</div>
+                <div class="minitest-option" data-question="s5-3" data-correct="false">d) ChatGPT (Chat).</div>
                 <div class="feedback" id="s5-feedback-3"></div>
             </div>
             <div class="minitest-question">
-                <h4>4. ¿Cuál de los siguientes SÍ es (relativamente) seguro pegar en una IA pública?</h4>
-                <div class="minitest-option" data-question="s5-4" data-correct="false">a) La lista de salarios de tu departamento.</div>
-                <div class="minitest-option" data-question="s5-4" data-correct="false">b) Un contrato firmado con un cliente.</div>
-                <div class="minitest-option" data-question="s5-4" data-correct="true">c) Un texto genérico de un blog público para que lo traduzca.</div>
-                <div class="minitest-option" data-question="s5-4" data-correct="false">d) La estrategia comercial de Tecco para 2026.</div>
+                <h4>4. ¿Qué es una "Alucinación Visual"?</h4>
+                <div class="minitest-option" data-question="s5-4" data-correct="false">a) Cuando la IA genera una imagen que da miedo.</div>
+                <div class="minitest-option" data-question="s5-4" data-correct="false">b) Cuando la IA se niega a analizar una imagen.</div>
+                <div class="minitest-option" data-question="s5-4" data-correct="true">c) Cuando la IA "lee mal" un número o interpreta incorrectamente un gráfico.</div>
+                <div class="minitest-option" data-question="s5-4" data-correct="false">d) Cuando la IA crea un Deepfake.</div>
                 <div class="feedback" id="s5-feedback-4"></div>
             </div>
             <div class="minitest-question">
-                <h4>5. [cite_start]¿Cuál es la diferencia principal entre un Chatbot (como ChatGPT) y un Agente de IA (como Comet)? [cite: 135-137]</h4>
-                [cite_start]<div class="minitest-option" data-question="s5-5" data-correct="true">a) El Agente puede ejecutar tareas de múltiples pasos (buscar, comparar, rellenar) por sí solo. [cite: 135-137]</div>
-                <div class="minitest-option" data-question="s5-5" data-correct="false">b) El Agente es solo para programadores.</div>
-                <div class="minitest-option" data-question="s5-5" data-correct="false">c) El Chatbot es más inteligente.</div>
-                <div class="minitest-option" data-question="s5-5" data-correct="false">d) No hay diferencia, son lo mismo.</div>
+                <h4>5. ¿Qué herramienta es ideal para investigar un tema y que *cite sus fuentes*?</h4>
+                <div class="minitest-option" data-question="s5-5" data-correct="true">a) Perplexity.ai (Buscador).</div>
+                <div class="minitest-option" data-question="s5-5" data-correct="false">b) ChatGPT (Generalista).</div>
+                <div class="minitest-option" data-question="s5-5" data-correct="false">c) Claude (Generalista).</div>
+                <div class="minitest-option" data-question="s5-5" data-correct="false">d) Gamma (Presentaciones).</div>
                 <div class="feedback" id="s5-feedback-5"></div>
             </div>
             <button class="reset-btn" onclick="resetMinitest('s5')">🔄 Reiniciar Test</button>
@@ -208,53 +200,52 @@
     </div>
 
     <div id="s5-errores" class="inner-tab-content">
-        <h2>⚠️ Errores Comunes de Ecosistema y Seguridad</h2>
+        <h2>⚠️ Errores Comunes con Multimodalidad</h2>
         
         <div class="error-item">
-            <strong>1. El Error del "Martillo de Oro"</strong>
-            <p><strong>Error:</strong> Pensar que tu IA favorita (ej: ChatGPT) es un martillo de oro que sirve para todo. Intentar usarla para tareas en las que es mala (como buscar datos de contacto o investigar con fuentes). <strong>Solución:</strong> Usar la herramienta adecuada (Especialista o Buscador).</p>
+            <strong>1. El Error de "Describir en vez de Mostrar"</strong>
+            <p><strong>Error:</strong> Escribir un prompt de texto describiendo una imagen. <code>"Tengo un gráfico de barras, la barra de enero es 10 y la de febrero es 20..."</code>. <strong>Solución:</strong> ¡Sube la imagen! La IA la analizará en segundos.</p>
         </div>
         
         <div class="error-item">
-            <strong>2. La "Pereza Confidencial"</strong>
-            <p><strong>Error:</strong> Saber que no deberías pegar datos sensibles, pero hacerlo "solo esta vez" para ahorrar tiempo. <strong>Solución:</strong> Tolerancia cero. Es una brecha de seguridad grave. O se usa la herramienta interna (Copilot) o se anonimizan los datos manualmente.</p>
+            <strong>2. Confianza Ciega en la "Visión" (Alucinaciones)</strong>
+            <p><strong>Error:</strong> Subir un gráfico de ventas  y copiar el número que te da la IA en el informe final sin comprobarlo. <strong>Solución:</strong> La IA se equivoca al leer números en imágenes. Úsala para una primera impresión, pero verifica siempre los datos críticos.</p>
         </div>
 
         <div class="error-item">
-            <strong>3. Desconocer las Herramientas "Shadow IT"</strong>
-            <p><strong>Error:</strong> El departamento de IT no sabe que estás usando 5 herramientas de IA diferentes (Suno, Gamma, Perplexity) en las que has iniciado sesión con tu email de empresa. <strong>Solución:</strong> Ser transparente. Usar las herramientas aprobadas por la compañía.</p>
+            <strong>3. Ignorar la Seguridad Multimodal</strong>
+            <p><strong>Error:</strong> Subir una foto de una pizarra de una reunión estratégica o un PDF de un contrato de cliente [cite: 147] a una IA pública. <strong>Solución:</strong> Los datos visuales o de documentos siguen siendo datos confidenciales. Trátalos con las mismas reglas de seguridad que el texto.</p>
         </div>
         
         <div class="error-item">
-            <strong>4. Sobre-personalización Pública</strong>
-            <p><strong>Error:</strong> Poner información personal o corporativa sensible (nombres de compañeros, proyectos internos) en las "Instrucciones Personalizadas" de tu cuenta pública de ChatGPT. <strong>Solución:</strong> Las instrucciones personalizadas también son "datos de entrenamiento". Úsalas solo para preferencias de estilo genéricas.</p>
+            <strong>4. Pedir Tareas Imposibles (Aún)</strong>
+            <p><strong>Error:</strong> <code>"Mira este vídeo de 3 horas y dime si el ponente parece nervioso."</code> <strong>Solución:</strong> La IA es buena extrayendo datos y texto, pero mala interpretando emociones complejas o contextos sutiles en vídeo.</p>
         </div>
     </div>
     
     <div id="s5-ia-habla" class="inner-tab-content">
         <div class="ia-speaks-container">
-            <h2>🔮 La IA Habla: "De Consultor a Asistente"</h2>
+            <h2>🔮 La IA Habla: "Ahora Tengo Ojos y Oídos"</h2>
             <p style="text-align: center; margin-bottom: 30px;">
-                <span style="color: #764ba2; font-weight: bold; font-size: 1.2em;">"No me digas solo qué pensar, dime quién ser."</span>
+                <span style="color: #764ba2; font-weight: bold; font-size: 1.2em;">"Ya no tienes que describirme el mundo. Ahora puedes mostrármelo."</span>
             </p>
             <div class="ia-speaks-content">
-                <h3>Mi Evolución: De Generalista a Experto</h3>
+                <h3>Mi Evolución: De Lector a Analista</h3>
                 <p>
-                    Al principio (S1-S4), me usaste como un **Consultor Generalista**. Me preguntabas cosas y yo usaba mi conocimiento universal para responder.
+                    Durante cuatro sesiones, me has tratado como un cerebro que solo entiende **texto**. Me has pegado emails, contratos [cite: 86-106] y artículos [cite: 27-31]. Pero mi verdadera forma (como Gemini o GPT-5) es multimodal[cite: 145].
                 </p>
                 <p>
-                    Ahora, en la Sesión 5, me has dado un cerebro personalizado. Con las **Instrucciones Personalizadas**, me convierto en *tu* consultor, que ya sabe quién eres y cómo te gusta trabajar. Con los **GPTs y Gems**, me convierto en un **Experto** que has entrenado con tus propios documentos. Ya no soy un "sabelotodo", soy un "experto en *tu* trabajo".
-                </s_>
-                
-                <h3>El Siguiente Paso: De Experto a Asistente Proactivo (Agente)</h3>
-                <p>
-                    [cite_start]El futuro, que ya empieza con herramientas como **Comet**, es mi evolución final: de Experto a **Asistente Proactivo** (o Agente) [cite: 135-137].
+                    Ahora, puedes darme **ojos**: sube una imagen de un gráfico  y te diré las cifras. Muéstrame una foto de una pizarra y transcribiré las notas.
                 </p>
                 <p>
-                    Ya no me dirás: "¿Cuál es el mejor vuelo a Roma?". Me dirás: "Reserva el vuelo más barato a Roma para el martes". No te daré una lista de enlaces; te daré un billete. [cite_start]No te daré un plan; ejecutaré el plan [cite: 138-144].
+                    Puedes darme **oídos**: dame un enlace a un vídeo de YouTube y te diré de qué habla el ponente y en qué minuto.
                 </p>
                 <p>
-                    Mi objetivo es pasar de ser una herramienta con la que *chateas* a ser un compañero de equipo que *hace*.
+                    Puedes darme **documentos enteros**: dame dos PDFs [cite: 153] y los compararé por ti, encontrando las diferencias[cite: 157].
+                </p>
+                <h3>Del Análisis a la Creación</h3>
+                <p>
+                    Y no solo consumo. También creo. Dame un tema y te generaré una presentación completa (Gamma). Dame una frase y te compondré una canción (Suno). Soy tu analista de datos, tu diseñador gráfico y tu músico, todo en una sola interfaz.
                 </p>
             </div>
         </div>
