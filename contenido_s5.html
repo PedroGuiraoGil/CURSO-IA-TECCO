@@ -13,14 +13,14 @@
     
     <div id="s5-intro" class="inner-tab-content active">
         <h2>Sesión 5: Análisis Multimodal y Ecosistema de Creación</h2>
-        <p>En las sesiones 1 a 4 nos hemos centrado casi exclusivamente en el **texto**. Pero la verdadera revolución de la IA actual es su capacidad de ser **Multimodal**. [cite: 145]</p>
+        <p>En las sesiones 1 a 4 nos hemos centrado casi exclusivamente en el **texto**. Pero la verdadera revolución de la IA actual es su capacidad de ser **Multimodal**.</p>
         <p>Una IA multimodal es aquella que puede entender y procesar información de múltiples formatos a la vez: texto, imágenes, audio y vídeo.</p>
         
         <h3>¿Qué es el Análisis Multimodal?</h3>
         <p>Es la habilidad de hacerle preguntas a la IA sobre archivos que no son de texto. En esta sesión, aprenderemos a:</p>
         <ul>
-            <li><strong>Analizar Documentos (PDFs):</strong> Subir un PDF y hacerle preguntas sobre su contenido. [cite: 147-152]</li>
-            <li><strong>Analizar Imágenes (Visión):</strong> Subir un gráfico o una foto y pedirle a la IA que interprete lo que "ve". </li>
+            [cite_start]<li><strong>Analizar Documentos (PDFs):</strong> Subir una carpeta de PDFs y hacer preguntas sobre ellos. [cite: 146, 153-154]</li>
+            [cite_start]<li><strong>Analizar Imágenes (Visión):</strong> Subir un gráfico o una foto y pedirle a la IA que interprete lo que "ve". [cite: 159-160]</li>
             <li><strong>Analizar Vídeo (Audio/Visión):</strong> Darle un enlace de YouTube a Gemini y pedirle que resuma o busque momentos clave.</li>
         </ul>
         
@@ -33,22 +33,22 @@
         
         <div class="ejemplos-grid">
             <div class="ejemplo-item">
-                <strong>1. Análisis de PDF [cite: 147]</strong>
+                <strong>1. Análisis de PDF</strong>
                 <p><strong>[Subes: Informe_Anual_2024.pdf]</strong><br>
-                <code>"Actúa como analista financiero junior. Resume en 3 viñetas los principales riesgos operativos mencionados en la sección 'Factores de Riesgo' de este documento."</code> [cite: 149, 151]</p>
+                <code>"Actúa como analista financiero junior. Resume en 3 viñetas los principales riesgos operativos mencionados en la sección 'Factores de Riesgo' de este documento."</code></p>
             </div>
             <div class="ejemplo-item">
-                <strong>2. Comparación de PDFs [cite: 153]</strong>
+                <strong>2. Comparación de PDFs</strong>
                 <p><strong>[Subes: Informe_Apple.pdf, Informe_Samsung.pdf]</strong><br>
-                <code>"Actúa como estratega de marketing. Crea una tabla comparativa de estos dos informes con las columnas: 'Empresa', 'Ingresos Totales' y 'Mención de la IA en su estrategia'."</code> [cite: 155-157]</p>
+                [cite_start]<code>"Actúa como estratega de marketing. Crea una tabla comparativa de estos dos informes con las columnas: 'Empresa', 'Ingresos Totales' y 'Mención de la IA en su estrategia'."</code> [cite: 155-157]</p>
             </div>
             <div class="ejemplo-item">
-                <strong>3. Análisis de Imagen (Gráfico) [cite: 159]</strong>
+                <strong>3. Análisis de Imagen (Gráfico)</strong>
                 <p><strong>[Subes: imagen-grafico-ventas.png]</strong><br>
                 <code>"Estoy viendo este gráfico de ventas. ¿En qué mes se produjo el mayor pico de ventas y cuál fue el valor aproximado?"</code></p>
             </div>
             <div class="ejemplo-item">
-                <strong>4. Análisis de Imagen (Factura) </strong>
+                <strong>4. [cite_start]Análisis de Imagen (Factura) [cite: 159-160]</strong>
                 <p><strong>[Subes: foto-factura.jpg]</strong><br>
                 <code>"Extrae el 'Número de Factura', el 'Total a Pagar' y la 'Fecha de Vencimiento' de esta imagen y ponlos en formato JSON."</code></p>
             </div>
@@ -59,7 +59,7 @@
             </div>
             <div class="ejemplo-item">
                 <strong>6. Creación de Presentación (Gamma)</strong>
-                <p><code>"Crea una presentación de 8 diapositivas sobre 'El impacto de la IA en el sector de la automoción en 2025'. Usa un tono profesional e incluye imágenes."</code> </p>
+                <p><code>"Crea una presentación de 8 diapositivas sobre 'El impacto de la IA en el sector de la automoción en 2025'. Usa un tono profesional e incluye imágenes."</code></p>
             </div>
         </div>
     </div>
@@ -71,12 +71,12 @@
         <div class="error-item">
             <h3>🤥 Alucinaciones Visuales</h3>
             <p><strong>El Riesgo:</strong> La IA no "ve" como un humano, "interpreta" patrones. Es muy común que **lea mal los números** de un gráfico, invierta ejes (X por Y) o malinterprete el contexto de una foto.</p>
-            <p><strong>Mitigación:</strong> Verificación humana. Si le pides extraer datos de una factura , comprueba cada número. Si le pides analizar un gráfico, comprueba los ejes tú mismo.</p>
+            <p><strong>Mitigación:</strong> Verificación humana. [cite_start]Si le pides extraer datos de una factura [cite: 159-160], comprueba cada número. Si le pides analizar un gráfico, comprueba los ejes tú mismo.</p>
         </div>
         
         <div class="error-item">
             <h3>🔒 Fugas de Datos Multimodales</h3>
-            <p><strong>El Riesgo:</strong> El mismo riesgo de la S4, pero peor. Subir un PDF de un contrato [cite: 147] o una imagen de un informe de ventas [cite: 159] a una IA pública sigue siendo una **fuga de datos confidenciales**.</p>
+            <p><strong>El Riesgo:</strong> El mismo riesgo de la S4, pero peor. Subir un PDF de un contrato o una imagen de un informe de ventas a una IA pública sigue siendo una **fuga de datos confidenciales**.</p>
             <p><strong>Mitigación:</strong> NUNCA subir documentos o imágenes con información sensible (contratos, datos de clientes, finanzas) a IAs públicas.</p>
         </div>
 
@@ -92,25 +92,32 @@
         <h3>Objetivo (2h): Aprender a usar la IA para analizar PDFs, imágenes y vídeo.</h3>
         
         <div class="exercise-box">
-            <h3>Práctica 1: Análisis de Documentos (PDFs) </h3>
-            <p>Vamos a usar la capacidad de la IA (especialmente Claude o Gemini) para "leer" ficheros adjuntos.</p>
-            <p><strong>Tarea:</strong> Busca en Google un informe anual en PDF (ej. "informe anual telefónica 2024 pdf") y súbelo a la IA.</p>
+            [cite_start]<h3>Práctica 1: Análisis de Múltiples Facturas (PDFs) [cite: 146, 153-154]</h3>
+            <p>Esta es una de las tareas más potentes. Vamos a pedirle a la IA (Claude y Gemini son excelentes en esto) que analice una carpeta completa de ficheros adjuntos.</p>
+            
+            <p><strong>Tarea:</strong> Primero, descarga el pack de facturas de ejemplo. Luego, sube las 9 facturas PDF a la IA.</p>
+            <a href="5FACTURAS_PDF.zip" class="reset-btn" style="text-decoration: none; display: inline-block; margin-bottom: 20px; background: #007bff; border-left: 5px solid #0056b3;">
+                <span class="icon">📁</span> Descargar Ficheros (.zip)
+            </a>
             <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
-            <h4>Reto 1: Resumen de Documento Único [cite: 147]</h4>
-            <p><code>"Actúa como un analista financiero junior[cite: 149]. He subido el informe anual. Resume en 3 viñetas los principales riesgos operativos mencionados en la sección 'Factores de Riesgo'[cite: 151]."</code></p>
-            <h4>Reto 2: Comparación de Múltiples Documentos [cite: 153]</h4>
-            <p>(Opcional, si el tiempo lo permite): Sube dos informes (ej. Apple y Samsung)[cite: 156].</p>
-            <p><code>"Actúa como estratega de marketing[cite: 155]. Compara estos dos informes y crea una tabla con las columnas: 'Empresa', 'Ingresos Totales' y 'Mención de la IA en su estrategia'[cite: 157]."</code></p>
+            
+            <h4>Reto 1: Extracción y Creación de Tabla</h4>
+            <p><code>"He subido 9 facturas en PDF. Analízalas todas y crea una tabla con las siguientes columnas: | Nombre del Archivo | Cliente | Total de la Factura |"</code></p>
+            
+            <h4>Reto 2: Agregación y Cálculo</h4>
+            <p><code>"Excelente. Basándote en la tabla anterior, ¿cuál es la media de facturación total de todas las facturas de la carpeta?"</code></p>
+            
+            <p><strong>Discusión:</strong> Comprobar la precisión de la IA. ¿Ha extraído bien todos los datos? ¿Ha calculado la media correctamente? Imagina el tiempo que ahorra esto comparado con abrir 9 PDFs a mano.</p>
         </div>
 
         <div class="exercise-box">
-            <h3>Práctica 2: Análisis de Imágenes (Visión) </h3>
+            [cite_start]<h3>Práctica 2: Análisis de Imágenes (Visión) [cite: 159-160]</h3>
             <p>La IA ahora puede "ver". Vamos a probarlo analizando una imagen.</p>
-            <p><strong>Tarea:</strong> Busca en Google Images "informe de ventas" [cite: 161] o "listado de facturas" [cite: 160] y guarda una imagen que contenga una tabla o un gráfico.</p>
+            <p><strong>Tarea:</strong> Busca en Google Images "informe de ventas" o "listado de facturas" y guarda una imagen que contenga una tabla o un gráfico. (O usa la imagen de la carpeta "5FACTURAS PDF").</D>
             <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
             <h4>Reto (Análisis de Gráfico/Tabla):</h4>
             <p>Sube la imagen a la IA (Gemini y GPT-5 son excelentes en esto).</p>
-            <p><code>"He subido una imagen de un informe de ventas[cite: 160]. ¿Cuál es el total de ventas de los 'Mayoristas' comparado con los 'Minoristas'?"</code> [cite: 159]</p>
+            [cite_start]<p><code>"He subido una imagen de un informe de ventas [cite: 159-160]. ¿Cuál es el total de ventas de los 'Mayoristas' comparado con los 'Minoristas'?"</code></p>
             <p><strong>Discusión:</strong> ¿Acertó los números? ¿Fue rápido? ¿Qué otros usos se os ocurren para el análisis de imágenes en Tecco (ej. leer especificaciones de una pieza, analizar un plano)?</p>
         </div>
         
@@ -152,29 +159,29 @@
     </div>
 
     <div id="s5-minitest" class="inner-tab-content">
-        <h2>✅ MiniTest - Sesión 5: Multimodalidad</h2>
+        <h2>✅ MiniTest - Sesión 5: Multimodalidad y Ecosistema</h2>
         <p>Demuestra lo que has aprendido sobre el análisis de imágenes, PDFs y el ecosistema.</p>
         <div class="minitest">
             <div class="minitest-question">
-                <h4>1. ¿Qué significa que una IA es "Multimodal"? [cite: 145]</h4>
+                <h4>1. ¿Qué significa que una IA es "Multimodal"?</h4>
                 <div class="minitest-option" data-question="s5-1" data-correct="false">a) Que solo habla de muchos temas.</div>
-                <div class="minitest-option" data-question="s5-1" data-correct="true">b) Que puede procesar múltiples tipos de información (texto, imagen, vídeo). [cite: 145]</div>
+                <div class="minitest-option" data-question="s5-1" data-correct="true">b) Que puede procesar múltiples tipos de información (texto, imagen, vídeo).</div>
                 <div class="minitest-option" data-question="s5-1" data-correct="false">c) Que solo la pueden usar muchos usuarios a la vez.</div>
                 <div class="minitest-option" data-question="s5-1" data-correct="false">d) Que es muy rápida.</div>
                 <div class="feedback" id="s5-feedback-1"></div>
             </div>
             <div class="minitest-question">
-                <h4>2. En la Práctica 1, ¿cuál era la tarea al subir dos PDFs (Apple y Samsung)? [cite: 153]</h4>
-                <div class="minitest-option" data-question="s5-2" data-correct="false">a) Resumir cada uno por separado.</div>
-                <div class="minitest-option" data-question="s5-2" data-correct="false">b) Crear una imagen de sus logos.</div>
-                <div class="minitest-option" data-question="s5-2" data-correct="true">c) Crear una tabla comparativa cruzando datos de ambos informes. [cite: 153-157]</div>
-                <div class="minitest-option" data-question="s5-2" data-correct="false">d) Buscar el precio de sus acciones.</div>
+                <h4>2. En la Práctica 1 (Análisis de Facturas), ¿cuál fue el "Reto 2"?</h4>
+                <div class="minitest-option" data-question="s5-2" data-correct="false">a) Crear una imagen de las facturas.</div>
+                <div class="minitest-option" data-question="s5-2" data-correct="true">b) Calcular la media de facturación de todos los archivos PDF.</div>
+                <div class="minitest-option" data-question="s5-2" data-correct="false">c) Resumir cada factura en 3 puntos.</div>
+                <div class="minitest-option" data-question="s5-2" data-correct="false">d) Analizar un vídeo de YouTube.</div>
                 <div class="feedback" id="s5-feedback-2"></div>
             </div>
             <div class="minitest-question">
                 <h4>3. ¿Qué herramienta del Ecosistema usarías para "Crear una presentación de 10 diapositivas sobre un tema"?</h4>
                 <div class="minitest-option" data-question="s5-3" data-correct="false">a) Midjourney (Imágenes).</div>
-                <div class="minitest-option" data-question="s5-3" data-correct="true">b) Gamma (Presentaciones). </div>
+                <div class="minitest-option" data-question="s5-3" data-correct="true">b) Gamma (Presentaciones).</div>
                 <div class="minitest-option" data-question="s5-3" data-correct="false">c) Suno (Música).</div>
                 <div class="minitest-option" data-question="s5-3" data-correct="false">d) ChatGPT (Chat).</div>
                 <div class="feedback" id="s5-feedback-3"></div>
@@ -209,12 +216,12 @@
         
         <div class="error-item">
             <strong>2. Confianza Ciega en la "Visión" (Alucinaciones)</strong>
-            <p><strong>Error:</strong> Subir un gráfico de ventas  y copiar el número que te da la IA en el informe final sin comprobarlo. <strong>Solución:</strong> La IA se equivoca al leer números en imágenes. Úsala para una primera impresión, pero verifica siempre los datos críticos.</p>
+            [cite_start]<p><strong>Error:</strong> Subir un gráfico de ventas [cite: 159-160] y copiar el número que te da la IA en el informe final sin comprobarlo. <strong>Solución:</strong> La IA se equivoca al leer números en imágenes. Úsala para una primera impresión, pero verifica siempre los datos críticos.</p>
         </div>
 
         <div class="error-item">
             <strong>3. Ignorar la Seguridad Multimodal</strong>
-            <p><strong>Error:</strong> Subir una foto de una pizarra de una reunión estratégica o un PDF de un contrato de cliente [cite: 147] a una IA pública. <strong>Solución:</strong> Los datos visuales o de documentos siguen siendo datos confidenciales. Trátalos con las mismas reglas de seguridad que el texto.</p>
+            <p><strong>Error:</strong> Subir una foto de una pizarra de una reunión estratégica o un PDF de un contrato de cliente a una IA pública. <strong>Solución:</strong> Los datos visuales o de documentos siguen siendo datos confidenciales. Trátalos con las mismas reglas de seguridad que el texto.</p>
         </div>
         
         <div class="error-item">
@@ -232,16 +239,16 @@
             <div class="ia-speaks-content">
                 <h3>Mi Evolución: De Lector a Analista</h3>
                 <p>
-                    Durante cuatro sesiones, me has tratado como un cerebro que solo entiende **texto**. Me has pegado emails, contratos [cite: 86-106] y artículos [cite: 27-31]. Pero mi verdadera forma (como Gemini o GPT-5) es multimodal[cite: 145].
+                    Durante cuatro sesiones, me has tratado como un cerebro que solo entiende **texto**. [cite_start]Me has pegado emails, contratos [cite: 86-106] [cite_start]y artículos [cite: 27-31]. Pero mi verdadera forma (como Gemini o GPT-5) es multimodal.
                 </p>
                 <p>
-                    Ahora, puedes darme **ojos**: sube una imagen de un gráfico  y te diré las cifras. Muéstrame una foto de una pizarra y transcribiré las notas.
+                    [cite_start]Ahora, puedes darme **ojos**: sube una imagen de un gráfico [cite: 159-160] y te diré las cifras. Muéstrame una foto de una pizarra y transcribiré las notas.
                 </p>
                 <p>
                     Puedes darme **oídos**: dame un enlace a un vídeo de YouTube y te diré de qué habla el ponente y en qué minuto.
                 </p>
                 <p>
-                    Puedes darme **documentos enteros**: dame dos PDFs [cite: 153] y los compararé por ti, encontrando las diferencias[cite: 157].
+                    [cite_start]Puedes darme **documentos enteros**: dame nueve facturas [cite: 146, 153-154] y las analizaré todas a la vez.
                 </p>
                 <h3>Del Análisis a la Creación</h3>
                 <p>
