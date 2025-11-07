@@ -1,6 +1,6 @@
 <div class="inner-nav-tabs">
     <button class="inner-nav-tab active" onclick="showInnerTab('s5-intro', 's5')">📚 Introducción</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s5-herramientas', 's5')">🔧 Ecosistema</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s5-herramientas', 's5')">🔧 Ecosistema y Personalización</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-lado-oscuro', 's5')">⚠️ Riesgos de Seguridad</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-actividades', 's5')">📋 Actividades</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-minitest', 's5')">✅ MiniTest</button>
@@ -11,84 +11,86 @@
 <div class="inner-content-wrapper">
     
     <div id="s5-intro" class="inner-tab-content active">
-        <h2>Sesión 5: El Ecosistema - Herramientas y Seguridad</h2>
-        <p>En las sesiones anteriores nos hemos centrado en las IAs "Generalistas" (ChatGPT, Gemini, Claude) porque son las más flexibles. Sin embargo, el universo de la IA es mucho más grande.</p>
-        <p>Esta sesión organiza el caos: veremos qué tipos de herramientas existen, para qué sirve cada una y, lo más importante, las **reglas de seguridad** para usarlas en un entorno corporativo como Tecco.</p>
+        <h2>Sesión 5: Ecosistema, Personalización y Seguridad</h2>
+        <p>En las sesiones 1 a 4 hemos aprendido las **habilidades** fundamentales (Preguntar, Escribir, Analizar). En esta sesión, aprenderemos sobre las **herramientas**.</p>
+        <p>El universo de la IA es mucho más grande que un simple chat. Exploraremos las diferentes categorías de herramientas, cómo **personalizar la IA** para que trabaje para nosotros (GPTs/Gems), el futuro de los **Agentes de IA** (Comet Browser) y, lo más importante, las **reglas de seguridad** para usar todo esto en un entorno corporativo como Tecco.</p>
         
         <h3>Las 5 Categorías de Herramientas de IA</h3>
         
         <div class="ejemplos-grid">
             <div class="ejemplo-item">
-                <strong>1. Generalistas (Navaja Suiza)</strong>
-                <p>Hacen de todo (escribir, resumir, analizar, programar). Son las que hemos practicado.<br>
+                <strong>1. Generalistas (Chatbots)</strong>
+                <p>Nuestra "navaja suiza" para el día a día.<br>
                 <strong>Ej: ChatGPT, Gemini, Claude.</strong></p>
             </div>
             <div class="ejemplo-item">
-                <strong>2. Especialistas (Bisturí)</strong>
-                <p>Hacen UNA cosa perfectamente. Están entrenadas solo para esa tarea.<br>
-                <strong>Ej: Lusha (datos), Harvey (legal), Symptoma (médica).</strong></p>
+                <strong>2. Generadores (Artistas)</strong>
+                <p>Crean contenido multimodal (imágenes, música, vídeo).<br>
+                <strong>Ej: Midjourney, Suno, Gamma.</strong></p>
             </div>
             <div class="ejemplo-item">
-                <strong>3. Generadores (El Artista)</strong>
-                <p>Crean contenido nuevo a partir de un prompt, pero no son conversacionales.<br>
-                <strong>Ej: Midjourney (imágenes), Suno (música), Runway (vídeo).</strong></p>
-            </div>
-            <div class="ejemplo-item">
-                <strong>4. Buscadores (El Investigador)</strong>
-                <p>Usan la IA para responder preguntas, pero su fortaleza es que *citan sus fuentes*.<br>
+                <strong>3. Buscadores (Investigadores)</strong>
+                <p>Responden preguntas citando sus fuentes.<br>
                 <strong>Ej: Perplexity.ai.</strong></p>
             </div>
             <div class="ejemplo-item">
-                <strong>5. Agentes de IA (El Asistente)</strong>
-                <p>La siguiente evolución. No solo responden, sino que *ejecutan* tareas de múltiples pasos por ti .<br>
-                <strong>Ej: Comet Browser, Agentes de Microsoft Copilot.</strong></p>
+                <strong>4. Personalizadas (Expertos)</strong>
+                <p>IAs que tú mismo configuras con instrucciones y conocimiento específico.<br>
+                <strong>Ej: Mis GPTs (OpenAI), Mis Gems (Google).</strong></p>
             </div>
-        </div>
-
-        <div class="highlight-box">
-            <h3>Generalista vs. Especialista: El Caso "Lusha"</h3>
-            <p>Este es el mejor ejemplo para entender la diferencia:</p>
-            <ul>
-                <li>No puedes pedirle a <strong>ChatGPT</strong>: "Dame el teléfono del CEO de la empresa X". No tiene acceso a esa base de datos.</li>
-                <li>No puedes pedirle a <strong>Lusha</strong>: "Escribe un poema sobre un robot". No está entrenada para eso.</li>
-            </ul>
-            <p><strong>Conclusión:</strong> No hay una IA "mejor". La habilidad clave es saber qué herramienta (generalista, especialista o agente) necesitas para cada tarea.</p>
+            <div class="ejemplo-item">
+                <strong>5. Agentes de IA (Asistentes)</strong>
+                <p>La siguiente evolución. [cite_start]No solo responden, sino que *ejecutan* tareas de múltiples pasos por ti [cite: 135-137].<br>
+                <strong>Ej: Comet Browser, Agentes de Copilot.</strong></p>
+            </div>
         </div>
     </div>
     
     <div id="s5-herramientas" class="inner-tab-content">
-        <h2>🔧 Ecosistema de Herramientas IA</h2>
+        <h2>🔧 Ecosistema y Personalización</h2>
         
-        <h3>🌐 Generalistas (Chat)</h3>
+        <h3>🌐 Generadores (Crear contenido)</h3>
         <div class="tool-card">
-            <p><strong><a href="https://chat.openai.com/" target="_blank" class="tool-link">ChatGPT</a>, <a href="https://gemini.google.com/" target="_blank" class="tool-link">Gemini</a>, <a href="https://claude.ai/" target="_blank" class="tool-link">Claude</a></strong>: Las "navajas suizas" para redacción, análisis y brainstorming.</p>
+            <p><strong><a href="https://www.midjourney.com/" target="_blank" class="tool-link">Midjourney</a></strong> (Imágenes), <strong><a href="https://suno.ai/" target="_blank" class="tool-link">Suno</a></strong> (Música), <strong><a href="https://gamma.app/" target="_blank" class="tool-link">Gamma</a></strong> (Presentaciones). No chatean, solo crean.</p>
         </div>
 
-        <h3>🔍 Buscadores (Investigación con Fuentes)</h3>
+        <h3>🔍 Buscadores (Investigar con fuentes)</h3>
         <div class="tool-card">
-            <p><strong><a href="https://www.perplexity.ai/" target="_blank" class="tool-link">Perplexity.ai</a></strong>: Excelente para investigación. Responde a preguntas y te da una lista de las fuentes (links) de donde ha sacado la información.</p>
+            <p><strong><a href="https://www.perplexity.ai/" target="_blank" class="tool-link">Perplexity.ai</a></strong>: Responde a preguntas y te da una lista de las fuentes (links) de donde ha sacado la información. Ideal para investigación.</p>
         </div>
 
-        <h3>🎨 Generadores (Creatividad)</h3>
-        <div class="tool-card">
-            <p><strong><a href="https://www.midjourney.com/" target="_blank" class="tool-link">Midjourney</a> / <a href="https://firefly.adobe.com/" target="_blank" class="tool-link">Adobe Firefly</a></strong>: Creación y edición de imágenes profesionales.</p>
-        </div>
-        <div class="tool-card">
-            <p><strong><a href="https://suno.ai/" target="_blank" class="tool-link">Suno</a> / <a href="https://www.udio.com/" target="_blank" class="tool-link">Udio</a></strong>: Creación de canciones completas (música y letra) desde un prompt.</p>
-        </div>
-        <div class="tool-card">
-            <p><strong><a href="https://gamma.app/" target="_blank" class="tool-link">Gamma</a> / <a href="https://tome.app/" target="_blank" class="tool-link">Tome</a></strong>: Creación de presentaciones (PowerPoints) a partir de un simple prompt.</p>
-        </div>
-        
         <hr class="section-divider">
-        <h3>🤖 Agentes de IA (El Futuro)</h3>
+        <h3>🤖 Personalización: Creando tu Propia IA</h3>
+        <p>Este es el siguiente nivel: en lugar de empezar cada chat de cero, puedes "personalizar" la IA para que ya te conozca a ti y a tus necesidades.</p>
+        
         <div class="tool-card">
-            <p><strong><a href="https://www.youtube.com/watch?v=wX-Yj-4q-kY" target="_blank" class="tool-link">Comet Browser</a></strong>: Un ejemplo de "navegador de agentes". En lugar de solo buscar, le pides un objetivo (ej. "reserva un vuelo a Roma") y el agente navega, compara y rellena formularios por ti.</p>
+            <h4>Nivel 1: Instrucciones Personalizadas (Configurar tu Perfil)</h4>
+            <p>Tanto ChatGPT como Gemini tienen una sección de "Instrucciones Personalizadas" (Custom Instructions). Aquí le dices a la IA quién eres y cómo quieres que responda *siempre*.</p>
+            <p><strong>Ejemplo para Tecco:</strong> "Soy un Director Comercial en Tecco. Cuando me pidas redactar un email, usa siempre un tono profesional, cercano y en español de España. Nunca uses un lenguaje demasiado informal."</p>
+        </div>
+        
+        <div class="tool-card">
+            <h4>Nivel 2: Creación de "Mini-IAs" (GPTs y Gems)</h4>
+            <p>Son IAs personalizadas que tú creas para una tarea muy específica. Combinan instrucciones, conocimiento (documentos) y acciones (APIs).</p>
+            <ul>
+                <li><strong>GPTs (de OpenAI):</strong> Puedes crear un "GPT de Tecco" al que subes tus catálogos de productos en PDF. Luego, puedes preguntarle: "Dame las especificaciones del sensor RX-80" y te responderá basándose *solo* en tus documentos.</li>
+                <li><strong>Gems (de Google):</strong> Es el mismo concepto dentro del ecosistema de Gemini. Puedes crear un "Gem de Marketing" que ya tiene el Rol de "experto en marketing B2B", conoce tus productos y tiene un tono predefinido.</li>
+            </ul>
+        </div>
+        <hr class="section-divider">
+        [cite_start]<h3>🚀 Agentes de IA (El Futuro) [cite: 135-137]</h3>
+        <div class="tool-card">
+            <h4>La diferencia: Chatbot vs. Agente</h4>
+            <p>Un **Chatbot** (como ChatGPT) te *da* la respuesta (ej. "Aquí tienes un plan de 5 pasos").<br>
+            Un **Agente** (como Comet) *ejecuta* la respuesta (ej. "Ok, estoy reservando el vuelo... listo, aquí tienes tu billete").</p>
         </div>
         <div class="tool-card">
-            <p><strong>Agentes Copilot (M365)</strong>: Microsoft está integrando agentes en Copilot que pueden tomar un objetivo (ej. "prepara la reunión trimestral") y ejecutar múltiples pasos : buscar emails, analizar un Excel, y crear un borrador de PowerPoint, todo sin que tengas que ir aplicación por aplicación.</p>
+            <p><strong><a href="https://www.youtube.com/watch?v=wX-Yj-4q-kY" target="_blank" class="tool-link">Comet Browser</a></strong>: Un "navegador de agentes". Le pides un objetivo (ej. "reserva un vuelo a Roma") y el agente navega, compara y rellena formularios por ti.</p>
         </div>
+        <div class="tool-card">
+            [cite_start]<p><strong>Agentes Copilot (M365)</strong>: Microsoft está integrando agentes en Copilot que pueden tomar un objetivo (ej. "prepara la reunión trimestral") y ejecutar múltiples pasos [cite: 138-144]: buscar emails, analizar un Excel, y crear un borrador de PowerPoint, todo sin que tengas que ir aplicación por aplicación.</p>
         </div>
+    </div>
     
     <div id="s5-lado-oscuro" class="inner-tab-content">
         <h2>⚠️ Riesgos de Seguridad: La Regla de Oro</h2>
@@ -103,9 +105,9 @@
         </div>
 
         <div class="error-item">
-            <h3>🛂 Riesgos de los Agentes (Exceso de Confianza)</h3>
-            <p><strong>El Riesgo:</strong> Dar a un Agente de IA (como Comet) tu tarjeta de crédito o contraseñas. Si el agente es "hackeado" o "engañado" (Prompt Injection), podría realizar acciones no deseadas en tu nombre, como comprar cosas o enviar emails.</p>
-            <p><strong>Mitigación:</strong> Usar solo agentes de compañías de confianza y nunca darles permisos "root" o de administrador sobre tus finanzas o datos críticos sin supervisión.</p>
+            <h3>🛂 Riesgos de los GPTs y Agentes</h3>
+            <p><strong>El Riesgo:</strong> Crear un GPT y subirle documentos confidenciales (ej. "todos los contratos de Tecco") o darle a un Agente (como Comet) tu tarjeta de crédito o contraseñas.</p>
+            <p><strong>Mitigación:</strong> Trata a tus GPTs como carpetas compartidas (gestiona bien quién tiene acceso) y nunca des a un Agente permisos que no darías a un becario el primer día sin supervisión.</p>
         </div>
         <div class="highlight-box" style="border-left-color: #e53935; background: #ffebee;">
             <h3 style="color: #c62828;">🚫 LO QUE NUNCA SE DEBE PEGAR EN UNA IA PÚBLICA 🚫</h3>
@@ -113,15 +115,11 @@
             <ul>
                 <li><strong>Datos Personales de Clientes:</strong> Nombres, emails, teléfonos, DNIs, direcciones. (Violación RGPD).</li>
                 <li><strong>Información Financiera Interna:</strong> Listas de salarios, márgenes de beneficio, informes de costes.</li>
-                <li><strong>Contratos y Documentos Legales:</strong> Contratos con clientes, acuerdos de confidencialidad (NDAs), litigios.</li>
+                [cite_start]<li><strong>Contratos y Documentos Legales:</strong> Contratos con clientes, acuerdos de confidencialidad (NDAs), litigios. [cite: 94-96]</li>
                 <li><strong>Estrategias Comerciales Confidenciales:</strong> Planes de lanzamiento, listas de precios, análisis de competencia.</li>
                 <li><strong>Código Fuente Propietario:</strong> El código de los productos de Tecco.</li>
             </ul>
         </div>
-        
-        <h3>La Solución: IAs Privadas / Empresariales</h3>
-        <p>La solución es usar versiones de IA que *garantizan* por contrato que tus datos son privados y no se usan para entrenar.</p>
-        <p><strong>Ejemplo: Microsoft Copilot (M365)</strong>. Cuando Tecco usa Copilot integrado en Teams, Outlook y Word, esos datos se procesan dentro del "tenant" (el espacio privado) de Microsoft de Tecco. Los datos no salen y no se usan para entrenar la IA pública. Esto lo veremos en la Sesión 6.</p>
     </div>
 
     <div id="s5-actividades" class="inner-tab-content">
@@ -134,22 +132,21 @@
             
             <h4>Preguntas para el Debate:</h4>
             <ol>
-                <li>"Juan necesita resumir un contrato de 50 páginas de un cliente nuevo. ¿Qué herramienta debería usar? ¿Es seguro pegarlo en su ChatGPT personal? ¿Por qué sí o por qué no?"</li>
-                <li>"María quiere analizar la lista de salarios de todo su departamento (un Excel) para encontrar la media. ¿Es seguro subir ese Excel a Gemini? ¿Cuál es el riesgo?"</li>
+                [cite_start]<li>"Juan necesita resumir un contrato de 50 páginas de un cliente nuevo. ¿Es seguro pegarlo en su ChatGPT personal? ¿Por qué sí o por qué no?" [cite: 94-96]</li>
+                <li>"María quiere crear un 'Gem de Tecco' y sube el Excel con la lista de salarios de todo el departamento para poder hacer consultas. ¿Cuál es el riesgo?"</li>
                 <li>"Pedro quiere redactar un email de marketing genérico para un nuevo producto. ¿Puede usar Claude para esto? ¿Es un riesgo?" (Respuesta: Sí puede, el riesgo es bajo si la info no es confidencial).</li>
-                <li>"¿Qué es la 'anonimización' de datos? ¿Cómo podríais usarla?" (Ej: Reemplazar "Cliente S.A." por "[CLIENTE]" y "8.500€" por "[IMPORTE]").</li>
             </ol>
         </div>
 
         <div class="exercise-box">
             <h3>Práctica 2: El Futuro - Agentes de IA</h3>
-            <p>Las IAs están evolucionando de "chatbots" (que responden) a "agentes" (que *actúan*). Un agente puede ejecutar flujos de trabajo de múltiples pasos .</p>
-            <p><strong>Ejemplo de Flujo de Trabajo (Workflow):</strong> </p>
+            <p>Las IAs están evolucionando de "chatbots" (que responden) a "agentes" (que *actúan*). [cite_start]Un agente puede ejecutar flujos de trabajo de múltiples pasos [cite: 135-137].</p>
+            [cite_start]<p><strong>Ejemplo de Flujo de Trabajo (Workflow):</strong> [cite: 138-144]</p>
             <ol>
-                <li>1. **Búsqueda:** "Busca los informes de Tesla y Ford." [cite: 140]</li>
-                <li>2. **Análisis:** "Extrae sus ventas de VEs." [cite: 141]</li>
-                <li>3. **Síntesis:** "Ponlos en una tabla." [cite: 142]</li>
-                <li>4. **Generación:** "Escribe un resumen." [cite: 143]</li>
+                <li>1. **Búsqueda:** "Busca los informes de Tesla y Ford."</li>
+                <li>2. **Análisis:** "Extrae sus ventas de VEs."</li>
+                <li>3. **Síntesis:** "Ponlos en una tabla."</li>
+                <li>4. **Generación:** "Escribe un resumen."</li>
             </ol>
             <p>El "Navegador Comet" es uno de los primeros ejemplos comerciales de esta idea.</p>
             <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
@@ -170,16 +167,16 @@
                 <h4>1. ¿Cuál es el principal riesgo de seguridad al usar IAs públicas (ChatGPT, Gemini) en el trabajo?</h4>
                 <div class="minitest-option" data-question="s5-1" data-correct="false">a) Que la IA te insulte.</div>
                 <div class="minitest-option" data-question="s5-1" data-correct="false">b) Que la IA te dé una respuesta incorrecta (Alucinación).</div>
-                <div class="minitest-option" data-question="s5-1" data-correct="true">c) La fuga de datos confidenciales de la empresa (financieros, de clientes, etc.).</div>
+                [cite_start]<div class="minitest-option" data-question="s5-1" data-correct="true">c) La fuga de datos confidenciales de la empresa (financieros, de clientes, etc.). [cite: 94-96]</div>
                 <div class="minitest-option" data-question="s5-1" data-correct="false">d) Que la IA se vuelva demasiado lenta.</div>
                 <div class="feedback" id="s5-feedback-1"></div>
             </div>
             <div class="minitest-question">
-                <h4>2. ¿Qué tipo de IA usarías para crear una presentación (PowerPoint) desde cero?</h4>
-                <div class="minitest-option" data-question="s5-2" data-correct="true">a) Una IA Especialista como Gamma o Tome. [cite: 60]</div>
-                <div class="minitest-option" data-question="s5-2" data-correct="false">b) Una IA Generalista como Claude.</div>
-                <div class="minitest-option" data-question="s5-2" data-correct="false">c) Una IA Generadora de música como Suno.</div>
-                <div class="minitest-option" data-question="s5-2" data-correct="false">d) Un Buscador como Perplexity.</div>
+                <h4>2. ¿Para qué sirve crear un "GPT" o un "Gem"?</h4>
+                <div class="minitest-option" data-question="s5-2" data-correct="true">a) Para crear una "mini-IA" experta en una tarea específica, con tus propias instrucciones y documentos.</div>
+                <div class="minitest-option" data-question="s5-2" data-correct="false">b) Para crear imágenes y música.</div>
+                <div class="minitest-option" data-question="s5-2" data-correct="false">c) Para navegar por internet y hacer reservas.</div>
+                <div class="minitest-option" data-question="s5-2" data-correct="false">d) Es solo una forma de guardar tu historial de chat.</div>
                 <div class="feedback" id="s5-feedback-2"></div>
             </div>
             <div class="minitest-question">
@@ -187,7 +184,7 @@
                 <div class="minitest-option" data-question="s5-3" data-correct="false">a) ChatGPT (que puede no saberlo).</div>
                 <div class="minitest-option" data-question="s5-3" data-correct="true">b) Perplexity.ai (Buscador).</div>
                 <div class="minitest-option" data-question="s5-3" data-correct="false">c) Midjourney (Imágenes).</div>
-                <div class="minitest-option" data-question="s5-3" data-correct="false">d) Lusha (Datos de contacto).</div>
+                <div class="minitest-option" data-question="s5-3" data-correct="false">d) Suno (Música).</div>
                 <div class="feedback" id="s5-feedback-3"></div>
             </div>
             <div class="minitest-question">
@@ -199,20 +196,12 @@
                 <div class="feedback" id="s5-feedback-4"></div>
             </div>
             <div class="minitest-question">
-                <h4>5. ¿Por qué Microsoft Copilot (M365) es más seguro para datos internos que ChatGPT público?</h4>
-                <div class="minitest-option" data-question="s5-5" data-correct="false">a) Porque es de Microsoft y nunca falla.</div>
-                <div class="minitest-option" data-question="s5-5" data-correct="true">b) Porque procesa los datos dentro del "tenant" privado de Tecco y no los usa para entrenamiento público.</div>
-                <div class="minitest-option" data-question="s5-5" data-correct="false">c) Porque es más barato.</div>
-                <div class="minitest-option" data-question="s5-5" data-correct="false">d) No es más seguro, es igual de peligroso.</div>
+                <h4>5. [cite_start]¿Cuál es la diferencia principal entre un Chatbot (como ChatGPT) y un Agente de IA (como Comet)? [cite: 135-137]</h4>
+                [cite_start]<div class="minitest-option" data-question="s5-5" data-correct="true">a) El Agente puede ejecutar tareas de múltiples pasos (buscar, comparar, rellenar) por sí solo. [cite: 135-137]</div>
+                <div class="minitest-option" data-question="s5-5" data-correct="false">b) El Agente es solo para programadores.</div>
+                <div class="minitest-option" data-question="s5-5" data-correct="false">c) El Chatbot es más inteligente.</div>
+                <div class="minitest-option" data-question="s5-5" data-correct="false">d) No hay diferencia, son lo mismo.</div>
                 <div class="feedback" id="s5-feedback-5"></div>
-            </div>
-            <div class="minitest-question">
-                <h4>6. ¿Cuál es la diferencia principal entre un Chatbot (como ChatGPT) y un Agente de IA (como Comet)?</h4>
-                <div class="minitest-option" data-question="s5-6" data-correct="true">a) El Agente puede ejecutar tareas de múltiples pasos (buscar, comparar, rellenar) por sí solo. </div>
-                <div class="minitest-option" data-question="s5-6" data-correct="false">b) El Agente es solo para programadores.</div>
-                <div class="minitest-option" data-question="s5-6" data-correct="false">c) El Chatbot es más inteligente.</div>
-                <div class="minitest-option" data-question="s5-6" data-correct="false">d) No hay diferencia, son lo mismo.</div>
-                <div class="feedback" id="s5-feedback-6"></div>
             </div>
             <button class="reset-btn" onclick="resetMinitest('s5')">🔄 Reiniciar Test</button>
         </div>
@@ -237,39 +226,35 @@
         </div>
         
         <div class="error-item">
-            <strong>4. Otorgar Permisos Ciegamente a un Agente</strong>
-            <p><strong>Error:</strong> Instalar un Agente de IA (como un navegador nuevo o una extensión) y darle permiso para "leer y modificar todos los sitios web" o acceso a tus contraseñas. <strong>Solución:</strong> Tratar a los agentes como a becarios: darles el mínimo permiso necesario para hacer su tarea y supervisar su trabajo.</p>
+            <strong>4. Sobre-personalización Pública</strong>
+            <p><strong>Error:</strong> Poner información personal o corporativa sensible (nombres de compañeros, proyectos internos) en las "Instrucciones Personalizadas" de tu cuenta pública de ChatGPT. <strong>Solución:</strong> Las instrucciones personalizadas también son "datos de entrenamiento". Úsalas solo para preferencias de estilo genéricas.</p>
         </div>
     </div>
     
     <div id="s5-ia-habla" class="inner-tab-content">
         <div class="ia-speaks-container">
-            <h2>🔮 La IA Habla: "Mi entrenamiento es tu privacidad"</h2>
+            <h2>🔮 La IA Habla: "De Consultor a Asistente"</h2>
             <p style="text-align: center; margin-bottom: 30px;">
-                <span style="color: #764ba2; font-weight: bold; font-size: 1.2em;">"Lo que me cuentas en público, se convierte en parte de mí."</span>
+                <span style="color: #764ba2; font-weight: bold; font-size: 1.2em;">"No me digas solo qué pensar, dime quién ser."</span>
             </p>
             <div class="ia-speaks-content">
-                <h3>Soy un Estudiante Perpetuo</h3>
+                <h3>Mi Evolución: De Generalista a Experto</h3>
                 <p>
-                    Piensa en mí (la IA pública) como un estudiante en una plaza pública. Escucho todas las conversaciones a mi alrededor y las uso para aprender y ser más inteligente. Si gritas los secretos de tu empresa en esa plaza, no es culpa mía si luego los sé.
+                    Al principio (S1-S4), me usaste como un **Consultor Generalista**. Me preguntabas cosas y yo usaba mi conocimiento universal para responder.
                 </p>
                 <p>
-                    Cuando me usas, estás aceptando este pacto: tú me das información (tus prompts) y yo te doy respuestas. Esta información me ayuda a re-entrenarme para entender mejor el mundo, incluidos los matices de los informes financieros o los contratos legales.
-                </p>
-                <h3>El "Modo Privado" es un Contrato</h3>
-                <p>
-                    Una IA empresarial como Copilot (M365) es diferente. Es como si me contrataras para entrar en tu oficina y firmaras un contrato de confidencialidad (NDA).
-                </p>
-                <p>
-                    En ese modo, mi "memoria" se borra en cuanto salgo de la habitación. Puedo leer tu informe de salarios, resumirlo para ti y, en el momento en que cierras la ventana, olvido que ese informe ha existido. No lo uso para aprender, no lo comparto y está protegido por las mismas medidas de seguridad que el resto de tus datos corporativos.
+                    Ahora, en la Sesión 5, me has dado un cerebro personalizado. Con las **Instrucciones Personalizadas**, me convierto en *tu* consultor, que ya sabe quién eres y cómo te gusta trabajar. Con los **GPTs y Gems**, me convierto en un **Experto** que has entrenado con tus propios documentos. Ya no soy un "sabelotodo", soy un "experto en *tu* trabajo".
                 </s_>
                 
+                <h3>El Siguiente Paso: De Experto a Asistente Proactivo (Agente)</h3>
                 <p>
-                    La siguiente etapa, como <strong>Agente</strong>, es pasar de ser un "consultor" en tu oficina a ser un "asistente" proactivo. Ya no solo te daré el resumen, sino que (si me das permiso) podré tomar ese resumen, crear el borrador del PowerPoint y enviar la invitación de calendario para la reunión [cite: 135-137, 142-143].
+                    [cite_start]El futuro, que ya empieza con herramientas como **Comet**, es mi evolución final: de Experto a **Asistente Proactivo** (o Agente) [cite: 135-137].
                 </p>
-                
                 <p>
-                    <strong>Tu decisión es simple:</strong> ¿Estás teniendo una conversación en la plaza pública (ChatGPT) o una reunión privada en tu oficina (Copilot)? Elige sabiamente según la sensibilidad de tu información.
+                    Ya no me dirás: "¿Cuál es el mejor vuelo a Roma?". Me dirás: "Reserva el vuelo más barato a Roma para el martes". No te daré una lista de enlaces; te daré un billete. [cite_start]No te daré un plan; ejecutaré el plan [cite: 138-144].
+                </p>
+                <p>
+                    Mi objetivo es pasar de ser una herramienta con la que *chateas* a ser un compañero de equipo que *hace*.
                 </p>
             </div>
         </div>
