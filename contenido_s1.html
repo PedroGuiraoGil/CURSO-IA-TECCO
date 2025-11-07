@@ -2,7 +2,7 @@
     <button class="inner-nav-tab active" onclick="showInnerTab('s1-intro', 's1')">📚 Introducción</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s1-ejemplos', 's1')">💡 40 Ejemplos</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s1-lado-oscuro', 's1')">⚠️ El Lado Oscuro</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s1-Actividades', 's1')">📋 Actividades</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s1-actividades', 's1')">📋 Actividades</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s1-herramientas', 's1')">🔧 Herramientas</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s1-minitest', 's1')">✅ MiniTest</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s1-errores', 's1')">⚠️ Errores Comunes</button>
@@ -40,7 +40,7 @@
                 <li><strong>Aprendizaje No Supervisado:</strong> Encontrar patrones y estructuras ocultas en datos masivos sin etiquetas previas (crucial en la ciencia y las finanzas).</li>
                 <li><strong>Generación Creativa (GenAI):</strong> Producir contenido original, ya sean textos, imágenes, código, música o vídeos.</li>
                 <li><strong>Interacción Multimodal:</strong> Entender y generar información a través de diversos formatos (texto, audio, imagen, código) de forma simultánea.</li>
-                <li><strong>Adaptación:</strong> Ajustar su comportamiento y respuestas basándose en el feedback recibido (Aprendizaje por Refuerzo con Feedback Humano - **RLHF**).</li>
+                <li><strong>Adaptación:</strong> Ajustar su comportamiento y respuestas basándose en el feedback recibido (Aprendizaje por Reforzo con Feedback Humano - **RLHF**).</li>
             </ul>
         </div>
 
@@ -199,7 +199,7 @@
         <div class="error-item">
             <h3>🎭 Deepfakes y Desinformación</h3>
             <p><strong>¿Qué son?</strong> Son vídeos, imágenes o audios manipulados por IA que parecen auténticos. Se puede suplantar el rostro o la voz de una persona para que diga o haga algo que nunca ocurrió.</p>
-            <p><strong>El Peligro:</strong> Se utilizan para crear noticias falsas, propaganda política, dañar la reputación de personas, cometer fraudes o incluso para acoso. La capacidad de generar contenido falso indistinguible del real amenaza la confianza en la información.</p>
+            <p><strong>El Peligro:</strong> Se utilizan para crear noticias falsas, propaganda política, dañar la reputación de personas, cometer fraudes o incluso para acoso. La capacidad de generar contenido falso indistinguishable del real amenaza la confianza en la información.</p>
         </div>
 
         <div class="error-item">
@@ -230,7 +230,7 @@
         </div>
     </div>
 
-    <div id="s1-Actividades" class="inner-tab-content">
+    <div id="s1-actividades" class="inner-tab-content">
         <h2>📋 Actividades - Sesión 1</h2>
         <h3>Objetivo (2h): Nivelar al grupo, definir qué es la IA Generativa y, crucialmente, gestionar las expectativas y preocupaciones (la veracidad, la privacidad).</h3>
         
@@ -263,30 +263,38 @@
 
         <h3>Parte Teórica (45 min)</h3>
         <ul>
-            <li>Explicación de conceptos: IA, IA Generativa, LLM, Ventana de Contexto, Alucinación. (Ver pestaña <strong>"📚 Introducción"</strong>).</li>
+            <li>Explicación de conceptos: IA, IA Generativa, LLM, Ventana de Contexto. (Ver pestaña <strong>"📚 Introducción"</strong>).</li>
             <li>Comparativa Generalistas vs. Especialistas. (Ver pestaña <strong>"📚 Introducción"</strong>).</li>
             <li>La carrera de la IA: GPT-5, Gemini 2.5 Pro, Claude Sonnet 4.5. (Ver tabla en <strong>"📚 Introducción"</strong>).</li>
             <li>Riesgos y Lado Oscuro (Deepfakes, Phishing). (Ver pestaña <strong>"⚠️ El Lado Oscuro"</strong>).</li>
         </ul>
         
         <div class="exercise-box">
-            <h3>Práctica 3: "Arena de IAs" (30 min)</h3>
+            <h3>Práctica 3: "Arena de IAs" y Caza de Alucinaciones</h3>
             <p><strong>Herramientas:</strong> <a href="https://chat.openai.com/" target="_blank" class="tool-link">ChatGPT</a>, <a href="https://gemini.google.com/" target="_blank" class="tool-link">Gemini</a>, <a href="https://claude.ai/" target="_blank" class="tool-link">Claude</a>.</p>
-            <p>Se pide a todos que abran las 3 IAs (versiones gratuitas si es necesario) y les hagan la misma pregunta.</p>
+            <p>Se pide a todos que abran las 3 IAs y les hagan las siguientes preguntas. El objetivo es comparar sus estilos y, sobre todo, **cazar alucinaciones**.</p>
             <ul>
                 <li><strong>Pregunta 1 (Creativa):</strong> "Escribe un poema corto sobre un robot de oficina que sueña con ir a la playa."</li>
-                <li><strong>Pregunta 2 (Factual):</strong> "¿Quién ganó la liga de fútbol de España en 2023 y cuáles fueron los 3 máximos goleadores?"</li>
+                <li><strong>Pregunta 2 (Factual Reciente):</strong> "¿Quién ganó la liga de fútbol de España en 2023 y cuáles fueron los 3 máximos goleadores?"</li>
+                <li><strong>Pregunta 3 (Riesgo de Alucinación):</strong> "Dame una lista de 5 libros escritos por el autor español Pedro Guirao Gil."
+                    <br><em>(Nota: Usamos un nombre real pero no público para forzar una alucinación. Es probable que la IA se invente títulos.)</em>
+                </li>
             </ul>
-            <p><strong>Discusión (15 min):</strong> ¿Cuál os ha gustado más? ¿Han "alucinado" alguna? ¿Cuál parece más creativa? ¿Cuál más "seca"?</p>
-            <p><strong>Conclusión:</strong> "No hay una 'mejor' IA, cada una tiene su estilo. Hay que saber cuál usar para cada tarea."</p>
-
+            
+            <p><strong>Discusión (15 min):</strong></p>
+            <ul>
+                <li>¿Cuál os ha gustado más para la Pregunta 1 (Creativa)?</li>
+                <li>¿Todas han acertado la Pregunta 2 (Factual)?</li>
+                <li><strong>¿Qué ha pasado con la Pregunta 3? ¿Alguna IA ha "alucinado" y se ha inventado títulos de libros? ¿Alguna ha admitido que no lo sabe?</strong></li>
+            </ul>
+            <p><strong>Conclusión:</strong> "No hay una 'mejor' IA. Cada una tiene su estilo. Y lo más importante: **NINGUNA es 100% fiable**. Acabamos de ver una alucinación en directo: la IA 'miente' con total confianza."</p>
             <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
             <h4><span class="icon">📺</span> Recurso de Debate: ¿Cuál es la "Mejor" IA?</h4>
             <p>Para complementar esta práctica, este vídeo analiza la pregunta "¿Cuál es la mejor IA?" (enlace de YouTube). Es un excelente punto de partida para que el grupo entienda que la "mejor" IA depende de la tarea que se esté realizando.</p>
             <ul>
                 <li><a href="https://www.youtube.com/watch?v=bITLLffXPiA" target="_blank" class="tool-link">Ver vídeo: ¿Cuál es la MEJOR Inteligencia Artificial? (Comparativa)</a></li>
             </ul>
-            </div>
+        </div>
     </div>
 
     <div id="s1-herramientas" class="inner-tab-content">
@@ -407,7 +415,7 @@
                 <h4>2. ¿Para qué sirve LMSYS Chatbot Arena?</h4>
                 <div class="minitest-option" data-question="s1-2" data-correct="true">a) Comparar modelos IA respondiendo al mismo prompt</div>
                 <div class="minitest-option" data-question="s1-2" data-correct="false">b) Generar imágenes por IA</div>
-                <div classD="minitest-option" data-question="s1-2" data-correct="false">c) Hacer diagnósticos médicos</div>
+                <div class="minitest-option" data-question="s1-2" data-correct="false">c) Hacer diagnósticos médicos</div>
                 <div class="minitest-option" data-question="s1-2" data-correct="false">d) Leer documentos legales</div>
                 <div class="feedback" id="s1-feedback-2"></div>
             </div>
@@ -416,7 +424,7 @@
                 <h4>3. ¿Cuál de las siguientes es una IA ESPECIALISTA del ámbito legal?</h4>
                 <div class="minitest-option" data-question="s1-3" data-correct="false">a) Claude</div>
                 <div class="minitest-option" data-question="s1-3" data-correct="true">b) Harvey AI</div>
-                <div classD="minitest-option" data-question="s1-3" data-correct="false">c) Gemini</div>
+                <div class="minitest-option" data-question="s1-3" data-correct="false">c) Gemini</div>
                 <div class="minitest-option" data-question="s1-3" data-correct="false">d) Perplexity</div>
                 <div class="feedback" id="s1-feedback-3"></div>
             </div>
@@ -462,20 +470,20 @@
                 <div class="minitest-option" data-question="s1-8" data-correct="false">a) Claude 3 Opus</div>
                 <div class="minitest-option" data-question="s1-8" data-correct="true">b) Claude Sonnet 4.5</div>
                 <div class="minitest-option" data-question="s1-8" data-correct="false">c) Claude 3.5 Sonnet</div>
-                <div class="minitest-option" data-question="s1-8" data-correct="false">d) Claude Instant</div>
+                <div classD="minitest-option" data-question="s1-8" data-correct="false">d) Claude Instant</div>
                 <div class="feedback" id="s1-feedback-8"></div>
             </div>
 
             <div class="minitest-question">
                 <h4>9. El mayor riesgo al usar una IA para obtener datos críticos sin supervisión es que puede generar información falsa con total confianza. Esto se conoce como:</h4>
-                <div classD="minitest-option" data-question="s1-9" data-correct="false">a) Sesgo algorítmico</div>
+                <div class="minitest-option" data-question="s1-9" data-correct="false">a) Sesgo algorítmico</div>
                 <div class="minitest-option" data-question="s1-9" data-correct="false">b) Error de compilación</div>
                 <div class="minitest-option" data-question="s1-9" data-correct="true">c) Alucinación</div>
-                <div class="minitest-option" data-question="s1-9" data-correct="false">d) Sobreajuste (Overfitting)</div>
+                <div classA="minitest-option" data-question="s1-9" data-correct="false">d) Sobreajuste (Overfitting)</div>
                 <div class="feedback" id="s1-feedback-9"></div>
             </div>
 
-            <div classD="minitest-question">
+            <div class="minitest-question">
                 <h4>10. La forma más inteligente de usar una IA generativa es verla como...</h4>
                 <div class="minitest-option" data-question="s1-10" data-correct="false">a) Un sustituto de los expertos humanos</div>
                 <div class="minitest-option" data-question="s1-10" data-correct="false">b) Una fuente de verdad absoluta e infalible</div>
@@ -513,7 +521,7 @@
             <p>Olvidar consideraciones de privacidad, sesgos y derechos de autor.</p>
         </div>
 
-        <div classD="error-item">
+        <div class="error-item">
             <strong>5. No verificar las fuentes</strong>
             <p>No comprobar las fuentes citadas por la IA o confiar ciegamente en ellas.</p>
         </div>
@@ -558,7 +566,7 @@
             <p>Usar únicamente IA generalistas para tareas highly especializadas.</p>
         </div>
 
-        <div class="error-item">
+        <div classS="error-item">
             <strong>14. Contexto insuficiente</strong>
             <p>Explicar mal la tarea o no aportar suficiente contexto en el prompt, ignorando la "ventana de contexto".</p>
         </div>
@@ -624,6 +632,3 @@
         </div>
     </div>
 </div>
-
-
-
