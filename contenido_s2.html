@@ -13,6 +13,14 @@
     
     <div id="s2-intro" class="inner-tab-content active">
         <h2>Sesión 2: La Habilidad Clave - "El Arte del Prompting"</h2>
+
+        <div class="highlight-box" style="background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%); border-left-color: #00796b;">
+            <h4 style="color: #004d40; margin-top: 0;">¿Prefieres verlo en formato presentación?</h4>
+            <p style="margin-bottom: 0;">He creado una presentación visual de esta sesión. Puedes verla en este enlace:</p>
+            <ul>
+                <li><a href="https://app.presentations.ai/view/L5gBT8BApr" target="_blank" class="tool-link">Ver Presentación de la Sesión 2</a></li>
+            </ul>
+        </div>
         <p>Esta es la sesión más importante de todo el curso. La IA es un motor potentísimo, pero el **prompt es el volante**. Un mal conductor (un mal prompt) estrellará el motor. Un buen conductor (un buen prompt) puede ganar la carrera.</p>
         <p>El "Prompting" es el arte y la ciencia de dar instrucciones a la IA para obtener exactamente el resultado que deseas. No es "pedir", es "instruir".</p>
         
@@ -30,6 +38,7 @@
         <p>Por defecto, la IA te da una respuesta **rápida**, no necesariamente la más **reflexiva**. Como has observado, si le pides que "piense más", "razone paso a paso" o "busque en internet", la respuesta mejora.</p>
         <p>Esto se llama **"Cadena de Pensamiento" (Chain-of-Thought)**. Al forzar a la IA a explicar su razonamiento *antes* de dar la respuesta final, es mucho más probable que detecte sus propios errores y te dé un resultado correcto. Es la diferencia entre preguntar "¿cuánto es 2+2?" y preguntar "explícame cómo llegas al resultado de 2+2".</p>
         <p>Herramientas como la función **"Deep Research" de Gemini** son una versión automatizada de esta técnica, donde la IA se toma más tiempo para consultar fuentes y sintetizar una respuesta más profunda.</p>
+
         <hr class="section-divider">
         <h3>Entendiendo el "Contexto" y la "Memoria"</h3>
         <p>El concepto más importante del prompting es el **Contexto**. Las IAs no "recuerdan" vuestras conversaciones anteriores como lo hace un humano.</p>
@@ -70,7 +79,6 @@
                 <strong>Prompt Profesional (R.C.T.F.)</strong>
                 <p><code>"<strong>(Rol)</strong> Actúa como un manager de proyecto. <strong>(Contexto)</strong> Necesito reportar a mi superior sobre el estado de esta cadena de emails. <strong>(Tarea)</strong> Lee toda la conversación. <strong>(Formato)</strong> Genera un resumen en 5 puntos clave (bullet points), indicando claramente quién es el responsable de cada acción pendiente y cuál es la fecha límite."</code></p>
             </div>
-
             <div class="ejemplo-item" style="border-left-color: #e53935;">
                 <strong>Prompt Pobre (Respuesta Rápida)</strong>
                 <p><code>"¿Es una buena idea abrir una cafetería en mi barrio?"</code></p>
@@ -81,7 +89,7 @@
                 <p><code>"Quiero abrir una cafetería en mi barrio. <strong>(Tarea)</strong> Actúa como un consultor de negocios. <strong>Primero, hazme una lista de 10 preguntas clave</strong> que necesito responder sobre mi competencia y público. <strong>Luego, basándote en esas preguntas, dame un plan de acción</strong> paso a paso."</code></p>
                 <p><em>(Resultado: Una respuesta útil, porque la forzamos a pensar en los pasos previos.)</em></p>
             </div>
-            </div>
+        </div>
 
         <hr class="section-divider">
 
@@ -155,6 +163,7 @@
             </ol>
             <p><strong>Discusión:</strong> ¿La IA dio la respuesta instintiva (y errónea) de 0,10€ en el primer prompt? ¿Cómo al pedirle que "razone paso a paso" (Chain-of-Thought) llega casi siempre a la respuesta correcta (0,05€)?</p>
         </div>
+
         <div class="exercise-box">
             <h3>Práctica 2: "El Ejercicio Mágico de Traducción" (R.C.T.F.)</h3>
             <p>Esta práctica está diseñada para crear un momento "Ajá" en el grupo. Usaremos un texto base y lo mejoraremos iterativamente con 4 niveles de prompts.</p>
@@ -230,6 +239,7 @@
                 <li><strong>Perplexity Pro:</strong> Permite elegir el modelo de IA (GPT-5, Claude) para realizar búsquedas más reflexivas.</li>
             </ul>
         </div>
+        
         <div class="tool-card">
             <h4><span class="icon">🤖</span>¡La propia IA! (Meta-Prompting)</h4>
             <p>Usa la IA para que te ayude a construir el prompt. En lugar de pedir el resultado final, pídele a la IA que te haga las preguntas necesarias.</p>
@@ -267,11 +277,11 @@
                 <div class="feedback" id="s2-feedback-3"></div>
             </div>
             <div class="minitest-question">
-                <h4>4. Pedirle a la IA que "razone paso a paso" (Chain-of-Thought) sirve para:</h4>
-                <div class="minitest-option" data-question="s2-4" data-correct="true">a) Forzar una respuesta más reflexiva y reducir la probabilidad de un error rápido.</div>
-                <div class="minitest-option" data-question="s2-4" data-correct="false">b) Hacer que la respuesta sea más corta y directa.</div>
-                <div class="minitest-option" data-question="s2-4" data-correct="false">c) Analizar vídeos de YouTube.</div>
-                <div class="minitest-option" data-question="s2-4" data-correct="false">d) Crear imágenes.</div>
+                <h4>4. En la Práctica 1 (Problema de Lógica), ¿por qué pedir "razona paso a paso" (Chain-of-Thought) da un mejor resultado?</h4>
+                <div class="minitest-option" data-question="s2-4" data-correct="true">a) Porque la IA se ve forzada a dejar la respuesta "rápida" (e incorrecta) y seguir un proceso lógico.</div>
+                <div class="minitest-option" data-question="s2-4" data-correct="false">b) Porque la IA se vuelve más creativa.</div>
+                <div class="minitest-option" data-question="s2-4" data-correct="false">c) Porque la IA busca en Google.</div>
+                <div class="minitest-option" data-question="s2-4" data-correct="false">d) Porque es un comando para cambiar el formato.</div>
                 <div class="feedback" id="s2-feedback-4"></div>
             </div>
             <div class="minitest-question">
