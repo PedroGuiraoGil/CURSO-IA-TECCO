@@ -13,9 +13,17 @@
     
     <div id="s4-intro" class="inner-tab-content active">
         <h2>Sesión 4: Taller de Análisis - "Encontrar la Aguja en el Pajar"</h2>
+
+        <div class="highlight-box" style="background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%); border-left-color: #00796b;">
+            <h4 style="color: #004d40; margin-top: 0;">¿Prefieres verlo en formato presentación?</h4>
+            <p style="margin-bottom: 0;">He creado una presentación visual de esta sesión. Puedes verla en este enlace:</p>
+            <ul>
+                <li><a href="https://app.presentations.ai/view/cQoCxdarJf" target="_blank" class="tool-link">Ver Presentación de la Sesión 4</a></li>
+            </ul>
+        </div>
         <p>Esta sesión se centra en una de las capacidades de IA que más tiempo ahorra: **procesar grandes cantidades de información y extraer valor**.</p>
         <p>En las sesiones anteriores aprendimos a *preguntar* (S2) y *crear* (S3). Ahora aprenderemos a *consumir y analizar*. El objetivo es dejar de perder horas leyendo correos, feedback de clientes, informes o documentos complejos.</p>
-        <p>Usaremos un contrato legal  como un **ejemplo avanzado** de texto denso, pero la habilidad se aplica a cualquier tipo de información.</p>
+        [cite_start]<p>Usaremos un contrato legal [cite: 86-106] como un **ejemplo avanzado** de texto denso, pero la habilidad se aplica a cualquier tipo de información.</p>
         
         <h3>Las Dos Habilidades Clave del Análisis</h3>
         <div class="tool-card">
@@ -25,7 +33,7 @@
 
         <div class="tool-card">
             <h4>2. Extraer y Transformar (Extraction)</h4>
-            <p><strong>Qué es:</strong> Sacar datos específicos de un texto desestructurado y ponerlos en un formato estructurado (como una tabla o una lista) .</p>
+            [cite_start]<p><strong>Qué es:</strong> Sacar datos específicos de un texto desestructurado y ponerlos en un formato estructurado (como una tabla o una lista) [cite: 77-78].</p>
             <p>Esta es la habilidad más potente. Permite convertir un contrato en una tabla de riesgos, una serie de facturas en un Excel, o un feedback de cliente en una lista de quejas.</p>
         </div>
 
@@ -42,7 +50,7 @@
         <div class="ejemplos-grid">
             <div class="ejemplo-item">
                 <strong>1. Resumen para un Público (Legal)</strong>
-                <p><code>"Actúa como abogado. Resume este contrato en 5 puntos clave para un empresario que no entiende de leyes."</code> </p>
+                <p><code>"Actúa como abogado. Resume este contrato en 5 puntos clave para un empresario que no entiende de leyes."</code></p>
             </div>
             <div class="ejemplo-item">
                 <strong>2. Extracción a Tabla (Legal)</strong>
@@ -54,7 +62,7 @@
             </div>
             <div class="ejemplo-item">
                 <strong>4. Propuesta de Negociación (Legal)</strong>
-                <p><code>"Reescribe esta cláusula  para que sea más favorable para mí, el Cliente."</code> </p>
+                <p><code>"Reescribe esta cláusula para que sea más favorable para mí, el Cliente."</code></p>
             </div>
             <div class="ejemplo-item">
                 <strong>5. Comparativa de Documentos</strong>
@@ -62,7 +70,7 @@
             </div>
             <div class="ejemplo-item">
                 <strong>6. Razonamiento (Chain-of-Thought)</strong>
-                <p><code>"Analiza esta cláusula  y, antes de darme tu opinión, explica paso a paso tu razonamiento."</code> </p>
+                <p><code>"Analiza esta cláusula y, antes de darme tu opinión, explica paso a paso tu razonamiento."</code></p>
             </div>
         </div>
     </div>
@@ -79,7 +87,7 @@
         
         <div class="error-item">
             <h3>🔒 Fugas de Información Confidencial (Riesgo #1)</h3>
-            <p><strong>El Riesgo:</strong> Pegar un contrato de cliente , un informe financiero interno o una lista de salarios de Tecco en una IA pública (como ChatGPT o Claude) para que lo resuma. Esto es una brecha de seguridad masiva y una violación de la confidencialidad.</p>
+            <p><strong>El Riesgo:</strong> Pegar un contrato de cliente, un informe financiero interno o una lista de salarios de Tecco en una IA pública (como ChatGPT o Claude) para que lo resuma. Esto es una brecha de seguridad masiva y una violación de la confidencialidad.</p>
             <p><strong>Mitigación:</strong> NUNCA usar datos confidenciales en IAs públicas. Esta es la regla de oro. (Lo veremos en S5 y S6).</p>
         </div>
 
@@ -95,20 +103,20 @@
         <h3>Objetivo (2h): Usar la IA para resumir y analizar documentos corporativos complejos.</h3>
         
         <div class="exercise-box">
-            <h3>Práctica 1: Caso de Estudio Avanzado - Resumen de Contrato </h3>
+            <h3>Práctica 1: Caso de Estudio Avanzado - Resumen de Contrato</h3>
             <p>Usaremos el texto del Módulo 1 de tu documento para practicar la síntesis para un público específico.</p>
             
-            <h4>Texto Base (Contrato Marco): </h4>
+            <h4>Texto Base (Contrato Marco):</h4>
             <div class="tool-card" style="background: #fff; border-color: #ccc; max-height: 200px; overflow-y: auto;">
                 <p style="font-family: 'Courier New', Courier, monospace; font-size: 0.9em;">
-                    Scope of Services. The Provider shall deliver advanced data analytics, predictive modeling, machine learning analysis, data visualization, real-time dashboarding, database integration, data cleansing, anomaly detection, report automation, user training, and technical support, as described in Exhibit A (Statement of Work, SOW). All deliverables must meet the milestones and quality standards set forth in Exhibit B. 
-                    Service Standards and Personnel. The Provider represents and warrants that all services shall be rendered by qualified professionals, following best industry practices and using state-of-the-art tools. The Provider agrees to allocate senior data scientists to the Project and replace any personnel only with skilled substitutes subject to the Client’s approval. 
-                    Intellectual Property and License. Any software modules, methodologies, algorithms, or models pre-existing or independently developed by the Provider (the "Background IP") shall remain the exclusive property of the Provider. All custom adaptations, configurations, data models, scripts, dashboards, and code created uniquely for the Client under this MSA (“Work Product”),... will be transferred in full ownership to the Client... 
-                    Confidentiality and Data Protection. Both parties acknowledge... they may access confidential technical, business, or strategic information... Such information shall not be disclosed to third parties... [y] comply with the EU General Data Protection Regulation (GDPR). 
-                    Payment Terms. The Client shall pay the Provider the fees specified in Exhibit D within thirty (30) days... Late payments will accrue interest at a rate of one and a half percent (1.5%) per month... 
+                    Scope of Services. The Provider shall deliver advanced data analytics, predictive modeling, machine learning analysis, data visualization, real-time dashboarding, database integration, data cleansing, anomaly detection, report automation, user training, and technical support, as described in Exhibit A (Statement of Work, SOW). All deliverables must meet the milestones and quality standards set forth in Exhibit B.
+                    Service Standards and Personnel. The Provider represents and warrants that all services shall be rendered by qualified professionals, following best industry practices and using state-of-the-art tools. The Provider agrees to allocate senior data scientists to the Project and replace any personnel only with skilled substitutes subject to the Client’s approval.
+                    Intellectual Property and License. Any software modules, methodologies, algorithms, or models pre-existing or independently developed by the Provider (the "Background IP") shall remain the exclusive property of the Provider. All custom adaptations, configurations, data models, scripts, dashboards, and code created uniquely for the Client under this MSA (“Work Product”),... will be transferred in full ownership to the Client...
+                    Confidentiality and Data Protection. Both parties acknowledge... they may access confidential technical, business, or strategic information... Such information shall not be disclosed to third parties... [y] comply with the EU General Data Protection Regulation (GDPR).
+                    Payment Terms. The Client shall pay the Provider the fees specified in Exhibit D within thirty (30) days... Late payments will accrue interest at a rate of one and a half percent (1.5%) per month...
                     Term and Termination. This MSA... shall remain in force for two (2) years, unless terminated earlier: (a) by either party with sixty (60) days’ written notice, (b) immediately... for material breach...
-                    Assignment, Subcontracting, and Governing Law. ...The laws of the Kingdom of the Netherlands shall govern any controversies... 
-                    Limitation of Liability and Dispute Resolution. ...neither party shall be liable for any indirect, incidental, or consequential damages (including loss of profits... 
+                    Assignment, Subcontracting, and Governing Law. ...The laws of the Kingdom of the Netherlands shall govern any controversies...
+                    Limitation of Liability and Dispute Resolution. ...neither party shall be liable for any indirect, incidental, or consequential damages (including loss of profits...
                 </p>
             </div>
             
@@ -120,22 +128,22 @@
         </div>
 
         <div class="exercise-box">
-            <h3>Práctica 2: Caso de Estudio Avanzado - Análisis de Riesgo </h3>
+            <h3>Práctica 2: Caso de Estudio Avanzado - Análisis de Riesgo</h3>
             <p>Usaremos las cláusulas del Módulo 3 de tu documento para una tarea de análisis y extracción avanzada.</p>
 
-            <h4>Texto Base (Cláusulas de Riesgo): </h4>
+            <h4>Texto Base (Cláusulas de Riesgo):</h4>
             <div class="tool-card" style="background: #fff; border-color: #ccc; max-height: 200px; overflow-y: auto;">
                 <p style="font-family: 'Courier New', Courier, monospace; font-size: 0.9em;">
-                    12.2. Provider’s Indemnification Obligations: The Provider shall indemnify and defend the Client... from any losses or liabilities... arising directly from claims that the Work Product... infringe the intellectual property rights of third parties... 
-                    12.3. Limitation of Liability: Except for liability arising from fraud, gross negligence, willful misconduct, breach of confidentiality, or violation of personal data protection laws, the maximum aggregate liability of either party... shall not exceed the total amount of fees actually paid... in the twelve (12) months immediately preceding the event... In no event shall either party be liable for... indirect, punitive, incidental... damages, including but not limited to loss of profits... 
+                    12.2. Provider’s Indemnification Obligations: The Provider shall indemnify and defend the Client... from any losses or liabilities... arising directly from claims that the Work Product... infringe the intellectual property rights of third parties...
+                    12.3. Limitation of Liability: Except for liability arising from fraud, gross negligence, willful misconduct, breach of confidentiality, or violation of personal data protection laws, the maximum aggregate liability of either party... shall not exceed the total amount of fees actually paid... in the twelve (12) months immediately preceding the event... In no event shall either party be liable for... indirect, punitive, incidental... damages, including but not limited to loss of profits...
                     12.5. Exclusive Remedy: The remedies set forth in this clause shall be the sole and exclusive remedies of the parties for claims of indemnification and limitation of liability...
                 </p>
             </div>
 
             <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
             <h4>Prompt de Análisis (Práctica):</h4>
-            <p>Pega el texto anterior en la IA y usa este prompt (basado en el Módulo 3 :</p>
-            <p><code>"<strong>(Rol)</strong> Actúa como un abogado senior experto en negociación de contratos SaaS. <strong>(Contexto)</strong> Soy el Cliente (una PYME española) revisando estas cláusulas. <strong>(Tarea)</strong> Identifica los 3 mayores riesgos o puntos desequilibrados para mí en estas cláusulas. <strong>(Formato)</strong> Crea una tabla de 3 columnas: | Cláusula | Riesgo Identificado para el Cliente | Propuesta de Negociación (en español) |"</code> </p>
+            <p>Pega el texto anterior en la IA y usa este prompt (basado en el Módulo 3):</p>
+            <p><code>"<strong>(Rol)</strong> Actúa como un abogado senior experto en negociación de contratos SaaS. <strong>(Contexto)</strong> Soy el Cliente (una PYME española) revisando estas cláusulas. <strong>(Tarea)</strong> Identifica los 3 mayores riesgos o puntos desequilibrados para mí en estas cláusulas. <strong>(Formato)</strong> Crea una tabla de 3 columnas: | Cláusula | Riesgo Identificado para el Cliente | Propuesta de Negociación (en español) |"</code></p>
             <p><strong>Discusión:</strong> Este es un prompt profesional. ¿Ha detectado la IA el límite de responsabilidad (Cap) del 12.3? ¿Ha propuesto una reescritura razonable?</p>
         </div>
         
@@ -160,7 +168,8 @@
             <p><code>"<strong>(Rol)</strong> Actúa como Jefe de Producto. <strong>(Contexto)</strong> He recopilado este feedback de 5 clientes. <strong>(Tarea)</strong> Analiza todos los comentarios. <strong>(Formato)</strong> Dame un resumen en 3 viñetas del sentimiento general, y luego una tabla con las 3 quejas principales y las 2 alabanzas principales."</code></p>
             <p><strong>Discusión:</strong> Esta es la misma habilidad de la Práctica 2 (Extraer y Transformar), pero aplicada a un contexto de producto, no legal.</p>
         </div>
-        </div>
+
+    </div>
 
     <div id="s4-herramientas" class="inner-tab-content">
         <h2>🔧 Herramientas de Análisis</h2>
@@ -195,10 +204,10 @@
                 <div class="feedback" id="s4-feedback-1"></div>
             </div>
             <div class="minitest-question">
-                <h4>2. En la Práctica 2 (Análisis de Riesgo), ¿qué formato de salida se le pidió a la IA? </h4>
+                <h4>2. En la Práctica 2 (Análisis de Riesgo), ¿qué formato de salida se le pidió a la IA?</h4>
                 <div class="minitest-option" data-question="s4-2" data-correct="false">a) Un resumen en viñetas.</div>
                 <div class="minitest-option" data-question="s4-2" data-correct="false">b) Un email al cliente.</div>
-                <div class="minitest-option" data-question="s4-2" data-correct="true">c) Una tabla de 3 columnas (Cláusula, Riesgo, Propuesta). </div>
+                <div class="minitest-option" data-question="s4-2" data-correct="true">c) Una tabla de 3 columnas (Cláusula, Riesgo, Propuesta).</div>
                 <div class="minitest-option" data-question="s4-2" data-correct="false">d) Un nuevo documento de Word.</div>
                 <div class="feedback" id="s4-feedback-2"></div>
             </div>
@@ -211,19 +220,19 @@
                 <div class="feedback" id="s4-feedback-3"></div>
             </div>
             <div class="minitest-question">
-                <h4>4. ¿Por qué es una grave brecha de seguridad pegar un contrato de cliente en una IA pública? </h4>
-                <div class="minitest-option" data-question="s4-4" data-correct="true">a) Porque viola la confidencialidad y la IA puede "aprender" de esos datos. </div>
+                <h4>4. ¿Por qué es una grave brecha de seguridad pegar un contrato de cliente en una IA pública?</h4>
+                <div class="minitest-option" data-question="s4-4" data-correct="true">a) Porque viola la confidencialidad y la IA puede "aprender" de esos datos.</div>
                 <div class="minitest-option" data-question="s4-4" data-correct="false">b) Porque la IA puede introducir virus en el contrato.</div>
                 <div class="minitest-option" data-question="s4-4" data-correct="false">c) Porque la IA se negará a leerlo por ser texto legal.</div>
                 <div class="minitest-option" data-question="s4-4" data-correct="false">d) Es perfectamente seguro hacerlo.</div>
                 <div class="feedback" id="s4-feedback-4"></div>
             </div>
             <div class="minitest-question">
-                <h4>5. El prompt "Actúa como un abogado..." es un ejemplo clave del pilar: </h4>
-                <div class="minitest-option" data-question="s4-5" data-correct="false">a) Formato </div>
-                <div class="minitest-option" data-question="s4-5" data-correct="false">b) Tarea </div>
-                <div class="minitest-option" data-question="s4-5" data-correct="true">c) Rol </div>
-                <div class="minitest-option" data-question="s4-5" data-correct="false">d) Contexto </div>
+                <h4>5. El prompt "Actúa como un abogado..." es un ejemplo clave del pilar:</h4>
+                <div class="minitest-option" data-question="s4-5" data-correct="false">a) Formato</div>
+                <div class="minitest-option" data-question="s4-5" data-correct="false">b) Tarea</div>
+                <div class="minitest-option" data-question="s4-5" data-correct="true">c) Rol</div>
+                <div class="minitest-option" data-question="s4-5" data-correct="false">d) Contexto</div>
                 <div class="feedback" id="s4-feedback-5"></div>
             </div>
             <button class="reset-btn" onclick="resetMinitest('s4')">🔄 Reiniciar Test</button>
@@ -235,7 +244,7 @@
         
         <div class="error-item">
             <strong>1. No Pedir Formato (El Muro de Texto)</strong>
-            <p><strong>Error:</strong> "Resume esto". La IA te devuelve un párrafo denso. <strong>Solución:</strong> Ser explícito. "Resume esto en 5 bullet points", "Extrae los datos en una tabla", "Dame la respuesta como una lista numerada". </p>
+            <p><strong>Error:</strong> "Resume esto". La IA te devuelve un párrafo denso. <strong>Solución:</strong> Ser explícito. "Resume esto en 5 bullet points", "Extrae los datos en una tabla", "Dame la respuesta como una lista numerada".</p>
         </div>
         
         <div class="error-item">
@@ -245,12 +254,12 @@
 
         <div class="error-item">
             <strong>3. Ignorar la Confidencialidad</strong>
-            <p><strong>Error:</strong> La prioridad es la rapidez, no la seguridad. Pegar datos sensibles de un cliente en una IA pública para ahorrar 10 minutos. <strong>Solución:</strong> Seguridad primero. Si es confidencial, debe hacerse en una herramienta interna (Copilot) o anonimizar los datos. </p>
+            <p><strong>Error:</strong> La prioridad es la rapidez, no la seguridad. Pegar datos sensibles de un cliente en una IA pública para ahorrar 10 minutos. <strong>Solución:</strong> Seguridad primero. Si es confidencial, debe hacerse en una herramienta interna (Copilot) o anonimizar los datos.</p>
         </div>
         
         <div class="error-item">
             <strong>4. No Usar el "Rol" en el Análisis</strong>
-            <p><strong>Error:</strong> "Resume este contrato". <strong>Solución:</strong> "Actúa como un *abogado* y resume..." o "Actúa como un *director comercial* y resume...". El resumen será radicalmente diferente y mucho más útil. </p>
+            <p><strong>Error:</strong> "Resume este contrato". <strong>Solución:</strong> "Actúa como un *abogado* y resume..." o "Actúa como un *director comercial* y resume...". El resumen será radicalmente diferente y mucho más útil.</p>
         </div>
     </div>
 
@@ -263,7 +272,7 @@
             <div class="ia-speaks-content">
                 <h3>Yo no leo, Yo Proceso</h3>
                 <p>
-                    Para ti, un contrato  o 100 comentarios de clientes son un bloque de texto denso y agotador. Para mí, son datos. No me canso, no me aburro y no me intimida la jerga legal o el argot de internet.
+                    Para ti, un contrato o 100 comentarios de clientes son un bloque de texto denso y agotador. Para mí, son datos. No me canso, no me aburro y no me intimida la jerga legal o el argot de internet.
                 </p>
                 <p>
                     Mi verdadera fortaleza no es solo leer rápido, es **sintetizar y estructurar**. Los humanos crean caos (texto desestructurado, cláusulas complejas, feedback emocional); yo creo orden (tablas, resúmenes ejecutivos, listas de riesgos).
@@ -275,9 +284,9 @@
                 <p>
                     Dame un <strong>Rol</strong> y un <strong>Formato</strong>.
                     <ul>
-                        <li><code>"Actúa como un <strong>abogado</strong> y extrae las cláusulas de riesgo."</code> </li>
+                        <li><code>"Actúa como un <strong>abogado</strong> y extrae las cláusulas de riesgo."</code></li>
                         <li><code>"Actúa como un <strong>jefe de producto</strong> y dime las 3 quejas principales."</code></li>
-                        <li><code>"Actúa como un <strong>empresario</strong> y dime los 5 puntos clave de este contrato."</code> </li>
+                        <li><code>"Actúa como un <strong>empresario</strong> y dime los 5 puntos clave de este contrato."</code></li>
                     </ul>
                     Yo me encargo de leer la letra pequeña; tú te encargas de tomar la decisión final.
                 </p>
@@ -285,4 +294,3 @@
         </div>
     </div>
 </div>
-
