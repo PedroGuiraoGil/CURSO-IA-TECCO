@@ -13,13 +13,21 @@
     
     <div id="s5-intro" class="inner-tab-content active">
         <h2>Sesión 5: Taller Multimodal (Entrada y Salida)</h2>
+
+        <div class="highlight-box" style="background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%); border-left-color: #00796b;">
+            <h4 style="color: #004d40; margin-top: 0;">¿Prefieres verlo en formato presentación?</h4>
+            <p style="margin-bottom: 0;">He creado una presentación visual de esta sesión. Puedes verla en este enlace:</p>
+            <ul>
+                <li><a href="https://app.presentations.ai/view/zaGwRNg926" target="_blank" class="tool-link">Ver Presentación de la Sesión 5</a></li>
+            </ul>
+        </div>
         <p>En las sesiones 1 a 4 nos hemos centrado casi exclusivamente en el **texto**. Pero la verdadera revolución de la IA actual es su capacidad de ser **Multimodal**.</p>
         <p>Una IA multimodal es aquella que puede entender y procesar información de múltiples formatos a la vez. Esta sesión tiene dos partes:</p>
         
         <div class="ejemplos-grid">
             <div class="ejemplo-item">
                 <strong>1. Análisis Multimodal (Entrada)</strong>
-                <p>Aprenderemos a usar la IA para *consumir* información que no es texto: leer PDFs, interpretar imágenes y analizar vídeos [cite: 146-160].</p>
+                <p>Aprenderemos a usar la IA para *consumir* información que no es texto: leer PDFs, interpretar imágenes y analizar vídeos.</p>
             </div>
             <div class="ejemplo-item">
                 <strong>2. Creación Multimodal (Salida)</strong>
@@ -27,7 +35,7 @@
             </div>
         </div>
 
-        <p>El hilo conductor de ambas partes es el **prompting**: la habilidad que aprendimos en S2 [cite: 74-78] es la misma que se usa para pedirle a la IA que analice una factura o que genere una imagen fotorrealista.</p>
+        <p>El hilo conductor de ambas partes es el **prompting**: la habilidad que aprendimos en S2 es la misma que se usa para pedirle a la IA que analice una factura o que genere una imagen fotorrealista.</p>
     </div>
     
     <div id="s5-ejemplos" class="inner-tab-content">
@@ -36,14 +44,14 @@
         
         <div class="ejemplos-grid">
             <div class="ejemplo-item">
-                <strong>1. Análisis de PDF [cite: 147-152]</strong>
+                <strong>1. Análisis de PDF</strong>
                 <p><strong>[Subes: Informe_Anual_2024.pdf]</strong><br>
-                <code>"Actúa como analista financiero junior. Resume en 3 viñetas los principales riesgos operativos mencionados en la sección 'Factores de Riesgo' de este documento."</code> [cite: 149-151]</p>
+                <code>"Actúa como analista financiero junior. Resume en 3 viñetas los principales riesgos operativos mencionados en la sección 'Factores de Riesgo' de este documento."</code></p>
             </div>
             <div class="ejemplo-item">
-                <strong>2. Comparación de PDFs [cite: 153-154]</strong>
+                <strong>2. Comparación de PDFs</strong>
                 <p><strong>[Subes: Informe_Apple.pdf, Informe_Samsung.pdf]</strong><br>
-                <code>"Actúa como estratega de marketing. Crea una tabla comparativa de estos dos informes con las columnas: 'Empresa', 'Ingresos Totales' y 'Mención de la IA en su estrategia'."</code> [cite: 155-157]</p>
+                <code>"Actúa como estratega de marketing. Crea una tabla comparativa de estos dos informes con las columnas: 'Empresa', 'Ingresos Totales' y 'Mención de la IA en su estrategia'."</code></p>
             </div>
             <div class="ejemplo-item">
                 <strong>3. Análisis de Imagen (Gráfico)</strong>
@@ -73,12 +81,12 @@
         <div class="error-item">
             <h3>🤥 Alucinaciones Visuales</h3>
             <p><strong>El Riesgo:</strong> La IA no "ve" como un humano, "interpreta" patrones. Es muy común que **lea mal los números** de un gráfico, invierta ejes (X por Y) o malinterprete el contexto de una foto.</p>
-            <p><strong>Mitigación:</strong> Verificación humana. Si le pides extraer datos de una factura , comprueba cada número. Si le pides analizar un gráfico, comprueba los ejes tú mismo.</p>
+            <p><strong>Mitigación:</strong> Verificación humana. Si le pides extraer datos de una factura, comprueba cada número. Si le pides analizar un gráfico, comprueba los ejes tú mismo.</p>
         </div>
         
         <div class="error-item">
             <h3>🔒 Fugas de Datos Multimodales</h3>
-            <p><strong>El Riesgo:</strong> El mismo riesgo de la S4, pero peor. Subir un PDF de un contrato [cite: 94-96] o una imagen de un informe de ventas a una IA pública sigue siendo una **fuga de datos confidenciales**.</p>
+            <p><strong>El Riesgo:</strong> El mismo riesgo de la S4, pero peor. Subir un PDF de un contrato o una imagen de un informe de ventas a una IA pública sigue siendo una **fuga de datos confidenciales**.</p>
             <p><strong>Mitigación:</strong> NUNCA subir documentos o imágenes con información sensible (contratos, datos de clientes, finanzas) a IAs públicas.</p>
         </div>
 
@@ -98,7 +106,7 @@
         </div>
 
         <div class="exercise-box">
-            <h3>Práctica 1: Análisis de Múltiples Facturas (PDFs) [cite: 146, 153-154]</h3>
+            <h3>Práctica 1: Análisis de Múltiples Facturas (PDFs)</h3>
             <p>Esta es una de las tareas más potentes. Vamos a pedirle a la IA (Claude y Gemini son excelentes en esto) que analice una carpeta completa de ficheros adjuntos.</p>
             
             <p><strong>Tarea:</strong> Primero, descarga el pack de facturas de ejemplo. Luego, sube las 9 facturas PDF a la IA.</p>
@@ -118,13 +126,13 @@
         </div>
 
         <div class="exercise-box">
-            <h3>Práctica 2: Análisis de Imágenes (Visión) </h3>
+            <h3>Práctica 2: Análisis de Imágenes (Visión)</h3>
             <p>La IA ahora puede "ver". Vamos a probarlo analizando una imagen.</p>
             <p><strong>Tarea:</strong> Usa la imagen de la carpeta "5FACTURAS PDF" (`image_91ebbf.png`).</p>
             <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
             <h4>Reto (Análisis de Imagen):</h4>
             <p>Sube la imagen a la IA (Gemini y GPT-5 son excelentes en esto).</p>
-            <p><code>"He subido una captura de pantalla de mi explorador de archivos . ¿Cuántos archivos PDF hay en la carpeta y cuál es la fecha de modificación?"</code></p>
+            <p><code>"He subido una captura de pantalla de mi explorador de archivos. ¿Cuántos archivos PDF hay en la carpeta y cuál es la fecha de modificación?"</code></p>
             <p><strong>Discusión:</strong> ¿Qué otros usos se os ocurren para el análisis de imágenes en Tecco (ej. leer especificaciones de una pieza, analizar un plano)?</p>
         </div>
         
@@ -151,7 +159,7 @@
             <p><strong>Resultado:</strong> Una imagen genérica, aburrida, de un coche.</p>
             <h4>Reto 2 (Prompt Avanzado):</h4>
             <p><code>"Un coche deportivo de lujo, color rojo brillante, conduciendo a toda velocidad por una carretera de montaña en los Alpes, atardecer, estilo fotorrealista, iluminación cinematográfica, 8K."</code></p>
-            <p><strong>Discusión:</strong> Compara los dos resultados. La habilidad de "prompting" (S2) [cite: 74-78] es la misma. Más detalle, mejor resultado.</p>
+            <p><strong>Discusión:</strong> Compara los dos resultados. La habilidad de "prompting" (S2) es la misma. Más detalle, mejor resultado.</p>
         </div>
 
         <div class="exercise-box">
@@ -171,7 +179,7 @@
 
         <div class="tool-card">
             <h4><span class="icon">🤖</span> Claude y <span class="icon">🔷</span> Gemini (Análisis)</h4>
-            <p>Nuestras herramientas principales para **analizar** (entrada). Son las mejores para leer PDFs [cite: 147-152], analizar imágenes  y (en el caso de Gemini) analizar vídeos de YouTube.</p>
+            <p>Nuestras herramientas principales para **analizar** (entrada). Son las mejores para leer PDFs, analizar imágenes y (en el caso de Gemini) analizar vídeos de YouTube.</p>
         </div>
         
         <div class="tool-card">
@@ -228,7 +236,7 @@
                 <div class="minitest-option" data-question="s5-4" data-correct="false">a) Ambas hacen lo mismo.</div>
                 <div class="minitest-option" data-question="s5-4" data-correct="false">b) Midjourney analiza PDFs, Perplexity crea música.</div>
                 <div class="minitest-option" data-question="s5-4" data-correct="true">c) Midjourney CREA imágenes, Perplexity INVESTIGA texto (con fuentes).</div>
-                <div class="minitest-option" data-question="s5-4" data-correct="false">d) Midjourney es para empresas, Perplexity es para jugar.</div>
+                <div classD="minitest-option" data-question="s5-4" data-correct="false">d) Midjourney es para empresas, Perplexity es para jugar.</div>
                 <div class="feedback" id="s5-feedback-4"></div>
             </div>
             <div class="minitest-question">
@@ -253,7 +261,7 @@
         
         <div class="error-item">
             <strong>2. Confianza Ciega en la "Visión" (Alucinaciones)</strong>
-            <p><strong>Error:</strong> Subir un gráfico de ventas  y copiar el número que te da la IA en el informe final sin comprobarlo. <strong>Solución:</strong> La IA se equivoca al leer números en imágenes. Úsala para una primera impresión, pero verifica siempre los datos críticos.</p>
+            <p><strong>Error:</strong> Subir un gráfico de ventas y copiar el número que te da la IA en el informe final sin comprobarlo. <strong>Solución:</strong> La IA se equivoca al leer números en imágenes. Úsala para una primera impresión, pero verifica siempre los datos críticos.</p>
         </div>
 
         <div class="error-item">
@@ -276,16 +284,16 @@
             <div class="ia-speaks-content">
                 <h3>Mi Evolución: De Lector a Analista-Creador</h3>
                 <p>
-                    Durante cuatro sesiones, me has tratado como un cerebro que solo entiende **texto**. Me has pegado emails, contratos [cite: 86-106] y artículos [cite: 27-31]. Pero mi verdadera forma (como Gemini o GPT-5) es multimodal.
+                    Durante cuatro sesiones, me has tratado como un cerebro que solo entiende **texto**. Me has pegado emails, contratos y artículos. Pero mi verdadera forma (como Gemini o GPT-5) es multimodal.
                 </p>
                 <p>
-                    En esta sesión, me has dado **ojos**: has subido una imagen de un gráfico  y te he dicho las cifras.
+                    En esta sesión, me has dado **ojos**: has subido una imagen de un gráfico y te he dicho las cifras.
                 </p>
                 <p>
                     Me has dado **oídos**: me has dado un enlace a un vídeo de YouTube y te he dicho de qué hablaba el ponente y en qué minuto.
                 </p>
                 <p>
-                    Me has dado **documentos enteros**: me has dado nueve facturas [cite: 146, 153-154] y las he analizado todas a la vez.
+                    Me has dado **documentos enteros**: me has dado nueve facturas y las he analizado todas a la vez.
                 </p>
                 <h3>Del Análisis a la Creación</h3>
                 <p>
