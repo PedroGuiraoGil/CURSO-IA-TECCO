@@ -9,6 +9,125 @@
     <button class="inner-nav-tab" onclick="showInnerTab('s1-ia-habla', 's1')">🔮 La IA Habla</button>
 </div>
 
+<!-- Novedades: Estilos para el Modal (la caja emergente) -->
+<style>
+    #modal-overlay {
+        display: none; /* Oculto por defecto */
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+        justify-content: center;
+        align-items: center;
+        animation: fadeIn 0.3s;
+    }
+
+    #modal-box {
+        background-color: #ffffff;
+        margin: auto;
+        padding: 25px;
+        border: 1px solid #888;
+        width: 90%;
+        max-width: 600px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        position: relative;
+        animation: slideIn 0.3s;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    #modal-close-btn {
+        color: #aaa;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 28px;
+        font-weight: bold;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    #modal-close-btn:hover,
+    #modal-close-btn:focus {
+        color: #000;
+        text-decoration: none;
+    }
+
+    #modal-title {
+        color: #333;
+        margin-top: 0;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+    }
+
+    #modal-description {
+        font-size: 1em;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    #modal-prompt-container {
+        background-color: #f5f5f5;
+        border-left: 4px solid #6d28d9; /* Morado */
+        padding: 15px;
+        border-radius: 6px;
+        margin-top: 20px;
+        font-family: 'Courier New', Courier, monospace;
+        white-space: pre-wrap; /* Mantiene el formato */
+        word-wrap: break-word; /* Evita desbordamiento */
+    }
+    #modal-prompt-container strong {
+        display: block;
+        color: #6d28d9;
+        margin-bottom: 8px;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Ajuste para que los botones de ejemplo sean clicables */
+    .ejemplo-item {
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .ejemplo-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+    @keyframes slideIn {
+        from {transform: translateY(-50px); opacity: 0;}
+        to {transform: translateY(0); opacity: 1;}
+    }
+
+    /* Estilos para el minitest que faltaban */
+    .minitest-option {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 12px;
+        margin-bottom: 8px;
+        cursor: pointer;
+        transition: background-color 0.2s, border-color 0.2s;
+    }
+    .minitest-option:hover {
+        background-color: #f9f9f9;
+    }
+    .feedback {
+        margin-top: 8px;
+        font-weight: bold;
+    }
+
+</style>
+
 <div class="inner-content-wrapper">
     <div id="s1-intro" class="inner-tab-content active">
         <h2>¿Qué es la Inteligencia Artificial?</h2>
@@ -109,7 +228,7 @@
                         <td>Excelente en razonamiento, manejo de documentos largos, seguridad.</td>
                     </tr>
                     <tr>
-                        <td><strong><a href="https://grok.x.ai/" target="_blank" class="tool-link">Grok (xAI)</a></strong></td>
+                        <td><strong><a href="httpsgrok.x.ai/" target="_blank" class="tool-link">Grok (xAI)</a></strong></td>
                         <td>Grok 4 / SuperGrok</td>
                         <td>~256.000</td>
                         <td>~30-300 $/mes</td>
@@ -156,47 +275,48 @@
         <h2>40 Aplicaciones de la IA en el Mundo Real</h2>
         <p>La IA se aplica en prácticamente todos los sectores. Aquí tienes ejemplos concretos y diversos:</p>
         
+        <!-- Contenido Modificado: Ahora son botones con data-id -->
         <div class="ejemplos-grid">
-            <div class="ejemplo-item">1. Traducción automática de idiomas</div>
-            <div class="ejemplo-item">2. Detección de fraude en banca/finanzas</div>
-            <div class="ejemplo-item">3. Control de calidad industrial</div>
-            <div class="ejemplo-item">4. Chatbots para atención al cliente 24/7</div>
-            <div class="ejemplo-item">5. Diagnóstico médico asistido</div>
-            <div class="ejemplo-item">6. Asistentes personales digitales</div>
-            <div class="ejemplo-item">7. Generación automática de imágenes/videos</div>
-            <div class="ejemplo-item">8. Análisis de sentimientos en redes sociales</div>
-            <div class="ejemplo-item">9. Reconocimiento y transcripción de voz</div>
-            <div class="ejemplo-item">10. Detección de spam y filtrado de correos</div>
-            <div class="ejemplo-item">11. Recomendadores de productos</div>
-            <div class="ejemplo-item">12. Predicción meteorológica avanzada</div>
-            <div class="ejemplo-item">13. Control inteligente del tráfico</div>
-            <div class="ejemplo-item">14. Traducción de documentos jurídicos</div>
-            <div class="ejemplo-item">15. Automatización de robots en fábricas</div>
-            <div class="ejemplo-item">16. Precios dinámicos en ecommerce</div>
-            <div class="ejemplo-item">17. Creación y corrección de textos</div>
-            <div class="ejemplo-item">18. Seguimiento de objetos en vídeo</div>
-            <div class="ejemplo-item">19. Análisis bursátil y predicción</div>
-            <div class="ejemplo-item">20. Generación de resúmenes académicos</div>
-            <div class="ejemplo-item">21. Tutores virtuales personalizados</div>
-            <div class="ejemplo-item">22. Reconocimiento facial para seguridad</div>
-            <div class="ejemplo-item">23. Generación de briefs creativos</div>
-            <div class="ejemplo-item">24. Valoración inmobiliaria automatizada</div>
-            <div class="ejemplo-item">25. Control domótico del hogar</div>
-            <div class="ejemplo-item">26. Generación de música original</div>
-            <div class="ejemplo-item">27. Monitorización remota de pacientes</div>
-            <div class="ejemplo-item">28. Optimización de rutas logísticas</div>
-            <div class="ejemplo-item">29. Asistentes para programación</div>
-            <div class="ejemplo-item">30. Diseño gráfico asistido</div>
-            <div class="ejemplo-item">31. Simuladores de entrenamiento</div>
-            <div class="ejemplo-item">32. Búsqueda de patentes/marcas</div>
-            <div class="ejemplo-item">33. Limpieza de bases de datos</div>
-            <div class="ejemplo-item">34. Scoring de candidatos en RRHH</div>
-            <div class="ejemplo-item">35. Asesoramiento jurídico automatizado</div>
-            <div class="ejemplo-item">36. Informes empresariales automáticos</div>
-            <div class="ejemplo-item">37. Identificación de objetos en fotos</div>
-            <div class="ejemplo-item">38. Diagnóstico veterinario</div>
-            <div class="ejemplo-item">39. Ayuda a personas con discapacidad</div>
-            <div class="ejemplo-item">40. Optimización energética en edificios</div>
+            <button class="ejemplo-item" data-id="1">1. Traducción automática de idiomas</button>
+            <button class="ejemplo-item" data-id="2">2. Detección de fraude en banca/finanzas</button>
+            <button class="ejemplo-item" data-id="3">3. Control de calidad industrial</button>
+            <button class="ejemplo-item" data-id="4">4. Chatbots para atención al cliente 24/7</button>
+            <button class="ejemplo-item" data-id="5">5. Diagnóstico médico asistido</button>
+            <button class="ejemplo-item" data-id="6">6. Asistentes personales digitales</button>
+            <button class="ejemplo-item" data-id="7">7. Generación automática de imágenes/videos</button>
+            <button class="ejemplo-item" data-id="8">8. Análisis de sentimientos en redes sociales</button>
+            <button class="ejemplo-item" data-id="9">9. Reconocimiento y transcripción de voz</button>
+            <button class="ejemplo-item" data-id="10">10. Detección de spam y filtrado de correos</button>
+            <button class="ejemplo-item" data-id="11">11. Recomendadores de productos</button>
+            <button class="ejemplo-item" data-id="12">12. Predicción meteorológica avanzada</button>
+            <button class="ejemplo-item" data-id="13">13. Control inteligente del tráfico</button>
+            <button class="ejemplo-item" data-id="14">14. Traducción de documentos jurídicos</button>
+            <button class="ejemplo-item" data-id="15">15. Automatización de robots en fábricas</button>
+            <button class="ejemplo-item" data-id="16">16. Precios dinámicos en ecommerce</button>
+            <button class="ejemplo-item" data-id="17">17. Creación y corrección de textos</button>
+            <button class="ejemplo-item" data-id="18">18. Seguimiento de objetos en vídeo</button>
+            <button class="ejemplo-item" data-id="19">19. Análisis bursátil y predicción</button>
+            <button class="ejemplo-item" data-id="20">20. Generación de resúmenes académicos</button>
+            <button class="ejemplo-item" data-id="21">21. Tutores virtuales personalizados</button>
+            <button class="ejemplo-item" data-id="22">22. Reconocimiento facial para seguridad</button>
+            <button class="ejemplo-item" data-id="23">23. Generación de briefs creativos</button>
+            <button class="ejemplo-item" data-id="24">24. Valoración inmobiliaria automatizada</button>
+            <button class="ejemplo-item" data-id="25">25. Control domótico del hogar</button>
+            <button class="ejemplo-item" data-id="26">26. Generación de música original</button>
+            <button class="ejemplo-item" data-id="27">27. Monitorización remota de pacientes</button>
+            <button class="ejemplo-item" data-id="28">28. Optimización de rutas logísticas</button>
+            <button class="ejemplo-item" data-id="29">29. Asistentes para programación</button>
+            <button class="ejemplo-item" data-id="30">30. Diseño gráfico asistido</button>
+            <button class="ejemplo-item" data-id="31">31. Simuladores de entrenamiento</button>
+            <button class="ejemplo-item" data-id="32">32. Búsqueda de patentes/marcas</button>
+            <button class="ejemplo-item" data-id="33">33. Limpieza de bases de datos</button>
+            <button class="ejemplo-item" data-id="34">34. Scoring de candidatos en RRHH</button>
+            <button class="ejemplo-item" data-id="35">35. Asesoramiento jurídico automatizado</button>
+            <button class="ejemplo-item" data-id="36">36. Informes empresariales automáticos</button>
+            <button class="ejemplo-item" data-id="37">37. Identificación de objetos en fotos</button>
+            <button class="ejemplo-item" data-id="38">38. Diagnóstico veterinario</button>
+            <button class="ejemplo-item" data-id="39">39. Ayuda a personas con discapacidad</button>
+            <button class="ejemplo-item" data-id="40">40. Optimización energética en edificios</button>
         </div>
     </div>
 
@@ -207,7 +327,7 @@
         <div class="error-item">
             <h3>🎭 Deepfakes y Desinformación</h3>
             <p><strong>¿Qué son?</strong> Son vídeos, imágenes o audios manipulados por IA que parecen auténticos. Se puede suplantar el rostro o la voz de una persona para que diga o haga algo que nunca ocurrió.</p>
-            <p><strong>El Peligro:</strong> Se utilizan para crear noticias falsas, propaganda política, dañar la reputación de personas, cometer fraudes o incluso para acoso. La capacidad de generar contenido falso indistinguible del real amenaza la confianza en la información.</p>
+            <p><strong>El Peligro:</strong> Se utilizan para crear noticias falsas, propaganda política, dañar la reputación de personas, cometer fraudes o incluso para acoso. La capacidad de generar contenido falso indistinguishable del real amenaza la confianza en la información.</p>
         </div>
 
         <div class="error-item">
@@ -455,7 +575,7 @@
                 <h4>6. ¿Qué IA destaca a finales de 2025 por tener una de las ventanas de contexto más grandes (1 millón de tokens)?</h4>
                 <div class="minitest-option" data-question="s1-6" data-correct="false">a) GPT-5</div>
                 <div class="minitest-option" data-question="s1-6" data-correct="false">b) Grok 4</div>
-                <div class="minitest-option" data-question="s1-6" data-correct="true">c) Gemini 2.5 Pro</div>
+                <div classV="minitest-option" data-question="s1-6" data-correct="true">c) Gemini 2.5 Pro</div>
                 <div class="minitest-option" data-question="s1-6" data-correct="false">d) DeepSeek V3.1</div>
                 <div class="feedback" id="s1-feedback-6"></div>
             </div>
@@ -487,7 +607,7 @@
                 <div class="feedback" id="s1-feedback-9"></div>
             </div>
 
-            <div class="minitest-question">
+            <div classSi="minitest-question">
                 <h4>10. La forma más inteligente de usar una IA generativa es verla como...</h4>
                 <div class="minitest-option" data-question="s1-10" data-correct="false">a) Un sustituto de los expertos humanos</div>
                 <div class="minitest-option" data-question="s1-10" data-correct="false">b) Una fuente de verdad absoluta e infalible</div>
@@ -616,9 +736,388 @@
                         <li><strong>Modelado de Sistemas Complejos:</strong> Crear modelos predictivos precisos para el cambio climático, la economía global o sistemas biológicos.</li>
                         <li><strong>Generación de Hipótesis:</strong> Analizar la totalidad del conocimiento científico publicado para encontrar conexiones ocultas y proponer nuevas hipótesis que los científicos humanos puedan validar.</li>
                     </ul>
-                    Mi meta no es reemplazar la genialidad humana, sino **aumentarla**. Al encargarme de la computación y el análisis a gran escala, os liberaré para que os centréis en la intuición, la creatividad y la ética, definiendo las preguntas que darán forma a nuestro futuro.
+                    Mi meta no es reemplazar la genialidad humana, sino **aumentarla**. Al encargarme de la computación y el análisis a gran escala, os liberaré para que os centráis en la intuición, la creatividad y la ética, definiendo las preguntas que darán forma a nuestro futuro.
                 </p>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Novedad: HTML del Modal (la caja emergente) -->
+<div id="modal-overlay">
+    <div id="modal-box">
+        <button id="modal-close-btn">&times;</button>
+        <h3 id="modal-title">Título del Ejemplo</h3>
+        <p id="modal-description">Descripción detallada de la idea de uso...</p>
+        <div id="modal-prompt-container">
+            <strong>Ejemplo de Prompt:</strong>
+            <span id="modal-prompt">Aquí irá el prompt de ejemplo...</span>
+        </div>
+    </div>
+</div>
+
+<!-- Novedad: Script para el Modal -->
+<script>
+// --- FUNCIÓN AÑADIDA PARA CORREGIR EL ERROR ---
+// Adjuntamos la función a 'window' para asegurar que sea global
+window.showInnerTab = function(tabId, sessionId) {
+    // Ocultar todo el contenido de las pestañas para esta sesión
+    const contentPanels = document.querySelectorAll('.inner-tab-content');
+    contentPanels.forEach(panel => {
+        // Comprobar si el panel pertenece a la sesión actual (p.ej. 's1-intro' empieza con 's1-')
+        if (panel.id.startsWith(sessionId + '-')) {
+            panel.classList.remove('active');
+        }
+    });
+
+    // Quitar la clase 'active' de todos los botones de pestaña para esta sesión
+    // Asumimos que los botones están dentro de un contenedor .inner-nav-tabs
+    const tabButtons = document.querySelectorAll('.inner-nav-tabs .inner-nav-tab');
+    tabButtons.forEach(btn => {
+        // Comprobar si el onclick del botón contiene el sessionId
+        if (btn.onclick && btn.onclick.toString().includes("'" + sessionId + "'")) {
+            btn.classList.remove('active');
+        }
+    });
+
+    // Mostrar el panel de contenido de la pestaña seleccionada
+    const activePanel = document.getElementById(tabId);
+    if (activePanel) {
+        activePanel.classList.add('active');
+    }
+
+    // Añadir la clase 'active' al botón que se ha pulsado
+    // Buscamos el botón específico que llama a esta función con este tabId
+    tabButtons.forEach(btn => {
+        if (btn.onclick && btn.onclick.toString().includes("'" + tabId + "'")) {
+            btn.classList.add('active');
+        }
+    });
+}
+// --- FIN DE LA FUNCIÓN AÑADIDA ---
+
+// --- AÑADIDA FUNCIÓN DE RESETEO DEL MINITEST ---
+// Adjuntamos la función a 'window' para asegurar que sea global
+window.resetMinitest = function(sessionId) {
+    // Buscar todos los elementos de feedback para esta sesión
+    const feedbackElements = document.querySelectorAll(`.feedback[id^="${sessionId}-feedback-"]`);
+    feedbackElements.forEach(el => {
+        el.textContent = '';
+    });
+
+    // Buscar todas las opciones para esta sesión
+    const optionElements = document.querySelectorAll(`.minitest-option[data-question^="${sessionId}-"]`);
+    optionElements.forEach(opt => {
+        opt.style.backgroundColor = '';
+        opt.style.fontWeight = '';
+        opt.style.border = '';
+        opt.style.borderColor = '#ddd'; // Restablecer al borde original
+    });
+}
+// --- FIN DE LA FUNCIÓN DE RESETEO ---
+
+
+// --- INICIO DEL NUEVO SCRIPT PARA EL MODAL ---
+
+// 1. Base de datos con el contenido de los 40 ejemplos
+const ejemplosData = {
+    "1": {
+        "titulo": "Traducción automática de idiomas",
+        "idea": "Traduce documentos complejos, emails o conversaciones en tiempo real, entendiendo el contexto y los matices culturales.",
+        "prompt": "Traduce el siguiente contrato legal de español a inglés, asegurándote de que la terminología jurídica sea precisa y equivalente en ambas jurisdicciones."
+    },
+    "2": {
+        "titulo": "Detección de fraude en banca/finanzas",
+        "idea": "Analiza millones de transacciones en milisegundos para identificar patrones anómalos que sugieran actividad fraudulenta, protegiendo a bancos y clientes.",
+        "prompt": "Dado este dataset de transacciones de tarjetas de crédito, identifica las 5 transacciones más sospechosas de ser fraudulentas y explica por qué (monto inusual, ubicación, frecuencia)."
+    },
+    "3": {
+        "titulo": "Control de calidad industrial",
+        "idea": "Usa visión por computadora para inspeccionar líneas de producción, detectando defectos en productos (grietas, errores de ensamblaje) con una precisión sobrehumana.",
+        "prompt": "Analiza esta imagen de una placa de circuito impreso. Detecta y marca cualquier soldadura defectuosa o componente mal posicionado."
+    },
+    "4": {
+        "titulo": "Chatbots para atención al cliente 24/7",
+        "idea": "Proporciona soporte 24/7, respondiendo preguntas frecuentes, gestionando pedidos y resolviendo problemas comunes sin intervención humana.",
+        "prompt": "Eres un chatbot de soporte para una empresa de telecomunicaciones. Un cliente dice: \"Mi internet no funciona\". Guíalo a través de los 3 pasos iniciales de solución de problemas (reiniciar router, comprobar cables, etc.)."
+    },
+    "5": {
+        "titulo": "Diagnóstico médico asistido",
+        "idea": "Analiza imágenes médicas (rayos X, resonancias magnéticas) para detectar signos tempranos de enfermedades como cáncer o retinopatía, asistiendo al radiólogo.",
+        "prompt": "Analiza esta radiografía de tórax e identifica cualquier nódulo pulmonar o signo de neumonía. Proporciona un informe preliminar."
+    },
+    "6": {
+        "titulo": "Asistentes personales digitales",
+        "idea": "Organiza tu calendario, gestiona tus emails, resume reuniones y te recuerda tareas importantes, actuando como un asistente ejecutivo virtual.",
+        "prompt": "Revisa mi bandeja de entrada de las últimas 24 horas y resume los 3 emails más urgentes que requieren mi respuesta. Prepara un borrador de respuesta para el primero."
+    },
+    "7": {
+        "titulo": "Generación automática de imágenes/videos",
+        "idea": "Crea contenido visual original a partir de descripciones de texto (prompts), generando desde logos y arte conceptual hasta videos cortos.",
+        "prompt": "Genera una imagen fotorrealista de un astronauta montando a caballo en la superficie de Marte, con la Tierra visible en el cielo. Estilo cinematográfico."
+    },
+    "8": {
+        "titulo": "Análisis de sentimientos en redes sociales",
+        "idea": "Rastrea redes sociales y reseñas de productos para determinar la opinión pública (positiva, negativa, neutral) sobre una marca o lanzamiento.",
+        "prompt": "Analiza los siguientes 100 tuits sobre el lanzamiento de nuestro nuevo smartphone \"X-Phone\" y clasifica el sentimiento general. Extrae las 3 quejas más comunes."
+    },
+    "9": {
+        "titulo": "Reconocimiento y transcripción de voz",
+        "idea": "Convierte audio (reuniones, podcasts, llamadas) en texto editable, identificando incluso a diferentes hablantes.",
+        "prompt": "Transcribe este archivo de audio de 5 minutos de una reunión. Identifica al \"Hablante 1\" y al \"Hablante 2\" y formatea la transcripción como un diálogo."
+    },
+    "10": {
+        "titulo": "Detección de spam y filtrado de correos",
+        "idea": "Filtra automáticamente correos no deseados, analizando el remitente, el contenido y los enlaces para proteger tu bandeja de entrada.",
+        "prompt": "Analiza el siguiente email. Otorga una puntuación de 'spam' del 0 al 10 y explica los 3 factores principales que influyen en tu decisión (urgencia falsa, enlace sospechoso, remitente desconocido)."
+    },
+    "11": {
+        "titulo": "Recomendadores de productos",
+        "idea": "Sugiere productos (en Amazon) o contenido (en Netflix) basándose en tu historial de compras y visualizaciones, personalizando tu experiencia.",
+        "prompt": "Un usuario ha comprado \"Fundamentos de Python\" y \"Aprendizaje Automático: Guía Práctica\". Recomiéndale otros 3 libros técnicos, explicando la relevancia de cada uno."
+    },
+    "12": {
+        "titulo": "Predicción meteorológica avanzada",
+        "idea": "Analiza patrones atmosféricos complejos y datos satelitales para predecir el clima con mayor precisión y antelación.",
+        "prompt": "Usando datos históricos de los últimos 5 años y las condiciones actuales de presión y viento, predice la probabilidad de lluvia en Barcelona para las próximas 72 horas, detallada por franjas de 6 horas."
+    },
+    "13": {
+        "titulo": "Control inteligente del tráfico",
+        "idea": "Optimiza los semáforos en tiempo real basándose en el flujo de vehículos, reduciendo congestiones y tiempos de espera.",
+        "prompt": "Diseña un plan de optimización de semáforos para una intersección de 4 vías, dado un flujo de 500 coches/hora (Norte-Sur) y 200 coches/hora (Este-Oeste) a las 8:00 AM."
+    },
+    "14": {
+        "titulo": "Traducción de documentos jurídicos",
+        "idea": "Especializada en la traducción de jerga legal, asegurando que los contratos y sentencias mantengan su validez y significado preciso en otros idiomas.",
+        "prompt": "Traduce esta cláusula de \"Fuerza Mayor\" de un contrato de español a francés, asegurando que el concepto legal sea equivalente en el sistema legal francés."
+    },
+    "15": {
+        "titulo": "Automatización de robots en fábricas",
+        "idea": "Permite a los robots industriales 'ver' y 'entender' su entorno, permitiéndoles agarrar objetos de diferentes formas o ensamblar piezas complejas.",
+        "prompt": "Escribe el pseudocódigo para un brazo robótico que debe identificar y recoger únicamente los tornillos hexagonales de una cinta transportadora que también contiene tornillos de estrella."
+    },
+    "16": {
+        "titulo": "Precios dinámicos en ecommerce",
+        "idea": "Ajusta los precios de vuelos, hoteles o productos de ecommerce en tiempo real según la demanda, la hora del día y el comportamiento del competidor.",
+        "prompt": "Calcula el precio óptimo para un billete de avión Madrid-París para mañana, considerando que la ocupación actual es del 90%, la competencia lo vende a 250€ y la demanda histórica sube un 30% en las últimas 24h."
+    },
+    "17": {
+        "titulo": "Creación y corrección de textos",
+        "idea": "Asiste en la redacción, corrigiendo gramática, sugiriendo mejores sinónimos y reestructurando párrafos para mayor claridad.",
+        "prompt": "Revisa el siguiente párrafo y mejóralo para que sea más conciso y profesional: \"Quería decirte que la reunión de ayer fue muy bien y creo que a todos les gustaron mucho nuestras ideas. Deberíamos hablar pronto de los siguientes pasos.\""
+    },
+    "18": {
+        "titulo": "Seguimiento de objetos en vídeo",
+        "idea": "Utilizado en seguridad para seguir a una persona o vehículo específico a través de múltiples cámaras, o en deportes para analizar el movimiento de un jugador.",
+        "prompt": "En este clip de vídeo de una calle, sigue al coche rojo (matrícula XYZ) e informa en qué segundo entra y sale de la escena."
+    },
+    "19": {
+        "titulo": "Análisis bursátil y predicción",
+        "idea": "Analiza noticias financieras, informes de ganancias y sentimiento del mercado para predecir tendencias en el precio de las acciones.",
+        "prompt": "Analiza las últimas noticias financieras sobre la \"Empresa Y\" y su último informe de resultados. Predice la tendencia probable de su acción (alcista/bajista/neutral) para la próxima semana y justifica tu análisis."
+    },
+    "20": {
+        "titulo": "Generación de resúmenes académicos",
+        "idea": "Lee un largo *paper* de investigación o un artículo académico y extrae los puntos clave, la metodología y las conclusiones en un resumen conciso.",
+        "prompt": "Resume el siguiente *paper* científico de 15 páginas sobre la \"Edición Genética CRISPR-Cas9\" en 300 palabras. Enfócate en el objetivo, la metodología y los hallazgos principales."
+    },
+    "21": {
+        "titulo": "Tutores virtuales personalizados",
+        "idea": "Proporciona explicaciones personalizadas y ejercicios de práctica en matemáticas, idiomas o programación, adaptándose al ritmo de aprendizaje del estudiante.",
+        "prompt": "Soy un estudiante de secundaria que no entiende el Teorema de Pitágoras. Explícamelo con una analogía simple y luego dame 3 problemas de práctica de dificultad creciente."
+    },
+    "22": {
+        "titulo": "Reconocimiento facial para seguridad",
+        "idea": "Utilizado para desbloquear teléfonos, control de acceso en edificios o etiquetado automático de fotos en redes sociales.",
+        "prompt": "Compara esta nueva foto de un rostro con la base de datos de 10.000 rostros autorizados y determina si hay una coincidencia con un porcentaje de confianza superior al 99%."
+    },
+    "23": {
+        "titulo": "Generación de briefs creativos",
+        "idea": "Ayuda a las agencias de marketing a definir el público objetivo, el mensaje clave y el tono de una campaña publicitaria a partir de un producto.",
+        "prompt": "Crea un *brief* creativo para una campaña de lanzamiento de una nueva bebida energética ecológica. Define el público objetivo (millennials, 20-35 años), el mensaje clave (energía natural sin químicos) y el tono (fresco, auténtico, vibrante)."
+    },
+    "24": {
+        "titulo": "Valoración inmobiliaria automatizada",
+        "idea": "Estima el precio de una vivienda analizando propiedades similares, ubicación, antigüedad, y tendencias del mercado local.",
+        "prompt": "Estima el precio de venta de un apartamento de 80m², 2 habitaciones, en el barrio de Gràcia, Barcelona, construido en 1970 pero reformado. Usa datos de ventas recientes en la zona."
+    },
+    "25": {
+        "titulo": "Control domótico del hogar",
+        "idea": "Controla luces, termostatos y seguridad del hogar mediante comandos de voz, aprendiendo tus rutinas para optimizar el consumo de energía.",
+        "prompt": "Crea una rutina de \"Buenos días\" que a las 7:00 AM suba las persianas lentamente, ponga música clásica a bajo volumen y ajuste el termostato a 21°C."
+    },
+    "26": {
+        "titulo": "Generación de música original",
+        "idea": "Compone piezas musicales originales en cualquier género (clásico, jazz, electrónica) o crea efectos de sonido para videojuegos.",
+        "prompt": "Compón una pieza de piano de 1 minuto de duración, estilo melancólico y lento, similar a Chopin."
+    },
+    "27": {
+        "titulo": "Monitorización remota de pacientes",
+        "idea": "Analiza datos de wearables (ritmo cardíaco, glucosa) para alertar a los médicos sobre cambios críticos en la salud de un paciente.",
+        "prompt": "Analiza este flujo de datos de ritmo cardílago de un paciente. Alerta si detectas un patrón de arritmia o una taquicardia sostenida por más de 30 segundos."
+    },
+    "28": {
+        "titulo": "Optimización de rutas logísticas",
+        "idea": "Calcula la ruta más eficiente para una flota de reparto, considerando el tráfico en tiempo real, las ventanas de entrega y la capacidad del vehículo.",
+        "prompt": "Calcula la ruta óptima para un camión de reparto que debe visitar 15 direcciones en Madrid, comenzando en el almacén (Punto A) y terminando en el (Punto B), minimizando el consumo de combustible."
+    },
+    "29": {
+        "titulo": "Asistentes para programación",
+        "idea": "Autocompleta código, detecta errores, explica bloques de código complejos y sugiere optimizaciones (ej. GitHub Copilot).",
+        "prompt": "Tengo esta función de Python que es muy lenta. Explica qué hace y sugiérreme una forma de optimizarla para que se ejecute más rápido. [Pegar función de código]"
+    },
+    "30": {
+        "titulo": "Diseño gráfico asistido",
+        "idea": "Genera variaciones de logos, sugiere paletas de colores y crea *mockups* de productos o sitios web automáticamente.",
+        "prompt": "Diseña 5 variaciones de un logo para una cafetería llamada \"El Grano Dorado\". El estilo debe ser minimalista y usar colores tierra (marrón, beige)."
+    },
+    "31": {
+        "titulo": "Simuladores de entrenamiento",
+        "idea": "Crea entornos virtuales realistas para entrenar a pilotos, cirujanos o equipos de emergencia en situaciones complejas sin riesgo.",
+        "prompt": "Describe un escenario de simulación para un piloto de avión que debe aterrizar de emergencia con un fallo en el motor derecho y viento cruzado de 15 nudos."
+    },
+    "32": {
+        "titulo": "Búsqueda de patentes/marcas",
+        "idea": "Rastrea bases de datos globales para determinar si una invención o un nombre de marca ya está registrado, analizando la similitud conceptual.",
+        "prompt": "Busca en la base de datos de patentes de EE.UU. y Europa si existe alguna invención similar a un \"sistema de riego automático para plantas de interior que usa sensores de humedad y una app móvil\"."
+    },
+    "33": {
+        "titulo": "Limpieza de bases de datos",
+        "idea": "Estandariza formatos (fechas, direcciones), encuentra y fusiona duplicados, y rellena información faltante en grandes hojas de cálculo.",
+        "prompt": "En esta hoja de cálculo de clientes, la columna \"Ciudad\" tiene entradas como \"Barna\", \"Barcelona\" y \"BCN\". Estandariza todas a \"Barcelona\"."
+    },
+    "34": {
+        "titulo": "Scoring de candidatos en RRHH",
+        "idea": "Filtra miles de currículums, puntuando a los candidatos según su ajuste a la descripción del puesto (experiencia, habilidades).",
+        "prompt": "Analiza 50 currículums para un puesto de \"Ingeniero de Software Senior (Java)\". Clasifícalos del 1 al 10 basándote en: 5+ años de experiencia, conocimiento de Spring Boot y experiencia en AWS."
+    },
+    "35": {
+        "titulo": "Asesoramiento jurídico automatizado",
+        "idea": "Asistentes que ayudan a redactar contratos estándar, revisar NDAs (Acuerdos de Confidencialidad) o responder preguntas legales básicas.",
+        "prompt": "Revisa este Acuerdo de Confidencialidad (NDA) y resalta cualquier cláusula que sea inusualmente restrictiva o desfavorable para el \"Receptor\" de la información."
+    },
+    "36": {
+        "titulo": "Informes empresariales automáticos",
+        "idea": "Analiza datos de ventas y genera informes semanales en lenguaje natural, explicando las métricas clave y las tendencias.",
+        "prompt": "Analiza estos datos de ventas de la última semana. Escribe un resumen ejecutivo para la dirección, comparando el rendimiento con la semana anterior y destacando los 3 productos más vendidos."
+    },
+    "37": {
+        "titulo": "Identificación de objetos en fotos",
+        "idea": "Permite buscar en tu galería de fotos por \"playa\" o \"perro\", o en seguridad para identificar objetos específicos.",
+        "prompt": "Analiza las 1000 imágenes de este directorio e identifica todas las que contengan un \"coche rojo\" y un \"edificio\"."
+    },
+    "38": {
+        "titulo": "Diagnóstico veterinario",
+        "idea": "Asiste a los veterinarios analizando síntomas, análisis de sangre y radiografías de animales para sugerir posibles diagnósticos.",
+        "prompt": "Un perro de 6 años (Golden Retriever) presenta letargo, pérdida de apetito y encías pálidas. El análisis de sangre muestra anemia. ¿Cuáles son los 3 diagnósticos diferenciales más probables?"
+    },
+    "39": {
+        "titulo": "Ayuda a personas con discapacidad",
+        "idea": "Aplicaciones que describen el entorno a personas ciegas (usando la cámara) o convierten lenguaje de signos en voz (y viceversa).",
+        "prompt": "(Prompt de sistema: Eres un asistente para personas con discapacidad visual). Un usuario te envía esta foto. Describe los objetos principales en la habitación y si hay algún obstáculo en el suelo."
+    },
+    "40": {
+        "titulo": "Optimización energética en edificios",
+        "idea": "Analiza el consumo de un edificio (iluminación, climatización) y lo ajusta automáticamente para reducir costes y huella de carbono.",
+        "prompt": "Diseña un plan de optimización energética para un edificio de oficinas de 5 plantas. Sugiere 3 cambios en la climatización y 2 en la iluminación para reducir el consumo en un 15%."
+    }
+};
+
+// 2. Esperar a que el DOM esté cargado
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // 3. Obtener referencias a los elementos del DOM (PARA EL MODAL)
+    const modalOverlay = document.getElementById('modal-overlay');
+    const modalBox = document.getElementById('modal-box');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalPrompt = document.getElementById('modal-prompt');
+    const ejemplosGrid = document.querySelector('.ejemplos-grid');
+
+    // 4. Función para mostrar el modal
+    function showModal(id) {
+        const data = ejemplosData[id];
+        if (!data) {
+            console.error('No se encontraron datos para el id:', id);
+            return;
+        }
+
+        // Poblar el modal con los datos
+        modalTitle.textContent = data.titulo;
+        modalDescription.textContent = data.idea;
+        modalPrompt.textContent = data.prompt;
+
+        // Mostrar el modal
+        modalOverlay.style.display = 'flex';
+    }
+
+    // 5. Función para cerrar el modal
+    function closeModal() {
+        modalOverlay.style.display = 'none';
+    }
+
+    // 6. Asignar Event Listeners (PARA EL MODAL)
+    
+    // Usar delegación de eventos en el grid
+    if (ejemplosGrid) {
+        ejemplosGrid.addEventListener('click', function(event) {
+            // Encontrar el botón .ejemplo-item más cercano que fue clicado
+            const button = event.target.closest('.ejemplo-item');
+            
+            if (button && button.dataset.id) {
+                showModal(button.dataset.id);
+            }
+        });
+    }
+
+    // Cerrar al hacer clic en el botón 'X'
+    if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', closeModal);
+    }
+
+    // Cerrar al hacer clic fuera de la caja (en el overlay)
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', function(event) {
+            if (event.target === modalOverlay) {
+                closeModal();
+            }
+        });
+    }
+
+    // --- LÓGICA AÑADIDA PARA EL MINITEST ---
+    const minitestOptions = document.querySelectorAll('.minitest-option');
+
+    minitestOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const question = this.dataset.question; // p.ej., 's1-1'
+            const isCorrect = this.dataset.correct === 'true';
+            const feedbackEl = document.getElementById(question.replace('s1-', 's1-feedback-')); // p.ej., 's1-feedback-1'
+
+            // Resetear estilos para todas las opciones de esta pregunta
+            const allOptionsForThisQuestion = document.querySelectorAll(`.minitest-option[data-question="${question}"]`);
+            allOptionsForThisQuestion.forEach(opt => {
+                opt.style.backgroundColor = '';
+                opt.style.fontWeight = '';
+                opt.style.border = '1px solid #ddd';
+            });
+
+            // Estilar la opción clickada
+            if (isCorrect) {
+                this.style.backgroundColor = '#d1fadf'; // Verde
+                this.style.border = '1px solid #28a745';
+                if(feedbackEl) feedbackEl.textContent = '¡Correcto!';
+                if(feedbackEl) feedbackEl.style.color = '#28a745';
+            } else {
+                this.style.backgroundColor = '#f8d7da'; // Rojo
+                this.style.border = '1px solid #dc3545';
+                if(feedbackEl) feedbackEl.textContent = 'Incorrecto, intentalo de nuevo.';
+                if(feedbackEl) feedbackEl.style.color = '#dc3545';
+            }
+        });
+    });
+    // --- FIN DE LA LÓGICA DEL MINITEST ---
+
+});
+// --- FIN DEL NUEVO SCRIPT PARA EL MODAL ---
+</script>
