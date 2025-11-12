@@ -497,7 +497,7 @@
             <p>Generación de canciones completas con letra y voces a partir de un texto simple.</p>
         </div>
         <div class="tool-card">
-            <strong><a href="httpsS://www.udio.com/" target="_blank" class="tool-link">Udio</a>:</strong> <a href="httpsS://www.udio.com/" target="_blank" class="tool-link">https://www.udio.com/</a>
+            <strong><a href="httpsIS://www.udio.com/" target="_blank" class="tool-link">Udio</a>:</strong> <a href="httpsS://www.udio.com/" target="_blank" class="tool-link">https://www.udio.com/</a>
             <p>Competidor de Suno para generación musical de alta calidad y control estilístico.</p>
         </div>
 
@@ -506,12 +506,12 @@
 
         <h4>🏥 Médica</h4>
         <div class="tool-card">
-            <strong>Symptoma:</strong> <a href="httpsS://www.symptoma.es/" target="_blank" class="tool-link">https://www.symptoma.es/</a>
+            <strong>Symptoma:</strong> <a href="httpsIS://www.symptoma.es/" target="_blank" class="tool-link">https://www.symptoma.es/</a>
             <p>Comprobador de síntomas médicos</p>
         </div>
         <h4>⚖️ Legal</h4>
         <div class="tool-card">
-            <strong>Harvey AI:</strong> <a href="httpsS://www.harvey.ai/" target="_blank" class="tool-link">https://www.harvey.ai/</a>
+            <strong>Harvey AI:</strong> <a href="httpsIS://www.harvey.ai/" target="_blank" class="tool-link">https://www.harvey.ai/</a>
             <p>Asistente legal especializado</p>
         </div>
         <h4>💻 Programación</h4>
@@ -558,7 +558,7 @@
                 <div class="minitest-option" data-question="s1-4" data-correct="false">a) Es más rápida y creativa</div>
                 <div class="minitest-option" data-question="s1-4" data-correct="true">b) Utiliza bases de datos médicas validadas y está enfocada en precisión</div>
                 <div class="minitest-option" data-question="s1-4" data-correct="false">c) Puede generar imágenes de anatomía</div>
-                <div class="minitest-option" data-question="s1-4" data-correct="false">d) No tiene ninguna ventaja</div>
+                <div classV="minitest-option" data-question="s1-4" data-correct="false">d) No tiene ninguna ventaja</div>
                 <div class="feedback" id="s1-feedback-4"></div>
             </div>
 
@@ -575,7 +575,7 @@
                 <h4>6. ¿Qué IA destaca a finales de 2025 por tener una de las ventanas de contexto más grandes (1 millón de tokens)?</h4>
                 <div class="minitest-option" data-question="s1-6" data-correct="false">a) GPT-5</div>
                 <div class="minitest-option" data-question="s1-6" data-correct="false">b) Grok 4</div>
-                <div classV="minitest-option" data-question="s1-6" data-correct="true">c) Gemini 2.5 Pro</div>
+                <div class="minitest-option" data-question="s1-6" data-correct="true">c) Gemini 2.5 Pro</div>
                 <div class="minitest-option" data-question="s1-6" data-correct="false">d) DeepSeek V3.1</div>
                 <div class="feedback" id="s1-feedback-6"></div>
             </div>
@@ -607,13 +607,13 @@
                 <div class="feedback" id="s1-feedback-9"></div>
             </div>
 
-            <div classSi="minitest-question">
+            <div class="minitest-question">
                 <h4>10. La forma más inteligente de usar una IA generativa es verla como...</h4>
                 <div class="minitest-option" data-question="s1-10" data-correct="false">a) Un sustituto de los expertos humanos</div>
                 <div class="minitest-option" data-question="s1-10" data-correct="false">b) Una fuente de verdad absoluta e infalible</div>
                 <div class="minitest-option" data-question="s1-10" data-correct="false">c) Una herramienta que no requiere supervisión</div>
                 <div class="minitest-option" data-question="s1-10" data-correct="true">d) Un copiloto que asiste y acelera el trabajo humano</div>
-                <div classs="feedback" id="s1-feedback-10"></div>
+                <div class="feedback" id="s1-feedback-10"></div>
             </div>
 
 
@@ -657,7 +657,7 @@
             <strong>8. Copiar sin adaptar</strong>
             <p>Copiar y pegar sin personalizar el output a tus necesidades reales.</p>
         </div>
-        <div class="error-item">
+        <div classV="error-item">
             <strong>9. Obviar diferencias entre modelos</strong>
             <p>No considerar las diferencias entre modelos (GPT-5 vs Qwen3-Max) y sus ventanas de contexto.</p>
         </div>
@@ -846,7 +846,7 @@ const ejemplosData = {
         "idea": "Analiza imágenes médicas (rayos X, resonancias magnéticas) para detectar signos tempranos de enfermedades como cáncer o retinopatía, asistiendo al radiólogo.",
         "prompt": "Analiza esta radiografía de tórax e identifica cualquier nódulo pulmonar o signo de neumonía. Proporciona un informe preliminar."
     },
-    "6": {
+    "66": {
         "titulo": "Asistentes personales digitales",
         "idea": "Organiza tu calendario, gestiona tus emails, resume reuniones y te recuerda tareas importantes, actuando como un asistente ejecutivo virtual.",
         "prompt": "Revisa mi bandeja de entrada de las últimas 24 horas y resume los 3 emails más urgentes que requieren mi respuesta. Prepara un borrador de respuesta para el primero."
@@ -1023,101 +1023,98 @@ const ejemplosData = {
     }
 };
 
-// 2. Esperar a que el DOM esté cargado
-document.addEventListener('DOMContentLoaded', function() {
+// 2. *** CAMBIO: ELIMINADO EL 'DOMContentLoaded' WRAPPER ***
+// El script se ejecuta directamente, ya que está al final del HTML.
     
-    // 3. Obtener referencias a los elementos del DOM (PARA EL MODAL)
-    const modalOverlay = document.getElementById('modal-overlay');
-    const modalBox = document.getElementById('modal-box');
-    const modalCloseBtn = document.getElementById('modal-close-btn');
-    const modalTitle = document.getElementById('modal-title');
-    const modalDescription = document.getElementById('modal-description');
-    const modalPrompt = document.getElementById('modal-prompt');
-    const ejemplosGrid = document.querySelector('.ejemplos-grid');
+// 3. Obtener referencias a los elementos del DOM (PARA EL MODAL)
+const modalOverlay = document.getElementById('modal-overlay');
+const modalBox = document.getElementById('modal-box');
+const modalCloseBtn = document.getElementById('modal-close-btn');
+const modalTitle = document.getElementById('modal-title');
+const modalDescription = document.getElementById('modal-description');
+const modalPrompt = document.getElementById('modal-prompt');
+const ejemplosGrid = document.querySelector('.ejemplos-grid');
 
-    // 4. Función para mostrar el modal
-    function showModal(id) {
-        const data = ejemplosData[id];
-        if (!data) {
-            console.error('No se encontraron datos para el id:', id);
-            return;
+// 4. Función para mostrar el modal
+function showModal(id) {
+    const data = ejemplosData[id];
+    if (!data) {
+        console.error('No se encontraron datos para el id:', id);
+        return;
+    }
+
+    // Poblar el modal con los datos
+    modalTitle.textContent = data.titulo;
+    modalDescription.textContent = data.idea;
+    modalPrompt.textContent = data.prompt;
+
+    // Mostrar el modal
+    modalOverlay.style.display = 'flex';
+}
+
+// 5. Función para cerrar el modal
+function closeModal() {
+    modalOverlay.style.display = 'none';
+}
+
+// 6. Asignar Event Listeners (PARA EL MODAL)
+
+// Usar delegación de eventos en el grid
+if (ejemplosGrid) {
+    ejemplosGrid.addEventListener('click', function(event) {
+        // Encontrar el botón .ejemplo-item más cercano que fue clicado
+        const button = event.target.closest('.ejemplo-item');
+        
+        if (button && button.dataset.id) {
+            showModal(button.dataset.id);
         }
-
-        // Poblar el modal con los datos
-        modalTitle.textContent = data.titulo;
-        modalDescription.textContent = data.idea;
-        modalPrompt.textContent = data.prompt;
-
-        // Mostrar el modal
-        modalOverlay.style.display = 'flex';
-    }
-
-    // 5. Función para cerrar el modal
-    function closeModal() {
-        modalOverlay.style.display = 'none';
-    }
-
-    // 6. Asignar Event Listeners (PARA EL MODAL)
-    
-    // Usar delegación de eventos en el grid
-    if (ejemplosGrid) {
-        ejemplosGrid.addEventListener('click', function(event) {
-            // Encontrar el botón .ejemplo-item más cercano que fue clicado
-            const button = event.target.closest('.ejemplo-item');
-            
-            if (button && button.dataset.id) {
-                showModal(button.dataset.id);
-            }
-        });
-    }
-
-    // Cerrar al hacer clic en el botón 'X'
-    if (modalCloseBtn) {
-        modalCloseBtn.addEventListener('click', closeModal);
-    }
-
-    // Cerrar al hacer clic fuera de la caja (en el overlay)
-    if (modalOverlay) {
-        modalOverlay.addEventListener('click', function(event) {
-            if (event.target === modalOverlay) {
-                closeModal();
-            }
-        });
-    }
-
-    // --- LÓGICA AÑADIDA PARA EL MINITEST ---
-    const minitestOptions = document.querySelectorAll('.minitest-option');
-
-    minitestOptions.forEach(option => {
-        option.addEventListener('click', function() {
-            const question = this.dataset.question; // p.ej., 's1-1'
-            const isCorrect = this.dataset.correct === 'true';
-            const feedbackEl = document.getElementById(question.replace('s1-', 's1-feedback-')); // p.ej., 's1-feedback-1'
-
-            // Resetear estilos para todas las opciones de esta pregunta
-            const allOptionsForThisQuestion = document.querySelectorAll(`.minitest-option[data-question="${question}"]`);
-            allOptionsForThisQuestion.forEach(opt => {
-                opt.style.backgroundColor = '';
-                opt.style.fontWeight = '';
-                opt.style.border = '1px solid #ddd';
-            });
-
-            // Estilar la opción clickada
-            if (isCorrect) {
-                this.style.backgroundColor = '#d1fadf'; // Verde
-                this.style.border = '1px solid #28a745';
-                if(feedbackEl) feedbackEl.textContent = '¡Correcto!';
-                if(feedbackEl) feedbackEl.style.color = '#28a745';
-            } else {
-                this.style.backgroundColor = '#f8d7da'; // Rojo
-                this.style.border = '1px solid #dc3545';
-                if(feedbackEl) feedbackEl.textContent = 'Incorrecto, intentalo de nuevo.';
-                if(feedbackEl) feedbackEl.style.color = '#dc3545';
-            }
-        });
     });
-    // --- FIN DE LA LÓGICA DEL MINITEST ---
+}
 
+// Cerrar al hacer clic en el botón 'X'
+if (modalCloseBtn) {
+    modalCloseBtn.addEventListener('click', closeModal);
+}
+
+// Cerrar al hacer clic fuera de la caja (en el overlay)
+if (modalOverlay) {
+    modalOverlay.addEventListener('click', function(event) {
+        if (event.target === modalOverlay) {
+            closeModal();
+        }
+    });
+}
+
+// --- LÓGICA AÑADIDA PARA EL MINITEST ---
+const minitestOptions = document.querySelectorAll('.minitest-option');
+
+minitestOptions.forEach(option => {
+    option.addEventListener('click', function() {
+        const question = this.dataset.question; // p.ej., 's1-1'
+        const isCorrect = this.dataset.correct === 'true';
+        const feedbackEl = document.getElementById(question.replace('s1-', 's1-feedback-')); // p.ej., 's1-feedback-1'
+
+        // Resetear estilos para todas las opciones de esta pregunta
+        const allOptionsForThisQuestion = document.querySelectorAll(`.minitest-option[data-question="${question}"]`);
+        allOptionsForThisQuestion.forEach(opt => {
+            opt.style.backgroundColor = '';
+            opt.style.fontWeight = '';
+            opt.style.border = '1px solid #ddd';
+        });
+
+        // Estilar la opción clickada
+        if (isCorrect) {
+            this.style.backgroundColor = '#d1fadf'; // Verde
+            this.style.border = '1px solid #28a745';
+            if(feedbackEl) feedbackEl.textContent = '¡Correcto!';
+            if(feedbackEl) feedbackEl.style.color = '#28a745';
+        } else {
+            this.style.backgroundColor = '#f8d7da'; // Rojo
+            this.style.border = '1px solid #dc3545';
+            if(feedbackEl) feedbackEl.textContent = 'Incorrecto, intentalo de nuevo.';
+            if(feedbackEl) feedbackEl.style.color = '#dc3545';
+        }
+    });
 });
 // --- FIN DEL NUEVO SCRIPT PARA EL MODAL ---
 </script>
