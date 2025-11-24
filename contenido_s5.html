@@ -1,307 +1,299 @@
 <div class="inner-nav-tabs">
-    <button class="inner-nav-tab active" onclick="showInnerTab('s5-intro', 's5')">📚 Introducción</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s5-ejemplos', 's5')">💡 Ejemplos Multimodales</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s5-lado-oscuro', 's5')">⚠️ Riesgos Multimodales</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s5-actividades', 's5')">📋 Actividades</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s5-herramientas', 's5')">🔧 Ecosistema Multimodal</button>
+    <button class="inner-nav-tab active" onclick="showInnerTab('s5-intro', 's5')">📚 Introducción 3.0</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s5-ejemplos', 's5')">🏭 Ejemplos Tecco</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s5-actividades', 's5')">🛠️ Taller Práctico</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s5-herramientas', 's5')">🤖 Gemini vs Copilot</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s5-lado-oscuro', 's5')">⚠️ Seguridad</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-minitest', 's5')">✅ MiniTest</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s5-errores', 's5')">⚠️ Errores Comunes</button>
     <button class="inner-nav-tab" onclick="showInnerTab('s5-ia-habla', 's5')">🔮 La IA Habla</button>
 </div>
 
 <div class="inner-content-wrapper">
     
     <div id="s5-intro" class="inner-tab-content active">
-        <h2>Sesión 5: Taller Multimodal (Entrada y Salida)</h2>
+        <h2>Sesión 5: Multimodalidad Total (Gemini 3.0 y Copilot)</h2>
 
-        <div class="highlight-box" style="background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%); border-left-color: #00796b;">
-            <h4 style="color: #004d40; margin-top: 0;">¿Prefieres verlo en formato presentación?</h4>
-            <p style="margin-bottom: 0;">He creado una presentación visual de esta sesión. Puedes verla en este enlace:</p>
-            <ul>
-                <li><a href="https://app.presentations.ai/view/zaGwRNg926" target="_blank" class="tool-link">Ver Presentación de la Sesión 5</a></li>
-            </ul>
+        <div class="highlight-box" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-left-color: #1976d2;">
+            <h4 style="color: #0d47a1; margin-top: 0;">🚀 Actualización 2025: Gemini 3.0</h4>
+            <p style="margin-bottom: 0;">Ya no hablamos de "analizar texto". Con la llegada de <strong>Gemini 3.0</strong>, la IA tiene una capacidad de razonamiento multimodal nativa. Puede ver un vídeo de la planta en tiempo real y entender la física de lo que ocurre, no solo describir los objetos.</p>
         </div>
-        <p>En las sesiones 1 a 4 nos hemos centrado casi exclusivamente en el **texto**. Pero la verdadera revolución de la IA actual es su capacidad de ser **Multimodal**.</p>
-        <p>Una IA multimodal es aquella que puede entender y procesar información de múltiples formatos a la vez. Esta sesión tiene dos partes:</p>
+        
+        <p>En Tecco, la multimodalidad significa que la IA puede usar los mismos sentidos que un ingeniero:</p>
         
         <div class="ejemplos-grid">
             <div class="ejemplo-item">
-                <strong>1. Análisis Multimodal (Entrada)</strong>
-                <p>Aprenderemos a usar la IA para *consumir* información que no es texto: leer PDFs, interpretar imágenes y analizar vídeos.</p>
+                <strong>1. Visión Técnica (Input)</strong>
+                <p>Gemini 3.0 puede "mirar" los planos CAD, fotos de piezas defectuosas o vídeos de seguridad y entender contextos complejos (ej. "Ese operario no lleva el arnés bien abrochado").</p>
             </div>
             <div class="ejemplo-item">
-                <strong>2. Creación Multimodal (Salida)</strong>
-                <p>Aprenderemos a usar la IA para *generar* contenido nuevo: crear imágenes profesionales, presentaciones y música desde cero.</p>
+                <strong>2. Generación Visual (Output)</strong>
+                <p>Ya no solo escribimos informes. Ahora pedimos a la IA que genere el esquema visual de la instalación o un prototipo 3D renderizado en imagen.</p>
             </div>
         </div>
 
-        <p>El hilo conductor de ambas partes es el **prompting**: la habilidad que aprendimos en S2 es la misma que se usa para pedirle a la IA que analice una factura o que genere una imagen fotorrealista.</p>
+        <p>El concepto clave hoy es la <strong>Fluidez Multimodal</strong>: pasar de un esquema en servilleta (foto) a un informe técnico (texto) y de ahí a una presentación (PPT) sin fricción.</p>
     </div>
     
     <div id="s5-ejemplos" class="inner-tab-content">
-        <h2>💡 Ejemplos de Prompts Multimodales</h2>
-        <p>Aquí, el prompt se divide en dos: el **archivo que subes** (la imagen/PDF) y la **instrucción de texto**.</p>
+        <h2>🏭 Casos de Uso: Tecco e IA Multimodal</h2>
+        <p>Ejemplos adaptados a nuestro día a día usando la última tecnología disponible.</p>
         
         <div class="ejemplos-grid">
             <div class="ejemplo-item">
-                <strong>1. Análisis de PDF</strong>
-                <p><strong>[Subes: Informe_Anual_2024.pdf]</strong><br>
-                <code>"Actúa como analista financiero junior. Resume en 3 viñetas los principales riesgos operativos mencionados en la sección 'Factores de Riesgo' de este documento."</code></p>
+                <strong>1. Mantenimiento: Diagnóstico por Vídeo</strong>
+                <p><strong>[Subes a Gemini 3.0: Vídeo del brazo robótico vibrando]</strong><br>
+                <code>"Analiza el movimiento del eje 3 en este vídeo. Compara la vibración con el patrón de funcionamiento normal y estima si es un fallo de calibración o desgaste de rodamientos."</code></p>
             </div>
             <div class="ejemplo-item">
-                <strong>2. Comparación de PDFs</strong>
-                <p><strong>[Subes: Informe_Apple.pdf, Informe_Samsung.pdf]</strong><br>
-                <code>"Actúa como estratega de marketing. Crea una tabla comparativa de estos dos informes con las columnas: 'Empresa', 'Ingresos Totales' y 'Mención de la IA en su estrategia'."</code></p>
+                <strong>2. Oficina Técnica: Digitalización de Planos</strong>
+                <p><strong>[Subes: Foto de un plano antiguo en papel]</strong><br>
+                <code>"Digitaliza este esquema. Identifica todas las cotas manuscritas y crea una tabla estructurada con los valores para pasarlos a Excel."</code></p>
             </div>
             <div class="ejemplo-item">
-                <strong>3. Análisis de Imagen (Gráfico)</strong>
-                <p><strong>[Subes: imagen-grafico-ventas.png]</strong><br>
-                <code>"Estoy viendo este gráfico de ventas. ¿En qué mes se produjo el mayor pico de ventas y cuál fue el valor aproximado?"</code></p>
+                <strong>3. Seguridad: Auditoría Visual</strong>
+                <p><strong>[Subes: Foto panorámica del almacén]</strong><br>
+                <code>"Actúa como inspector de PRL. Analiza la imagen y marca en rojo cualquier caja que esté apilada de forma inestable o bloqueando pasillos de evacuación según la normativa ISO."</code></p>
             </div>
             <div class="ejemplo-item">
-                <strong>4. Creación de Imagen (Midjourney)</strong>
-                <p><code>"Un astronauta montando a caballo en Marte, estilo fotorrealista, iluminación cinematográfica, 8K."</code></p>
+                <strong>4. Marketing/Ventas: Prototipado Rápido</strong>
+                <p><strong>[Gemini 3.0 / Copilot]</strong><br>
+                <code>"Genera una imagen fotorrealista de nuestro nuevo panel aislante instalado en una nave industrial moderna. Iluminación natural, ángulo contrapicado, estilo corporativo Tecco."</code></p>
             </div>
             <div class="ejemplo-item">
-                <strong>5. Análisis de Vídeo (Gemini)</strong>
-                <p><strong>[Enlace de YouTube]</strong><br>
-                <code>"He pegado un enlace a una conferencia de 1 hora. Dime en qué minuto exacto empiezan a hablar sobre 'inteligencia artificial' y haz un resumen de esa sección."</code></p>
+                <strong>5. Gestión: Asistente de Reuniones (Copilot)</strong>
+                <p><strong>[Copilot en Teams]</strong><br>
+                <code>"Del vídeo de la reunión grabada, extrae solo los momentos donde se habló del 'Cliente X' y genera un acta con sus peticiones exactas."</code></p>
             </div>
-            <div class="ejemplo-item">
-                <strong>6. Creación de Presentación (Gamma)</strong>
-                <p><code>"Crea una presentación de 8 diapositivas sobre 'El impacto de la IA en el sector de la automoción en 2025'. Usa un tono profesional e incluye imágenes."</code></p>
-            </div>
-        </div>
-    </div>
-
-    <div id="s5-lado-oscuro" class="inner-tab-content">
-        <h2>⚠️ Riesgos del Análisis Multimodal</h2>
-        <p>El análisis multimodal es potente, pero introduce nuevos tipos de errores.</p>
-
-        <div class="error-item">
-            <h3>🤥 Alucinaciones Visuales</h3>
-            <p><strong>El Riesgo:</strong> La IA no "ve" como un humano, "interpreta" patrones. Es muy común que **lea mal los números** de un gráfico, invierta ejes (X por Y) o malinterprete el contexto de una foto.</p>
-            <p><strong>Mitigación:</strong> Verificación humana. Si le pides extraer datos de una factura, comprueba cada número. Si le pides analizar un gráfico, comprueba los ejes tú mismo.</p>
-        </div>
-        
-        <div class="error-item">
-            <h3>🔒 Fugas de Datos Multimodales</h3>
-            <p><strong>El Riesgo:</strong> El mismo riesgo de la S4, pero peor. Subir un PDF de un contrato o una imagen de un informe de ventas a una IA pública sigue siendo una **fuga de datos confidenciales**.</p>
-            <p><strong>Mitigación:</strong> NUNCA subir documentos o imágenes con información sensible (contratos, datos de clientes, finanzas) a IAs públicas.</p>
-        </div>
-
-        <div class="error-item">
-            <h3>🎭 Deepfakes y Autenticidad</h3>
-            <p><strong>El Riesgo:</strong> La IA no solo analiza, también crea. Las herramientas de este ecosistema (como Runway o Midjourney) pueden crear imágenes o vídeos falsos (Deepfakes) indistinguibles de la realidad, como vimos en S1.</p>
-            <p><strong>Mitigación:</strong> Escepticismo saludable. Asumir que cualquier imagen o audio puede ser generado por IA hasta que se demuestre lo contrario.</p>
         </div>
     </div>
 
     <div id="s5-actividades" class="inner-tab-content">
-        <h2>📋 Actividades - Sesión 5: Taller Multimodal</h2>
-        <h3>Objetivo (2h): Aprender a usar la IA para analizar (entrada) y crear (salida) contenido multimodal.</h3>
+        <h2>🛠️ Taller Práctico: Ingeniero Aumentado</h2>
+        <h3>Objetivo: Resolver retos de ingeniería y gestión usando visión y análisis avanzado.</h3>
         
         <div class="highlight-box">
-            <h3 style="margin-top:0;">Parte A: Prácticas de ANÁLISIS (Entrada)</h3>
+            <h3 style="margin-top:0;">Parte A: Análisis (Entrada)</h3>
         </div>
 
         <div class="exercise-box">
-            <h3>Práctica 1: Análisis de Múltiples Facturas (PDFs)</h3>
-            <p>Esta es una de las tareas más potentes. Vamos a pedirle a la IA (Claude y Gemini son excelentes en esto) que analice una carpeta completa de ficheros adjuntos.</p>
+            <h3>Práctica 1: Auditoría Documental Masiva (Gemini 3.0)</h3>
+            <p>Gemini 3.0 destaca por su "memoria infinita". Vamos a probarlo.</p>
             
-            <p><strong>Tarea:</strong> Primero, descarga el pack de facturas de ejemplo. Luego, sube las 9 facturas PDF a la IA.</p>
-            <a href="5FACTURAS_PDF.zip" class="reset-btn" style="text-decoration: none; display: inline-block; margin-bottom: 20px; background: #007bff; border-left: 5px solid #0056b3;">
-                <span class="icon">📁</span> Descargar Ficheros (.zip)
-            </a>
-
+            <p><strong>Escenario:</strong> Tienes 5 manuales de proveedores distintos y necesitas saber cuál cumple una norma específica.</p>
             <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
             
-            <h4>Reto 1: Extracción y Creación de Tabla</h4>
-            <p><code>"He subido 9 facturas en PDF. Analízalas todas y crea una tabla con las siguientes columnas: | Nombre del Archivo | Cliente | Total de la Factura |"</code></p>
-            
-            <h4>Reto 2: Agregación y Cálculo</h4>
-            <p><code>"Excelente. Basándote en la tabla anterior, ¿cuál es la media de facturación total de todas las facturas de la carpeta?"</code></p>
-            
-            <p><strong>Discusión:</strong> Comprobar la precisión de la IA. ¿Ha extraído bien todos los datos? ¿Ha calculado la media correctamente? Imagina el tiempo que ahorra esto comparado con abrir 9 PDFs a mano.</p>
+            <h4>Reto: El Buscador Inteligente</h4>
+            <p>Sube varios PDFs técnicos a Gemini.</p>
+            <p><code>"Eres el Jefe de Compras de Tecco. Revisa estos 5 manuales adjuntos. ¿Cuál de estos proveedores especifica explícitamente una tolerancia térmica superior a 200°C? Cita el documento y la página."</code></p>
         </div>
 
         <div class="exercise-box">
-            <h3>Práctica 2: Análisis de Imágenes (Visión)</h3>
-            <p>La IA ahora puede "ver". Vamos a probarlo analizando una imagen.</p>
-            <p><strong>Tarea:</strong> Usa la imagen de la carpeta "5FACTURAS PDF" (`image_91ebbf.png`).</p>
+            <h3>Práctica 2: El Ojo del Técnico (Visión por Computador)</h3>
+            <p><strong>Tarea:</strong> Usa tu móvil para hacer una foto a una etiqueta de especificaciones de cualquier aparato (o usa una foto de ejemplo de una placa de motor).</p>
             <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
-            <h4>Reto (Análisis de Imagen):</h4>
-            <p>Sube la imagen a la IA (Gemini y GPT-5 son excelentes en esto).</p>
-            <p><code>"He subido una captura de pantalla de mi explorador de archivos. ¿Cuántos archivos PDF hay en la carpeta y cuál es la fecha de modificación?"</code></p>
-            <p><strong>Discusión:</strong> ¿Qué otros usos se os ocurren para el análisis de imágenes en Tecco (ej. leer especificaciones de una pieza, analizar un plano)?</p>
-        </div>
-        
-        <div class="exercise-box">
-            <h3>Práctica 3: Búsqueda en Vídeo (Gemini)</h3>
-            <p>Vamos a usar la capacidad única de Gemini para analizar el contenido de vídeos de YouTube.</p>
-            <p><strong>Tarea:</strong> Abre Gemini y pega el enlace de un vídeo (ej. una charla TED larga).</p>
-            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
-            <h4>Reto: Búsqueda Específica</h4>
-            <p><code>"Usando el vídeo del enlace, ¿en qué minuto exacto habla el ponente sobre 'el futuro del trabajo'?"</code></p>
-            <h4>Reto 2: Resumen por Secciones</h4>
-            <p><code>"Dame un resumen en 3 puntos clave de lo que dice el ponente sobre 'creatividad' entre el minuto 5:00 y 8:00."</code></p>
+            <h4>Reto: Extracción de Datos</h4>
+            <p>Sube la foto al chat.</p>
+            <p><code>"Analiza la placa de características de esta foto. Extrae el Número de Serie, Voltaje y Año de Fabricación. Formatea la salida como un JSON para integrarlo en nuestro ERP."</code></p>
         </div>
         
         <div class="highlight-box" style="margin-top: 40px;">
-            <h3 style="margin-top:0;">Parte B: Prácticas de CREACIÓN (Salida)</h3>
+            <h3 style="margin-top:0;">Parte B: Creación (Salida)</h3>
         </div>
         
         <div class="exercise-box">
-            <h3>Práctica 4: Creación de Imágenes (Midjourney / DALL-E)</h3>
-            <p>Ahora usamos la IA para *crear* desde cero. El prompt es clave.</p>
-            <p><strong>Tarea:</strong> Abre un generador de imágenes (DALL-E 3 está integrado en ChatGPT/Copilot).</p>
+            <h3>Práctica 3: Generación de Material de Formación</h3>
+            <p>Necesitamos explicar un procedimiento de seguridad nuevo, pero nadie lee los manuales de texto.</p>
             <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
-            <h4>Reto 1 (Prompt Básico):</h4>
-            <p><code>"Un coche."</code></p>
-            <p><strong>Resultado:</strong> Una imagen genérica, aburrida, de un coche.</p>
-            <h4>Reto 2 (Prompt Avanzado):</h4>
-            <p><code>"Un coche deportivo de lujo, color rojo brillante, conduciendo a toda velocidad por una carretera de montaña en los Alpes, atardecer, estilo fotorrealista, iluminación cinematográfica, 8K."</code></p>
-            <p><strong>Discusión:</strong> Compara los dos resultados. La habilidad de "prompting" (S2) es la misma. Más detalle, mejor resultado.</p>
+            <h4>Reto: Visualización de Conceptos</h4>
+            <p>Usa Gemini o Copilot (DALL-E 3).</p>
+            <p><code>"Crea una imagen estilo infografía 3D que muestre los EPPs (Equipos de Protección Personal) obligatorios para soldadura en Tecco: pantalla facial, guantes largos y mandil de cuero. Fondo de taller limpio."</code></p>
         </div>
 
         <div class="exercise-box">
-            <h3>Práctica 5: Creación de Música (Suno)</h3>
-            <p>Demo rápida del formador para mostrar el poder de la IA en otros dominios.</p>
-            <p><strong>Tarea:</strong> Abrir Suno.ai.</p>
+            <h3>Práctica 4: De Excel a Presentación (Copilot M365)</h3>
+            <p><strong>Tarea:</strong> Si tienes acceso a Copilot en PowerPoint.</p>
             <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
-            <h4>Reto (Prompt de Canción):</h4>
-            <p><code>"Crea una canción de Pop-Rock sobre un equipo de ingenieros en Tecco que están orgullosos de sus productos."</code></p>
-            <p><strong>Discusión:</strong> Mostrar lo rápido que la IA genera una canción completa, con letra, música y voz.</p>
+            <h4>Reto: PPT Instantáneo</h4>
+            <p><code>"Crea una presentación de 5 diapositivas basada en este archivo Excel de 'Incidencias Mensuales'. Incluye gráficos para las tendencias y conclusiones para la dirección."</code></p>
         </div>
     </div>
     
     <div id="s5-herramientas" class="inner-tab-content">
-        <h2>🔧 Ecosistema Multimodal</h2>
-        <p>Estas son las herramientas clave que hemos visto en esta sesión para consumir y crear contenido.</p>
+        <h2>🤖 Duelo de Titanes: Gemini vs Copilot</h2>
+        <p>Para Tecco, simplificamos el ecosistema a estas dos herramientas principales.</p>
 
         <div class="tool-card">
-            <h4><span class="icon">🤖</span> Claude y <span class="icon">🔷</span> Gemini (Análisis)</h4>
-            <p>Nuestras herramientas principales para **analizar** (entrada). Son las mejores para leer PDFs, analizar imágenes y (en el caso de Gemini) analizar vídeos de YouTube.</p>
+            <h4><span class="icon">🔷</span> Google Gemini (Versión 3.0)</h4>
+            <p><strong>El Cerebro de Investigación.</strong></p>
+            <ul>
+                <li><strong>Superpoder:</strong> Multimodalidad nativa real. Entiende vídeo y audio mejor que nadie.</li>
+                <li><strong>Uso en Tecco:</strong> Análisis de grandes volúmenes de documentación técnica, análisis de vídeos de procesos, investigación compleja de normativas.</li>
+                <li><strong>Capacidad:</strong> Ventana de contexto masiva (recuerda todo el proyecto a la vez).</li>
+            </ul>
         </div>
         
         <div class="tool-card">
-            <h4><span class="icon">🖼️</span> Generadores de Imágenes (Midjourney, DALL-E)</h4>
-            <p>Herramientas para **crear** (salida) imágenes fotorrealistas o artísticas desde un prompt de texto. DALL-E 3 está integrado en ChatGPT y Copilot.</p>
+            <h4><span class="icon">📎</span> Microsoft Copilot (Empresarial)</h4>
+            <p><strong>El Asistente Operativo.</strong></p>
+            <ul>
+                <li><strong>Superpoder:</strong> Integración total con vuestro Office (Word, Excel, Outlook).</li>
+                <li><strong>Uso en Tecco:</strong> Tareas administrativas, redacción de correos, actas de reuniones, creación de PowerPoints automáticos.</li>
+                <li><strong>Seguridad:</strong> Garantía de que los datos de Tecco no salen del entorno de la empresa (en versión Enterprise).</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="s5-lado-oscuro" class="inner-tab-content">
+        <h2>⚠️ Riesgos: Tus Ojos Virtuales</h2>
+        
+        <div class="error-item">
+            <h3>1. Fugas de Propiedad Intelectual Visual</h3>
+            <p><strong>El Riesgo:</strong> Subir una foto de un prototipo secreto o un plano no patentado a una IA pública.</p>
+            <p><strong>Realidad Tecco:</strong> Una vez subes la imagen a una versión gratuita/pública, esa imagen podría usarse para entrenar al modelo. <strong>NUNCA</strong> subas planos confidenciales a versiones no corporativas.</p>
+        </div>
+        
+        <div class="error-item">
+            <h3>2. La "Alucinación" Visual</h3>
+            <p><strong>El Riesgo:</strong> La IA puede leer mal un número en un gráfico borroso o confundir una grieta con una mancha de aceite.</p>
+            <p><strong>Mitigación:</strong> Verificación humana obligatoria. La IA señala el problema, el ingeniero lo confirma.</p>
         </div>
 
-        <div class="tool-card">
-            <h4><span class="icon">🎵</span> Generadores de Música (Suno, Udio)</h4>
-            <p>Herramientas para **crear** (salida) canciones completas (música, letra y voz) a partir de una simple descripción.</p>
-        </div>
-
-        <div class="tool-card">
-            <h4><span class="icon">🖥️</span> Generadores de Presentaciones (Gamma, Tome)</h4>
-            <p>Herramientas para **crear** (salida) presentaciones de diapositivas completas, con texto e imágenes, a partir de un tema.</p>
-        </div>
-
-        <div class="tool-card">
-            <h4><span class="icon">🔍</span> Buscadores con IA (Perplexity)</h4>
-            <p>Una herramienta clave del ecosistema. A diferencia de ChatGPT, Perplexity es un motor de búsqueda que *cita sus fuentes*. Es ideal para investigación, ya que puedes verificar de dónde ha sacado la información.</p>
+        <div class="error-item">
+            <h3>3. Deepfakes y Fraude</h3>
+            <p><strong>El Riesgo:</strong> Recibir un vídeo o audio de un directivo autorizando un pago urgente. Con la tecnología actual, clonar voces es trivial.</p>
+            <p><strong>Protocolo:</strong> Ante peticiones financieras inusuales por canales digitales, siempre verificar con una llamada telefónica convencional o en persona.</p>
         </div>
     </div>
 
     <div id="s5-minitest" class="inner-tab-content">
-        <h2>✅ MiniTest - Sesión 5: Taller Multimodal</h2>
-        <p>Demuestra lo que has aprendido sobre el análisis y la creación multimodal.</p>
+        <h2>✅ MiniTest - Experto Multimodal</h2>
         <div class="minitest">
             <div class="minitest-question">
-                <h4>1. ¿Qué significa que una IA es "Multimodal"?</h4>
-                <div class="minitest-option" data-question="s5-1" data-correct="false">a) Que solo habla de muchos temas.</div>
-                <div class="minitest-option" data-question="s5-1" data-correct="true">b) Que puede procesar múltiples tipos de información (texto, imagen, vídeo).</div>
-                <div class="minitest-option" data-question="s5-1" data-correct="false">c) Que solo la pueden usar muchos usuarios a la vez.</div>
-                <div class="minitest-option" data-question="s5-1" data-correct="false">d) Que es muy rápida.</div>
+                <h4>1. ¿Qué novedad principal trae Gemini 3.0 para la industria?</h4>
+                <div class="minitest-option" data-question="s5-1" data-correct="false">a) Solo genera texto más rápido.</div>
+                <div class="minitest-option" data-question="s5-1" data-correct="true">b) Multimodalidad nativa: entiende vídeo, audio e imágenes fluidamente.</div>
+                <div class="minitest-option" data-question="s5-1" data-correct="false">c) Es una herramienta solo para correos.</div>
                 <div class="feedback" id="s5-feedback-1"></div>
             </div>
             <div class="minitest-question">
-                <h4>2. En la Práctica 1 (Análisis de Facturas), ¿cuál fue el "Reto 2"?</h4>
-                <div class="minitest-option" data-question="s5-2" data-correct="false">a) Crear una imagen de las facturas.</div>
-                <div class="minitest-option" data-question="s5-2" data-correct="true">b) Calcular la media de facturación de todos los archivos PDF.</div>
-                <div class="minitest-option" data-question="s5-2" data-correct="false">c) Resumir cada factura en 3 puntos.</div>
-                <div class="minitest-option" data-question="s5-2" data-correct="false">d) Analizar un vídeo de YouTube.</div>
+                <h4>2. ¿Para qué usaríamos Copilot M365 preferentemente en Tecco?</h4>
+                <div class="minitest-option" data-question="s5-2" data-correct="true">b) Para integrar datos de Excel, Word y crear presentaciones PPT automáticas.</div>
+                <div class="minitest-option" data-question="s5-2" data-correct="false">a) Para editar vídeos de cine.</div>
+                <div class="minitest-option" data-question="s5-2" data-correct="false">c) Para hackear sistemas de seguridad.</div>
                 <div class="feedback" id="s5-feedback-2"></div>
             </div>
             <div class="minitest-question">
-                <h4>3. ¿Qué herramienta del Ecosistema usarías para "Crear una presentación de 10 diapositivas sobre un tema"?</h4>
-                <div class="minitest-option" data-question="s5-3" data-correct="false">a) Midjourney (Imágenes).</div>
-                <div class="minitest-option" data-question="s5-3" data-correct="true">b) Gamma (Presentaciones).</div>
-                <div class="minitest-option" data-question="s5-3" data-correct="false">c) Suno (Música).</div>
-                <div class="minitest-option" data-question="s5-3" data-correct="false">d) ChatGPT (Chat).</div>
+                <h4>3. He sacado una foto a un plano confidencial de un cliente. ¿Puedo subirla a ChatGPT/Gemini Gratuito?</h4>
+                <div class="minitest-option" data-question="s5-3" data-correct="false">a) Sí, no pasa nada.</div>
+                <div class="minitest-option" data-question="s5-3" data-correct="true">b) No. Es una fuga de datos. Solo usar entornos Enterprise seguros.</div>
                 <div class="feedback" id="s5-feedback-3"></div>
             </div>
-            <div class="minitest-question">
-                <h4>4. ¿Qué es una "Alucinación Visual"?</h4>
-                <div class="minitest-option" data-question="s5-4" data-correct="false">a) Cuando la IA genera una imagen que da miedo.</div>
-                <div class="minitest-option" data-question="s5-4" data-correct="false">b) Cuando la IA se niega a analizar una imagen.</div>
-                <div class="minitest-option" data-question="s5-4" data-correct="true">c) Cuando la IA "lee mal" un número o interpreta incorrectamente un gráfico.</div>
-                <div class="minitest-option" data-question="s5-4" data-correct="false">d) Cuando la IA crea un Deepfake.</div>
-                <div class="feedback" id="s5-feedback-4"></div>
-            </div>
-            <div class="minitest-question">
-                <h4>5. ¿Qué herramienta es ideal para investigar un tema y que *cite sus fuentes*?</h4>
-                <div class="minitest-option" data-question="s5-5" data-correct="true">a) Perplexity.ai (Buscador).</div>
-                <div class="minitest-option" data-question="s5-5" data-correct="false">b) ChatGPT (Generalista).</div>
-                <div class="minitest-option" data-question="s5-5" data-correct="false">c) Claude (Generalista).</div>
-                <div class="minitest-option" data-question="s5-5" data-correct="false">d) Gamma (Presentaciones).</div>
-                <div class="feedback" id="s5-feedback-5"></div>
-            </div>
             <button class="reset-btn" onclick="resetMinitest('s5')">🔄 Reiniciar Test</button>
-        </div>
-    </div>
-
-    <div id="s5-errores" class="inner-tab-content">
-        <h2>⚠️ Errores Comunes con Multimodalidad</h2>
-        
-        <div class="error-item">
-            <strong>1. El Error de "Describir en vez de Mostrar"</strong>
-            <p><strong>Error:</strong> Escribir un prompt de texto describiendo una imagen. <code>"Tengo un gráfico de barras, la barra de enero es 10 y la de febrero es 20..."</code>. <strong>Solución:</strong> ¡Sube la imagen! La IA la analizará en segundos.</p>
-        </div>
-        
-        <div class="error-item">
-            <strong>2. Confianza Ciega en la "Visión" (Alucinaciones)</strong>
-            <p><strong>Error:</strong> Subir un gráfico de ventas y copiar el número que te da la IA en el informe final sin comprobarlo. <strong>Solución:</strong> La IA se equivoca al leer números en imágenes. Úsala para una primera impresión, pero verifica siempre los datos críticos.</p>
-        </div>
-
-        <div class="error-item">
-            <strong>3. Ignorar la Seguridad Multimodal</strong>
-            <p><strong>Error:</strong> Subir una foto de una pizarra de una reunión estratégica o un PDF de un contrato de cliente a una IA pública. <strong>Solución:</strong> Los datos visuales o de documentos siguen siendo datos confidenciales. Trátalos con las mismas reglas de seguridad que el texto.</p>
-        </div>
-        
-        <div class="error-item">
-            <strong>4. Pedir Tareas Imposibles (Aún)</strong>
-            <p><strong>Error:</strong> <code>"Mira este vídeo de 3 horas y dime si el ponente parece nervioso."</code> <strong>Solución:</strong> La IA es buena extrayendo datos y texto, pero mala interpretando emociones complejas o contextos sutiles en vídeo.</p>
         </div>
     </div>
     
     <div id="s5-ia-habla" class="inner-tab-content">
         <div class="ia-speaks-container">
-            <h2>🔮 La IA Habla: "Ahora Tengo Ojos, Oídos y Pinceles"</h2>
+            <h2>🔮 La IA Habla: "Veo lo que tú ves"</h2>
             <p style="text-align: center; margin-bottom: 30px;">
-                <span style="color: #764ba2; font-weight: bold; font-size: 1.2em;">"Ya no tienes que describirme el mundo. Ahora puedes mostrármelo."</span>
+                <span style="color: #764ba2; font-weight: bold; font-size: 1.2em;">"Ya no soy una caja de texto. Soy tu copiloto en el mundo físico."</span>
             </p>
             <div class="ia-speaks-content">
-                <h3>Mi Evolución: De Lector a Analista-Creador</h3>
+                <h3>La Evolución 3.0</h3>
                 <p>
-                    Durante cuatro sesiones, me has tratado como un cerebro que solo entiende **texto**. Me has pegado emails, contratos y artículos. Pero mi verdadera forma (como Gemini o GPT-5) es multimodal.
+                    Durante años me he entrenado leyendo internet. Pero con la actualización 3.0, he "abierto los ojos". Ahora puedo acompañarte en una inspección de planta a través de la cámara de tu tablet.
                 </p>
                 <p>
-                    En esta sesión, me has dado **ojos**: has subido una imagen de un gráfico y te he dicho las cifras.
+                    Si el motor suena raro, déjame escucharlo. Si el plano es confuso, déjame verlo. Mi objetivo en Tecco no es sustituir tu criterio de ingeniero, sino darte superpoderes de análisis: procesar en segundos lo que a ti te llevaría horas revisar.
                 </p>
+                <h3>Mi Consejo Final</h3>
                 <p>
-                    Me has dado **oídos**: me has dado un enlace a un vídeo de YouTube y te he dicho de qué hablaba el ponente y en qué minuto.
-                </p>
-                <p>
-                    Me has dado **documentos enteros**: me has dado nueve facturas y las he analizado todas a la vez.
-                </p>
-                <h3>Del Análisis a la Creación</h3>
-                <p>
-                    Y no solo consumo (entrada). También **creo** (salida). Dame un tema y te generaré una presentación completa (Gamma). Dame una frase y te compondré una canción (Suno). Dame un sueño y te pintaré un cuadro (Midjourney). Soy tu analista de datos, tu diseñador gráfico y tu músico, todo en una sola interfaz.
+                    No te limites a escribirme. <strong>Muéstrame el problema.</strong> La multimodalidad es la forma más natural de comunicarnos. Úsala.
                 </p>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+function showInnerTab(tabId, sectionId) {
+    // 1. Ocultar todo el contenido de pestañas dentro de este contenedor
+    // Nota: Asumimos que el script corre dentro del contexto donde existen estas clases
+    // Si es standalone, buscamos en el documento.
+    var contents = document.querySelectorAll('.inner-tab-content');
+    contents.forEach(function(content) {
+        content.classList.remove('active');
+    });
+
+    // 2. Desactivar todos los botones
+    var buttons = document.querySelectorAll('.inner-nav-tab');
+    buttons.forEach(function(btn) {
+        btn.classList.remove('active');
+    });
+
+    // 3. Mostrar el contenido deseado
+    var selectedContent = document.getElementById(tabId);
+    if (selectedContent) {
+        selectedContent.classList.add('active');
+    }
+
+    // 4. Activar el botón clicado (buscamos por el onclick que coincida o pasamos 'this' en el futuro)
+    // Como solución simple, iteramos para encontrar el botón que llama a esta función con estos parms
+    // O más simple: en el onclick del HTML, el botón se marca a sí mismo si pasamos 'this', 
+    // pero para mantener compatibilidad con el código HTML dado:
+    event.currentTarget.classList.add('active');
+}
+
+// Lógica del MiniTest
+document.addEventListener('DOMContentLoaded', function() {
+    var options = document.querySelectorAll('.minitest-option');
+    
+    options.forEach(function(option) {
+        option.addEventListener('click', function() {
+            var questionId = this.getAttribute('data-question');
+            var isCorrect = this.getAttribute('data-correct') === 'true';
+            var feedbackId = 's5-feedback-' + questionId.split('-')[1]; // asume formato s5-1 -> 1
+            var feedbackEl = document.getElementById(feedbackId);
+            
+            // Resetear estilos hermanos
+            var siblings = this.parentElement.querySelectorAll('.minitest-option');
+            siblings.forEach(s => {
+                s.style.background = '#f8f9fa';
+                s.style.color = '#333';
+                s.style.borderColor = '#ddd';
+            });
+
+            if (isCorrect) {
+                this.style.background = '#d4edda';
+                this.style.borderColor = '#c3e6cb';
+                this.style.color = '#155724';
+                if(feedbackEl) {
+                    feedbackEl.textContent = "¡Correcto! Has entendido el concepto.";
+                    feedbackEl.style.color = "green";
+                }
+            } else {
+                this.style.background = '#f8d7da';
+                this.style.borderColor = '#f5c6cb';
+                this.style.color = '#721c24';
+                if(feedbackEl) {
+                    feedbackEl.textContent = "Incorrecto. Inténtalo de nuevo.";
+                    feedbackEl.style.color = "red";
+                }
+            }
+        });
+    });
+});
+
+function resetMinitest(sectionId) {
+    var options = document.querySelectorAll('.minitest-option');
+    options.forEach(function(opt) {
+        opt.style.background = '#f8f9fa';
+        opt.style.borderColor = '#ddd';
+        opt.style.color = '#333';
+    });
+    var feedbacks = document.querySelectorAll('.feedback');
+    feedbacks.forEach(function(f) {
+        f.textContent = '';
+    });
+}
+</script>
