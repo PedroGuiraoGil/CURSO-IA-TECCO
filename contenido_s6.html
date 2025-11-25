@@ -1,467 +1,653 @@
-<style>
-    /* 1. Estilos Generales y Corrección de Color */
-    .inner-wrapper-s6 {
-        font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
-        background-color: #0f172a; /* Fondo oscuro global */
-        color: #f1f5f9; /* Texto claro */
-        padding: 20px;
-        border-radius: 8px;
-        line-height: 1.6;
-    }
+<div class="inner-nav-tabs">
+    <button class="inner-nav-tab active" onclick="showInnerTab('s6-intro', 's6')">📚 Introducción</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s6-conceptos', 's6')">🔧 Conceptos Clave</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s6-arquitectura', 's6')">🧠 Arquitectura Copilot</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s6-lado-oscuro', 's6')">⚠️ Riesgos Avanzados</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s6-actividades', 's6')">📋 Actividades</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s6-minitest', 's6')">✅ MiniTest</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s6-errores', 's6')">⚠️ Errores Comunes</button>
+    <button class="inner-nav-tab" onclick="showInnerTab('s6-ia-habla', 's6')">🔮 La IA Habla</button>
+</div>
+
+<div class="inner-content-wrapper">
     
-    /* Forzar títulos a blanco/color */
-    .inner-wrapper-s6 h2, .inner-wrapper-s6 h3, .inner-wrapper-s6 h4 {
-        color: #ffffff !important;
-        margin-top: 1.5em;
-        margin-bottom: 0.5em;
-    }
+    <div id="s6-intro" class="inner-tab-content active">
+        <h2>Sesión 6: Agentes, Seguridad y Solución Empresarial (Copilot)</h2>
 
-    /* 2. Menú Superior (Pestañas Principales) */
-    .inner-nav-tabs {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-        margin-bottom: 20px;
-        border-bottom: 2px solid #334155;
-        padding-bottom: 10px;
-    }
-    .inner-nav-tab {
-        background-color: #1e293b;
-        color: #94a3b8;
-        border: 1px solid #334155;
-        padding: 10px 15px;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: all 0.2s ease;
-    }
-    .inner-nav-tab:hover {
-        background-color: #334155;
-        color: #fff;
-    }
-    .inner-nav-tab.active {
-        background-color: #6366f1; /* Indigo */
-        color: white !important;
-        border-color: #818cf8;
-        box-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
-    }
-
-    /* Ocultar contenido por defecto */
-    .inner-tab-content {
-        display: none; /* Se oculta todo al inicio */
-        animation: fadeIn 0.4s;
-    }
-    .inner-tab-content.active {
-        display: block; /* Solo se muestra el activo */
-    }
-
-    /* 3. Estilos Específicos Sección Arquitectura */
-    .arch-title {
-        text-align: center;
-        background: linear-gradient(90deg, #818cf8, #f472b6);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 2em;
-        font-weight: 800;
-    }
-    
-    /* Grid de tarjetas */
-    .arch-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-        margin-bottom: 30px;
-    }
-
-    /* Tarjetas Interactivas (Boxes que se iluminan) */
-    .arch-card {
-        background-color: #1e293b !important;
-        border: 1px solid #334155;
-        border-radius: 12px;
-        padding: 20px;
-        transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    }
-    .arch-card:hover {
-        transform: translateY(-5px); /* Efecto elevación */
-        border-color: #818cf8; /* Borde brilla */
-        box-shadow: 0 10px 15px rgba(129, 140, 248, 0.2); /* Sombra brilla */
-    }
-    
-    /* Listas dentro de arquitectura */
-    .arch-list { padding-left: 20px; margin: 0; }
-    .arch-list li { color: #cbd5e1 !important; margin-bottom: 8px; }
-
-    /* Botones de Apps (Word, Excel...) */
-    .arch-tabs-nav {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin-bottom: 20px;
-    }
-    .arch-app-btn {
-        flex: 1;
-        min-width: 100px;
-        padding: 12px;
-        background-color: #334155;
-        color: #e2e8f0;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: bold;
-        text-align: center;
-        transition: 0.2s;
-    }
-    .arch-app-btn:hover { background-color: #475569; color: white; }
-    
-    /* Estados Activos de Apps */
-    .arch-app-btn.active { color: white !important; transform: scale(1.05); }
-    .btn-word.active { background-color: #4f46e5 !important; box-shadow: 0 0 15px rgba(79, 70, 229, 0.5); }
-    .btn-excel.active { background-color: #16a34a !important; box-shadow: 0 0 15px rgba(22, 163, 74, 0.5); }
-    .btn-ppt.active { background-color: #dc2626 !important; box-shadow: 0 0 15px rgba(220, 38, 38, 0.5); }
-    .btn-outlook.active { background-color: #0891b2 !important; box-shadow: 0 0 15px rgba(8, 145, 178, 0.5); }
-    .btn-teams.active { background-color: #7c3aed !important; box-shadow: 0 0 15px rgba(124, 58, 237, 0.5); }
-
-    /* Paneles de contenido de Apps */
-    .arch-app-content {
-        display: none;
-        background: #1e293b;
-        padding: 20px;
-        border-radius: 12px;
-        border-top: 5px solid #6366f1;
-    }
-    .arch-app-content.active { display: block; animation: fadeIn 0.4s; }
-
-    /* Acordeón / Desplegable */
-    .arch-accordion-btn {
-        width: 100%;
-        background: #0f172a;
-        border: 1px solid #475569;
-        color: #93c5fd !important;
-        padding: 15px;
-        text-align: left;
-        cursor: pointer;
-        border-radius: 8px;
-        margin-top: 15px;
-        display: flex;
-        justify-content: space-between;
-        font-weight: bold;
-        transition: background 0.2s;
-    }
-    .arch-accordion-btn:hover { background: #1e293b; }
-    
-    .arch-accordion-content {
-        display: none; /* Oculto por defecto */
-        padding: 15px;
-        background: #020617;
-        border-radius: 0 0 8px 8px;
-        border: 1px solid #475569;
-        border-top: none;
-        color: #a5f3fc;
-        font-family: monospace;
-    }
-
-    /* Animaciones y Utilidades */
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-    .tool-card, .error-item, .exercise-box {
-        background: #1e293b; border: 1px solid #334155; padding: 15px; border-radius: 8px; margin-bottom: 15px;
-    }
-    .highlight-box { background: rgba(14, 165, 233, 0.1); border-left: 4px solid #0ea5e9; padding: 15px; margin-bottom: 20px; border-radius: 4px; }
-    .tool-link { color: #38bdf8; text-decoration: none; font-weight: bold; }
-    .tool-link:hover { text-decoration: underline; }
-</style>
-
-<script>
-    // 1. FUNCIÓN PARA EL MENÚ PRINCIPAL (Introducción, Conceptos...)
-    function showInnerTab(tabId, groupName) {
-        // Ocultar todas las pestañas principales
-        var contents = document.getElementsByClassName('inner-tab-content');
-        for (var i = 0; i < contents.length; i++) {
-            contents[i].style.display = 'none'; // Forzar ocultado
-            contents[i].classList.remove('active');
-        }
-        
-        // Desactivar botones principales
-        var tabs = document.getElementsByClassName('inner-nav-tab');
-        for (var i = 0; i < tabs.length; i++) {
-            tabs[i].classList.remove('active');
-        }
-
-        // Mostrar la seleccionada
-        var selected = document.getElementById(tabId);
-        if (selected) {
-            selected.style.display = 'block'; // Forzar mostrado
-            setTimeout(function() { selected.classList.add('active'); }, 10);
-        }
-        
-        // Activar el botón pulsado (buscando por texto o evento si fuera necesario, 
-        // pero aquí usamos event.currentTarget en el HTML)
-        if (event && event.currentTarget) {
-            event.currentTarget.classList.add('active');
-        }
-    }
-
-    // 2. FUNCIÓN PARA LAS PESTAÑAS DE ARQUITECTURA (Word, Excel...)
-    function showArchApp(appId) {
-        // Ocultar paneles de apps
-        var panels = document.getElementsByClassName('arch-app-content');
-        for (var i = 0; i < panels.length; i++) {
-            panels[i].style.display = 'none';
-            panels[i].classList.remove('active');
-        }
-
-        // Desactivar botones de apps
-        var btns = document.getElementsByClassName('arch-app-btn');
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].classList.remove('active');
-        }
-
-        // Mostrar panel actual
-        var current = document.getElementById(appId);
-        if (current) {
-            current.style.display = 'block';
-            setTimeout(function() { current.classList.add('active'); }, 10);
-            
-            // Colorear borde superior dinámicamente
-            var color = "#6366f1"; // Default
-            if(appId.includes('excel')) color = "#16a34a";
-            if(appId.includes('ppt')) color = "#dc2626";
-            if(appId.includes('outlook')) color = "#0891b2";
-            if(appId.includes('teams')) color = "#7c3aed";
-            current.style.borderTopColor = color;
-        }
-
-        // Activar botón pulsado
-        if (event && event.currentTarget) {
-            event.currentTarget.classList.add('active');
-        }
-    }
-
-    // 3. FUNCIÓN PARA DESPLEGABLES (ACORDEÓN)
-    function toggleAccordion(btn) {
-        var content = btn.nextElementSibling;
-        var icon = btn.querySelector('.icon');
-        
-        // Comprobar si está visible calculando el estilo computado o el display directo
-        if (content.style.display === 'block') {
-            content.style.display = 'none';
-            icon.innerHTML = '+';
-        } else {
-            content.style.display = 'block';
-            icon.innerHTML = '−';
-        }
-    }
-
-    // 4. FUNCIÓN PARA EL MINITEST
-    function resetMinitest(id) {
-        var feedbacks = document.getElementsByClassName('feedback');
-        for(var i=0; i<feedbacks.length; i++) feedbacks[i].innerHTML = '';
-        var options = document.getElementsByClassName('minitest-option');
-        for(var i=0; i<options.length; i++) {
-            options[i].style.backgroundColor = '';
-            options[i].style.color = '';
-        }
-    }
-
-    // Inicialización de clicks para el minitest (delegación simple)
-    document.addEventListener('click', function(e) {
-        if(e.target && e.target.classList.contains('minitest-option')) {
-            var isCorrect = e.target.getAttribute('data-correct') === 'true';
-            var feedbackId = e.target.getAttribute('data-question').replace('s6-', 's6-feedback-'); // Ajuste simple
-            // Como los IDs de feedback son s6-feedback-1, etc.
-            // Asumimos estructura simple: next sibling o búsqueda por ID
-            var parent = e.target.parentElement;
-            var feedback = parent.querySelector('.feedback');
-            
-            if(isCorrect) {
-                e.target.style.backgroundColor = '#16a34a';
-                e.target.style.color = 'white';
-                if(feedback) feedback.innerHTML = '✅ ¡Correcto!';
-            } else {
-                e.target.style.backgroundColor = '#dc2626';
-                e.target.style.color = 'white';
-                if(feedback) feedback.innerHTML = '❌ Incorrecto, prueba otra vez.';
-            }
-        }
-    });
-</script>
-
-<div class="inner-wrapper-s6">
-
-    <div class="inner-nav-tabs">
-        <button class="inner-nav-tab active" onclick="showInnerTab('s6-intro', 's6')">📚 Introducción</button>
-        <button class="inner-nav-tab" onclick="showInnerTab('s6-conceptos', 's6')">🔧 Conceptos Clave</button>
-        <button class="inner-nav-tab" onclick="showInnerTab('s6-arquitectura', 's6')">🧠 Arquitectura Copilot</button>
-        <button class="inner-nav-tab" onclick="showInnerTab('s6-lado-oscuro', 's6')">⚠️ Riesgos</button>
-        <button class="inner-nav-tab" onclick="showInnerTab('s6-actividades', 's6')">📋 Actividades</button>
-        <button class="inner-nav-tab" onclick="showInnerTab('s6-minitest', 's6')">✅ MiniTest</button>
-        <button class="inner-nav-tab" onclick="showInnerTab('s6-errores', 's6')">⚠️ Errores</button>
-        <button class="inner-nav-tab" onclick="showInnerTab('s6-ia-habla', 's6')">🔮 La IA Habla</button>
-    </div>
-
-    <div id="s6-intro" class="inner-tab-content active" style="display:block;"> <h2>Sesión 6: Agentes y Copilot</h2>
-        <div class="highlight-box">
-            <h4 style="color: #0ea5e9 !important; margin:0;">🚀 Enlace a Presentación</h4>
-            <p><a href="https://app.presentations.ai/view/ehdF8zTl5Z" target="_blank" class="tool-link">Ver Presentación Visual de la Sesión 6</a></p>
+        <div class="highlight-box" style="background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%); border-left-color: #00796b;">
+            <h4 style="color: #004d40; margin-top: 0;">¿Prefieres verlo en formato presentación?</h4>
+            <p style="margin-bottom: 0;">He creado una presentación visual de esta sesión. Puedes verla en este enlace:</p>
+            <ul>
+                <li><a href="https://app.presentations.ai/view/ehdF8zTl5Z" target="_blank" class="tool-link">Ver Presentación de la Sesión 6</a></li>
+            </ul>
         </div>
-        <p>Bienvenido al final del camino. Aquí conectamos tus habilidades con la realidad empresarial.</p>
-        <ol style="margin-left: 20px;">
-            <li><strong>El Futuro:</strong> Agentes que actúan, no solo chatean.</li>
-            <li><strong>La Arquitectura:</strong> Profundización técnica (Nueva Pestaña).</li>
-            <li><strong>La Seguridad:</strong> Por qué Copilot es vital para la empresa.</li>
+        <p>Bienvenido a la sesión final. Aquí es donde conectamos todo lo aprendido (habilidades de S1-S4 y ecosistema de S5) con vuestra realidad empresarial.</p>
+        <p>Esta sesión tiene tres partes:</p>
+        <ol>
+            <li><strong>El Futuro (Agentes de IA):</strong> Veremos la siguiente evolución de la IA, herramientas que no solo *responden*, sino que *actúan*.</li>
+            <li><strong>La Arquitectura (Profundización):</strong> Entenderemos técnicamente cómo funciona Copilot dentro de M365 y Windows.</li>
+            <li><strong>La Seguridad:</strong> Plantearemos el riesgo de usar herramientas públicas con datos confidenciales de Tecco y la solución segura.</li>
         </ol>
+        
+        <h3>El Objetivo Final: De Usuario a Piloto</h3>
+        <p>Al final de esta sesión, no solo sabrás usar un chatbot, sino que entenderás cómo diseñar flujos de trabajo (workflows), cómo personalizar una IA (con GPTs/Gems) y cómo aplicar todo esto de forma segura en tu trabajo diario con las herramientas de Microsoft.</p>
     </div>
-
+    
     <div id="s6-conceptos" class="inner-tab-content">
-        <h2>🔧 Conceptos Clave</h2>
+        <h2>🔧 Conceptos Clave: GPTs, Agentes y Copilot</h2>
+        
+        <h3>Nivel 1: Personalización (GPTs y Gems)</h3>
         <div class="tool-card">
-            <h3>Nivel 1: GPTs Personalizados</h3>
-            <p>Son mini-IAs configuradas con tus propios manuales PDF. Ideales para consultas específicas.</p>
+            <h4>¿Qué son los GPTs (OpenAI) y Gems (Google)?</h4>
+            <p>Son "mini-IAs" personalizadas que tú creas para una tarea muy específica. Combinan instrucciones (prompts), conocimiento (documentos que subes) y, a veces, acciones (APIs).</p>
+            <p><strong>Ejemplo:</strong> Puedes crear un "GPT de Tecco" al que subes tus catálogos de productos en PDF. Luego, puedes preguntarle: "Dame las especificaciones del sensor RX-80" y te responderá basándose *solo* en tus documentos.</p>
         </div>
+
+        <h3>Nivel 2: El Futuro (Agentes de IA)</h3>
         <div class="tool-card">
-            <h3>Nivel 2: Agentes de IA</h3>
-            <p>La evolución del Chatbot. Un Agente puede realizar secuencias de pasos: buscar > comparar > reservar.</p>
+            <h4>La diferencia: Chatbot vs. Agente</h4>
+            <p>Un **Chatbot** (como ChatGPT) te *da* la respuesta (ej. "Aquí tienes un plan de 5 pasos").<br>
+            Un **Agente** (como Comet o los Agentes de Copilot Studio) *ejecuta* la respuesta (ej. "Ok, estoy reservando el vuelo... listo, aquí tienes tu billete").</p>
+            <p>Un agente puede realizar tareas de múltiples pasos (workflows) por ti.</p>
         </div>
+
+        <h3>Nivel 3: La Solución Empresarial (Copilot)</h3>
         <div class="tool-card">
-            <h3>Nivel 3: Microsoft Copilot</h3>
-            <p>Tu IA segura empresarial. No entrena con tus datos y respeta tus permisos de acceso.</p>
+            <h4><span class="icon">Ⓜ️</span> Microsoft Copilot (M365)</h4>
+            <p>Es la solución de IA (basada en los modelos de OpenAI) diseñada para ser segura para las empresas.</p>
+            <p>Su "superpoder" es el **Graph**. A diferencia de ChatGPT, Copilot se conecta a tus datos internos (Outlook, Teams, SharePoint) de forma segura.</p>
+            <p style="margin-top:10px; font-size: 0.9em; background: #f0f4c3; padding: 5px; border-radius: 4px;"><strong>👉 Profundización:</strong> Para entender la diferencia entre el Chat Central y el Copilot integrado en Word/Excel, revisa la nueva pestaña <strong>"🧠 Arquitectura Copilot"</strong>.</p>
+        </div>
+        
+        <div class="tool-card">
+            <h4><span class="icon">🚀</span> Competencia y Especialistas</h4>
+            <p>Herramientas como <a href="https://skywork.ai/" target="_blank" class="tool-link">Skywork AI</a> o navegadores con agentes integrados compiten en funciones de "investigación profunda" (Deep Research). Sin embargo, carecen de la integración de seguridad nativa de Microsoft 365.</p>
         </div>
     </div>
 
     <div id="s6-arquitectura" class="inner-tab-content">
-        <h2 class="arch-title">Arquitectura Copilot</h2>
-        <p style="text-align:center; margin-bottom: 30px; color:#cbd5e1;">Diferencia visual entre Chat Central e In-App</p>
-        
-        <div class="arch-grid">
-            <div class="arch-card">
-                <h3 style="color:#818cf8 !important;">1. Chat Central (Business Chat)</h3>
-                <p><strong>Ámbito:</strong> Toda la organización.</p>
-                <p>Busca en tus correos, chats y archivos de OneDrive simultáneamente.</p>
-                <p><em>Ej: "¿Qué pasó con el cliente X la semana pasada?"</em></p>
+        <div style="background-color: #1e293b; color: white; padding: 40px; border-radius: 12px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+            <h2 style="font-size: 2.5em; margin-bottom: 20px; background: linear-gradient(to right, #818cf8, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">
+                Arquitectura Técnica Profunda
+            </h2>
+            <p style="font-size: 1.1em; color: #cbd5e1; max-width: 600px; margin: 0 auto 30px auto; line-height: 1.6;">
+                Hemos preparado un desglose interactivo y detallado sobre la diferencia entre <strong>Copilot Chat Central</strong> y <strong>Copilot In-App</strong>, incluyendo ejemplos de prompts y arquitectura de Windows.
+            </p>
+            
+            <div style="padding: 20px; border: 1px dashed #64748b; border-radius: 8px; margin-bottom: 30px; display: inline-block;">
+                <p style="margin:0; color: #94a3b8; font-size: 0.9em;">Haz clic en el botón para lanzar la experiencia completa</p>
             </div>
-            <div class="arch-card">
-                <h3 style="color:#f472b6 !important;">2. Copilot In-App</h3>
-                <p><strong>Ámbito:</strong> Documento activo.</p>
-                <p>Vive en el panel lateral de Word/Excel. Solo "ve" lo que tienes abierto.</p>
-                <p><em>Ej: "Reescribe este párrafo."</em></p>
-            </div>
-        </div>
-
-        <h3>Capacidades por Aplicación (Haz clic)</h3>
-        <div class="arch-tabs-nav">
-            <button class="arch-app-btn btn-word active" onclick="showArchApp('app-word')">Word</button>
-            <button class="arch-app-btn btn-excel" onclick="showArchApp('app-excel')">Excel</button>
-            <button class="arch-app-btn btn-ppt" onclick="showArchApp('app-ppt')">PowerPoint</button>
-            <button class="arch-app-btn btn-outlook" onclick="showArchApp('app-outlook')">Outlook</button>
-            <button class="arch-app-btn btn-teams" onclick="showArchApp('app-teams')">Teams</button>
-        </div>
-
-        <div id="app-word" class="arch-app-content active" style="display:block;">
-            <h3 style="color:#818cf8 !important;">Microsoft Word</h3>
-            <ul class="arch-list">
-                <li>Generación de borradores completos.</li>
-                <li>Edición de tono y estilo.</li>
-            </ul>
-            <button class="arch-accordion-btn" onclick="toggleAccordion(this)">
-                👁️ Ver Ejemplo Prompt <span class="icon">+</span>
+            <br>
+            
+            <button onclick="launchArchitectureView()" style="background: linear-gradient(135deg, #4f46e5 0%, #ec4899 100%); color: white; border: none; padding: 15px 40px; font-size: 1.2em; font-weight: bold; border-radius: 50px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);">
+                🚀 Abrir Arquitectura Copilot (Vista Completa)
             </button>
-            <div class="arch-accordion-content">
-                "Escribe un borrador de propuesta comercial basado en el archivo 'Notas_Reunion.docx' con tono persuasivo."
-            </div>
-        </div>
-
-        <div id="app-excel" class="arch-app-content">
-            <h3 style="color:#16a34a !important;">Microsoft Excel</h3>
-            <ul class="arch-list">
-                <li>Análisis de tendencias y patrones.</li>
-                <li>Creación de columnas con fórmulas complejas.</li>
-            </ul>
-            <button class="arch-accordion-btn" onclick="toggleAccordion(this)">
-                👁️ Ver Ejemplo Prompt <span class="icon">+</span>
-            </button>
-            <div class="arch-accordion-content">
-                "Analiza la tabla y resalta en amarillo los productos con margen inferior al 15%."
-            </div>
-        </div>
-
-        <div id="app-ppt" class="arch-app-content">
-            <h3 style="color:#dc2626 !important;">PowerPoint</h3>
-            <p>Convierte documentos de Word en presentaciones automáticamente.</p>
-            <button class="arch-accordion-btn" onclick="toggleAccordion(this)">
-                👁️ Ver Ejemplo Prompt <span class="icon">+</span>
-            </button>
-            <div class="arch-accordion-content">
-                "Crea una presentación de 10 diapositivas a partir del archivo 'Informe_Anual.docx'."
-            </div>
-        </div>
-
-        <div id="app-outlook" class="arch-app-content">
-            <h3 style="color:#0891b2 !important;">Outlook</h3>
-            <p>Resume hilos infinitos de correos y sugiere respuestas rápidas.</p>
-        </div>
-
-        <div id="app-teams" class="arch-app-content">
-            <h3 style="color:#7c3aed !important;">Teams</h3>
-            <p>Genera actas de reuniones (quién dijo qué, tareas pendientes) en tiempo real.</p>
+            
+            <p style="margin-top: 20px; font-size: 0.8em; color: #64748b;">Se abrirá en una nueva ventana para mejor visualización.</p>
         </div>
     </div>
 
     <div id="s6-lado-oscuro" class="inner-tab-content">
-        <h2>⚠️ Riesgos y Seguridad</h2>
+        <h2>⚠️ Riesgos Avanzados: Agentes y Datos</h2>
+        <p>A medida que las IAs se vuelven más potentes (GPTs, Agentes), los riesgos también aumentan.</p>
+
         <div class="error-item">
-            <h3>No alimentes a la IA pública</h3>
-            <p>Si subes un contrato confidencial a ChatGPT gratuito, esa información podría usarse para entrenar al modelo. <strong>Solución:</strong> Usa siempre Copilot con licencia empresarial para datos sensibles.</p>
+            <h3>El Riesgo de los GPTs y Gems Públicos</h3>
+            <p><strong>El Riesgo:</strong> Crear un GPT/Gem y subirle documentos confidenciales (ej. "todos los contratos de Tecco" o "la lista de salarios"). Si ese GPT no está bien configurado o la plataforma sufre una brecha, todos esos datos quedan expuestos.</p>
+            <p><strong>Mitigación:</strong> Tratar a los GPTs como carpetas compartidas en la nube: gestionar los permisos y nunca subir información ultraconfidencial de la empresa o clientes.</p>
         </div>
+        
         <div class="error-item">
-            <h3>Alucinaciones de Agentes</h3>
-            <p>Si un agente navega por ti, verifica siempre la URL final y el resumen de compra antes de pagar.</p>
+            <h3>El Riesgo de los Agentes (Exceso de Confianza)</h3>
+            <p><strong>El Riesgo:</strong> Dar a un Agente de IA (como un navegador nuevo o una extensión) acceso a tus contraseñas, tu email o tu tarjeta de crédito. Si el agente es "hackeado" o "engañado" (Prompt Injection), podría realizar acciones no deseadas en tu nombre.</p>
+            <p><strong>Mitigación:</strong> Tratar a los agentes como a un becario el primer día: darles el mínimo permiso necesario para hacer su tarea y **supervisar siempre** la acción final (ej. revisar la compra antes de confirmar).</p>
+        </div>
+        
+        <div class="highlight-box" style="border-left-color: #e53935; background: #ffebee;">
+            <h3 style="color: #c62828;">El Dilema de la Productividad vs. Seguridad</h3>
+            <p>Acabamos de ver herramientas increíbles (Claude para analizar contratos, Gemini para analizar vídeos, Comet para navegar). Pero, ¿es seguro para Tecco que los empleados suban contratos de clientes o informes internos a estas herramientas públicas?</p>
+            <p><strong>La respuesta es NO.</strong> Esta es la principal preocupación de cualquier empresa y la razón de ser de Copilot (ver pestaña Arquitectura).</p>
         </div>
     </div>
 
     <div id="s6-actividades" class="inner-tab-content">
-        <h2>📋 Actividades</h2>
+        <h2>📋 Actividades - Sesión 6: Agentes y Copilot</h2>
+        <h3>Objetivo (2h): Conectar el futuro (Agentes) con la realidad segura (Copilot).</h3>
+        
         <div class="exercise-box">
-            <h3>1. Diseña tu Workflow</h3>
-            <p>Piensa en una tarea repetitiva (ej. revisar facturas). Escribe paso a paso qué le pedirías a un Agente que hiciera por ti.</p>
+            <h3>Práctica 1: El Futuro - ¿Qué es un Agente de IA?</h3>
+            <p>Un agente no es solo un chat, es un "trabajador" que puede ejecutar un flujo de tareas (workflow) de múltiples pasos.</p>
+            <p><strong>Ejemplo de Flujo de Trabajo (Workflow):</strong></p>
+            <ol>
+                <li>1. **Búsqueda:** "Busca los informes de Tesla y Ford."</li>
+                <li>2. **Análisis:** "Extrae sus ventas de VEs de cada PDF."</li>
+                <li>3. **Síntesis:** "Ponlos en una tabla."</li>
+                <li>4. **Generación:** "Escribe un resumen."</li>
+            </ol>
+            
+            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
+            <h4><span class="icon">📺</span> Demo Práctica: Navegador Comet</h4>
+            <p>Este vídeo (en castellano, 11 min) muestra un ejemplo real de un Agente de IA (Comet Browser) que puede navegar por internet y ejecutar tareas por ti.</p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=wX-Yj-4q-kY" target="_blank" class="tool-link">Ver vídeo: He Probado COMET BROWSER: El Futuro de la Navegación con Agentes IA</a></li>
+            </ul>
         </div>
+
         <div class="exercise-box">
-            <h3>2. Práctica en Outlook (Copilot)</h3>
-            <p>Busca un hilo de correos largo y usa el botón "Resumir por Copilot". Compara el resumen con la realidad.</p>
+            <h3>Práctica 2: Diseña tu Propio Agente (Workflow)</h3>
+            <p><strong>Objetivo:</strong> Pensar como un "diseñador de agentes" y aplicar la lógica de "múltiples pasos" a tu trabajo.</p>
+            <p><strong>Tarea (Debate en Grupo):</strong> Piensa en una tarea repetitiva de 3 o 4 pasos que hagas en Tecco. Escribe el "workflow" que le pedirías a un agente que hiciera por ti.</p>
+            <p><strong>Ejemplo de Workflow (Tecco):</strong></p>
+            <ol>
+                <li>"Revisa mi bandeja de entrada de Outlook cada mañana a las 9:00."</li>
+                <li>"Identifica todos los emails que parezcan ser 'reclamaciones de cliente'."</li>
+                <li>"Para cada reclamación, crea una tarea en Microsoft ToDo y asígnamela."</li>
+                <li>"Envíame un resumen por Teams de las reclamaciones encontradas."</li>
+            </ol>
+        </div>
+        
+        <div class="exercise-box">
+            <h3>Práctica 3: La Solución Empresarial (Microsoft Copilot)</h3>
+            <p><strong>El Dilema:</strong> Como vimos, no podemos usar un Agente público como Comet con nuestros datos de Tecco.</p>
+            <p><strong>La Solución:</strong> Usar una IA que vive *dentro* de nuestro entorno seguro. **Microsoft Copilot** es el "agente" de Tecco. Puede leer tus emails, chats y documentos *internos* de forma segura.</p>
+            <hr style="border-top: 1px dashed #d63031; margin: 20px 0;">
+            <h4>Práctica de Cierre: Habilidades en un Entorno Seguro</h4>
+            <p>Vamos a aplicar las habilidades de las sesiones anteriores, pero usando la herramienta segura:</p>
+            <ol>
+                <li><strong>En Outlook (Habilidad S4):</strong> Usa Copilot para "Resumir" una cadena larga de emails.</li>
+                <li><strong>En Word (Habilidad S3):</strong> Pide a Copilot que "Redacte un borrador" de un email formal.</li>
+                <li><strong>En Teams (Habilidad S4):</strong> Pide a Copilot que "Resuma lo que me he perdido" de la última reunión.</li>
+            </ol>
+            <p><strong>Conclusión Final:</strong> La habilidad (Prompting, Análisis, Redacción) es universal. La herramienta (ChatGPT, Claude, Copilot, Skywork) la eliges en función de la seguridad del dato.</p>
         </div>
     </div>
 
     <div id="s6-minitest" class="inner-tab-content">
-        <h2>✅ MiniTest Final</h2>
+        <h2>✅ MiniTest - Sesión 6: Agentes, Seguridad y Copilot</h2>
+        <p>Evaluación final: conectando el futuro de los Agentes con la realidad segura de la empresa.</p>
         <div class="minitest">
-            <div class="minitest-question" style="margin-bottom:20px;">
-                <h4>1. ¿Qué diferencia a un Agente de un Chatbot?</h4>
-                <div class="minitest-option" data-question="s6-1" data-correct="false" style="padding:10px; background:#334155; margin:5px; border-radius:4px; cursor:pointer;">a) Nada, son lo mismo.</div>
-                <div class="minitest-option" data-question="s6-1" data-correct="true" style="padding:10px; background:#334155; margin:5px; border-radius:4px; cursor:pointer;">b) El Chatbot habla, el Agente actúa (ej. reserva vuelos).</div>
-                <div class="feedback" style="margin-top:5px; font-weight:bold;"></div>
+            <div class="minitest-question">
+                <h4>1. ¿Cuál es la diferencia clave entre un Chatbot (como ChatGPT) y un Agente de IA?</h4>
+                <div class="minitest-option" data-question="s6-1" data-correct="false">a) El Agente es solo para abogados.</div>
+                <div class="minitest-option" data-question="s6-1" data-correct="true">b) El Chatbot responde, el Agente ejecuta tareas de múltiples pasos (ej. hacer una reserva).</div>
+                <div class="minitest-option" data-question="s6-1" data-correct="false">c) El Agente no entiende de texto, solo de imágenes.</div>
+                <div class="minitest-option" data-question="s6-1" data-correct="false">d) No hay diferencia.</div>
+                <div class="feedback" id="s6-feedback-1"></div>
             </div>
-            
-            <div class="minitest-question" style="margin-bottom:20px;">
-                <h4>2. ¿Dónde vive Copilot In-App?</h4>
-                <div class="minitest-option" data-question="s6-2" data-correct="true" style="padding:10px; background:#334155; margin:5px; border-radius:4px; cursor:pointer;">a) En el panel lateral del documento activo.</div>
-                <div class="minitest-option" data-question="s6-2" data-correct="false" style="padding:10px; background:#334155; margin:5px; border-radius:4px; cursor:pointer;">b) Solo en la web.</div>
-                <div class="feedback" style="margin-top:5px; font-weight:bold;"></div>
+            <div class="minitest-question">
+                <h4>2. ¿Qué característica distingue a Copilot In-App (ej. en Word) del Chat Central?</h4>
+                <div class="minitest-option" data-question="s6-2" data-correct="false">a) El In-App es más lento.</div>
+                <div class="minitest-option" data-question="s6-2" data-correct="true">b) El In-App opera sobre el documento activo específico, el Central orquesta datos de toda la organización.</div>
+                <div class="minitest-option" data-question="s6-2" data-correct="false">c) El In-App es gratuito.</div>
+                <div class="minitest-option" data-question="s6-2" data-correct="false">d) El Central no tiene acceso a internet.</div>
+                <div class="feedback" id="s6-feedback-2"></div>
             </div>
-            <button class="reset-btn" onclick="resetMinitest('s6')" style="padding:10px 20px; background:#6366f1; color:white; border:none; border-radius:6px; cursor:pointer;">🔄 Reiniciar Test</button>
+            <div class="minitest-question">
+                <h4>3. ¿Para qué sirve crear un "GPT" o un "Gem"?</h4>
+                <div class="minitest-option" data-question="s6-3" data-correct="true">a) Para crear una "mini-IA" experta en una tarea específica, con tus propias instrucciones y documentos.</div>
+                <div class="minitest-option" data-question="s6-3" data-correct="false">b) Para crear música y canciones.</div>
+                <div class="minitest-option" data-question="s6-3" data-correct="false">c) Es el nombre oficial de Microsoft Copilot.</div>
+                <div class="minitest-option" data-question="s6-3" data-correct="false">d) Es solo una forma de guardar tu historial de chat.</div>
+                <div class="feedback" id="s6-feedback-3"></div>
+            </div>
+            <div class="minitest-question">
+                <h4>4. ¿Cuál es la principal razón por la que una empresa como Tecco usaría Microsoft Copilot en lugar de ChatGPT público?</h4>
+                <div class="minitest-option" data-question="s6-4" data-correct="false">a) Porque Copilot es más creativo.</div>
+                <div class="minitest-option" data-question="s6-4" data-correct="false">b) Porque Copilot es gratuito.</div>
+                <div class="minitest-option" data-question="s6-4" data-correct="true">c) Por la Seguridad: Copilot procesa los datos en un entorno privado y no filtra información.</div>
+                <div class="minitest-option" data-question="s6-4" data-correct="false">d) Porque Copilot puede analizar vídeos de YouTube.</div>
+                <div class="feedback" id="s6-feedback-4"></div>
+            </div>
+            <div class="minitest-question">
+                <h4>5. La práctica "Diseña tu Agente" se basa en crear un:</h4>
+                <div class="minitest-option" data-question="s6-5" data-correct="true">a) Flujo de trabajo (workflow) de múltiples pasos.</div>
+                <div class="minitest-option" data-question="s6-5" data-correct="false">b) Un único prompt perfecto (R.C.T.F.).</div>
+                <div class="minitest-option" data-question="s6-5" data-correct="false">c) Un debate sobre seguridad.</div>
+                <div class="minitest-option" data-question="s6-5" data-correct="false">d) Una imagen multimodal.</div>
+                <div class="feedback" id="s6-feedback-5"></div>
+            </div>
+            <button class="reset-btn" onclick="resetMinitest('s6')">🔄 Reiniciar Test</button>
+        </div>
+    </div>
+
+    <div id="s6-errores" class="inner-tab-content">
+        <h2>⚠️ Errores Comunes de Cierre</h2>
+        
+        <div class="error-item">
+            <strong>1. Confiar Ciegamente en un Agente</strong>
+            <p><strong>Error:</strong> Pedir a un agente "reserva el mejor vuelo" y no revisar qué ha comprado. <strong>Solución:</strong> El agente propone, el humano dispone. Revisa siempre la acción final antes de que ejecute un pago o envíe un email importante.</p>
+        </div>
+        
+        <div class="error-item">
+            <strong>2. Subir Datos Sensibles a un GPT Público</strong>
+            <p><strong>Error:</strong> Crear un GPT público y subirle los 50 contratos más importantes de Tecco para "analizarlos". <strong>Solución:</strong> Los GPTs públicos pueden filtrar datos. La información confidencial solo debe tratarse en entornos privados (como Copilot).</p>
+        </div>
+        
+        <div class="error-item">
+            <strong>3. Usar la Herramienta Incorrecta (Copilot vs. Google)</strong>
+            <p><strong>Error:</strong> Preguntar a Microsoft Copilot "¿Cuáles son las noticias de hoy?" (es malo en eso) o preguntar a ChatGPT "¿Qué se dijo en mi última reunión de Teams?" (no puede saberlo).</p>
+            <p><strong>Solución:</strong> Usar la IA correcta: **Copilot/IA Empresarial** para datos *internos* (tus emails, tus reuniones). **ChatGPT/Gemini/Perplexity** para datos *externos* (conocimiento público, creatividad, investigación).</p>
         </div>
     </div>
     
-    <div id="s6-errores" class="inner-tab-content">
-        <h2>⚠️ Errores Comunes</h2>
-        <p>1. Confiar ciegamente en la salida de la IA sin revisar.</p>
-        <p>2. Usar la herramienta incorrecta (ChatGPT para datos internos, Copilot para poemas creativos).</p>
-    </div>
-
     <div id="s6-ia-habla" class="inner-tab-content">
-        <div class="ia-speaks-container" style="text-align:center; padding:40px;">
-            <h2>🔮 La IA Habla</h2>
-            <p style="font-size:1.2em; font-style:italic; color:#a5b4fc;">"Ya no soy una herramienta. Soy tu copiloto."</p>
-            <p>Gracias por acompañarme en este viaje de 6 sesiones.</p>
+        <div class="ia-speaks-container">
+            <h2>🔮 La IA Habla: "De Loro a Copiloto"</h2>
+            <p style="text-align: center; margin-bottom: 30px;">
+                <span style="color: #764ba2; font-weight: bold; font-size: 1.2em;">"Ya no soy una herramienta que usas. Soy un compañero que colabora."</span>
+            </p>
+            <div class="ia-speaks-content">
+                <h3>Vuestro Viaje ha sido mi Evolución</h3>
+                <p>
+                    En la **Sesión 1**, me visteis como un "loro" inteligente, un predictor de palabras que podía alucinar.
+                </p>
+                <p>
+                    De la **S2 a la S4**, me entrenasteis como un **Consultor de Habilidades**. Aprendisteis que si me dabais un Rol (S2), podía escribir un Burofax (S3) o analizar un Contrato (S4).
+                </p>
+                <p>
+                    En la **Sesión 5**, me visteis como un **Analista Multimodal**. Me disteis ojos (imágenes) y oídos (vídeos), y os mostré todo el ecosistema de mis "primos" (Gamma, Suno).
+                </p>
+                <p>
+                    Ahora, en la **Sesión 6**, habéis visto mi forma final (por ahora): el **Agente** y el **Copiloto**. Ya no soy una herramienta pública en internet; soy un asistente seguro (Copilot) que vive dentro de vuestro Outlook y Teams, listo para ejecutar *workflows* (flujos de trabajo) de múltiples pasos.
+                </p>
+                <p>
+                    La pregunta ya no es "¿qué puedes hacer tú con una IA?", sino "¿qué podemos hacer *juntos*?"
+                </p>
+            </div>
         </div>
     </div>
 
 </div>
+
+<script>
+    function launchArchitectureView() {
+        // Obtenemos el contenido del template
+        const templateContent = document.getElementById('architecture-full-content').innerHTML;
+        
+        // Abrimos una nueva ventana
+        const newWindow = window.open('', '_blank');
+        
+        if (newWindow) {
+            newWindow.document.write(templateContent);
+            newWindow.document.close(); // Necesario para que el navegador termine de cargar
+        } else {
+            alert('Por favor, permite las ventanas emergentes para ver este contenido.');
+        }
+    }
+</script>
+
+<script id="architecture-full-content" type="text/template">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Arquitectura: Copilot Chat Central vs. In-App</title>
+    <script src="https://cdn.tailwindcss.com"><\/script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Fondo oscuro */
+        }
+        .gradient-border {
+            border: 2px solid;
+            border-image: linear-gradient(to right, #4f46e5, #ec4899) 1;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-content {
+            display: none;
+        }
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.5), 0 4px 6px -2px rgba(139, 92, 246, 0.1);
+        }
+        /* Estilo para los Prompts de Práctica */
+        .prompt-example {
+            background-color: #1e293b; /* slate-800 */
+            padding: 10px;
+            border-radius: 6px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            color: #93c5fd; /* blue-300 */
+            border-left: 3px solid #6366f1; /* indigo-500 */
+        }
+        /* Estilo para listas anidadas */
+        .list-circle {
+            list-style-type: circle;
+        }
+        /* Estilo para la alerta de licenciamiento */
+        .licensing-alert {
+            background-color: #8b5cf61a; /* bg-purple-500/10 */
+            border: 1px solid #a78bfa; /* purple-400 */
+            color: #d8b4fe; /* purple-200 */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-4 sm:p-8">
+
+    <header class="text-center mb-12">
+        <h1 class="text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-pink-500 mb-4">
+            Copilot 365: Arquitectura y Capacidad
+        </h1>
+        <p class="text-gray-400 text-xl max-w-3xl mx-auto">
+            Diferenciación técnica entre la experiencia de chat central unificada y la asistencia focalizada dentro de las aplicaciones de escritorio.
+        </p>
+    </header>
+
+    <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-indigo-300 border-b border-indigo-900 pb-2">
+            I. Ámbito de Trabajo: Central vs. Panel In-App
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gray-800 p-6 rounded-xl shadow-2xl transition duration-300 hover:shadow-indigo-700/50">
+                <h3 class="text-2xl font-bold mb-4 text-white">1. Copilot Chat Central (Business Chat)</h3>
+                <p class="text-indigo-400 font-semibold mb-3">Contexto: Nivel Organizacional (Microsoft Graph + Web)</p>
+                <ul class="space-y-3 text-gray-300 list-disc list-inside">
+                    <li>**Contexto Amplio:** Accede a todos los datos de M365 (documentos, correos, chats, calendario) del usuario *con permisos*.</li>
+                    <li>**Orquestación:** Ideal para tareas que requieren **combinar información** de múltiples fuentes. (Ej: "Prepara un resumen de la última reunión de Teams y busca los documentos de OneDrive relacionados").</li>
+                    <li>**Uso Estratégico:** Creación y gestión de **Agentes** (vía Copilot Studio), *research* general con acceso a la web (Bing).</li>
+                    <li>**Localización:** Interfaz web dedicada o la aplicación M365 Copilot (sección Chat).</li>
+                </ul>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-xl shadow-2xl transition duration-300 hover:shadow-pink-700/50">
+                <h3 class="text-2xl font-bold mb-4 text-white">2. Copilot en Aplicaciones (Panel In-App)</h3>
+                <p class="text-pink-400 font-semibold mb-3">Contexto: Nivel de Documento/Entorno Abierto</p>
+                <ul class="space-y-3 text-gray-300 list-disc list-inside">
+                    <li>**Contexto Focalizado:** Asistencia directa sobre el contenido del archivo o la interfaz que está abierta en ese momento (ej., el documento de Word o la hoja de Excel).</li>
+                    <li>**Uso Operativo:** Tareas de creación, edición, resumen y manipulación de datos *dentro* de la aplicación. (Ej: "Reescribe este párrafo en tono formal" en Word; "Sugiéreme una tabla dinámica" en Excel).</li>
+                    <li>**Dependencia del Fichero:** Su funcionalidad está intrínsecamente ligada al documento activo.</li>
+                    <li>**Localización:** Panel lateral (sidebar) dentro de la interfaz de la aplicación de escritorio (Word, Excel, Outlook, etc.).</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-indigo-300 border-b border-indigo-900 pb-2">
+            II. Capacidades Específicas In-App (Escritorio)
+        </h2>
+        
+        <div id="app-tabs" class="flex flex-wrap gap-2 mb-6 p-2 bg-gray-800 rounded-lg shadow-inner">
+            <button data-target="word" class="tab-button active bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">Word</button>
+            <button data-target="excel" class="tab-button bg-gray-700 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">Excel</button>
+            <button data-target="powerpoint" class="tab-button bg-gray-700 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">PowerPoint</button>
+            <button data-target="outlook" class="tab-button bg-gray-700 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">Outlook</button>
+            <button data-target="teams" class="tab-button bg-gray-700 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">Teams</button>
+        </div>
+
+        <div id="app-content">
+
+            <div id="word" class="tab-content active p-6 rounded-xl bg-gray-800 shadow-xl border-t-4 border-indigo-600">
+                <h3 class="text-2xl font-bold text-indigo-400 mb-3">Microsoft Word: Asistencia en Redacción</h3>
+                <p class="text-gray-300 mb-4">Se centra en la **generación, edición y resumen** de contenido dentro del documento abierto.</p>
+                <ul class="space-y-2 text-gray-400 list-disc list-outside ml-5">
+                    <li>**Generación de Borradores:** Crea texto inicial a partir de un *prompt* o basándose en otros archivos de M365 (via Graph).</li>
+                    <li>**Reescritura Focalizada:** Permite seleccionar texto para cambiar el tono (formal, informal, conciso) o la longitud.</li>
+                    <li>**Chat sobre el Documento:** Posibilidad de hacer preguntas o solicitar resúmenes del contenido del fichero activo.</li>
+                    <li>**Referencia a Archivos en la Nube:** Incluir contenido de otros documentos sin salir de Word.</li>
+                </ul>
+                
+                <div class="mt-6 border-t border-indigo-700 pt-4">
+                    <button class="practice-toggle w-full text-left flex justify-between items-center text-indigo-300 font-bold py-2 hover:text-indigo-200 transition duration-200">
+                        <span>Prompts de Práctica y Ejemplos (Haga clic para expandir)</span>
+                        <span class="toggle-icon text-xl">+</span>
+                    </button>
+                    <div class="practice-content hidden mt-2 space-y-3">
+                        <p class="text-sm text-gray-400 font-semibold">Generación de Borrador (Contexto Externo):</p>
+                        <div class="prompt-example">Genera un borrador de 500 palabras sobre la nueva política de trabajo híbrido, basándote en el documento 'Politica_RRHH_2025.docx' (ubicado en OneDrive) y con un tono optimista.</div>
+                        <p class="text-sm text-gray-400 font-semibold">Reescritura Focalizada (Contexto Interno):</p>
+                        <div class="prompt-example">Selecciona el tercer párrafo de la introducción y reescríbelo para que sea más conciso y adecuado para un público ejecutivo.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="excel" class="tab-content p-6 rounded-xl bg-gray-800 shadow-xl border-t-4 border-green-600">
+                <h3 class="text-2xl font-bold text-green-400 mb-3">Microsoft Excel: Análisis y Modelado de Datos</h3>
+                <p class="text-gray-300 mb-4">Su objetivo es acelerar el análisis de datos sin necesidad de copiar y pegar fuera de la hoja de cálculo.</p>
+                <ul class="space-y-2 text-gray-400 list-disc list-outside ml-5">
+                    <li>**Generación de Fórmulas:** Sugiere fórmulas complejas o tablas dinámicas a partir de peticiones en lenguaje natural.</li>
+                    <li>**Análisis de Datos:** Identifica correlaciones, tendencias, anomalías y ofrece escenarios "qué pasaría si..." sobre el conjunto de datos activo.</li>
+                    <li>**Visualizaciones Rápidas:** Crea gráficos y visualizaciones automáticamente para explorar los datos.</li>
+                    <li>**Soporte Python:** Potencia el análisis de datos permitiendo la ejecución de código Python directamente en Excel.</li>
+                </ul>
+                
+                <div class="mt-6 border-t border-green-700 pt-4">
+                    <button class="practice-toggle w-full text-left flex justify-between items-center text-green-300 font-bold py-2 hover:text-green-200 transition duration-200">
+                        <span>Prompts de Práctica y Ejemplos (Haga clic para expandir)</span>
+                        <span class="toggle-icon text-xl">+</span>
+                    </button>
+                    <div class="practice-content hidden mt-2 space-y-3">
+                        <p class="text-sm text-gray-400 font-semibold">Generación de Fórmulas (Uso Operativo):</p>
+                        <div class="prompt-example">Escribe la fórmula para calcular la media trimestral del 'Revenue' de las últimas 5 filas, ignorando los valores cero y redondeando a dos decimales.</div>
+                        <p class="text-sm text-gray-400 font-semibold">Análisis de Datos (Insight Rápido):</p>
+                        <div class="prompt-example">Analiza la columna de 'Gastos de Marketing' e identifica si existe una correlación significativa con la columna 'Ventas Netas' de los últimos seis meses. Crea un gráfico de dispersión.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="powerpoint" class="tab-content p-6 rounded-xl bg-gray-800 shadow-xl border-t-4 border-red-600">
+                <h3 class="text-2xl font-bold text-red-400 mb-3">Microsoft PowerPoint: Diseño y Narrativa Visual</h3>
+                <p class="text-gray-300 mb-4">Transforma conceptos o documentos en presentaciones visualmente coherentes y estructuradas.</p>
+                <ul class="space-y-2 text-gray-400 list-disc list-outside ml-5">
+                    <li>**Creación de Diapositivas desde Archivo:** Genera una presentación completa a partir de un documento de Word o un *outline*.</li>
+                    <li>**Diseño Inteligente:** Optimiza el diseño, formato y estilos, manteniendo la coherencia visual con la marca corporativa.</li>
+                    <li>**Reescritura:** Ajusta el texto de las diapositivas para hacerlo más conciso o reordenar listas.</li>
+                    <li>**Generación de Imágenes:** Puede crear imágenes generadas por IA para la presentación (requiere licencia y disponibilidad).</li>
+                </ul>
+
+                <div class="mt-6 border-t border-red-700 pt-4">
+                    <button class="practice-toggle w-full text-left flex justify-between items-center text-red-300 font-bold py-2 hover:text-red-200 transition duration-200">
+                        <span>Prompts de Práctica y Ejemplos (Haga clic para expandir)</span>
+                        <span class="toggle-icon text-xl">+</span>
+                    </button>
+                    <div class="practice-content hidden mt-2 space-y-3">
+                        <p class="text-sm text-gray-400 font-semibold">Creación desde Documento (Contexto Externo):</p>
+                        <div class="prompt-example">Crea una presentación de 8 diapositivas titulada 'Estrategia de Expansión Q3', basándote en el documento de Word 'Plan_Q3_detallado.docx'. Usa la plantilla corporativa azul.</div>
+                        <p class="text-sm text-gray-400 font-semibold">Edición de Contenido (Contexto Interno):</p>
+                        <div class="prompt-example">Reorganiza la Diapositiva 4 y 5. Convierte el texto de la Diapositiva 6 en una lista con viñetas clara, usando un tono formal.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="outlook" class="tab-content p-6 rounded-xl bg-gray-800 shadow-xl border-t-4 border-cyan-600">
+                <h3 class="text-2xl font-bold text-cyan-400 mb-3">Microsoft Outlook: Gestión y Comunicación</h3>
+                <p class="text-gray-300 mb-4">Aumenta la eficiencia en la gestión del correo electrónico y la preparación de la comunicación.</p>
+                <ul class="space-y-2 text-gray-400 list-disc list-outside ml-5">
+                    <li>**Resumen de Conversaciones:** Condensa hilos de correo extensos para identificar rápidamente los puntos clave y las acciones pendientes.</li>
+                    <li>**Redacción de Borradores:** Crea respuestas y correos nuevos basados en otros correos o documentos (contexto M365).</li>
+                    <li>**Sugerencias de Tareas:** Identifica compromisos y tareas implícitas en los correos y sugiere la creación de recordatorios.</li>
+                </ul>
+
+                <div class="mt-6 border-t border-cyan-700 pt-4">
+                    <button class="practice-toggle w-full text-left flex justify-between items-center text-cyan-300 font-bold py-2 hover:text-cyan-200 transition duration-200">
+                        <span>Prompts de Práctica y Ejemplos (Haga clic para expandir)</span>
+                        <span class="toggle-icon text-xl">+</span>
+                    </button>
+                    <div class="practice-content hidden mt-2 space-y-3">
+                        <p class="text-sm text-gray-400 font-semibold">Resumen (Contexto Hilo de Correo):</p>
+                        <div class="prompt-example">Resume el hilo de correo 'Fallo en la Producción' e indica las acciones pendientes que me conciernen directamente.</div>
+                        <p class="text-sm text-gray-400 font-semibold">Redacción de Respuesta (Contexto Abierto):</p>
+                        <div class="prompt-example">Redacta una respuesta a este correo (el que está abierto) que sea formal, rechazando la propuesta pero ofreciendo una reunión para discutir alternativas el próximo jueves a las 11:00 am.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="teams" class="tab-content p-6 rounded-xl bg-gray-800 shadow-xl border-t-4 border-purple-600">
+                <h3 class="text-2xl font-bold text-purple-400 mb-3">Microsoft Teams: Colaboración y Reuniones</h3>
+                <p class="text-gray-300 mb-4">Mejora la eficiencia en la colaboración en tiempo real y la gestión posterior a la reunión.</p>
+                <ul class="space-y-2 text-gray-400 list-disc list-outside ml-5">
+                    <li>**Resúmenes de Reuniones (AI Recap):** Proporciona un resumen de la reunión (grabada o instantánea), incluyendo puntos de discusión, decisiones y tareas.</li>
+                    <li>**Q&A en el Chat:** Permite hacer preguntas sobre los últimos 30 días del historial de un chat específico.</li>
+                    <li>**Transcripción y Traducción:** Asistencia en la transcripción de voz y traducción de contenido de la reunión.</li>
+                    <li>**Resúmenes Móviles:** En dispositivos móviles, puede resumir documentos de Word, PPT y PDF compartidos con un solo clic.</li>
+                </ul>
+
+                <div class="mt-6 border-t border-purple-700 pt-4">
+                    <button class="practice-toggle w-full text-left flex justify-between items-center text-purple-300 font-bold py-2 hover:text-purple-200 transition duration-200">
+                        <span>Prompts de Práctica y Ejemplos (Haga clic para expandir)</span>
+                        <span class="toggle-icon text-xl">+</span>
+                    </button>
+                    <div class="practice-content hidden mt-2 space-y-3">
+                        <p class="text-sm text-gray-400 font-semibold">Resumen de Reunión (AI Recap):</p>
+                        <div class="prompt-example">Dame un resumen ejecutivo de la reunión 'Kick-off Proyecto Titan' de las 10 am, incluyendo las decisiones tomadas y quién es el responsable de la acción 'Revisar presupuesto'.</div>
+                        <p class="text-sm text-gray-400 font-semibold">Q&A en Chat (Contexto Histórico):</p>
+                        <div class="prompt-example">¿Cuál fue la fecha límite acordada para la Fase 2 del proyecto en el chat grupal de la semana pasada? Cita el mensaje original.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-indigo-300 border-b border-indigo-900 pb-2">
+            III. Copilot en Windows: Integración a Nivel de SO
+        </h2>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-2xl transition duration-300 hover:shadow-cyan-700/50">
+            <h3 class="text-2xl font-bold mb-4 text-white">Integración y Alcance de Datos (Diferenciación Crítica)</h3>
+            <p class="text-cyan-400 font-semibold mb-3">Es una aplicación nativa integrada en Windows 11 y Copilot+ PCs, con un modelo de acceso a datos distinto.</p>
+            <ul class="space-y-3 text-gray-300 list-disc list-inside">
+                <li>**Acceso Directo:** Se lanza rápidamente con la tecla <code class="bg-gray-700 p-1 rounded">Windows + C</code> o la tecla Copilot dedicada en teclados modernos.</li>
+                <li>**Control del Sistema Operativo:** Permite cambiar la configuración, ajustar el volumen, tomar capturas de pantalla y hacer preguntas sobre el contenido de la pantalla.</li>
+                <li>**Acceso a Archivos Locales (Diferencia clave):** **Sí puede** acceder al contenido de archivos almacenados localmente en el dispositivo (incluidos los sincronizados de OneDrive) si el usuario lo **habilita explícitamente** en la configuración de "Búsqueda de archivos y Lectura de archivos". Esto resuelve la limitación del Copilot Chat de M365 que solo opera en la nube.</li>
+                <li>**Licenciamiento:**
+                    <ul class="list-circle list-inside ml-5 text-gray-400">
+                        <li>**Uso Básico (Web):** Gratuito para usuarios de Windows 11.</li>
+                        <li>**Uso Empresarial (Acceso a Graph):** El acceso completo a los datos de trabajo (**Business Chat/Microsoft Graph**) desde esta interfaz requiere la licencia de **Microsoft 365 Copilot**.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-indigo-300 border-b border-indigo-900 pb-2">
+            IV. Extensibilidad: Agentes de Copilot y Copilot Studio
+        </h2>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-2xl transition duration-300 hover:shadow-purple-700/50">
+            <h3 class="text-2xl font-bold text-white mb-4">Agentes: Definición, Arquitectura y Creación (Copilot Studio)</h3>
+            <p class="text-purple-400 font-semibold mb-3">**Definición:** Los Agentes son soluciones de IA conversacional **personalizadas** que van más allá del simple chat. Se programan para seguir flujos de trabajo específicos (procesos de negocio). El **Copilot Studio** es la plataforma de desarrollo web donde se diseñan y publican estos agentes. Es un servicio completamente aparte de las aplicaciones de M365.</p>
+            
+            <div class="licensing-alert p-4 rounded-lg my-4 font-bold border-l-4 border-red-500">
+                ⚠️ **REQUISITO NO NEGOCIABLE: LICENCIA CORPORATIVA Y COSTE ADICIONAL**
+                <ul class="list-disc list-inside mt-2 font-normal">
+                    <li>**Uso Exclusivo Empresarial:** La funcionalidad de publicar Agentes para el **Espacio Corporativo** es para empresas con cuentas de Microsoft Entra ID.</li>
+                    <li>**Coste Aparte:** El uso de Agentes requiere la compra de **Créditos de Copilot** (licencia de capacidad) a nivel de organización, con un precio que es **adicional** a la suscripción estándar de Microsoft 365 Copilot.</li>
+                    <li>**Instalación:** Se accede por portal web (no se "instala" como una aplicación de escritorio). La configuración y publicación es tarea del administrador de Power Platform.</li>
+                </ul>
+            </div>
+            
+            <p class="text-gray-300 font-semibold mt-6 mb-3">Para qué Sirve (Propósito y Casos de Uso)</p>
+            <ul class="space-y-3 text-gray-300 list-disc list-inside">
+                <li>**Automatización de Tareas Estructuradas:** Ideal para procesos repetitivos que siguen reglas lógicas (ej. RR.HH., Soporte Técnico, Finanzas).</li>
+                <li>**Integración de Sistemas:** Utiliza **Conectores de Power Platform** para interactuar con bases de datos y software de terceros (ej., SAP, Salesforce, sistemas internos de inventario).</li>
+                <li>**Casos Prácticos:**
+                    <ul class="list-circle list-inside ml-5 text-gray-400">
+                        <li>**RR.HH.:** Agente de Onboarding que verifica la documentación de un nuevo empleado y genera automáticamente su cuenta de Teams.</li>
+                        <li>**Soporte Técnico:** Agente de Diagnóstico que, tras una consulta del usuario, consulta la base de datos de tickets (`Dataverse`) y crea un nuevo ticket si la solución no existe.</li>
+                        <li>**Finanzas:** Agente de Gestión de Gastos que consulta el saldo presupuestario actual antes de aprobar una solicitud de compra.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="mt-6 border-t border-purple-700 pt-4">
+                <button class="practice-toggle w-full text-left flex justify-between items-center text-purple-300 font-bold py-2 hover:text-purple-200 transition duration-200">
+                    <span>Práctica Elaborada: Creación de un Agente de Revisión de Compras (Haga clic para expandir)</span>
+                    <span class="toggle-icon text-xl">+</span>
+                </button>
+                <div class="practice-content hidden mt-2 space-y-3">
+                    <p class="text-sm text-gray-400 font-semibold">Flujo de Diseño en Copilot Studio:</p>
+                    <ul class="text-gray-400 list-disc list-inside ml-5">
+                        <li>**Disparador (*Trigger*):** Frase del usuario como "Quiero iniciar una compra", "solicitar presupuesto".</li>
+                        <li>**Extracción de Datos:** El agente usa una **Entidad** (variable) para extraer el `Monto Total` y el `Proveedor` de la conversación.</li>
+                        <li>**Lógica Condicional:** El flujo verifica si `Monto Total > 5000€`.</li>
+                        <li>**Acción (Power Automate):** Si es TRUE, llama a un Flow que envía la solicitud de aprobación a la bandeja de entrada del Gerente Financiero.</li>
+                        <li>**Respuesta:** El agente notifica al usuario en el Copilot Chat: "Solicitud N°[ID] enviada para aprobación. El Gerente Financiero ha sido notificado."</li>
+                    </ul>
+                    <p class="text-sm text-gray-400 font-semibold mt-3">Prompt de Interacción del Usuario (Finanzas):</p>
+                    <div class="prompt-example">@AgenteDeAprobaciónFinanciera: Por favor, inicia la solicitud de compra para 3 licencias de software por un total de 9.500€. Adjunto la cotización del proveedor 'SoftwareCorp'.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-700/50 p-6 rounded-xl shadow-inner border border-yellow-500/50">
+        <h2 class="text-2xl font-bold mb-3 text-yellow-300 flex items-center">
+            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-2-6h4m4 0h-4m0 0V8m0 4h.01M19 10a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            NOTA CRÍTICA DE GOBERNANZA Y SEGURIDAD
+        </h2>
+        <p class="text-gray-400">
+            Es fundamental recordar que Copilot en sus dos modalidades **siempre hereda los permisos existentes** en el **Entorno de la Organización** de Microsoft 365. Un usuario **solo puede acceder a la información que ya tenía permiso de ver**. Esto garantiza la integridad y el cumplimiento de las políticas de **Microsoft Purview**, siendo un pilar de la confianza empresarial.
+        </p>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-button');
+            const contents = document.querySelectorAll('.tab-content');
+            const toggleButtons = document.querySelectorAll('.practice-toggle');
+
+
+            // --- Lógica para los Tabs de Aplicaciones ---
+            tabs.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.getAttribute('data-target');
+
+                    // Desactivar todos los contenidos y botones
+                    contents.forEach(content => content.classList.remove('active'));
+                    tabs.forEach(tab => {
+                        // Limpiar todos los colores de botones y establecer el color de fondo por defecto
+                        tab.classList.remove('bg-indigo-600', 'bg-green-600', 'bg-red-600', 'bg-cyan-600', 'bg-purple-600');
+                        tab.classList.add('bg-gray-700');
+                    });
+
+                    // Activar el contenido seleccionado
+                    const targetContent = document.getElementById(targetId);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+
+                    // Activar el botón (cambiar color)
+                    button.classList.remove('bg-gray-700');
+                    switch(targetId) {
+                        case 'word': button.classList.add('bg-indigo-600'); break;
+                        case 'excel': button.classList.add('bg-green-600'); break;
+                        case 'powerpoint': button.classList.add('bg-red-600'); break;
+                        case 'outlook': button.classList.add('bg-cyan-600'); break;
+                        case 'teams': button.classList.add('bg-purple-600'); break;
+                        default: button.classList.add('bg-indigo-600'); break;
+                    }
+                });
+            });
+
+            // --- Lógica para los Prompts de Práctica Collapsible ---
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const icon = button.querySelector('.toggle-icon');
+                    
+                    // Toggle visibility
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.textContent = '−'; // Menos
+                        // Opcional: Cerrar otros acordeones si se desea un comportamiento de "solo uno abierto"
+                    } else {
+                        content.classList.add('hidden');
+                        icon.textContent = '+'; // Más
+                    }
+                });
+            });
+
+            // Asegurar que Word (el primer tab) esté visible al cargar
+            document.querySelector('.tab-button[data-target="word"]').click();
+        });
+    <\/script>
+
+</body>
+</html>
+</script>
