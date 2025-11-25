@@ -1,411 +1,466 @@
 <style>
-    /* Contenedor principal aislado */
-    #arch-wrapper-v3 {
+    /* 1. Estilos Generales y Corrección de Color */
+    .inner-wrapper-s6 {
         font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
-        background-color: #0f172a; /* Fondo muy oscuro */
-        color: #f1f5f9; /* Texto casi blanco por defecto */
+        background-color: #0f172a; /* Fondo oscuro global */
+        color: #f1f5f9; /* Texto claro */
         padding: 20px;
         border-radius: 8px;
-        margin-top: 20px;
         line-height: 1.6;
     }
-
-    /* Títulos */
-    #arch-wrapper-v3 h2, 
-    #arch-wrapper-v3 h3 {
-        color: #ffffff !important; /* Forzar blanco */
-        margin-top: 0;
-    }
     
-    #arch-wrapper-v3 h2.arch-title {
+    /* Forzar títulos a blanco/color */
+    .inner-wrapper-s6 h2, .inner-wrapper-s6 h3, .inner-wrapper-s6 h4 {
+        color: #ffffff !important;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+    }
+
+    /* 2. Menú Superior (Pestañas Principales) */
+    .inner-nav-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #334155;
+        padding-bottom: 10px;
+    }
+    .inner-nav-tab {
+        background-color: #1e293b;
+        color: #94a3b8;
+        border: 1px solid #334155;
+        padding: 10px 15px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+    .inner-nav-tab:hover {
+        background-color: #334155;
+        color: #fff;
+    }
+    .inner-nav-tab.active {
+        background-color: #6366f1; /* Indigo */
+        color: white !important;
+        border-color: #818cf8;
+        box-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+    }
+
+    /* Ocultar contenido por defecto */
+    .inner-tab-content {
+        display: none; /* Se oculta todo al inicio */
+        animation: fadeIn 0.4s;
+    }
+    .inner-tab-content.active {
+        display: block; /* Solo se muestra el activo */
+    }
+
+    /* 3. Estilos Específicos Sección Arquitectura */
+    .arch-title {
         text-align: center;
         background: linear-gradient(90deg, #818cf8, #f472b6);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-weight: 800;
         font-size: 2em;
-        margin-bottom: 20px;
-        display: block; /* Asegurar bloque */
+        font-weight: 800;
     }
-
+    
     /* Grid de tarjetas */
-    .arch-grid-v3 {
+    .arch-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 20px;
         margin-bottom: 30px;
     }
 
-    /* Tarjetas con contraste arreglado */
-    .arch-card-v3 {
-        background-color: #1e293b !important; /* Gris azulado oscuro */
+    /* Tarjetas Interactivas (Boxes que se iluminan) */
+    .arch-card {
+        background-color: #1e293b !important;
         border: 1px solid #334155;
         border-radius: 12px;
         padding: 20px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+        transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    .arch-card:hover {
+        transform: translateY(-5px); /* Efecto elevación */
+        border-color: #818cf8; /* Borde brilla */
+        box-shadow: 0 10px 15px rgba(129, 140, 248, 0.2); /* Sombra brilla */
     }
     
-    /* Subtítulos dentro de tarjetas - FORZANDO COLOR */
-    .arch-subtitle-v3 {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 10px;
-        text-transform: uppercase;
-        font-size: 0.85em;
-        letter-spacing: 1px;
-    }
-    .text-indigo-forced { color: #a5b4fc !important; }
-    .text-pink-forced { color: #f9a8d4 !important; }
-    .text-cyan-forced { color: #67e8f9 !important; }
-    .text-purple-forced { color: #d8b4fe !important; }
+    /* Listas dentro de arquitectura */
+    .arch-list { padding-left: 20px; margin: 0; }
+    .arch-list li { color: #cbd5e1 !important; margin-bottom: 8px; }
 
-    /* Listas - FORZANDO COLOR CLARO */
-    .arch-list-v3 {
-        padding-left: 20px;
-        margin: 0;
-    }
-    .arch-list-v3 li {
-        color: #e2e8f0 !important; /* Gris muy claro */
-        margin-bottom: 8px;
-    }
-    .arch-list-v3 li strong {
-        color: #ffffff !important; /* Blanco puro */
-    }
-
-    /* Navegación de Tabs */
-    .arch-tabs-nav-v3 {
+    /* Botones de Apps (Word, Excel...) */
+    .arch-tabs-nav {
         display: flex;
+        gap: 10px;
         flex-wrap: wrap;
-        gap: 8px;
-        background-color: #1e293b;
-        padding: 10px;
-        border-radius: 8px;
         margin-bottom: 20px;
     }
-    
-    .arch-tab-btn-v3 {
-        background-color: #334155;
-        color: #cbd5e1 !important;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: 600;
+    .arch-app-btn {
         flex: 1;
-        transition: all 0.2s;
-        text-align: center;
-    }
-    
-    .arch-tab-btn-v3:hover {
-        background-color: #475569;
-        color: white !important;
-    }
-
-    /* Botones Activos (Colores específicos) */
-    .arch-tab-btn-v3.active { color: white !important; transform: scale(1.02); box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
-    .btn-word.active { background-color: #4f46e5 !important; }
-    .btn-excel.active { background-color: #16a34a !important; }
-    .btn-ppt.active { background-color: #dc2626 !important; }
-    .btn-outlook.active { background-color: #0891b2 !important; }
-    .btn-teams.active { background-color: #7c3aed !important; }
-
-    /* Paneles de contenido */
-    .arch-content-pane-v3 {
-        display: none;
-        background-color: #1e293b;
-        padding: 25px;
-        border-radius: 12px;
-        border-top: 4px solid #4f46e5; /* Default color */
-    }
-    .arch-content-pane-v3.active { display: block; animation: fadeIn 0.4s; }
-
-    /* Acordeón / Desplegables */
-    .arch-toggle-btn-v3 {
-        width: 100%;
-        background-color: #0f172a;
-        color: #93c5fd !important; /* Azul claro */
-        border: 1px solid #334155;
+        min-width: 100px;
         padding: 12px;
-        border-radius: 6px;
+        background-color: #334155;
+        color: #e2e8f0;
+        border: none;
+        border-radius: 8px;
         cursor: pointer;
-        text-align: left;
-        margin-top: 15px;
         font-weight: bold;
+        text-align: center;
+        transition: 0.2s;
+    }
+    .arch-app-btn:hover { background-color: #475569; color: white; }
+    
+    /* Estados Activos de Apps */
+    .arch-app-btn.active { color: white !important; transform: scale(1.05); }
+    .btn-word.active { background-color: #4f46e5 !important; box-shadow: 0 0 15px rgba(79, 70, 229, 0.5); }
+    .btn-excel.active { background-color: #16a34a !important; box-shadow: 0 0 15px rgba(22, 163, 74, 0.5); }
+    .btn-ppt.active { background-color: #dc2626 !important; box-shadow: 0 0 15px rgba(220, 38, 38, 0.5); }
+    .btn-outlook.active { background-color: #0891b2 !important; box-shadow: 0 0 15px rgba(8, 145, 178, 0.5); }
+    .btn-teams.active { background-color: #7c3aed !important; box-shadow: 0 0 15px rgba(124, 58, 237, 0.5); }
+
+    /* Paneles de contenido de Apps */
+    .arch-app-content {
+        display: none;
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 12px;
+        border-top: 5px solid #6366f1;
+    }
+    .arch-app-content.active { display: block; animation: fadeIn 0.4s; }
+
+    /* Acordeón / Desplegable */
+    .arch-accordion-btn {
+        width: 100%;
+        background: #0f172a;
+        border: 1px solid #475569;
+        color: #93c5fd !important;
+        padding: 15px;
+        text-align: left;
+        cursor: pointer;
+        border-radius: 8px;
+        margin-top: 15px;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        font-weight: bold;
+        transition: background 0.2s;
     }
-    .arch-toggle-content-v3 {
-        display: none;
-        background-color: #020617;
+    .arch-accordion-btn:hover { background: #1e293b; }
+    
+    .arch-accordion-content {
+        display: none; /* Oculto por defecto */
         padding: 15px;
-        margin-top: 5px;
-        border-radius: 6px;
-        border-left: 3px solid #6366f1;
-    }
-    .arch-code-box {
+        background: #020617;
+        border-radius: 0 0 8px 8px;
+        border: 1px solid #475569;
+        border-top: none;
+        color: #a5f3fc;
         font-family: monospace;
-        color: #a5f3fc !important;
-        font-size: 0.95em;
     }
 
+    /* Animaciones y Utilidades */
     @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    .tool-card, .error-item, .exercise-box {
+        background: #1e293b; border: 1px solid #334155; padding: 15px; border-radius: 8px; margin-bottom: 15px;
+    }
+    .highlight-box { background: rgba(14, 165, 233, 0.1); border-left: 4px solid #0ea5e9; padding: 15px; margin-bottom: 20px; border-radius: 4px; }
+    .tool-link { color: #38bdf8; text-decoration: none; font-weight: bold; }
+    .tool-link:hover { text-decoration: underline; }
 </style>
 
 <script>
-    function openArchTabV3(evt, tabId, colorClass) {
-        // 1. Ocultar todos los paneles
-        var panels = document.getElementsByClassName("arch-content-pane-v3");
+    // 1. FUNCIÓN PARA EL MENÚ PRINCIPAL (Introducción, Conceptos...)
+    function showInnerTab(tabId, groupName) {
+        // Ocultar todas las pestañas principales
+        var contents = document.getElementsByClassName('inner-tab-content');
+        for (var i = 0; i < contents.length; i++) {
+            contents[i].style.display = 'none'; // Forzar ocultado
+            contents[i].classList.remove('active');
+        }
+        
+        // Desactivar botones principales
+        var tabs = document.getElementsByClassName('inner-nav-tab');
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove('active');
+        }
+
+        // Mostrar la seleccionada
+        var selected = document.getElementById(tabId);
+        if (selected) {
+            selected.style.display = 'block'; // Forzar mostrado
+            setTimeout(function() { selected.classList.add('active'); }, 10);
+        }
+        
+        // Activar el botón pulsado (buscando por texto o evento si fuera necesario, 
+        // pero aquí usamos event.currentTarget en el HTML)
+        if (event && event.currentTarget) {
+            event.currentTarget.classList.add('active');
+        }
+    }
+
+    // 2. FUNCIÓN PARA LAS PESTAÑAS DE ARQUITECTURA (Word, Excel...)
+    function showArchApp(appId) {
+        // Ocultar paneles de apps
+        var panels = document.getElementsByClassName('arch-app-content');
         for (var i = 0; i < panels.length; i++) {
-            panels[i].style.display = "none";
-            panels[i].classList.remove("active");
+            panels[i].style.display = 'none';
+            panels[i].classList.remove('active');
         }
 
-        // 2. Desactivar todos los botones
-        var btns = document.getElementsByClassName("arch-tab-btn-v3");
+        // Desactivar botones de apps
+        var btns = document.getElementsByClassName('arch-app-btn');
         for (var i = 0; i < btns.length; i++) {
-            btns[i].classList.remove("active");
-            // Limpiar colores de fondo específicos si quedan residuales
+            btns[i].classList.remove('active');
         }
 
-        // 3. Mostrar panel actual y activar botón
-        var currentPanel = document.getElementById(tabId);
-        if(currentPanel) {
-            currentPanel.style.display = "block";
-            currentPanel.classList.add("active");
+        // Mostrar panel actual
+        var current = document.getElementById(appId);
+        if (current) {
+            current.style.display = 'block';
+            setTimeout(function() { current.classList.add('active'); }, 10);
             
-            // Asignar color al borde superior del panel dinámicamente
-            var borderColor = "#4f46e5"; // Default Word
-            if(tabId.includes("excel")) borderColor = "#16a34a";
-            if(tabId.includes("ppt")) borderColor = "#dc2626";
-            if(tabId.includes("outlook")) borderColor = "#0891b2";
-            if(tabId.includes("teams")) borderColor = "#7c3aed";
-            currentPanel.style.borderTopColor = borderColor;
+            // Colorear borde superior dinámicamente
+            var color = "#6366f1"; // Default
+            if(appId.includes('excel')) color = "#16a34a";
+            if(appId.includes('ppt')) color = "#dc2626";
+            if(appId.includes('outlook')) color = "#0891b2";
+            if(appId.includes('teams')) color = "#7c3aed";
+            current.style.borderTopColor = color;
         }
-        
-        evt.currentTarget.classList.add("active");
+
+        // Activar botón pulsado
+        if (event && event.currentTarget) {
+            event.currentTarget.classList.add('active');
+        }
     }
 
-    function toggleAccordionV3(btn) {
+    // 3. FUNCIÓN PARA DESPLEGABLES (ACORDEÓN)
+    function toggleAccordion(btn) {
         var content = btn.nextElementSibling;
-        var icon = btn.querySelector('span:last-child');
+        var icon = btn.querySelector('.icon');
         
-        if (content.style.display === "block") {
-            content.style.display = "none";
-            icon.innerHTML = "+";
+        // Comprobar si está visible calculando el estilo computado o el display directo
+        if (content.style.display === 'block') {
+            content.style.display = 'none';
+            icon.innerHTML = '+';
         } else {
-            content.style.display = "block";
-            icon.innerHTML = "−";
+            content.style.display = 'block';
+            icon.innerHTML = '−';
         }
     }
+
+    // 4. FUNCIÓN PARA EL MINITEST
+    function resetMinitest(id) {
+        var feedbacks = document.getElementsByClassName('feedback');
+        for(var i=0; i<feedbacks.length; i++) feedbacks[i].innerHTML = '';
+        var options = document.getElementsByClassName('minitest-option');
+        for(var i=0; i<options.length; i++) {
+            options[i].style.backgroundColor = '';
+            options[i].style.color = '';
+        }
+    }
+
+    // Inicialización de clicks para el minitest (delegación simple)
+    document.addEventListener('click', function(e) {
+        if(e.target && e.target.classList.contains('minitest-option')) {
+            var isCorrect = e.target.getAttribute('data-correct') === 'true';
+            var feedbackId = e.target.getAttribute('data-question').replace('s6-', 's6-feedback-'); // Ajuste simple
+            // Como los IDs de feedback son s6-feedback-1, etc.
+            // Asumimos estructura simple: next sibling o búsqueda por ID
+            var parent = e.target.parentElement;
+            var feedback = parent.querySelector('.feedback');
+            
+            if(isCorrect) {
+                e.target.style.backgroundColor = '#16a34a';
+                e.target.style.color = 'white';
+                if(feedback) feedback.innerHTML = '✅ ¡Correcto!';
+            } else {
+                e.target.style.backgroundColor = '#dc2626';
+                e.target.style.color = 'white';
+                if(feedback) feedback.innerHTML = '❌ Incorrecto, prueba otra vez.';
+            }
+        }
+    });
 </script>
 
-<div class="inner-nav-tabs">
-    <button class="inner-nav-tab active" onclick="showInnerTab('s6-intro', 's6')">📚 Introducción</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s6-conceptos', 's6')">🔧 Conceptos Clave</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s6-arquitectura', 's6')">🧠 Arquitectura Copilot</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s6-lado-oscuro', 's6')">⚠️ Riesgos Avanzados</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s6-actividades', 's6')">📋 Actividades</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s6-minitest', 's6')">✅ MiniTest</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s6-errores', 's6')">⚠️ Errores Comunes</button>
-    <button class="inner-nav-tab" onclick="showInnerTab('s6-ia-habla', 's6')">🔮 La IA Habla</button>
-</div>
+<div class="inner-wrapper-s6">
 
-<div class="inner-content-wrapper">
-    
-    <div id="s6-intro" class="inner-tab-content active">
-        <h2>Sesión 6: Agentes, Seguridad y Solución Empresarial (Copilot)</h2>
-        <div class="highlight-box" style="background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%); border-left-color: #00796b;">
-            <h4 style="color: #004d40; margin-top: 0;">¿Prefieres verlo en formato presentación?</h4>
-            <p style="margin-bottom: 0;">He creado una presentación visual de esta sesión. Puedes verla en este enlace:</p>
-            <ul><li><a href="https://app.presentations.ai/view/ehdF8zTl5Z" target="_blank" class="tool-link">Ver Presentación de la Sesión 6</a></li></ul>
+    <div class="inner-nav-tabs">
+        <button class="inner-nav-tab active" onclick="showInnerTab('s6-intro', 's6')">📚 Introducción</button>
+        <button class="inner-nav-tab" onclick="showInnerTab('s6-conceptos', 's6')">🔧 Conceptos Clave</button>
+        <button class="inner-nav-tab" onclick="showInnerTab('s6-arquitectura', 's6')">🧠 Arquitectura Copilot</button>
+        <button class="inner-nav-tab" onclick="showInnerTab('s6-lado-oscuro', 's6')">⚠️ Riesgos</button>
+        <button class="inner-nav-tab" onclick="showInnerTab('s6-actividades', 's6')">📋 Actividades</button>
+        <button class="inner-nav-tab" onclick="showInnerTab('s6-minitest', 's6')">✅ MiniTest</button>
+        <button class="inner-nav-tab" onclick="showInnerTab('s6-errores', 's6')">⚠️ Errores</button>
+        <button class="inner-nav-tab" onclick="showInnerTab('s6-ia-habla', 's6')">🔮 La IA Habla</button>
+    </div>
+
+    <div id="s6-intro" class="inner-tab-content active" style="display:block;"> <h2>Sesión 6: Agentes y Copilot</h2>
+        <div class="highlight-box">
+            <h4 style="color: #0ea5e9 !important; margin:0;">🚀 Enlace a Presentación</h4>
+            <p><a href="https://app.presentations.ai/view/ehdF8zTl5Z" target="_blank" class="tool-link">Ver Presentación Visual de la Sesión 6</a></p>
         </div>
-        <p>Bienvenido a la sesión final. Aquí es donde conectamos todo lo aprendido (habilidades de S1-S4 y ecosistema de S5) con vuestra realidad empresarial.</p>
-        <ol>
-            <li><strong>El Futuro (Agentes de IA):</strong> Herramientas que no solo *responden*, sino que *actúan*.</li>
-            <li><strong>La Arquitectura (Profundización):</strong> Entenderemos técnicamente cómo funciona Copilot (Nueva sección).</li>
-            <li><strong>La Seguridad:</strong> El riesgo de usar herramientas públicas con datos confidenciales.</li>
+        <p>Bienvenido al final del camino. Aquí conectamos tus habilidades con la realidad empresarial.</p>
+        <ol style="margin-left: 20px;">
+            <li><strong>El Futuro:</strong> Agentes que actúan, no solo chatean.</li>
+            <li><strong>La Arquitectura:</strong> Profundización técnica (Nueva Pestaña).</li>
+            <li><strong>La Seguridad:</strong> Por qué Copilot es vital para la empresa.</li>
         </ol>
     </div>
-    
+
     <div id="s6-conceptos" class="inner-tab-content">
-        <h2>🔧 Conceptos Clave: GPTs, Agentes y Copilot</h2>
-        <h3>Nivel 1: Personalización (GPTs y Gems)</h3>
+        <h2>🔧 Conceptos Clave</h2>
         <div class="tool-card">
-            <h4>¿Qué son los GPTs (OpenAI) y Gems (Google)?</h4>
-            <p>Son "mini-IAs" personalizadas para tareas específicas con tus propios documentos.</p>
+            <h3>Nivel 1: GPTs Personalizados</h3>
+            <p>Son mini-IAs configuradas con tus propios manuales PDF. Ideales para consultas específicas.</p>
         </div>
-        <h3>Nivel 2: El Futuro (Agentes de IA)</h3>
         <div class="tool-card">
-            <h4>La diferencia: Chatbot vs. Agente</h4>
-            <p>Un **Chatbot** da respuestas. Un **Agente** ejecuta acciones (reservar vuelos, rellenar formularios).</p>
+            <h3>Nivel 2: Agentes de IA</h3>
+            <p>La evolución del Chatbot. Un Agente puede realizar secuencias de pasos: buscar > comparar > reservar.</p>
         </div>
-        <h3>Nivel 3: La Solución Empresarial (Copilot)</h3>
         <div class="tool-card">
-            <h4><span class="icon">Ⓜ️</span> Microsoft Copilot (M365)</h4>
-            <p>La solución segura que se conecta a tus datos internos (Graph). Revisa la pestaña <strong>"🧠 Arquitectura Copilot"</strong> para más detalles.</p>
+            <h3>Nivel 3: Microsoft Copilot</h3>
+            <p>Tu IA segura empresarial. No entrena con tus datos y respeta tus permisos de acceso.</p>
         </div>
     </div>
 
     <div id="s6-arquitectura" class="inner-tab-content">
-        <div id="arch-wrapper-v3">
-            
-            <h2 class="arch-title">Copilot 365: Arquitectura</h2>
-            <p style="text-align: center; color: #cbd5e1; margin-bottom: 30px;">Diferencias entre el Chat Central y la IA integrada en Apps.</p>
-
-            <h3 style="border-bottom: 1px solid #475569; padding-bottom: 10px; margin-bottom: 20px;">I. Ámbito de Trabajo</h3>
-            
-            <div class="arch-grid-v3">
-                <div class="arch-card-v3">
-                    <h3>1. Copilot Chat Central</h3>
-                    <span class="arch-subtitle-v3 text-indigo-forced">Contexto: Organizacional</span>
-                    <ul class="arch-list-v3">
-                        <li><strong>Alcance:</strong> Busca en TODO tu M365 (correos, chats, docs).</li>
-                        <li><strong>Uso:</strong> "Resume qué pasó ayer en la empresa".</li>
-                        <li><strong>Ubicación:</strong> App o Web (pestaña Chat).</li>
-                    </ul>
-                </div>
-                <div class="arch-card-v3">
-                    <h3>2. Copilot In-App</h3>
-                    <span class="arch-subtitle-v3 text-pink-forced">Contexto: Documento Activo</span>
-                    <ul class="arch-list-v3">
-                        <li><strong>Alcance:</strong> Solo ve el archivo abierto.</li>
-                        <li><strong>Uso:</strong> "Reescribe este párrafo" (Word), "Analiza esta tabla" (Excel).</li>
-                        <li><strong>Ubicación:</strong> Panel lateral derecho.</li>
-                    </ul>
-                </div>
+        <h2 class="arch-title">Arquitectura Copilot</h2>
+        <p style="text-align:center; margin-bottom: 30px; color:#cbd5e1;">Diferencia visual entre Chat Central e In-App</p>
+        
+        <div class="arch-grid">
+            <div class="arch-card">
+                <h3 style="color:#818cf8 !important;">1. Chat Central (Business Chat)</h3>
+                <p><strong>Ámbito:</strong> Toda la organización.</p>
+                <p>Busca en tus correos, chats y archivos de OneDrive simultáneamente.</p>
+                <p><em>Ej: "¿Qué pasó con el cliente X la semana pasada?"</em></p>
             </div>
-
-            <h3 style="border-bottom: 1px solid #475569; padding-bottom: 10px; margin-bottom: 20px;">II. Capacidades por App</h3>
-
-            <div class="arch-tabs-nav-v3">
-                <button class="arch-tab-btn-v3 btn-word active" onclick="openArchTabV3(event, 'panel-word-v3', 'btn-word')">Word</button>
-                <button class="arch-tab-btn-v3 btn-excel" onclick="openArchTabV3(event, 'panel-excel-v3', 'btn-excel')">Excel</button>
-                <button class="arch-tab-btn-v3 btn-ppt" onclick="openArchTabV3(event, 'panel-ppt-v3', 'btn-ppt')">PowerPoint</button>
-                <button class="arch-tab-btn-v3 btn-outlook" onclick="openArchTabV3(event, 'panel-outlook-v3', 'btn-outlook')">Outlook</button>
-                <button class="arch-tab-btn-v3 btn-teams" onclick="openArchTabV3(event, 'panel-teams-v3', 'btn-teams')">Teams</button>
+            <div class="arch-card">
+                <h3 style="color:#f472b6 !important;">2. Copilot In-App</h3>
+                <p><strong>Ámbito:</strong> Documento activo.</p>
+                <p>Vive en el panel lateral de Word/Excel. Solo "ve" lo que tienes abierto.</p>
+                <p><em>Ej: "Reescribe este párrafo."</em></p>
             </div>
+        </div>
 
-            <div id="panel-word-v3" class="arch-content-pane-v3 active" style="display:block;">
-                <h3 style="color:#818cf8 !important;">Microsoft Word</h3>
-                <ul class="arch-list-v3">
-                    <li><strong>Redacción:</strong> Genera borradores desde cero.</li>
-                    <li><strong>Edición:</strong> Transforma texto (ej. "Hazlo más formal").</li>
-                </ul>
-                <button class="arch-toggle-btn-v3" onclick="toggleAccordionV3(this)">
-                    👁️ Ver Ejemplo de Prompt <span>+</span>
-                </button>
-                <div class="arch-toggle-content-v3">
-                    <p style="color:#94a3b8; font-size:0.8em; margin:0;">Copia y pega esto:</p>
-                    <div class="arch-code-box">"Genera un borrador de 2 páginas sobre sostenibilidad basado en el archivo 'Memoria2024.pdf'."</div>
-                </div>
+        <h3>Capacidades por Aplicación (Haz clic)</h3>
+        <div class="arch-tabs-nav">
+            <button class="arch-app-btn btn-word active" onclick="showArchApp('app-word')">Word</button>
+            <button class="arch-app-btn btn-excel" onclick="showArchApp('app-excel')">Excel</button>
+            <button class="arch-app-btn btn-ppt" onclick="showArchApp('app-ppt')">PowerPoint</button>
+            <button class="arch-app-btn btn-outlook" onclick="showArchApp('app-outlook')">Outlook</button>
+            <button class="arch-app-btn btn-teams" onclick="showArchApp('app-teams')">Teams</button>
+        </div>
+
+        <div id="app-word" class="arch-app-content active" style="display:block;">
+            <h3 style="color:#818cf8 !important;">Microsoft Word</h3>
+            <ul class="arch-list">
+                <li>Generación de borradores completos.</li>
+                <li>Edición de tono y estilo.</li>
+            </ul>
+            <button class="arch-accordion-btn" onclick="toggleAccordion(this)">
+                👁️ Ver Ejemplo Prompt <span class="icon">+</span>
+            </button>
+            <div class="arch-accordion-content">
+                "Escribe un borrador de propuesta comercial basado en el archivo 'Notas_Reunion.docx' con tono persuasivo."
             </div>
+        </div>
 
-            <div id="panel-excel-v3" class="arch-content-pane-v3">
-                <h3 style="color:#4ade80 !important;">Microsoft Excel</h3>
-                <ul class="arch-list-v3">
-                    <li><strong>Fórmulas:</strong> Pídelas en lenguaje natural.</li>
-                    <li><strong>Insights:</strong> "Dime qué tendencias ves en las ventas".</li>
-                </ul>
-                <button class="arch-toggle-btn-v3" onclick="toggleAccordionV3(this)">
-                    👁️ Ver Ejemplo de Prompt <span>+</span>
-                </button>
-                <div class="arch-toggle-content-v3">
-                    <div class="arch-code-box">"Añade una columna que calcule el beneficio neto y resalta en rojo los valores negativos."</div>
-                </div>
+        <div id="app-excel" class="arch-app-content">
+            <h3 style="color:#16a34a !important;">Microsoft Excel</h3>
+            <ul class="arch-list">
+                <li>Análisis de tendencias y patrones.</li>
+                <li>Creación de columnas con fórmulas complejas.</li>
+            </ul>
+            <button class="arch-accordion-btn" onclick="toggleAccordion(this)">
+                👁️ Ver Ejemplo Prompt <span class="icon">+</span>
+            </button>
+            <div class="arch-accordion-content">
+                "Analiza la tabla y resalta en amarillo los productos con margen inferior al 15%."
             </div>
+        </div>
 
-            <div id="panel-ppt-v3" class="arch-content-pane-v3">
-                <h3 style="color:#f87171 !important;">PowerPoint</h3>
-                <ul class="arch-list-v3">
-                    <li><strong>Creación:</strong> Crea diapositivas desde un documento Word.</li>
-                    <li><strong>Diseño:</strong> Organiza imágenes y texto automáticamente.</li>
-                </ul>
-                <button class="arch-toggle-btn-v3" onclick="toggleAccordionV3(this)">
-                    👁️ Ver Ejemplo de Prompt <span>+</span>
-                </button>
-                <div class="arch-toggle-content-v3">
-                    <div class="arch-code-box">"Crea una presentación de 5 slides basada en el archivo 'Proyecto_Alpha.docx'."</div>
-                </div>
+        <div id="app-ppt" class="arch-app-content">
+            <h3 style="color:#dc2626 !important;">PowerPoint</h3>
+            <p>Convierte documentos de Word en presentaciones automáticamente.</p>
+            <button class="arch-accordion-btn" onclick="toggleAccordion(this)">
+                👁️ Ver Ejemplo Prompt <span class="icon">+</span>
+            </button>
+            <div class="arch-accordion-content">
+                "Crea una presentación de 10 diapositivas a partir del archivo 'Informe_Anual.docx'."
             </div>
+        </div>
 
-            <div id="panel-outlook-v3" class="arch-content-pane-v3">
-                <h3 style="color:#22d3ee !important;">Outlook</h3>
-                <ul class="arch-list-v3">
-                    <li><strong>Resumen:</strong> "Resume este hilo de correos largo".</li>
-                    <li><strong>Coaching:</strong> Te ayuda a mejorar el tono de tus respuestas.</li>
-                </ul>
-            </div>
+        <div id="app-outlook" class="arch-app-content">
+            <h3 style="color:#0891b2 !important;">Outlook</h3>
+            <p>Resume hilos infinitos de correos y sugiere respuestas rápidas.</p>
+        </div>
 
-            <div id="panel-teams-v3" class="arch-content-pane-v3">
-                <h3 style="color:#c084fc !important;">Teams</h3>
-                <ul class="arch-list-v3">
-                    <li><strong>Recap Inteligente:</strong> Notas automáticas de la reunión.</li>
-                    <li><strong>Chat Histórico:</strong> Pregunta al chat "¿Cuándo es la entrega?".</li>
-                </ul>
-            </div>
-
-            <div style="margin-top: 40px; background: #1e293b; padding: 20px; border-radius: 8px; border-left: 4px solid #facc15;">
-                <h3 style="color: #facc15 !important;">🔒 Nota sobre Gobernanza</h3>
-                <p style="color: #e2e8f0 !important;">Copilot <strong>hereda tus permisos</strong>. Nunca verás datos que no podrías ver manualmente. Además, Copilot en Windows (tecla Win+C) tiene la capacidad única de leer archivos locales de tu PC si lo permites.</p>
-            </div>
-
+        <div id="app-teams" class="arch-app-content">
+            <h3 style="color:#7c3aed !important;">Teams</h3>
+            <p>Genera actas de reuniones (quién dijo qué, tareas pendientes) en tiempo real.</p>
         </div>
     </div>
 
     <div id="s6-lado-oscuro" class="inner-tab-content">
-        <h2>⚠️ Riesgos Avanzados: Agentes y Datos</h2>
+        <h2>⚠️ Riesgos y Seguridad</h2>
         <div class="error-item">
-            <h3>El Riesgo de los GPTs y Gems Públicos</h3>
-            <p><strong>El Riesgo:</strong> Subir datos confidenciales a IAs públicas.</p>
-            <p><strong>Mitigación:</strong> Usar Copilot (Entorno Seguro) para datos de empresa.</p>
+            <h3>No alimentes a la IA pública</h3>
+            <p>Si subes un contrato confidencial a ChatGPT gratuito, esa información podría usarse para entrenar al modelo. <strong>Solución:</strong> Usa siempre Copilot con licencia empresarial para datos sensibles.</p>
         </div>
-        <div class="highlight-box" style="border-left-color: #e53935; background: #ffebee;">
-            <h3 style="color: #c62828;">Dilema Productividad vs. Seguridad</h3>
-            <p><strong>Respuesta:</strong> No subir contratos ni datos de clientes a herramientas gratuitas.</p>
+        <div class="error-item">
+            <h3>Alucinaciones de Agentes</h3>
+            <p>Si un agente navega por ti, verifica siempre la URL final y el resumen de compra antes de pagar.</p>
         </div>
     </div>
 
     <div id="s6-actividades" class="inner-tab-content">
-        <h2>📋 Actividades - Sesión 6</h2>
+        <h2>📋 Actividades</h2>
         <div class="exercise-box">
-            <h3>Práctica 1: El Futuro - ¿Qué es un Agente de IA?</h3>
-            <p>Ver vídeo: <a href="https://www.youtube.com/watch?v=wX-Yj-4q-kY" target="_blank" class="tool-link">He Probado COMET BROWSER</a></p>
+            <h3>1. Diseña tu Workflow</h3>
+            <p>Piensa en una tarea repetitiva (ej. revisar facturas). Escribe paso a paso qué le pedirías a un Agente que hiciera por ti.</p>
         </div>
         <div class="exercise-box">
-            <h3>Práctica 3: La Solución Empresarial (Microsoft Copilot)</h3>
-            <p>Aplica las habilidades de S3 y S4 pero usando Copilot en tu entorno seguro de trabajo.</p>
+            <h3>2. Práctica en Outlook (Copilot)</h3>
+            <p>Busca un hilo de correos largo y usa el botón "Resumir por Copilot". Compara el resumen con la realidad.</p>
         </div>
     </div>
 
     <div id="s6-minitest" class="inner-tab-content">
-        <h2>✅ MiniTest - Sesión 6</h2>
+        <h2>✅ MiniTest Final</h2>
         <div class="minitest">
-            <div class="minitest-question">
-                <h4>1. Diferencia clave Chatbot vs. Agente:</h4>
-                <div class="minitest-option" data-question="s6-1" data-correct="true">b) El Chatbot responde, el Agente ejecuta tareas de múltiples pasos.</div>
-                <div class="minitest-option" data-question="s6-1" data-correct="false">a) Ninguna.</div>
-                <div class="feedback" id="s6-feedback-1"></div>
+            <div class="minitest-question" style="margin-bottom:20px;">
+                <h4>1. ¿Qué diferencia a un Agente de un Chatbot?</h4>
+                <div class="minitest-option" data-question="s6-1" data-correct="false" style="padding:10px; background:#334155; margin:5px; border-radius:4px; cursor:pointer;">a) Nada, son lo mismo.</div>
+                <div class="minitest-option" data-question="s6-1" data-correct="true" style="padding:10px; background:#334155; margin:5px; border-radius:4px; cursor:pointer;">b) El Chatbot habla, el Agente actúa (ej. reserva vuelos).</div>
+                <div class="feedback" style="margin-top:5px; font-weight:bold;"></div>
             </div>
-            <div class="minitest-question">
-                <h4>2. Diferencia clave Copilot In-App vs. Central:</h4>
-                <div class="minitest-option" data-question="s6-2" data-correct="true">b) In-App es focalizado (doc activo), Central es orquestador (toda la empresa).</div>
-                <div class="feedback" id="s6-feedback-2"></div>
+            
+            <div class="minitest-question" style="margin-bottom:20px;">
+                <h4>2. ¿Dónde vive Copilot In-App?</h4>
+                <div class="minitest-option" data-question="s6-2" data-correct="true" style="padding:10px; background:#334155; margin:5px; border-radius:4px; cursor:pointer;">a) En el panel lateral del documento activo.</div>
+                <div class="minitest-option" data-question="s6-2" data-correct="false" style="padding:10px; background:#334155; margin:5px; border-radius:4px; cursor:pointer;">b) Solo en la web.</div>
+                <div class="feedback" style="margin-top:5px; font-weight:bold;"></div>
             </div>
-             <button class="reset-btn" onclick="resetMinitest('s6')">🔄 Reiniciar Test</button>
+            <button class="reset-btn" onclick="resetMinitest('s6')" style="padding:10px 20px; background:#6366f1; color:white; border:none; border-radius:6px; cursor:pointer;">🔄 Reiniciar Test</button>
         </div>
     </div>
-
-    <div id="s6-errores" class="inner-tab-content">
-        <h2>⚠️ Errores Comunes de Cierre</h2>
-        <div class="error-item"><strong>1. Confiar Ciegamente:</strong> Siempre revisa antes de enviar.</div>
-        <div class="error-item"><strong>2. Datos Sensibles:</strong> Nunca en GPTs públicos.</div>
-    </div>
     
+    <div id="s6-errores" class="inner-tab-content">
+        <h2>⚠️ Errores Comunes</h2>
+        <p>1. Confiar ciegamente en la salida de la IA sin revisar.</p>
+        <p>2. Usar la herramienta incorrecta (ChatGPT para datos internos, Copilot para poemas creativos).</p>
+    </div>
+
     <div id="s6-ia-habla" class="inner-tab-content">
-        <div class="ia-speaks-container">
-            <h2>🔮 La IA Habla: "De Loro a Copiloto"</h2>
-            <p>"Ya no soy una herramienta que usas. Soy un compañero que colabora."</p>
+        <div class="ia-speaks-container" style="text-align:center; padding:40px;">
+            <h2>🔮 La IA Habla</h2>
+            <p style="font-size:1.2em; font-style:italic; color:#a5b4fc;">"Ya no soy una herramienta. Soy tu copiloto."</p>
+            <p>Gracias por acompañarme en este viaje de 6 sesiones.</p>
         </div>
     </div>
 
