@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Arquitectura: Copilot Chat Central vs. In-App</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Fondo oscuro */
+        }
+        .gradient-border {
+            border: 2px solid;
+            border-image: linear-gradient(to right, #4f46e5, #ec4899) 1;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-content {
+            display: none;
+        }
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.5), 0 4px 6px -2px rgba(139, 92, 246, 0.1);
+        }
+        /* Estilo para los Prompts de Práctica */
+        .prompt-example {
+            background-color: #1e293b; /* slate-800 */
+            padding: 10px;
+            border-radius: 6px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            color: #93c5fd; /* blue-300 */
+            border-left: 3px solid #6366f1; /* indigo-500 */
+        }
+        /* Estilo para listas anidadas */
+        .list-circle {
+            list-style-type: circle;
+        }
+        /* Estilo para la alerta de licenciamiento */
+        .licensing-alert {
+            background-color: #8b5cf61a; /* bg-purple-500/10 */
+            border: 1px solid #a78bfa; /* purple-400 */
+            color: #d8b4fe; /* purple-200 */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-4 sm:p-8">
+
+    <!-- Encabezado y Título -->
+    <header class="text-center mb-12">
+        <h1 class="text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-pink-500 mb-4">
+            Copilot 365: Arquitectura y Capacidad
+        </h1>
+        <p class="text-gray-400 text-xl max-w-3xl mx-auto">
+            Diferenciación técnica entre la experiencia de chat central unificada y la asistencia focalizada dentro de las aplicaciones de escritorio.
+        </p>
+    </header>
+
+    <!-- Comparación Central vs. In-App -->
+    <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-indigo-300 border-b border-indigo-900 pb-2">
+            I. Ámbito de Trabajo: Central vs. Panel In-App
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Columna: Copilot Chat Central (Business Chat) -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow-2xl transition duration-300 hover:shadow-indigo-700/50">
+                <h3 class="text-2xl font-bold mb-4 text-white">1. Copilot Chat Central (Business Chat)</h3>
+                <p class="text-indigo-400 font-semibold mb-3">Contexto: Nivel Organizacional (Microsoft Graph + Web)</p>
+                <ul class="space-y-3 text-gray-300 list-disc list-inside">
+                    <li>**Contexto Amplio:** Accede a todos los datos de M365 (documentos, correos, chats, calendario) del usuario *con permisos*.</li>
+                    <li>**Orquestación:** Ideal para tareas que requieren **combinar información** de múltiples fuentes. (Ej: "Prepara un resumen de la última reunión de Teams y busca los documentos de OneDrive relacionados").</li>
+                    <li>**Uso Estratégico:** Creación y gestión de **Agentes** (vía Copilot Studio), *research* general con acceso a la web (Bing).</li>
+                    <li>**Localización:** Interfaz web dedicada o la aplicación M365 Copilot (sección Chat).</li>
+                </ul>
+            </div>
+
+            <!-- Columna: Copilot en Aplicaciones (Panel In-App) -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow-2xl transition duration-300 hover:shadow-pink-700/50">
+                <h3 class="text-2xl font-bold mb-4 text-white">2. Copilot en Aplicaciones (Panel In-App)</h3>
+                <p class="text-pink-400 font-semibold mb-3">Contexto: Nivel de Documento/Entorno Abierto</p>
+                <ul class="space-y-3 text-gray-300 list-disc list-inside">
+                    <li>**Contexto Focalizado:** Asistencia directa sobre el contenido del archivo o la interfaz que está abierta en ese momento (ej., el documento de Word o la hoja de Excel).</li>
+                    <li>**Uso Operativo:** Tareas de creación, edición, resumen y manipulación de datos *dentro* de la aplicación. (Ej: "Reescribe este párrafo en tono formal" en Word; "Sugiéreme una tabla dinámica" en Excel).</li>
+                    <li>**Dependencia del Fichero:** Su funcionalidad está intrínsecamente ligada al documento activo.</li>
+                    <li>**Localización:** Panel lateral (sidebar) dentro de la interfaz de la aplicación de escritorio (Word, Excel, Outlook, etc.).</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funcionalidades In-App Detalladas (Sección Dinámica con Tabs) -->
+    <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-indigo-300 border-b border-indigo-900 pb-2">
+            II. Capacidades Específicas In-App (Escritorio)
+        </h2>
+        
+        <!-- Controles de Navegación (Tabs) -->
+        <div id="app-tabs" class="flex flex-wrap gap-2 mb-6 p-2 bg-gray-800 rounded-lg shadow-inner">
+            <button data-target="word" class="tab-button active bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">Word</button>
+            <button data-target="excel" class="tab-button bg-gray-700 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">Excel</button>
+            <button data-target="powerpoint" class="tab-button bg-gray-700 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">PowerPoint</button>
+            <button data-target="outlook" class="tab-button bg-gray-700 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">Outlook</button>
+            <button data-target="teams" class="tab-button bg-gray-700 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">Teams</button>
+        </div>
+
+        <!-- Contenido de las Tabs -->
+        <div id="app-content">
+
+            <!-- Word Content -->
+            <div id="word" class="tab-content active p-6 rounded-xl bg-gray-800 shadow-xl border-t-4 border-indigo-600">
+                <h3 class="text-2xl font-bold text-indigo-400 mb-3">Microsoft Word: Asistencia en Redacción</h3>
+                <p class="text-gray-300 mb-4">Se centra en la **generación, edición y resumen** de contenido dentro del documento abierto.</p>
+                <ul class="space-y-2 text-gray-400 list-disc list-outside ml-5">
+                    <li>**Generación de Borradores:** Crea texto inicial a partir de un *prompt* o basándose en otros archivos de M365 (via Graph).</li>
+                    <li>**Reescritura Focalizada:** Permite seleccionar texto para cambiar el tono (formal, informal, conciso) o la longitud.</li>
+                    <li>**Chat sobre el Documento:** Posibilidad de hacer preguntas o solicitar resúmenes del contenido del fichero activo.</li>
+                    <li>**Referencia a Archivos en la Nube:** Incluir contenido de otros documentos sin salir de Word.</li>
+                </ul>
+                
+                <!-- Prompts de Práctica - Collapsible -->
+                <div class="mt-6 border-t border-indigo-700 pt-4">
+                    <button class="practice-toggle w-full text-left flex justify-between items-center text-indigo-300 font-bold py-2 hover:text-indigo-200 transition duration-200">
+                        <span>Prompts de Práctica y Ejemplos (Haga clic para expandir)</span>
+                        <span class="toggle-icon text-xl">+</span>
+                    </button>
+                    <div class="practice-content hidden mt-2 space-y-3">
+                        <p class="text-sm text-gray-400 font-semibold">Generación de Borrador (Contexto Externo):</p>
+                        <div class="prompt-example">Genera un borrador de 500 palabras sobre la nueva política de trabajo híbrido, basándote en el documento 'Politica_RRHH_2025.docx' (ubicado en OneDrive) y con un tono optimista.</div>
+                        <p class="text-sm text-gray-400 font-semibold">Reescritura Focalizada (Contexto Interno):</p>
+                        <div class="prompt-example">Selecciona el tercer párrafo de la introducción y reescríbelo para que sea más conciso y adecuado para un público ejecutivo.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Excel Content -->
+            <div id="excel" class="tab-content p-6 rounded-xl bg-gray-800 shadow-xl border-t-4 border-green-600">
+                <h3 class="text-2xl font-bold text-green-400 mb-3">Microsoft Excel: Análisis y Modelado de Datos</h3>
+                <p class="text-gray-300 mb-4">Su objetivo es acelerar el análisis de datos sin necesidad de copiar y pegar fuera de la hoja de cálculo.</p>
+                <ul class="space-y-2 text-gray-400 list-disc list-outside ml-5">
+                    <li>**Generación de Fórmulas:** Sugiere fórmulas complejas o tablas dinámicas a partir de peticiones en lenguaje natural.</li>
+                    <li>**Análisis de Datos:** Identifica correlaciones, tendencias, anomalías y ofrece escenarios "qué pasaría si..." sobre el conjunto de datos activo.</li>
+                    <li>**Visualizaciones Rápidas:** Crea gráficos y visualizaciones automáticamente para explorar los datos.</li>
+                    <li>**Soporte Python:** Potencia el análisis de datos permitiendo la ejecución de código Python directamente en Excel.</li>
+                </ul>
+                
+                <!-- Prompts de Práctica - Collapsible -->
+                <div class="mt-6 border-t border-green-700 pt-4">
+                    <button class="practice-toggle w-full text-left flex justify-between items-center text-green-300 font-bold py-2 hover:text-green-200 transition duration-200">
+                        <span>Prompts de Práctica y Ejemplos (Haga clic para expandir)</span>
+                        <span class="toggle-icon text-xl">+</span>
+                    </button>
+                    <div class="practice-content hidden mt-2 space-y-3">
+                        <p class="text-sm text-gray-400 font-semibold">Generación de Fórmulas (Uso Operativo):</p>
+                        <div class="prompt-example">Escribe la fórmula para calcular la media trimestral del 'Revenue' de las últimas 5 filas, ignorando los valores cero y redondeando a dos decimales.</div>
+                        <p class="text-sm text-gray-400 font-semibold">Análisis de Datos (Insight Rápido):</p>
+                        <div class="prompt-example">Analiza la columna de 'Gastos de Marketing' e identifica si existe una correlación significativa con la columna 'Ventas Netas' de los últimos seis meses. Crea un gráfico de dispersión.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PowerPoint Content -->
+            <div id="powerpoint" class="tab-content p-6 rounded-xl bg-gray-800 shadow-xl border-t-4 border-red-600">
+                <h3 class="text-2xl font-bold text-red-400 mb-3">Microsoft PowerPoint: Diseño y Narrativa Visual</h3>
+                <p class="text-gray-300 mb-4">Transforma conceptos o documentos en presentaciones visualmente coherentes y estructuradas.</p>
+                <ul class="space-y-2 text-gray-400 list-disc list-outside ml-5">
+                    <li>**Creación de Diapositivas desde Archivo:** Genera una presentación completa a partir de un documento de Word o un *outline*.</li>
+                    <li>**Diseño Inteligente:** Optimiza el diseño, formato y estilos, manteniendo la coherencia visual con la marca corporativa.</li>
+                    <li>**Reescritura:** Ajusta el texto de las diapositivas para hacerlo más conciso o reordenar listas.</li>
+                    <li>**Generación de Imágenes:** Puede crear imágenes generadas por IA para la presentación (requiere licencia y disponibilidad).</li>
+                </ul>
+
+                <!-- Prompts de Práctica - Collapsible -->
+                <div class="mt-6 border-t border-red-700 pt-4">
+                    <button class="practice-toggle w-full text-left flex justify-between items-center text-red-300 font-bold py-2 hover:text-red-200 transition duration-200">
+                        <span>Prompts de Práctica y Ejemplos (Haga clic para expandir)</span>
+                        <span class="toggle-icon text-xl">+</span>
+                    </button>
+                    <div class="practice-content hidden mt-2 space-y-3">
+                        <p class="text-sm text-gray-400 font-semibold">Creación desde Documento (Contexto Externo):</p>
+                        <div class="prompt-example">Crea una presentación de 8 diapositivas titulada 'Estrategia de Expansión Q3', basándote en el documento de Word 'Plan_Q3_detallado.docx'. Usa la plantilla corporativa azul.</div>
+                        <p class="text-sm text-gray-400 font-semibold">Edición de Contenido (Contexto Interno):</p>
+                        <div class="prompt-example">Reorganiza la Diapositiva 4 y 5. Convierte el texto de la Diapositiva 6 en una lista con viñetas clara, usando un tono formal.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Outlook Content -->
+            <div id="outlook" class="tab-content p-6 rounded-xl bg-gray-800 shadow-xl border-t-4 border-cyan-600">
+                <h3 class="text-2xl font-bold text-cyan-400 mb-3">Microsoft Outlook: Gestión y Comunicación</h3>
+                <p class="text-gray-300 mb-4">Aumenta la eficiencia en la gestión del correo electrónico y la preparación de la comunicación.</p>
+                <ul class="space-y-2 text-gray-400 list-disc list-outside ml-5">
+                    <li>**Resumen de Conversaciones:** Condensa hilos de correo extensos para identificar rápidamente los puntos clave y las acciones pendientes.</li>
+                    <li>**Redacción de Borradores:** Crea respuestas y correos nuevos basados en otros correos o documentos (contexto M365).</li>
+                    <li>**Sugerencias de Tareas:** Identifica compromisos y tareas implícitas en los correos y sugiere la creación de recordatorios.</li>
+                </ul>
+
+                <!-- Prompts de Práctica - Collapsible -->
+                <div class="mt-6 border-t border-cyan-700 pt-4">
+                    <button class="practice-toggle w-full text-left flex justify-between items-center text-cyan-300 font-bold py-2 hover:text-cyan-200 transition duration-200">
+                        <span>Prompts de Práctica y Ejemplos (Haga clic para expandir)</span>
+                        <span class="toggle-icon text-xl">+</span>
+                    </button>
+                    <div class="practice-content hidden mt-2 space-y-3">
+                        <p class="text-sm text-gray-400 font-semibold">Resumen (Contexto Hilo de Correo):</p>
+                        <div class="prompt-example">Resume el hilo de correo 'Fallo en la Producción' e indica las acciones pendientes que me conciernen directamente.</div>
+                        <p class="text-sm text-gray-400 font-semibold">Redacción de Respuesta (Contexto Abierto):</p>
+                        <div class="prompt-example">Redacta una respuesta a este correo (el que está abierto) que sea formal, rechazando la propuesta pero ofreciendo una reunión para discutir alternativas el próximo jueves a las 11:00 am.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teams Content -->
+            <div id="teams" class="tab-content p-6 rounded-xl bg-gray-800 shadow-xl border-t-4 border-purple-600">
+                <h3 class="text-2xl font-bold text-purple-400 mb-3">Microsoft Teams: Colaboración y Reuniones</h3>
+                <p class="text-gray-300 mb-4">Mejora la eficiencia en la colaboración en tiempo real y la gestión posterior a la reunión.</p>
+                <ul class="space-y-2 text-gray-400 list-disc list-outside ml-5">
+                    <li>**Resúmenes de Reuniones (AI Recap):** Proporciona un resumen de la reunión (grabada o instantánea), incluyendo puntos de discusión, decisiones y tareas.</li>
+                    <li>**Q&A en el Chat:** Permite hacer preguntas sobre los últimos 30 días del historial de un chat específico.</li>
+                    <li>**Transcripción y Traducción:** Asistencia en la transcripción de voz y traducción de contenido de la reunión.</li>
+                    <li>**Resúmenes Móviles:** En dispositivos móviles, puede resumir documentos de Word, PPT y PDF compartidos con un solo clic.</li>
+                </ul>
+
+                <!-- Prompts de Práctica - Collapsible -->
+                <div class="mt-6 border-t border-purple-700 pt-4">
+                    <button class="practice-toggle w-full text-left flex justify-between items-center text-purple-300 font-bold py-2 hover:text-purple-200 transition duration-200">
+                        <span>Prompts de Práctica y Ejemplos (Haga clic para expandir)</span>
+                        <span class="toggle-icon text-xl">+</span>
+                    </button>
+                    <div class="practice-content hidden mt-2 space-y-3">
+                        <p class="text-sm text-gray-400 font-semibold">Resumen de Reunión (AI Recap):</p>
+                        <div class="prompt-example">Dame un resumen ejecutivo de la reunión 'Kick-off Proyecto Titan' de las 10 am, incluyendo las decisiones tomadas y quién es el responsable de la acción 'Revisar presupuesto'.</div>
+                        <p class="text-sm text-gray-400 font-semibold">Q&A en Chat (Contexto Histórico):</p>
+                        <div class="prompt-example">¿Cuál fue la fecha límite acordada para la Fase 2 del proyecto en el chat grupal de la semana pasada? Cita el mensaje original.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN III: Copilot en Windows -->
+    <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-indigo-300 border-b border-indigo-900 pb-2">
+            III. Copilot en Windows: Integración a Nivel de SO
+        </h2>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-2xl transition duration-300 hover:shadow-cyan-700/50">
+            <h3 class="text-2xl font-bold mb-4 text-white">Integración y Alcance de Datos (Diferenciación Crítica)</h3>
+            <p class="text-cyan-400 font-semibold mb-3">Es una aplicación nativa integrada en Windows 11 y Copilot+ PCs, con un modelo de acceso a datos distinto.</p>
+            <ul class="space-y-3 text-gray-300 list-disc list-inside">
+                <li>**Acceso Directo:** Se lanza rápidamente con la tecla <code class="bg-gray-700 p-1 rounded">Windows + C</code> o la tecla Copilot dedicada en teclados modernos.</li>
+                <li>**Control del Sistema Operativo:** Permite cambiar la configuración, ajustar el volumen, tomar capturas de pantalla y hacer preguntas sobre el contenido de la pantalla.</li>
+                <li>**Acceso a Archivos Locales (Diferencia clave):** **Sí puede** acceder al contenido de archivos almacenados localmente en el dispositivo (incluidos los sincronizados de OneDrive) si el usuario lo **habilita explícitamente** en la configuración de "Búsqueda de archivos y Lectura de archivos". Esto resuelve la limitación del Copilot Chat de M365 que solo opera en la nube.</li>
+                <li>**Licenciamiento:**
+                    <ul class="list-circle list-inside ml-5 text-gray-400">
+                        <li>**Uso Básico (Web):** Gratuito para usuarios de Windows 11.</li>
+                        <li>**Uso Empresarial (Acceso a Graph):** El acceso completo a los datos de trabajo (**Business Chat/Microsoft Graph**) desde esta interfaz requiere la licencia de **Microsoft 365 Copilot**.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN IV: Agentes de Copilot y Copilot Studio -->
+    <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-indigo-300 border-b border-indigo-900 pb-2">
+            IV. Extensibilidad: Agentes de Copilot y Copilot Studio
+        </h2>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-2xl transition duration-300 hover:shadow-purple-700/50">
+            <h3 class="text-2xl font-bold text-white mb-4">Agentes: Definición, Arquitectura y Creación (Copilot Studio)</h3>
+            <p class="text-purple-400 font-semibold mb-3">**Definición:** Los Agentes son soluciones de IA conversacional **personalizadas** que van más allá del simple chat. Se programan para seguir flujos de trabajo específicos (procesos de negocio). El **Copilot Studio** es la plataforma de desarrollo web donde se diseñan y publican estos agentes. Es un servicio completamente aparte de las aplicaciones de M365.</p>
+            
+            <!-- Bloque de Licenciamiento (Énfasis en Costo y Empresa) -->
+            <div class="licensing-alert p-4 rounded-lg my-4 font-bold border-l-4 border-red-500">
+                ⚠️ **REQUISITO NO NEGOCIABLE: LICENCIA CORPORATIVA Y COSTE ADICIONAL**
+                <ul class="list-disc list-inside mt-2 font-normal">
+                    <li>**Uso Exclusivo Empresarial:** La funcionalidad de publicar Agentes para el **Espacio Corporativo** es para empresas con cuentas de Microsoft Entra ID.</li>
+                    <li>**Coste Aparte:** El uso de Agentes requiere la compra de **Créditos de Copilot** (licencia de capacidad) a nivel de organización, con un precio que es **adicional** a la suscripción estándar de Microsoft 365 Copilot.</li>
+                    <li>**Instalación:** Se accede por portal web (no se "instala" como una aplicación de escritorio). La configuración y publicación es tarea del administrador de Power Platform.</li>
+                </ul>
+            </div>
+            
+            <p class="text-gray-300 font-semibold mt-6 mb-3">Para qué Sirve (Propósito y Casos de Uso)</p>
+            <ul class="space-y-3 text-gray-300 list-disc list-inside">
+                <li>**Automatización de Tareas Estructuradas:** Ideal para procesos repetitivos que siguen reglas lógicas (ej. RR.HH., Soporte Técnico, Finanzas).</li>
+                <li>**Integración de Sistemas:** Utiliza **Conectores de Power Platform** para interactuar con bases de datos y software de terceros (ej., SAP, Salesforce, sistemas internos de inventario).</li>
+                <li>**Casos Prácticos:**
+                    <ul class="list-circle list-inside ml-5 text-gray-400">
+                        <li>**RR.HH.:** Agente de Onboarding que verifica la documentación de un nuevo empleado y genera automáticamente su cuenta de Teams.</li>
+                        <li>**Soporte Técnico:** Agente de Diagnóstico que, tras una consulta del usuario, consulta la base de datos de tickets (`Dataverse`) y crea un nuevo ticket si la solución no existe.</li>
+                        <li>**Finanzas:** Agente de Gestión de Gastos que consulta el saldo presupuestario actual antes de aprobar una solicitud de compra.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Prompts de Práctica Agente - Collapsible -->
+            <div class="mt-6 border-t border-purple-700 pt-4">
+                <button class="practice-toggle w-full text-left flex justify-between items-center text-purple-300 font-bold py-2 hover:text-purple-200 transition duration-200">
+                    <span>Práctica Elaborada: Creación de un Agente de Revisión de Compras (Haga clic para expandir)</span>
+                    <span class="toggle-icon text-xl">+</span>
+                </button>
+                <div class="practice-content hidden mt-2 space-y-3">
+                    <p class="text-sm text-gray-400 font-semibold">Flujo de Diseño en Copilot Studio:</p>
+                    <ul class="text-gray-400 list-disc list-inside ml-5">
+                        <li>**Disparador (*Trigger*):** Frase del usuario como "Quiero iniciar una compra", "solicitar presupuesto".</li>
+                        <li>**Extracción de Datos:** El agente usa una **Entidad** (variable) para extraer el `Monto Total` y el `Proveedor` de la conversación.</li>
+                        <li>**Lógica Condicional:** El flujo verifica si `Monto Total > 5000€`.</li>
+                        <li>**Acción (Power Automate):** Si es TRUE, llama a un Flow que envía la solicitud de aprobación a la bandeja de entrada del Gerente Financiero.</li>
+                        <li>**Respuesta:** El agente notifica al usuario en el Copilot Chat: "Solicitud N°[ID] enviada para aprobación. El Gerente Financiero ha sido notificado."</li>
+                    </ul>
+                    <p class="text-sm text-gray-400 font-semibold mt-3">Prompt de Interacción del Usuario (Finanzas):</p>
+                    <div class="prompt-example">@AgenteDeAprobaciónFinanciera: Por favor, inicia la solicitud de compra para 3 licencias de software por un total de 9.500€. Adjunto la cotización del proveedor 'SoftwareCorp'.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Gobernanza (Recuadro de Seguridad) -->
+    <section class="bg-gray-700/50 p-6 rounded-xl shadow-inner border border-yellow-500/50">
+        <h2 class="text-2xl font-bold mb-3 text-yellow-300 flex items-center">
+            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-2-6h4m4 0h-4m0 0V8m0 4h.01M19 10a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            NOTA CRÍTICA DE GOBERNANZA Y SEGURIDAD
+        </h2>
+        <p class="text-gray-400">
+            Es fundamental recordar que Copilot en sus dos modalidades **siempre hereda los permisos existentes** en el **Entorno de la Organización** de Microsoft 365. Un usuario **solo puede acceder a la información que ya tenía permiso de ver**. Esto garantiza la integridad y el cumplimiento de las políticas de **Microsoft Purview**, siendo un pilar de la confianza empresarial.
+        </p>
+    </section>
+
+    <!-- Script para la funcionalidad dinámica (Tabs y Collapsible Prompts) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-button');
+            const contents = document.querySelectorAll('.tab-content');
+            const toggleButtons = document.querySelectorAll('.practice-toggle');
+
+
+            // --- Lógica para los Tabs de Aplicaciones ---
+            tabs.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.getAttribute('data-target');
+
+                    // Desactivar todos los contenidos y botones
+                    contents.forEach(content => content.classList.remove('active'));
+                    tabs.forEach(tab => {
+                        // Limpiar todos los colores de botones y establecer el color de fondo por defecto
+                        tab.classList.remove('bg-indigo-600', 'bg-green-600', 'bg-red-600', 'bg-cyan-600', 'bg-purple-600');
+                        tab.classList.add('bg-gray-700');
+                    });
+
+                    // Activar el contenido seleccionado
+                    const targetContent = document.getElementById(targetId);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+
+                    // Activar el botón (cambiar color)
+                    button.classList.remove('bg-gray-700');
+                    switch(targetId) {
+                        case 'word': button.classList.add('bg-indigo-600'); break;
+                        case 'excel': button.classList.add('bg-green-600'); break;
+                        case 'powerpoint': button.classList.add('bg-red-600'); break;
+                        case 'outlook': button.classList.add('bg-cyan-600'); break;
+                        case 'teams': button.classList.add('bg-purple-600'); break;
+                        default: button.classList.add('bg-indigo-600'); break;
+                    }
+                });
+            });
+
+            // --- Lógica para los Prompts de Práctica Collapsible ---
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const icon = button.querySelector('.toggle-icon');
+                    
+                    // Toggle visibility
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.textContent = '−'; // Menos
+                        // Opcional: Cerrar otros acordeones si se desea un comportamiento de "solo uno abierto"
+                    } else {
+                        content.classList.add('hidden');
+                        icon.textContent = '+'; // Más
+                    }
+                });
+            });
+
+            // Asegurar que Word (el primer tab) esté visible al cargar
+            document.querySelector('.tab-button[data-target="word"]').click();
+        });
+    </script>
+
+</body>
+</html>
